@@ -5,7 +5,7 @@ extends Sprite3D
 
 var timer = 0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# TODO: Make it into a functional collectable, and not just a sprite
 func _process(delta: float) -> void:
 	if timer >= frame_time:
 		frame += 1

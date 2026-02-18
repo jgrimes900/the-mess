@@ -3,12 +3,14 @@ extends "res://entities/Pole.gd"
 
 @export var size: float = 1.0
 
+const SM64_TREE = "uid://c4gk3h8tnsd5w"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	height = 4.0*size
 	super._ready()
 	var sprite = Sprite3D.new();
-	var texture = load("res://sm64_tree.png")
+	var texture = load(SM64_TREE)
 	sprite.texture = texture
 	sprite.centered = false
 	sprite.offset.x = -32

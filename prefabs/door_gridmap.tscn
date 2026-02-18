@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c22wldk8v3xb2"]
+
+[ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="1_oes1k"]
+[ext_resource type="ArrayMesh" uid="uid://donjr6fbwwdyt" path="res://assets/models/C1A0_001.res" id="2_bfqxw"]
+[ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="3_oc5ta"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gr3wi"]
+size = Vector3(0.002, 0.02, 0.02)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r26ln"]
+size = Vector3(0.004, 0.02, 0.02)
+
+[node name="Door" type="AnimatableBody3D" unique_id=878979255]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_oes1k")
+move_direction = Vector3(0, 0, -1)
+lip = 2.0
+
+[node name="C1a0001" type="MeshInstance3D" parent="." unique_id=1554549279]
+transform = Transform3D(71.4, 0, 0, 0, 71.4, 0, 0, 0, 125, 0, 0, 0)
+mesh = ExtResource("2_bfqxw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=157755607]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0.00049972534)
+shape = SubResource("BoxShape3D_gr3wi")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=977929976]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=1715294394]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0.0005000271)
+shape = SubResource("BoxShape3D_r26ln")
+
+[node name="Health" type="Node" parent="." unique_id=1933561153]
+script = ExtResource("3_oc5ta")
+
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_touch"]
+[connection signal="triggered" from="Health" to="." method="_open"]

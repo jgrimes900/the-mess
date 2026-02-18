@@ -9,13 +9,11 @@ extends Node3D
 
 var player_dead = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	silencer.visible = has_silencer
 	_idle_animation()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# TODO: Add sound, ammo, silencer, missing animations, and make the player have to pick it up first
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("fire_left") and !player_dead:
 		gun._fire()

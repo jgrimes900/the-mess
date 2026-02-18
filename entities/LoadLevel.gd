@@ -1,9 +1,18 @@
 extends Area3D
 
-func MapChange(_a,_body: Node3D,level: String) -> void:
-	var callable = Callable(DoTheThing);
-	callable.call_deferred(level)
-	(get_node("/root/Player/AudioTele") as AudioStreamPlayer3D).play()
+const KNOWN_MAPS = {
+	hl1_c1a0 = "uid://bck1kpbmbaj8n",
+	gbj = "uid://oef73g5qqf1y",
+	GridMapTest = "uid://bnijdfm8dpeuu"
+}
+
+func MapChange(_a,body: Node3D,level: String) -> void:
+	if body == get_node("/root/Player"):
+		var callable = Callable(DoTheThing);
+		callable.call_deferred(level)
+		(get_node("/root/Player/AudioTele") as AudioStreamPlayer3D).play()
 	
 func DoTheThing(level: String):
-	get_tree().change_scene_to_file("res://"+level)
+	if KNOWN_MAPS[level]:
+		level = KNOWN_MAPS[level]
+	get_tree().change_scene_to_file(level)

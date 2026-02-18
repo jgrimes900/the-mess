@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="The Mess"
-run/main_scene="res://hl1_c1a0.tscn"
+run/main_scene="res://maps/hl1_c1a0.tscn"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Player="*uid://bup1lkvcttpfw"
+Player="*uid://spg4pujovl52"
 
 [dotnet]
 

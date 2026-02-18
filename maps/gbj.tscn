@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://oef73g5qqf1y"]
 
-[ext_resource type="PackedScene" uid="uid://uunyi8xrjboa" path="res://gbj_section.tscn" id="1_u5o4e"]
+[ext_resource type="PackedScene" uid="uid://uunyi8xrjboa" path="res://prefabs/gbj_section.tscn" id="1_u5o4e"]
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="2_q72r2"]
 
 [sub_resource type="Environment" id="Environment_u5o4e"]
