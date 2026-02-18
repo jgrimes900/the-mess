@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://oef73g5qqf1y"]
+
+[ext_resource type="PackedScene" uid="uid://uunyi8xrjboa" path="res://gbj_section.tscn" id="1_u5o4e"]
+[ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="2_q72r2"]
+
+[sub_resource type="Environment" id="Environment_u5o4e"]
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+fog_density = 1.0
+fog_height = 1.0
+fog_depth_curve = 0.23325865
+fog_depth_begin = 4.0
+fog_depth_end = 40.0
+volumetric_fog_density = 0.0
+
+[node name="Node3D" type="Node3D" unique_id=747981294]
+
+[node name="Section01" parent="." unique_id=1539121152 instance=ExtResource("1_u5o4e")]
+
+[node name="Section02" parent="." unique_id=1974308654 instance=ExtResource("1_u5o4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+
+[node name="Section03" parent="." unique_id=412288492 instance=ExtResource("1_u5o4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+
+[node name="Section04" parent="." unique_id=1108203992 instance=ExtResource("1_u5o4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
+
+[node name="Section05" parent="." unique_id=1095178100 instance=ExtResource("1_u5o4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -40)
+
+[node name="Section06" parent="." unique_id=1949388327 instance=ExtResource("1_u5o4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -40)
+
+[node name="Section07" parent="." unique_id=598883600 instance=ExtResource("1_u5o4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+
+[node name="Section08" parent="." unique_id=413593880 instance=ExtResource("1_u5o4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 40)
+
+[node name="Section09" parent="." unique_id=1199483093 instance=ExtResource("1_u5o4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 40)
+
+[node name="Spawn" type="Node3D" parent="." unique_id=918272776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 84.86069, 0)
+script = ExtResource("2_q72r2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=392318429]
+environment = SubResource("Environment_u5o4e")
