@@ -20,6 +20,14 @@ var death_rotation: Vector3 = Vector3(90, 0, 90)
 
 @onready var pivot: Node3D = $Pivot
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
+@onready var sound_player: AudioStreamPlayer3D = $AudioTele
+
+const coin_sounds = {
+	SHaR_Coin = 3,
+	SHaR_Coin1 = preload("uid://do0hcpe20agk3"),
+	SHaR_Coin2 = preload("uid://b3kofhrj1ec5k"),
+	SHaR_Coin3 = preload("uid://dlnm6thk8215s")
+}
 
 func _kill():
 	dead = true
@@ -113,3 +121,8 @@ func _input(event: InputEvent) -> void:
 			elif new_pitch <= -1.5:
 				pivot.rotation = Vector3(0, pivot.rotation.y, 1.5)
 				view_pitch_set = -1
+				
+func recive_currency(_index, type: String):
+	if coin_sounds[type]:
+		sound_player.stream = coin_sounds[type + str(randi_range(1,coin_sounds[type]))]
+		sound_player.play()
