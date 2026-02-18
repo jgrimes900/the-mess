@@ -46,6 +46,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_pressed("move_forward"):
 				direction.z -= 1.0
 				
+			# TODO: Check if the player can uncrouch with a shapecast
 			if Input.is_action_pressed("crouch") and not crouched:
 				var shape: BoxShape3D = collision_shape.shape
 				shape.size = collision_size * collision_mult_crouched

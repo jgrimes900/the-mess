@@ -12,7 +12,7 @@ signal triggered()
 func damage(amount: float, body: Node3D = null) -> void:
 	if body == root or body == null:
 		health -= amount
-		if amount < 0:
+		if amount > 0:
 			emit_signal("damaged", 0-amount)
 		else:
 			emit_signal("healed", amount)

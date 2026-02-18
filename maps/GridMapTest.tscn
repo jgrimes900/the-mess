@@ -4,13 +4,23 @@
 [ext_resource type="Script" uid="uid://fb88cl62hy1j" path="res://maps/scripts/GridMapTest_Controler.gd" id="2_dbiju"]
 [ext_resource type="Script" uid="uid://psu6r5aime4d" path="res://entities/AreaHurt3D.gd" id="3_s6tu6"]
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="4_lumrj"]
+[ext_resource type="Material" uid="uid://b7gytrh7oboqd" path="res://assets/materials/Debug_Red.tres" id="4_s6tu6"]
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="5_5c4qy"]
+[ext_resource type="Material" uid="uid://bi2jqwdylnu4m" path="res://assets/materials/Debug_Green.tres" id="5_lumrj"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="6_fl54b"]
 [ext_resource type="Script" uid="uid://cddmtyqjy7hcs" path="res://entities/SM64_Tree.gd" id="7_hdov8"]
 [ext_resource type="Texture2D" uid="uid://dotvhc43bepmm" path="res://assets/sprites/shar_coin.png" id="8_xqyr0"]
 [ext_resource type="Script" uid="uid://b5u0tffn6ao4" path="res://entities/Shar_Coin.gd" id="9_hr8cw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba6ci"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5c4qy"]
+material = ExtResource("4_s6tu6")
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fl54b"]
+material = ExtResource("5_lumrj")
 size = Vector3(2, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_js533"]
@@ -38,14 +48,30 @@ light_energy = 2.795
 light_size = 1.0
 omni_range = 10.0
 
-[node name="The_Death_Cube" type="Area3D" parent="GridMap" unique_id=1344035598]
+[node name="InstantDeathCube" type="Area3D" parent="GridMap" unique_id=1344035598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 3)
 script = ExtResource("3_s6tu6")
 damage = 100.0
 is_percent = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMap/The_Death_Cube" unique_id=1657249509]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMap/InstantDeathCube" unique_id=1657249509]
 shape = SubResource("BoxShape3D_ba6ci")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GridMap/InstantDeathCube" unique_id=1204393993]
+mesh = SubResource("BoxMesh_5c4qy")
+
+[node name="SlowDeathCube" type="Area3D" parent="GridMap" unique_id=1962313293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 3)
+script = ExtResource("3_s6tu6")
+damage = 100.0
+is_percent = true
+is_per_second = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMap/SlowDeathCube" unique_id=1372109932]
+shape = SubResource("BoxShape3D_ba6ci")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GridMap/SlowDeathCube" unique_id=234074431]
+mesh = SubResource("BoxMesh_fl54b")
 
 [node name="Spawn" type="Node3D" parent="." unique_id=1509810602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.993747, 0, 6.584504)
