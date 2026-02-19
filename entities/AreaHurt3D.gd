@@ -7,7 +7,6 @@ extends Area3D
 var bodys_inside = []
 var damage_to_apply: float = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 		body_shape_entered.connect(func(_a1, body, _a3, _a4):
 			bodys_inside.append(body))

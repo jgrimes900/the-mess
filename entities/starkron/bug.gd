@@ -1,5 +1,10 @@
 extends CharacterBody3D
 
+# The ground enemy from Drillgon's current school project, Starkron
+
+# If I limit it to only being in GridMap based levels,
+# I might be able to implement the original method of pathing.
+
 @onready var aniplay: AnimationPlayer = $AnimationPlayer
 @onready var attack_area: Area3D = $AttackArea
 @onready var body: Area3D = $AttackArea
@@ -14,15 +19,12 @@ var attack_trigger_frames: int = -1
 
 signal attack()
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_on_animation_finished("")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	attack_timer += delta
 	attack_trigger_frames -= 1
-	print(attack_area.has_target)
 	if attack_area.has_target and attack_timer >= attack_delay:
 		attack_trigger_frames = 40
 		aniplay.play("anim_lib_bug/attack")

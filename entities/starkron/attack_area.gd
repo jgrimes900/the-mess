@@ -1,5 +1,7 @@
 extends "res://entities/AreaHurt3D.gd"
 
+# Specialized version of AreaHurt3D, made for Starkron Bug.
+
 @export var has_target: bool = false
 
 const bug_script_path = "res://entities/starkron/bug.gd"

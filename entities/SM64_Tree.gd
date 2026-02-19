@@ -1,11 +1,13 @@
 @tool
 extends "res://entities/Pole.gd"
 
+# Climbable tree from Super Mario 64.
+# Well... it looks like it, anyways
+
 @export var size: float = 1.0
 
-const SM64_TREE = "uid://c4gk3h8tnsd5w"
+const SM64_TREE = "uid://c4gk3h8tnsd5w" # Tree sprite graphic
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	height = 4.0*size
 	super._ready()

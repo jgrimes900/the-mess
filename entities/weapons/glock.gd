@@ -1,5 +1,11 @@
 extends Node3D
 
+# The glock / 9mm Pistol from Half-Life 1
+
+# Not accurate to the original thing.
+# Honestly, this is here because I had the model on-hand
+# Same thing with C1A0
+
 @export var has_silencer: bool = false
 
 @onready var aniplay: AnimationPlayer = $AnimationPlayer

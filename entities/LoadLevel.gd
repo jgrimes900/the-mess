@@ -16,6 +16,6 @@ func MapChange(_a,body: Node3D,level: String) -> void:
 		get_node("/root/Player/AudioTele").play()
 	
 func DoTheThing(level: String):
-	if KNOWN_MAPS.has(level):
+	if KNOWN_MAPS.has(level): # Load map UID if key is used, otherwise assume 'level' is a path or UID
 		level = KNOWN_MAPS[level]
 	get_tree().change_scene_to_file(level)

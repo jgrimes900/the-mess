@@ -1,5 +1,7 @@
 extends Sprite3D
 
+# Coin from The Simpsons: Hit and Run
+
 @export var frames: int = 24
 @export var frame_time: float = 0.01
 @export var index: int = -1

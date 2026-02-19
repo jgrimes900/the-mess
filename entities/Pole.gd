@@ -1,6 +1,11 @@
 @tool
 extends Area3D
 
+# An invisible, climbable pole.
+
+# Suppost to work like the ones in Super Mario 64,
+# but has a long way to go if I want it to be exactly the same.
+
 @export var height: float = 2.0
 @export var climb_speed: float = 2.0
 @export var jump_speed: float = 16.0
@@ -9,7 +14,6 @@ var state = 0
 var player
 var target_velocity = Vector3(0,0,0)
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var Collider = CollisionShape3D.new();
 	var Shape = CylinderShape3D.new();
@@ -23,8 +27,6 @@ func _ready() -> void:
 	body_shape_entered.connect(func(_a1, a2, _a3, _a4):
 			_climb(a2))
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if state == 1:
 		if(player.is_on_floor()):
