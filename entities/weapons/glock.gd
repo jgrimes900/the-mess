@@ -8,6 +8,7 @@ extends Node3D
 @onready var SVC: SubViewportContainer = $SVC
 
 var player_dead = false
+var in_control: bool = false
 
 func _ready() -> void:
 	silencer.visible = has_silencer
@@ -15,7 +16,7 @@ func _ready() -> void:
 
 # TODO: Add sound, ammo, silencer, missing animations, and make the player have to pick it up first
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("fire_left") and !player_dead:
+	if Input.is_action_pressed("fire_left") and !player_dead and in_control:
 		gun._fire()
 		aniplay.play("v_9mmhandgun_animation_lib/shoot")
 
@@ -26,3 +27,10 @@ func _idle_animation():
 func _player_dead() -> void:
 	SVC.visible = false
 	player_dead = true
+	
+func _player_undead() -> void:
+	SVC.visible = true
+	player_dead = false
+
+func _set_control(a: bool):
+	in_control = a

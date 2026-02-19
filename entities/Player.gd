@@ -8,15 +8,17 @@ extends CharacterBody3D
 @export var collision_size: Vector3 = Vector3(0.75, 1.8, 0.75)
 @export var collision_mult_crouched: Vector3 = Vector3(1.0, 0.5, 1.0)
 @export var in_control: bool = true
+@export var look_sensitivity: float = 100
 
 var dead = false
 var view_pitch: float = 0.0
 var view_pitch_set: int = 0
 var last_y: float = 0.0
 var target_velocity: Vector3 = Vector3.ZERO
-var mouse_captured: bool = false
+@export var mouse_captured: bool = false
 var crouched: bool = false
 var death_rotation: Vector3 = Vector3(90, 0, 90)
+var alive_rotation: Vector3 = Vector3(0, -90, 0)
 
 @onready var pivot: Node3D = $Pivot
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
@@ -31,8 +33,12 @@ const coin_sounds = {
 
 func _kill():
 	dead = true
+func _unkill():
+	dead = false
+	rotation_degrees = alive_rotation
 
 func _physics_process(delta: float) -> void:
+	get_node("Health").iframes -= 1
 	if in_control:
 		var direction := Vector3.ZERO
 		
@@ -91,15 +97,7 @@ func do_gravity(delta: float, velocity_in: Vector3):
 	return velocity_in
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("pause"):
-			if mouse_captured:
-				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-				mouse_captured = false
-			else:
-				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-				mouse_captured = true
-				
-	elif event is InputEventMouseMotion:
+	if event is InputEventMouseMotion:
 		if view_pitch_set == 1:
 			view_pitch = 1.5
 			view_pitch_set = 0
@@ -108,9 +106,9 @@ func _input(event: InputEvent) -> void:
 			view_pitch_set = 0
 			
 		if mouse_captured:
-			pivot.rotate_y(-event.relative.x / 100.0)
+			pivot.rotate_y(-event.relative.x / (100.0*(100/look_sensitivity)))
 			
-			var pitch_delta = event.relative.y / 150.0
+			var pitch_delta = event.relative.y / (150.0*(100/look_sensitivity))
 			var new_pitch = view_pitch - pitch_delta
 			
 			if new_pitch <= 1.5 and new_pitch >= -1.5:
@@ -127,3 +125,6 @@ func recive_currency(_index, type: String):
 	if coin_sounds[type]:
 		sound_player.stream = coin_sounds[type + str(randi_range(1,coin_sounds[type]))]
 		sound_player.play()
+		
+func set_look_sensitivity(value: float):
+	look_sensitivity = value

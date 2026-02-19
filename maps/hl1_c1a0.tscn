@@ -44,10 +44,6 @@ billboard = 1
 alpha_scissor_threshold = 0.484
 texture = ExtResource("4_7fnmf")
 
-[node name="Spawn" type="Node3D" parent="C1A0" unique_id=917287883]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.189187, 3.1875558, -9.592825)
-script = ExtResource("5_jgvh2")
-
 [node name="Lights" type="Node3D" parent="C1A0" unique_id=179350413]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="C1A0/Lights" unique_id=302776198]
@@ -253,6 +249,10 @@ billboard = 1
 alpha_scissor_threshold = 0.484
 texture = ExtResource("4_7fnmf")
 
+[node name="Spawn" type="Node3D" parent="." unique_id=917287883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9184103, -2.1957545, 0.5974302)
+script = ExtResource("5_jgvh2")
+
 [connection signal="body_shape_entered" from="C1A0/GridMapTest Teleport Trigger" to="C1A0/GridMapTest Teleport Trigger" method="MapChange" unbinds=2 binds= ["GridMapTest"]]
-[connection signal="body_shape_entered" from="C1A0/OOB Trigger" to="C1A0/Spawn" method="Respawn" unbinds=4]
+[connection signal="body_shape_entered" from="C1A0/OOB Trigger" to="Spawn" method="Respawn" unbinds=4]
 [connection signal="body_shape_entered" from="GBJ Teleport Trigger" to="GBJ Teleport Trigger" method="MapChange" unbinds=2 binds= ["gbj"]]
