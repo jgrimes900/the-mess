@@ -29,12 +29,12 @@ func _physics_process(delta: float) -> void:
 	if state == 1:
 		if(player.is_on_floor()):
 			_deactivate()
-			pass
+			return
 		if Input.is_action_pressed("jump"):
 			target_velocity = (Vector3.FORWARD * jump_speed).rotated(Vector3.UP, player.get_node("Pivot").rotation.y)
 			target_velocity.y = player.jump_vel
 			state = 2
-			pass
+			return
 		elif Input.is_action_pressed("move_forward"):
 			target_velocity.y = climb_speed
 		elif Input.is_action_pressed("move_back"):
@@ -45,11 +45,12 @@ func _physics_process(delta: float) -> void:
 		player.move_and_slide()
 		if player.global_position.y > (global_position.y + height):
 			_deactivate()
+			return
 	elif state == 2:
 		if player.is_on_floor():
 			_deactivate()
 			target_velocity = Vector3.ZERO
-			pass
+			return
 		target_velocity = player.do_gravity(delta, target_velocity)
 		player.velocity = target_velocity
 		player.move_and_slide()

@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cddmtyqjy7hcs" path="res://entities/SM64_Tree.gd" id="7_hdov8"]
 [ext_resource type="Texture2D" uid="uid://dotvhc43bepmm" path="res://assets/sprites/shar_coin.png" id="8_xqyr0"]
 [ext_resource type="Script" uid="uid://b5u0tffn6ao4" path="res://entities/Shar_Coin.gd" id="9_hr8cw"]
+[ext_resource type="PackedScene" uid="uid://dfbuo56xepf6o" path="res://prefabs/starkron/bug.tscn" id="12_lumrj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba6ci"]
 size = Vector3(2, 2, 2)
@@ -140,9 +141,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.246696, -2, 6.5013185)
 script = ExtResource("7_hdov8")
 height = 4.0
 
+[node name="Tree3" type="Area3D" parent="." unique_id=536599299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.867462, -2, 6.5013185)
+script = ExtResource("7_hdov8")
+height = 4.0
+
 [node name="Tree2" type="Area3D" parent="." unique_id=1131720437]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.64347, -2, -5.7917676)
 script = ExtResource("7_hdov8")
 height = 4.0
+
+[node name="Starkron_Bug" parent="." unique_id=1233271149 instance=ExtResource("12_lumrj")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -17.634087, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=83429287]
+transform = Transform3D(-0.040032804, -0.8778472, 0.4772647, -0.25250715, 0.47103232, 0.84520346, -0.96676666, -0.08667728, -0.2405192, 0.8803215, 8.589771, 0)
+shadow_enabled = true
 
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]

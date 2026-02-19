@@ -15,12 +15,18 @@ func _ready() -> void:
 			bodys_inside.erase(body))
 
 func _physics_process(delta: float) -> void:
+	_calc_damage(delta)
+	for body in bodys_inside:
+		_damage(body)
+
+func _calc_damage(delta: float):
 	damage_to_apply = damage
 	if is_per_second:
 		damage_to_apply *= delta
-	for body in bodys_inside:
-		if body.get_node_or_null("Health"):
-			if is_percent:
-				body.get_node("Health").damage_percent(damage_to_apply, body)
-			else:
-				body.get_node("Health").damage(damage_to_apply, body)
+
+func _damage(body):
+	if body.get_node_or_null("Health"):
+		if is_percent:
+			body.get_node("Health").damage_percent(damage_to_apply, body)
+		else:
+			body.get_node("Health").damage(damage_to_apply, body)

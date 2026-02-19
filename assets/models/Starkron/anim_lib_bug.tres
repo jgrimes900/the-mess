@@ -1,0 +1,10 @@
+[gd_resource type="AnimationLibrary" format=3 uid="uid://yxryqjjmef1b"]
+
+[ext_resource type="Animation" uid="uid://cnip04a74a2mn" path="res://assets/models/Starkron/anim_attack.res" id="1_e05nh"]
+[ext_resource type="Animation" uid="uid://c61e330l2j2d4" path="res://assets/models/Starkron/anim_walking.res" id="2_rpwss"]
+
+[resource]
+_data = {
+&"attack": ExtResource("1_e05nh"),
+&"walking": ExtResource("2_rpwss")
+}

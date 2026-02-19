@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bw3dtal3hvd0u"]
+
+[resource]
+resource_name = "lambert1"
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0.6666667, 0.15686275, 1)
+emission_enabled = true

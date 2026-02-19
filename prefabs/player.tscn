@@ -481,6 +481,7 @@ libraries/v_9mmhandgun_animation_lib = ExtResource("3_f2e50")
 transform = Transform3D(-3.590641e-07, -1.6757912e-07, 12.048193, -12.048193, -5.2664325e-07, -3.5906413e-07, 5.2664325e-07, -12.048193, -1.6757912e-07, 0, 0, 0)
 script = ExtResource("4_22xyk")
 parent = NodePath("../../..")
+damage = 5.0
 
 [node name="SVC" type="SubViewportContainer" parent="Pivot/glock" unique_id=728559446]
 anchors_preset = -1
