@@ -5,7 +5,8 @@ const SOUND = preload("uid://btlcj7opvssw5")
 const KNOWN_MAPS = {
 	hl1_c1a0 = "uid://bck1kpbmbaj8n",
 	gbj = "uid://oef73g5qqf1y",
-	GridMapTest = "uid://bnijdfm8dpeuu"
+	GridMapTest = "uid://bnijdfm8dpeuu",
+	WinMap = "uid://etjjb3ij7ot4"
 }
 
 func MapChange(_a,body: Node3D,level: String) -> void:

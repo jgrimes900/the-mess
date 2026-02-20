@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b05g0qqdyr8ip"]
+
+[ext_resource type="Texture2D" uid="uid://bel3aqbt4gvpu" path="res://assets/textures/WinMaze/wall.png" id="1_km21r"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_km21r")

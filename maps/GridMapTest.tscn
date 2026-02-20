@@ -91,6 +91,19 @@ billboard = 1
 alpha_scissor_threshold = 0.484
 texture = ExtResource("6_fl54b")
 
+[node name="WinMap Teleport Trigger" type="Area3D" parent="." unique_id=1855964316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.693396, -0.9912679, -10.405805)
+script = ExtResource("5_5c4qy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WinMap Teleport Trigger" unique_id=1790911489]
+shape = SubResource("BoxShape3D_js533")
+
+[node name="Sprite3D" type="Sprite3D" parent="WinMap Teleport Trigger" unique_id=1150686154]
+pixel_size = 0.02
+billboard = 1
+alpha_scissor_threshold = 0.484
+texture = ExtResource("6_fl54b")
+
 [node name="CoinTest" type="Sprite3D" parent="." unique_id=1585372960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5979514, 4.593423)
 billboard = 1
@@ -152,10 +165,11 @@ script = ExtResource("7_hdov8")
 height = 4.0
 
 [node name="Starkron_Bug" parent="." unique_id=1233271149 instance=ExtResource("12_lumrj")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -17.634087, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -17.596764, 0.12591088, -0.005931407)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=83429287]
 transform = Transform3D(-0.040032804, -0.8778472, 0.4772647, -0.25250715, 0.47103232, 0.84520346, -0.96676666, -0.08667728, -0.2405192, 0.8803215, 8.589771, 0)
 shadow_enabled = true
 
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
+[connection signal="body_shape_entered" from="WinMap Teleport Trigger" to="WinMap Teleport Trigger" method="MapChange" unbinds=2 binds= ["WinMap"]]

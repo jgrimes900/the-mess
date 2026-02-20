@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dnrqxqo0g23t1"]
+
+[ext_resource type="Texture2D" uid="uid://b3ru26p7o5wa2" path="res://assets/textures/WinMaze/ceiling.png" id="1_7r81y"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_7r81y")

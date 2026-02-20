@@ -1,0 +1,72 @@
+[gd_resource type="MeshLibrary" format=3 uid="uid://cd2uwqa068rvp"]
+
+[ext_resource type="ArrayMesh" uid="uid://8xbdhsdiemc0" path="res://assets/models/WinMaze/NW.res" id="1_0ha73"]
+[ext_resource type="ArrayMesh" uid="uid://eieh013t1jqg" path="res://assets/models/WinMaze/N_.res" id="2_256t2"]
+[ext_resource type="ArrayMesh" uid="uid://dowfnvfjsdjn7" path="res://assets/models/WinMaze/_W.res" id="3_eiyj0"]
+[ext_resource type="ArrayMesh" uid="uid://cu0hwjcifd3pj" path="res://assets/models/WinMaze/__.res" id="4_4gdx0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ha73"]
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_256t2"]
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eiyj0"]
+size = Vector3(2, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4gdx0"]
+size = Vector3(0.1, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dyu6p"]
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ht6g8"]
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_44ai3"]
+size = Vector3(2, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ku21"]
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_geyb5"]
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_70v3s"]
+size = Vector3(0.1, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rxgrl"]
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jy4ee"]
+size = Vector3(2, 0.1, 2)
+
+[resource]
+item/0/name = "NW"
+item/0/mesh = ExtResource("1_0ha73")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/mesh_cast_shadow = 1
+item/0/shapes = [SubResource("BoxShape3D_0ha73"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0), SubResource("BoxShape3D_256t2"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0), SubResource("BoxShape3D_eiyj0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.05), SubResource("BoxShape3D_4gdx0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, 0, 0)]
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = "N_"
+item/1/mesh = ExtResource("2_256t2")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/mesh_cast_shadow = 1
+item/1/shapes = [SubResource("BoxShape3D_dyu6p"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0), SubResource("BoxShape3D_ht6g8"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0), SubResource("BoxShape3D_44ai3"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.05)]
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
+item/2/name = "_W"
+item/2/mesh = ExtResource("3_eiyj0")
+item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/mesh_cast_shadow = 1
+item/2/shapes = [SubResource("BoxShape3D_7ku21"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0), SubResource("BoxShape3D_geyb5"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0), SubResource("BoxShape3D_70v3s"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, 0, 0)]
+item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/navigation_layers = 1
+item/3/name = "__"
+item/3/mesh = ExtResource("4_4gdx0")
+item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/mesh_cast_shadow = 1
+item/3/shapes = [SubResource("BoxShape3D_rxgrl"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0), SubResource("BoxShape3D_jy4ee"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)]
+item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/navigation_layers = 1
