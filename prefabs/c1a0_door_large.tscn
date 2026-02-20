@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://df2amvnuqjmfl"]
+
+[ext_resource type="Script" uid="uid://bw5ga3qhpwgtg" path="res://entities/signal_toggle.gd" id="1_ksxvg"]
+[ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="2_fk5ga"]
+[ext_resource type="ArrayMesh" uid="uid://5q1ahs5jvmaa" path="res://assets/models/hl1_bigdoor_C1A0_006.res" id="3_6gxou"]
+[ext_resource type="ArrayMesh" uid="uid://56fgg6yqde3k" path="res://assets/models/hl1_bigdoor_C1A0_007.res" id="4_io3nv"]
+[ext_resource type="ArrayMesh" uid="uid://d228iq4p0qhyy" path="res://assets/models/hl1_bigdoor_C1A0_005.res" id="5_4nt1x"]
+[ext_resource type="ArrayMesh" uid="uid://cs3xllc4eck6m" path="res://assets/models/hl1_bigdoor_C1A0_004.res" id="6_0bphr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2shil"]
+size = Vector3(0.80108833, 4.024521, 1.6005859)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_up1t3"]
+size = Vector3(0.80029297, 4.024521, 1.6005936)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wwy6x"]
+height = 4.0
+radius = 0.14990234
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ud12t"]
+height = 4.0
+radius = 0.14990234
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2vpma"]
+height = 0.20019531
+radius = 0.39990234
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_78pbg"]
+height = 0.20019531
+radius = 0.39990234
+
+[node name="Door" type="Node3D" unique_id=1357455180]
+script = ExtResource("1_ksxvg")
+
+[node name="Top" type="AnimatableBody3D" parent="." unique_id=638972383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, -0.7)
+script = ExtResource("2_fk5ga")
+move_speed = 3.0
+lip = 1.59
+close_time = -1.0
+
+[node name="Door" type="MeshInstance3D" parent="Top" unique_id=1193713258]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.084, -1.075, 0.74)
+mesh = ExtResource("3_6gxou")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Top" unique_id=1492936941]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.084, -0.809, 0.744)
+shape = SubResource("BoxShape3D_2shil")
+
+[node name="Bottom" type="AnimatableBody3D" parent="." unique_id=943443974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4, -0.7)
+script = ExtResource("2_fk5ga")
+move_direction = Vector3(0, -1, 0)
+move_speed = 3.0
+lip = 1.59
+close_time = -1.0
+
+[node name="Door" type="MeshInstance3D" parent="Bottom" unique_id=466373398]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.084, 0.857, 0.74)
+mesh = ExtResource("4_io3nv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bottom" unique_id=830152946]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.08390463, 0.59056246, 0.74408746)
+shape = SubResource("BoxShape3D_up1t3")
+
+[node name="Top_Bar" type="AnimatableBody3D" parent="." unique_id=1056302905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, -0.7)
+script = ExtResource("2_fk5ga")
+move_direction = Vector3(0, 0, -1)
+move_speed = 3.0
+lip = 4.0
+close_time = -1.0
+
+[node name="In" type="MeshInstance3D" parent="Top_Bar" unique_id=436591282]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.477, -0.019, 0.74)
+mesh = ExtResource("5_4nt1x")
+
+[node name="CollisionShapeIn" type="CollisionShape3D" parent="Top_Bar" unique_id=155042921]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.477, -0.019, 0.74000955)
+shape = SubResource("CylinderShape3D_wwy6x")
+
+[node name="Out" type="MeshInstance3D" parent="Top_Bar" unique_id=1794330151]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.63606644, -0.019, 0.74)
+mesh = ExtResource("5_4nt1x")
+
+[node name="CollisionShapeOut" type="CollisionShape3D" parent="Top_Bar" unique_id=597323638]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.63606644, -0.019, 0.74000955)
+shape = SubResource("CylinderShape3D_ud12t")
+
+[node name="Bottom_Bar" type="AnimatableBody3D" parent="." unique_id=880891669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, -0.7)
+script = ExtResource("2_fk5ga")
+move_direction = Vector3(0, 0, 1)
+move_speed = 3.0
+lip = 4.0
+close_time = -1.0
+
+[node name="In" type="MeshInstance3D" parent="Bottom_Bar" unique_id=929345695]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.477, 0.024, 0.74)
+mesh = ExtResource("5_4nt1x")
+
+[node name="Out" type="MeshInstance3D" parent="Bottom_Bar" unique_id=1225719157]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.63606644, 0.024, 0.74)
+mesh = ExtResource("5_4nt1x")
+
+[node name="CollisionShapeIn" type="CollisionShape3D" parent="Bottom_Bar" unique_id=646551858]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.477, 0.024, 0.74000955)
+shape = SubResource("CylinderShape3D_wwy6x")
+
+[node name="CollisionShapeOut" type="CollisionShape3D" parent="Bottom_Bar" unique_id=189767181]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.63606644, 0.024, 0.74000955)
+shape = SubResource("CylinderShape3D_ud12t")
+
+[node name="Top_Spin" type="AnimatableBody3D" parent="." unique_id=1742235229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.403, -1.763)
+
+[node name="In" type="MeshInstance3D" parent="Top_Spin" unique_id=120117728]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.477, 0, 0)
+mesh = ExtResource("6_0bphr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Top_Spin" unique_id=144478804]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -0.47700572, 0.00024414063, 1.2397777e-05)
+shape = SubResource("CylinderShape3D_2vpma")
+
+[node name="Out" type="MeshInstance3D" parent="Top_Spin" unique_id=1112335489]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.63606644, 0, 0)
+mesh = ExtResource("6_0bphr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Top_Spin" unique_id=284645045]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 0.6360607, 0.00024414063, 1.2397777e-05)
+shape = SubResource("CylinderShape3D_78pbg")
+
+[node name="Bottom_Spin" type="AnimatableBody3D" parent="." unique_id=1531892850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.475, 1.914)
+
+[node name="In" type="MeshInstance3D" parent="Bottom_Spin" unique_id=592172588]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.477, 0, 0)
+mesh = ExtResource("6_0bphr")
+
+[node name="Out" type="MeshInstance3D" parent="Bottom_Spin" unique_id=139888645]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.63606644, 0, 0)
+mesh = ExtResource("6_0bphr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bottom_Spin" unique_id=14092416]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -0.47700572, 0.00024414063, 1.2397777e-05)
+shape = SubResource("CylinderShape3D_2vpma")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Bottom_Spin" unique_id=714614282]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 0.6360607, 0.00024414063, 1.2397777e-05)
+shape = SubResource("CylinderShape3D_78pbg")
+
+[connection signal="state_false" from="." to="Top" method="_on_touch"]
+[connection signal="state_false" from="." to="Bottom" method="_on_touch"]
+[connection signal="state_true" from="." to="Top_Bar" method="_on_touch"]
+[connection signal="state_true" from="." to="Bottom_Bar" method="_on_touch"]
+[connection signal="closed" from="Top" to="Top_Bar" method="_open"]
+[connection signal="closed" from="Bottom" to="Bottom_Bar" method="_open"]
+[connection signal="opened" from="Top_Bar" to="Top" method="_open"]
+[connection signal="opened" from="Bottom_Bar" to="Bottom" method="_open"]

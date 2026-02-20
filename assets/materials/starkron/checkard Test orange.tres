@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bmcuaiimjayw2"]
+
+[ext_resource type="Texture2D" uid="uid://b8p1uv77jf3ne" path="res://assets/textures/Starkron/checkardTest.png" id="1_sfu67"]
+
+[resource]
+albedo_color = Color(1, 0.89267755, 0.78818816, 1)
+albedo_texture = ExtResource("1_sfu67")
