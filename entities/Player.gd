@@ -5,11 +5,14 @@ extends CharacterBody3D
 @export var jump_vel: float = 9.0
 @export var gravity: float = 30.0
 @export var fall_cap: float = 100.0
+@export var speed_cap: float = 8
 @export var collision_size: Vector3 = Vector3(0.75, 1.8, 0.75)
 @export var collision_mult_crouched: Vector3 = Vector3(1.0, 0.5, 1.0)
 @export var in_control: bool = true
 @export var look_sensitivity: float = 100
 @export var rotation_mod: Vector3 = Vector3(0, 0, 0)
+@export var friction_ground: float = 0.9999
+@export var friction_air: float = 0.8
 
 var dead = false
 var view_pitch: float = 0.0
@@ -73,6 +76,7 @@ func _physics_process(delta: float) -> void:
 				collision_shape.position.y += collision_size.y * collision_mult_crouched.y
 				pivot.position.y += shape.size.y/2
 				local_pos.y -= shape.size.y/2
+				speed_cap = speed_cap/2
 				crouched = true
 			elif not Input.is_action_pressed("crouch") and crouched:
 				var shape: BoxShape3D = collision_shape.shape
@@ -81,6 +85,7 @@ func _physics_process(delta: float) -> void:
 				position.y += collision_size.y * collision_mult_crouched.y
 				pivot.position.y -= (collision_size.y * collision_mult_crouched.y)/2
 				local_pos.y += (collision_size.y * collision_mult_crouched.y)/2
+				speed_cap = speed_cap*2
 				crouched = false
 
 		if abs(local_pos.y - last_y) <= 0.001:
@@ -89,18 +94,27 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			target_velocity = do_gravity(delta, target_velocity)
 		elif !dead and Input.is_action_pressed("jump"):
-			target_velocity.y = jump_vel
+			target_velocity.y += jump_vel
 			
 		if direction != Vector3.ZERO:
-			direction = direction.normalized()
+			direction = (direction.normalized() * speed).rotated(Vector3.UP, pivot.rotation.y)
 		
-		target_velocity.x = direction.x * speed
-		target_velocity.z = direction.z * speed
+		target_velocity.x += direction.x
+		target_velocity.z += direction.z
+		if (target_velocity*Vector3(1,0,1)).length() > speed_cap:
+			target_velocity = ((target_velocity*Vector3(1,0,1)).normalized()*speed_cap)+(target_velocity*Vector3(0,1,0))
+		var friction
+		if is_on_floor():
+			friction = friction_ground
+		else:
+			friction = friction_air
+		target_velocity.x += (target_velocity.x) * exp(delta * log(1.0 - friction)) - (target_velocity.x) 
+		target_velocity.z += (target_velocity.z) * exp(delta * log(1.0 - friction)) - (target_velocity.z) 
 		
 		last_y = local_pos.y
 		
 		up_direction = Basis.from_euler(rot_temp).y
-		velocity = Basis.from_euler(rot_temp) * target_velocity.rotated(Vector3.UP, pivot.rotation.y)
+		velocity = Basis.from_euler(rot_temp) * target_velocity
 		
 		move_and_slide()
 
