@@ -409,7 +409,6 @@ blend_shape_mode = 0
 size = Vector3(0.75, 1.8, 0.75)
 
 [node name="Player" type="CharacterBody3D" unique_id=1837370831]
-transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 0, 0, 0)
 script = ExtResource("1_edtk3")
 
 [node name="Control" type="Control" parent="." unique_id=1266802537]

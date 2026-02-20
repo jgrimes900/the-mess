@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var collision_mult_crouched: Vector3 = Vector3(1.0, 0.5, 1.0)
 @export var in_control: bool = true
 @export var look_sensitivity: float = 100
+@export var rotation_mod: Vector3 = Vector3(0, 0, 0)
 
 var dead = false
 var view_pitch: float = 0.0
@@ -17,8 +18,12 @@ var last_y: float = 0.0
 var target_velocity: Vector3 = Vector3.ZERO
 @export var mouse_captured: bool = false
 var crouched: bool = false
-var death_rotation: Vector3 = Vector3(90, 0, 90)
-var alive_rotation: Vector3 = Vector3(0, -90, 0)
+var death_rotation: Vector3 = Vector3(90, 0, 0)
+var alive_rotation: Vector3 = Vector3(0, 0, 0)
+var basis_temp: Basis
+var rotation_mod_unit: Vector3
+var rot_temp: Vector3
+var local_pos: Vector3
 
 @onready var pivot: Node3D = $Pivot
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
@@ -31,26 +36,35 @@ const coin_sounds = {
 	SHaR_Coin3 = preload("uid://dlnm6thk8215s")
 }
 
+func rotate_ply(rotation_a: Vector3):
+	rotation_degrees = rotation_a + rotation_mod
+
 func _kill():
 	dead = true
+	rotate_ply(death_rotation)
 func _unkill():
 	dead = false
-	rotation_degrees = alive_rotation
+	rotate_ply(alive_rotation)
 
 func _physics_process(delta: float) -> void:
 	get_node("Health").iframes -= 1
+	if dead:
+		rot_temp = rotation - Vector3(deg_to_rad(death_rotation.x),deg_to_rad(death_rotation.y),deg_to_rad(death_rotation.z))
+	else:
+		rot_temp = rotation
+	local_pos = (Basis.from_euler(rot_temp) * position)
 	if in_control:
 		var direction := Vector3.ZERO
 		
 		if !dead:
 			if Input.is_action_pressed("move_right"):
-				direction.x += 1.0
-			if Input.is_action_pressed("move_left"):
-				direction.x -= 1.0
-			if Input.is_action_pressed("move_back"):
-				direction.z += 1.0
-			if Input.is_action_pressed("move_forward"):
 				direction.z -= 1.0
+			if Input.is_action_pressed("move_left"):
+				direction.z += 1.0
+			if Input.is_action_pressed("move_back"):
+				direction.x += 1.0
+			if Input.is_action_pressed("move_forward"):
+				direction.x -= 1.0
 				
 			# TODO: Check if the player can uncrouch with a shapecast
 			if Input.is_action_pressed("crouch") and not crouched:
@@ -58,7 +72,7 @@ func _physics_process(delta: float) -> void:
 				shape.size = collision_size * collision_mult_crouched
 				collision_shape.position.y += collision_size.y * collision_mult_crouched.y
 				pivot.position.y += shape.size.y/2
-				position.y -= shape.size.y/2
+				local_pos.y -= shape.size.y/2
 				crouched = true
 			elif not Input.is_action_pressed("crouch") and crouched:
 				var shape: BoxShape3D = collision_shape.shape
@@ -66,12 +80,10 @@ func _physics_process(delta: float) -> void:
 				collision_shape.position.y -= collision_size.y * collision_mult_crouched.y
 				position.y += collision_size.y * collision_mult_crouched.y
 				pivot.position.y -= (collision_size.y * collision_mult_crouched.y)/2
-				position.y += (collision_size.y * collision_mult_crouched.y)/2
+				local_pos.y += (collision_size.y * collision_mult_crouched.y)/2
 				crouched = false
-		else:
-			rotation_degrees = death_rotation
 
-		if abs(position.y - last_y) <= 0.001:
+		if abs(local_pos.y - last_y) <= 0.001:
 			target_velocity.y = 0
 			
 		if not is_on_floor():
@@ -85,9 +97,11 @@ func _physics_process(delta: float) -> void:
 		target_velocity.x = direction.x * speed
 		target_velocity.z = direction.z * speed
 		
-		last_y = position.y
+		last_y = local_pos.y
 		
-		velocity = target_velocity.rotated(Vector3.UP, pivot.rotation.y)
+		up_direction = Basis.from_euler(rot_temp).y
+		velocity = Basis.from_euler(rot_temp) * target_velocity.rotated(Vector3.UP, pivot.rotation.y)
+		
 		move_and_slide()
 
 func do_gravity(delta: float, velocity_in: Vector3):
