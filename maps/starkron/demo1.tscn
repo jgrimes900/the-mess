@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://bmcuaiimjayw2" path="res://assets/materials/starkron/checkard Test orange.tres" id="3_ymd38"]
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="5_u8kvw"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="6_qsut8"]
-[ext_resource type="ArrayMesh" uid="uid://27csfhwo3bx1" path="res://assets/models/hl1_c1a0_transition_C0A0E_003.res" id="7_6jtjt"]
+[ext_resource type="ArrayMesh" uid="uid://b8yrqphxm3xcn" path="res://assets/models/hl1_c1a0_transition_C0A0E_003.res" id="7_6jtjt"]
 [ext_resource type="Script" uid="uid://8vx54lrm46k4" path="res://entities/timer_player.gd" id="7_qsut8"]
 [ext_resource type="Shape3D" uid="uid://esn36byd2ed" path="res://assets/models/C1A0_Transition_collision.res" id="8_jabkh"]
 [ext_resource type="PackedScene" uid="uid://df2amvnuqjmfl" path="res://prefabs/c1a0_door_large.tscn" id="9_ds621"]
