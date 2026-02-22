@@ -3,16 +3,17 @@ extends "res://entities/AreaHurt3D.gd"
 # Specialized version of AreaHurt3D, made for Starkron Bug.
 
 @export var has_target: bool = false
-
-const bug_script_path = "res://entities/starkron/bug.gd"
+@export var bug_script_path: String = "res://entities/starkron/bug.gd"
 
 func _ready() -> void:
 		body_shape_entered.connect(func(_a1, body, _a3, _a4):
-			if body.get_script().get_path() != bug_script_path:
-				bodys_inside.append(body))
+			if body.get_script():
+				if body.get_script().get_path() != bug_script_path:
+					bodys_inside.append(body))
 		body_shape_exited.connect(func(_a1, body, _a3, _a4):
-			if body.get_script().get_path() != bug_script_path:
-				bodys_inside.erase(body))
+			if body.get_script():
+				if body.get_script().get_path() != bug_script_path:
+					bodys_inside.erase(body))
 
 func _physics_process(delta: float) -> void:
 	pass

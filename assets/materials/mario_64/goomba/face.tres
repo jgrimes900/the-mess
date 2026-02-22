@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xeyxv38k41dl"]
+
+[ext_resource type="Texture2D" uid="uid://bi0afyv22jemw" path="res://assets/textures/mario64/goomba_face_1.png" id="1_0xv2n"]
+
+[resource]
+resource_name = "face"
+cull_mode = 2
+shading_mode = 2
+diffuse_mode = 2
+specular_mode = 1
+albedo_texture = ExtResource("1_0xv2n")
+texture_repeat = false

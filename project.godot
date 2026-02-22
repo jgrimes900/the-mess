@@ -28,10 +28,6 @@ project/assembly_name="The Mess"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
-[editor_plugins]
-
-enabled=PackedStringArray()
-
 [input]
 
 move_left={

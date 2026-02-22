@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="1_iqqqs"]
 [ext_resource type="MeshLibrary" uid="uid://cd2uwqa068rvp" path="res://assets/WinMaze_Tiles.tres" id="2_wgwhi"]
 [ext_resource type="PackedScene" uid="uid://cpl5g6ucti1gr" path="res://prefabs/WinMaze/gravity_flipper.tscn" id="3_wgwhi"]
+[ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="4_h5mn7"]
+[ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="5_uhf6p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_733ue"]
 
 [node name="Node3D" type="Node3D" unique_id=2048975526]
 
@@ -18,3 +22,18 @@ data = {
 
 [node name="Gravity_Flipper" parent="." unique_id=1463828297 instance=ExtResource("3_wgwhi")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1, 1, 3)
+
+[node name="c1a0 Teleport Trigger" type="Area3D" parent="." unique_id=1150069787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -5)
+script = ExtResource("4_h5mn7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="c1a0 Teleport Trigger" unique_id=1463581642]
+shape = SubResource("BoxShape3D_733ue")
+
+[node name="Sprite3D" type="Sprite3D" parent="c1a0 Teleport Trigger" unique_id=1464470649]
+pixel_size = 0.02
+billboard = 1
+alpha_scissor_threshold = 0.484
+texture = ExtResource("5_uhf6p")
+
+[connection signal="body_shape_entered" from="c1a0 Teleport Trigger" to="c1a0 Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]

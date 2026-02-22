@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="4_7fnmf"]
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="5_jgvh2"]
 [ext_resource type="PackedScene" uid="uid://bj7hpyycap38w" path="res://prefabs/door.tscn" id="6_pe3st"]
-[ext_resource type="ArrayMesh" uid="uid://27csfhwo3bx1" path="res://assets/models/hl1_c1a0_transition_C0A0E_003.res" id="7_7fnmf"]
+[ext_resource type="ArrayMesh" uid="uid://b8yrqphxm3xcn" path="res://assets/models/hl1_c1a0_transition_C0A0E_003.res" id="7_7fnmf"]
 [ext_resource type="Script" uid="uid://8vx54lrm46k4" path="res://entities/timer_player.gd" id="7_jgvh2"]
 [ext_resource type="Shape3D" uid="uid://esn36byd2ed" path="res://assets/models/C1A0_Transition_collision.res" id="8_jgvh2"]
 [ext_resource type="PackedScene" uid="uid://df2amvnuqjmfl" path="res://prefabs/c1a0_door_large.tscn" id="9_pe3st"]
+[ext_resource type="PackedScene" uid="uid://cxkmecccsn0bg" path="res://prefabs/mario_64/goomba.tscn" id="11_pe3st"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jbgc"]
 
@@ -311,6 +312,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.225634, -1.461638, 0.76281
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Transition_A/Area3D" unique_id=733247452]
 shape = SubResource("BoxShape3D_t7t8s")
+
+[node name="Goomba" parent="." unique_id=1214246322 instance=ExtResource("11_pe3st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.824566, -2.4346805, 5.631674)
 
 [connection signal="body_shape_entered" from="C1A0/GridMapTest Teleport Trigger" to="C1A0/GridMapTest Teleport Trigger" method="MapChange" unbinds=2 binds= ["GridMapTest"]]
 [connection signal="body_shape_entered" from="C1A0/OOB Trigger" to="Spawn" method="Respawn" unbinds=4]

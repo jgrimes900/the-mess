@@ -2099,17 +2099,17 @@ _subresources={
 "materials": {
 "bulletCHROME.bmp": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/materials/hl1_glock/bulletCHROME.res",
+"use_external/fallback_path": "res://assets/materials/v_hl1_glock/bulletCHROME.res",
 "use_external/path": "uid://ddw68vxhl07uf"
 },
 "chrome.bmp": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/materials/hl1_glock/chrome.res",
+"use_external/fallback_path": "res://assets/materials/v_hl1_glock/chrome.res",
 "use_external/path": "uid://b5b58n2egybih"
 },
 "rubbergloveCHROME.bmp": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/materials/hl1_glock/rubbergloveCHROME.res",
+"use_external/fallback_path": "res://assets/materials/v_hl1_glock/rubbergloveCHROME.res",
 "use_external/path": "uid://b5bv5despxtf0"
 }
 }
