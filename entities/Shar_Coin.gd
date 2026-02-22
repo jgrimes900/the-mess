@@ -6,6 +6,7 @@ extends Sprite3D
 @export var frame_time: float = 0.01
 @export var index: int = -1
 @export var spawner: Node3D = null
+@export var iframes: float = 0
 
 
 var timer = 0
@@ -28,7 +29,7 @@ func _ready() -> void:
 	
 
 func collect(_a, body):
-	if body == player:
+	if body == player and iframes <= 0:
 		collected.emit(index)
 		queue_free()
 
@@ -39,3 +40,4 @@ func _process(delta: float) -> void:
 			frame = 0
 		timer = 0
 	timer += delta
+	iframes -= delta

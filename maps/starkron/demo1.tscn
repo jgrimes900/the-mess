@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xwm1wyqw5vv3"]
 
-[ext_resource type="ArrayMesh" uid="uid://dpli03efdjyqh" path="res://assets/models/Starkron/block_out_v4.res" id="1_h7adf"]
+[ext_resource type="ArrayMesh" uid="uid://wocgs47ibflf" path="res://assets/models/Starkron/block_out_v4.res" id="1_h7adf"]
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="2_cmqfk"]
 [ext_resource type="Shape3D" uid="uid://3d8of500lp84" path="res://assets/models/Starkron/block_out_v4_collider.shape" id="2_ymd38"]
 [ext_resource type="Material" uid="uid://bmcuaiimjayw2" path="res://assets/materials/starkron/checkard Test orange.tres" id="3_ymd38"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://8vx54lrm46k4" path="res://entities/timer_player.gd" id="7_qsut8"]
 [ext_resource type="Shape3D" uid="uid://esn36byd2ed" path="res://assets/models/C1A0_Transition_collision.res" id="8_jabkh"]
 [ext_resource type="PackedScene" uid="uid://df2amvnuqjmfl" path="res://prefabs/c1a0_door_large.tscn" id="9_ds621"]
+[ext_resource type="PackedScene" uid="uid://cxkmecccsn0bg" path="res://prefabs/mario_64/goomba.tscn" id="11_6jtjt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ymd38"]
 
@@ -119,6 +120,68 @@ shape = SubResource("BoxShape3D_y28rc")
 
 [node name="Timer" type="Timer" parent="Transition_A" unique_id=775326709]
 one_shot = true
+
+[node name="DELETE_ME_Goombas" type="Node3D" parent="." unique_id=361894945]
+
+[node name="FakeGoombaTriplet1" type="Node3D" parent="DELETE_ME_Goombas" unique_id=2082730909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2084534, 0.54106116, -0.9768077)
+
+[node name="Goomba" parent="DELETE_ME_Goombas/FakeGoombaTriplet1" unique_id=1214246322 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1307185, 0, 0.61723435)
+
+[node name="Goomba2" parent="DELETE_ME_Goombas/FakeGoombaTriplet1" unique_id=397984177 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92223597, -1.9073486e-05, -1.9039601)
+
+[node name="Goomba3" parent="DELETE_ME_Goombas/FakeGoombaTriplet1" unique_id=1272549407 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5203049, 1.335144e-05, 1.7290937)
+
+[node name="FakeGoombaTriplet2" type="Node3D" parent="DELETE_ME_Goombas" unique_id=1703419595]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.18065, 0.54106116, -41.337364)
+
+[node name="Goomba" parent="DELETE_ME_Goombas/FakeGoombaTriplet2" unique_id=1012963624 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1307185, 0, 0.61723435)
+
+[node name="Goomba2" parent="DELETE_ME_Goombas/FakeGoombaTriplet2" unique_id=664099636 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92223597, -1.9073486e-05, -1.9039601)
+
+[node name="Goomba3" parent="DELETE_ME_Goombas/FakeGoombaTriplet2" unique_id=969095774 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5203049, 1.335144e-05, 1.7290937)
+
+[node name="FakeGoombaTriplet3" type="Node3D" parent="DELETE_ME_Goombas" unique_id=949350754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.36116, 0.54106116, 38.110695)
+
+[node name="Goomba" parent="DELETE_ME_Goombas/FakeGoombaTriplet3" unique_id=1574125772 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1307185, 0, 0.61723435)
+
+[node name="Goomba2" parent="DELETE_ME_Goombas/FakeGoombaTriplet3" unique_id=78935959 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92223597, -1.9073486e-05, -1.9039601)
+
+[node name="Goomba3" parent="DELETE_ME_Goombas/FakeGoombaTriplet3" unique_id=1978357953 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5203049, 1.335144e-05, 1.7290937)
+
+[node name="FakeGoombaTriplet4" type="Node3D" parent="DELETE_ME_Goombas" unique_id=2043398198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.019386, 0.54106116, -25.261)
+
+[node name="Goomba" parent="DELETE_ME_Goombas/FakeGoombaTriplet4" unique_id=123658694 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1307185, 0, 0.61723435)
+
+[node name="Goomba2" parent="DELETE_ME_Goombas/FakeGoombaTriplet4" unique_id=1824710386 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92223597, -1.9073486e-05, -1.9039601)
+
+[node name="Goomba3" parent="DELETE_ME_Goombas/FakeGoombaTriplet4" unique_id=1806393072 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5203049, 1.335144e-05, 1.7290937)
+
+[node name="FakeGoombaTriplet5" type="Node3D" parent="DELETE_ME_Goombas" unique_id=336888820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9433746, 0.54106116, 46.294662)
+
+[node name="Goomba" parent="DELETE_ME_Goombas/FakeGoombaTriplet5" unique_id=2106948649 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1307185, 0, 0.61723435)
+
+[node name="Goomba2" parent="DELETE_ME_Goombas/FakeGoombaTriplet5" unique_id=1810345065 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92223597, -1.9073486e-05, -1.9039601)
+
+[node name="Goomba3" parent="DELETE_ME_Goombas/FakeGoombaTriplet5" unique_id=1323301692 instance=ExtResource("11_6jtjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5203049, 1.335144e-05, 1.7290937)
 
 [connection signal="on_spawn" from="Spawn" to="Transition_A/Timer" method="start"]
 [connection signal="timeout" from="Transition_A/hl1_c1a0 Teleport Trigger2/Timer" to="Transition_A/hl1_c1a0 Teleport Trigger2" method="MapChange2"]

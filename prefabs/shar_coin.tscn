@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://brf1n5ap71gw"]
+
+[ext_resource type="Texture2D" uid="uid://dotvhc43bepmm" path="res://assets/sprites/shar_coin.png" id="1_idqpb"]
+[ext_resource type="Script" uid="uid://b5u0tffn6ao4" path="res://entities/Shar_Coin.gd" id="2_1mhw2"]
+
+[node name="CoinTest" type="Sprite3D" unique_id=1854968160]
+billboard = 1
+alpha_cut = 1
+texture = ExtResource("1_idqpb")
+hframes = 5
+vframes = 5
+script = ExtResource("2_1mhw2")
