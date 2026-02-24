@@ -13,6 +13,7 @@ var timer = 0
 @onready var player = get_node("/root/Player") as Player;
 
 signal collected(a: int)
+signal spawner_notify(a: int, coin: Node3D)
 
 func _ready() -> void:
 	var Hitbox = Area3D.new()
@@ -31,6 +32,7 @@ func _ready() -> void:
 func collect(_a, body):
 	if body == player and iframes <= 0:
 		collected.emit(index)
+		spawner_notify.emit(index, self)
 		queue_free()
 
 func _process(delta: float) -> void:
