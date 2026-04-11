@@ -13,6 +13,7 @@ extends CharacterBody3D
 @export var rotation_mod: Vector3 = Vector3(0, 0, 0)
 @export var friction_ground: float = 0.9999
 @export var friction_air: float = 0.8
+@export var use_distance: float = 2.0
 
 var dead = false
 var view_pitch: float = 0.0
@@ -61,6 +62,16 @@ func _physics_process(delta: float) -> void:
 		var direction := Vector3.ZERO
 		
 		if !dead:
+			if Input.is_action_just_pressed("use"):
+				var space_state = get_world_3d().direct_space_state
+				var query = PhysicsRayQueryParameters3D.create(pivot.global_position, (pivot.global_basis.x.normalized() * -use_distance) + pivot.global_position)
+				var result = space_state.intersect_ray(query)
+				if result:
+					print(result.collider)
+					if result.collider.get("can_use"):
+						print("used")
+						result.collider._on_use()
+			# Movement stuff
 			if Input.is_action_pressed("move_right"):
 				direction.z -= 1.0
 			if Input.is_action_pressed("move_left"):
@@ -149,7 +160,6 @@ func _input(event: InputEvent) -> void:
 			elif new_pitch <= -1.5:
 				pivot.rotation = Vector3(0, pivot.rotation.y, 1.5)
 				view_pitch_set = -1
-				
 func recive_currency(_index, type: String):
 	if coin_sounds[type]:
 		sound_player.stream = coin_sounds[type + str(randi_range(1,coin_sounds[type]))]

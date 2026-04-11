@@ -1,0 +1,40 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://cgc4e8of3oso2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfe6w"]
+resource_name = "Front"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gp553"]
+_surfaces = [{
+"aabb": AABB(0.55504286, -0.5, 0.99389815, 0.28141242, 0.11953959, 0.23581219),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAgAEAAAABQADAAEAAQAAAAUAAwAGAAIABAACAAYABgADAAUAAAAEAAcABgAHAAQABwAFAAAABQAHAAYA"),
+"name": "Front",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("ShcOPwAAAL8mZ50/7yFWPwAAAL8mZ50/7yFWPwAAAL8ccH4/7yFWP7XLwr4mZ50/ShcOPwAAAL8ccH4/ShcOP7XLwr4mZ50/7yFWP7XLwr4ccH4/ShcOP7XLwr4ccH4/")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "Button4"
+_surfaces = [{
+"aabb": AABB(0.55504286, -0.5, 0.99389815, 0.28141242, 0.11953959, 0.23581219),
+"attribute_data": PackedByteArray("e4xHP76RDz92JG4/wJEPP3Ykbj8ZISU/eoxHPxkhJT97jEc/vpEPP3qMRz8ZISU/diRuPxkhJT92JG4/wJEPP3Ykbj/AkQ8/diRuPxkhJT92JG4/GSElP3Ykbj/AkQ8/e4xHP76RDz92JG4/wJEPP3Ykbj/AkQ8/e4xHP76RDz92JG4/GSElP3qMRz8ZISU/eoxHPxkhJT92JG4/GSElP3qMRz8ZISU/e4xHP76RDz97jEc/vpEPP3qMRz8ZISU/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_lfe6w"),
+"name": "Front",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("ShcOPwAAAL8mZ50/7yFWPwAAAL8mZ50/7yFWPwAAAL8ccH4/ShcOPwAAAL8ccH4/ShcOP7XLwr4mZ50/ShcOP7XLwr4ccH4/7yFWP7XLwr4ccH4/7yFWP7XLwr4mZ50/7yFWP7XLwr4mZ50/7yFWP7XLwr4ccH4/7yFWPwAAAL8ccH4/7yFWPwAAAL8mZ50/ShcOP7XLwr4mZ50/7yFWP7XLwr4mZ50/7yFWPwAAAL8mZ50/ShcOPwAAAL8mZ50/7yFWP7XLwr4ccH4/ShcOP7XLwr4ccH4/ShcOPwAAAL8ccH4/7yFWPwAAAL8ccH4/ShcOP7XLwr4ccH4/ShcOP7XLwr4mZ50/ShcOPwAAAL8mZ50/ShcOPwAAAL8ccH4//38AAP7//7//fwAA/v//v/9/AAD+//+//38AAP///7//f////v//P/9///////8//3////7//z//f////v//P////3////+/////f////7////9/////v////3////+//3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gp553")

@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 		openness += move_delta_val
 		
 		if openness >= lip:
-			translate_object_local(move_direction * (move_delta_val + (openness - lip)))
+			translate_object_local(move_direction * (move_delta_val - (openness - lip)))
 			openness = lip
 			state = 2
 			emit_signal("opened")
@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 		openness += move_delta_val
 		
 		if openness <= 0.0:
-			translate_object_local(move_direction * (move_delta_val + openness))
+			translate_object_local(move_direction * (move_delta_val - openness))
 			openness = 0.0
 			state = 0
 			emit_signal("closed")
