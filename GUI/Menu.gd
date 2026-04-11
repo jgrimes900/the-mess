@@ -1,11 +1,14 @@
 extends Control
 
 var open = true
+var mode_2d = false
 signal control(a: bool)
+
+@onready var player = get_node("/root/Player") as Player;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	player.get_node("Control")._2d_ify()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,7 +16,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("pause") and !open:
+	if Input.is_action_pressed("pause") and !open and !mode_2d:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_node("/root/Player").mouse_captured = false
 		visible = true
@@ -34,3 +37,14 @@ func _gui_input_continue():
 		visible = false
 		open = false
 		emit_signal("control", true)
+		
+func _2d_ify():
+	_gui_input_continue()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_node("/root/Player").mouse_captured = false
+	mode_2d = true
+
+func _un_2d():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	get_node("/root/Player").mouse_captured = true
+	mode_2d = false
