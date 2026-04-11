@@ -27,6 +27,7 @@ var basis_temp: Basis
 var rotation_mod_unit: Vector3
 var rot_temp: Vector3
 var local_pos: Vector3
+var current_map: String = "hl1_c1a0"  # Default to starting map
 
 @onready var pivot: Node3D = $Pivot
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D

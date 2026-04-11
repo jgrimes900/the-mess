@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "godot-mcp": {
+      "command": "uv",
+      "args": ["run", "/home/jgrimes900/the-mess/addons/gdai-mcp-plugin-godot/gdai_mcp_server.py"]
+    }
+  }
+}
+

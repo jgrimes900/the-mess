@@ -68,6 +68,7 @@ func do_gravity(delta: float, velocity_in: Vector3):
 	
 func _kill():
 	var coin = coin_asset.instantiate()
+	coin.is_monster = true
 	get_node("/root/Node3D").add_child(coin)
 	_spawn_coin.call_deferred(global_position, coin)
 	home_area.queue_free()
