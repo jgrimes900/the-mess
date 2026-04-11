@@ -873,6 +873,11 @@ layers = 524288
 [node name="AudioTele" type="AudioStreamPlayer3D" parent="." unique_id=1907641354]
 stream = ExtResource("16_w4pj3")
 volume_db = -30.0
+max_polyphony = 32
+
+[node name="AudioStep" type="AudioStreamPlayer3D" parent="." unique_id=40794407]
+stream = ExtResource("16_w4pj3")
+volume_db = -30.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2092488387]
 shape = SubResource("BoxShape3D_5anan")

@@ -30,9 +30,11 @@ var rot_temp: Vector3
 var local_pos: Vector3
 var current_map: String = "hl1_c1a0"  # Default to starting map
 
+@onready var last_pos: Vector3 = self.global_position
 @onready var pivot: Node3D = $Pivot
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
 @onready var sound_player: AudioStreamPlayer3D = $AudioTele
+@onready var sound_step: AudioStreamPlayer3D = $AudioStep
 
 const coin_sounds = {
 	SHaR_Coin = 3,
@@ -40,6 +42,16 @@ const coin_sounds = {
 	SHaR_Coin2 = preload("uid://b3kofhrj1ec5k"),
 	SHaR_Coin3 = preload("uid://dlnm6thk8215s")
 }
+
+const step_sounds = [
+	preload("res://assets/sounds/ply/step/step_r1.ogg"),
+	preload("res://assets/sounds/ply/step/step_l1.ogg"),
+	preload("res://assets/sounds/ply/step/step_r2.ogg"),
+	preload("res://assets/sounds/ply/step/step_l2.ogg")
+]
+var step_time:float = 0.0
+var step:int = 0
+@export var step_wait: float = 2.0
 
 func rotate_ply(rotation_a: Vector3):
 	rotation_degrees = rotation_a + rotation_mod
@@ -107,7 +119,7 @@ func _physics_process(delta: float) -> void:
 			target_velocity = do_gravity(delta, target_velocity)
 		elif !dead and Input.is_action_pressed("jump"):
 			target_velocity.y += jump_vel
-			
+		
 		if direction != Vector3.ZERO:
 			direction = (direction.normalized() * speed).rotated(Vector3.UP, pivot.rotation.y)
 		
@@ -129,7 +141,20 @@ func _physics_process(delta: float) -> void:
 		velocity = Basis.from_euler(rot_temp) * target_velocity
 		
 		move_and_slide()
-
+		
+		
+		if is_on_floor() and last_pos != global_position:
+			step_time += (last_pos - global_position).length()
+			if step_time >= step_wait:
+				step_time = 0.0
+				sound_step.stream = step_sounds[step]
+				sound_step.play()
+				step += 1
+				if step >= step_sounds.size():
+					step = 0
+					
+		last_pos = global_position
+		
 func do_gravity(delta: float, velocity_in: Vector3):
 	velocity_in.y -= gravity * delta
 	if velocity_in.y > fall_cap:
