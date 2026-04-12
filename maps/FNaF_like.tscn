@@ -4,10 +4,39 @@
 [ext_resource type="Script" uid="uid://dll73x1nfi3gr" path="res://maps/fnaf like/control.gd" id="2_00ggd"]
 [ext_resource type="Shader" uid="uid://kdataqgjbvo7" path="res://shaders/clickteam_perspective.gdshader" id="2_c7deq"]
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="2_e6eqk"]
+[ext_resource type="Texture2D" uid="uid://cotm4ug7wd84k" path="res://assets/textures/hl1_c1a0/c1a0_texture_71.png" id="5_dh13w"]
+[ext_resource type="AudioStream" uid="uid://bj1jdfbsucegp" path="res://assets/sounds/fnaf1/BallastHumMedium2.wav" id="5_xmy25"]
+[ext_resource type="AudioStream" uid="uid://bse608jo4yv6a" path="res://assets/sounds/fnaf1/Buzz_Fan_Florescent2.wav" id="6_6xc40"]
+[ext_resource type="Texture2D" uid="uid://dsvuyuvis6224" path="res://assets/textures/hl1_c1a0/c1a0_texture_4.png" id="6_h5ams"]
+[ext_resource type="AudioStream" uid="uid://bcy45kwldvui7" path="res://assets/sounds/fnaf1/Door.wav" id="6_p1kp7"]
+[ext_resource type="AudioStream" uid="uid://cvtivc4mas0k0" path="res://assets/sounds/fnaf1/ColdPresc B.wav" id="7_6xc40"]
+[ext_resource type="PackedScene" uid="uid://c22wldk8v3xb2" path="res://prefabs/door_gridmap.tscn" id="7_t883d"]
+[ext_resource type="Script" uid="uid://b3cbkhmp5jpsn" path="res://maps/scripts/door_controler.gd" id="8_h5ams"]
+[ext_resource type="Texture2D" uid="uid://c4r6mna26f23k" path="res://assets/sprites/fnaf/cam/0001.png" id="9_0t5t8"]
+[ext_resource type="Texture2D" uid="uid://cwkjdwoxmqp2" path="res://assets/textures/hl1_c1a0/c1a0_texture_6.png" id="9_t883d"]
+[ext_resource type="Texture2D" uid="uid://dtc1syrbown0l" path="res://assets/sprites/fnaf/cam/0002.png" id="10_exw41"]
+[ext_resource type="Texture2D" uid="uid://doyeufhaokvi5" path="res://assets/sprites/fnaf/cam/0003.png" id="11_vytrw"]
+[ext_resource type="Texture2D" uid="uid://d238qkdp75moj" path="res://assets/sprites/fnaf/cam/0004.png" id="12_21b6a"]
+[ext_resource type="Texture2D" uid="uid://0a6md8fvjka8" path="res://assets/sprites/fnaf/cam/0005.png" id="13_0m5ra"]
+[ext_resource type="Texture2D" uid="uid://cpjvx17h34ftg" path="res://assets/textures/hl1_c1a0/c1a0_texture_21.png" id="13_g52et"]
+[ext_resource type="Texture2D" uid="uid://8yuudj6bffir" path="res://assets/sprites/fnaf/cam/0006.png" id="14_8syl6"]
+[ext_resource type="Texture2D" uid="uid://c2af38m7xc1fx" path="res://assets/textures/hl1_c1a0/c1a0_texture_10.png" id="14_p1kp7"]
+[ext_resource type="Texture2D" uid="uid://b8eryle3tc1ss" path="res://assets/sprites/fnaf/cam/0007.png" id="15_fmx8f"]
+[ext_resource type="Texture2D" uid="uid://dtlry0cccyamw" path="res://assets/sprites/fnaf/cam/0008.png" id="16_p4mtl"]
+[ext_resource type="Texture2D" uid="uid://cysavswbqarv3" path="res://assets/sprites/fnaf/cam/0009.png" id="17_yvc6q"]
+[ext_resource type="Texture2D" uid="uid://nwrl25wrppgy" path="res://assets/sprites/fnaf/cam/0010.png" id="18_f62u3"]
+[ext_resource type="Texture2D" uid="uid://cekxrpd3rowd6" path="res://assets/sprites/fnaf/cam/0011.png" id="19_nlvlt"]
+[ext_resource type="Texture2D" uid="uid://puqt61ru36fo" path="res://assets/sprites/fnaf/cam/0012.png" id="20_42ne2"]
+[ext_resource type="AudioStream" uid="uid://gjhfsj186vkj" path="res://assets/sounds/fnaf1/CAMERA_VIDEO_LOA_60105303.wav" id="21_vytrw"]
+[ext_resource type="AudioStream" uid="uid://bltgxf7thl037" path="res://assets/sounds/fnaf1/put down.wav" id="22_21b6a"]
+[ext_resource type="Script" uid="uid://crctdq67n1vmm" path="res://maps/fnaf like/fade_in_ani.gd" id="23_21b6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x02sa"]
+size = Vector2(133, 107)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ssk6"]
 shader = ExtResource("2_c7deq")
-shader_parameter/zoom = 0.2
+shader_parameter/zoom = 0.1
 shader_parameter/sharpness = 2.0
 shader_parameter/direction = Vector2(0, 1)
 shader_parameter/wrapping_mode = 0
@@ -21,15 +50,237 @@ size = Vector2(273, 663)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dh13w"]
 size = Vector2(139, 663)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0057"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_42ne2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nlvlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_f62u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yvc6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_p4mtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fmx8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8syl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0m5ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_21b6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vytrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_exw41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0t5t8")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"close",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0t5t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_exw41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vytrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_21b6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0m5ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8syl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fmx8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_p4mtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yvc6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_f62u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nlvlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_42ne2")
+}],
+"loop": false,
+"name": &"open",
+"speed": 45.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0m5ra"]
+size = Vector2(500, 75)
+
+[sub_resource type="Animation" id="Animation_vytrw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ambiance_1:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ambiance_2:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+
+[sub_resource type="Animation" id="Animation_21b6a"]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ambiance_1:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -10.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ambiance_2:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -10.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0m5ra"]
+_data = {
+&"RESET": SubResource("Animation_vytrw"),
+&"fade_in": SubResource("Animation_21b6a")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmy25"]
+albedo_texture = ExtResource("5_dh13w")
+
+[sub_resource type="BoxMesh" id="BoxMesh_6xc40"]
+size = Vector3(0.05, 0.5, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m34ca"]
+albedo_texture = ExtResource("6_h5ams")
+
+[sub_resource type="BoxMesh" id="BoxMesh_g52et"]
+size = Vector3(0.05, 0.15, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1kp7"]
+albedo_color = Color(0.63529414, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8og6k"]
+albedo_color = Color(0.5475, 0.6539584, 0.73, 1)
+
+[sub_resource type="Environment" id="Environment_x02sa"]
+background_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xc40"]
+albedo_texture = ExtResource("9_t883d")
+uv1_scale = Vector3(25, 25, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vytrw"]
+blend_mode = 3
+shading_mode = 0
+albedo_color = Color(0.72, 0.72, 0.72, 1)
+refraction_scale = -0.03
+disable_receive_shadows = true
+stencil_flags = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_t883d"]
+material = SubResource("StandardMaterial3D_vytrw")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2wjk"]
+albedo_texture = ExtResource("13_g52et")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gm3eh"]
+albedo_texture = ExtResource("14_p1kp7")
+
 [node name="FNaFLike" type="Node3D" unique_id=404573582]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=820282187]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, -2)
 mesh_library = ExtResource("1_8ssk6")
 data = {
-"cells": PackedInt32Array(65535, 0, 1, 65535, 1, 1, 0, 1, 1, 0, 65535, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 65534, 0, 1, 65534, 1, 1, 131070, 1, 0, 65537, 1, 0, 131070, 0, 196609, 65537, 0, 196609, 131070, 65535, 196609, 131071, 65535, 196609, 65536, 65535, 196609, 65537, 65535, 196609, 65537, 2, 196609, 131070, 2, 196609, 131070, 3, 196609, 131071, 4, 196609, 65536, 4, 196609, 65537, 3, 196609, 131069, 3, 196609, 131068, 3, 196609, 131068, 2, 196609, 131068, 1, 196609, 131068, 0, 196609, 65538, 3, 196609, 65539, 3, 196609, 65539, 2, 196609, 65539, 1, 196609, 65539, 0, 196609, 65539, 65535, 196609, 131067, 0, 196609, 131067, 65534, 196609, 131066, 0, 196609, 131065, 0, 196609, 131065, 65535, 196609, 131065, 65534, 196609, 131066, 65534, 196609, 131068, 65534, 196609, 131068, 65535, 0, 0, 2, 1, 65535, 2, 1, 0, 3, 1, 65535, 3, 1, 65533, 2, 1, 65533, 1, 1, 65533, 0, 1, 65533, 65535, 1, 65532, 65535, 1, 65531, 65535, 1, 65530, 0, 1, 65530, 65535, 1, 2, 2, 1, 2, 1, 1, 2, 0, 1, 2, 65535, 1, 65533, 65534, 1, 65535, 65534, 1, 65534, 65534, 1, 0, 65534, 1, 1, 65534, 1, 2, 65534, 1, 65533, 65533, 1, 65534, 65533, 1, 65535, 65533, 1, 1, 65533, 1, 0, 65533, 1, 2, 65533, 1, 2, 65531, 1, 2, 65532, 1, 1, 65532, 1, 0, 65532, 1, 65535, 65532, 1, 65534, 65532, 1, 65533, 65532, 1, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 1, 0, 65531, 1, 1, 65531, 1, 2, 65530, 1, 1, 65530, 1, 0, 65530, 1, 65535, 65530, 1, 65534, 65530, 1, 65533, 65530, 1, 65533, 65529, 1, 65534, 65529, 1, 65534, 65528, 1, 65535, 65528, 1, 0, 65528, 1, 1, 65528, 1, 1, 65529, 1, 2, 65529, 1, 3, 65529, 1, 0, 65529, 1, 65535, 65529, 1, 65533, 65528, 1, 65535, 65527, 1, 0, 65527, 1, 2, 65528, 1, 2, 65527, 1, 1, 65527, 1, 65534, 65527, 1, 65533, 65527, 1, 65533, 65526, 1, 65534, 65526, 1, 65535, 65526, 1, 0, 65526, 1, 1, 65526, 1, 2, 65526, 1, 65534, 65525, 1, 65535, 65525, 1, 0, 65525, 1, 1, 65525, 1, 65534, 65524, 1, 65535, 65524, 1, 0, 65524, 1, 1, 65524, 1, 65532, 65529, 1, 65531, 65529, 1, 65531, 65528, 1, 65531, 65527, 1, 65530, 65527, 1, 65529, 65527, 1, 65529, 65528, 1, 65530, 65528, 1, 65530, 65529, 1, 65529, 65529, 1, 65531, 65530, 1, 65530, 65530, 1, 65529, 65530, 1, 4, 65528, 1, 4, 65529, 1, 4, 65530, 1, 4, 65531, 1, 4, 65532, 1, 5, 65528, 1, 4, 65527, 1, 6, 65527, 1, 6, 65528, 1, 6, 65529, 1, 7, 65529, 1, 8, 65529, 1, 8, 65528, 1, 8, 65527, 1, 7, 65527, 1, 7, 65528, 1, 5, 65532, 1, 6, 65531, 1, 6, 65532, 1, 7, 65532, 1, 7, 65533, 1, 6, 65533, 1, 8, 65533, 1, 8, 65532, 1, 7, 65531, 1, 8, 65531, 1, 4, 65533, 1, 65541, 65528, 0, 65541, 65532, 0, 131068, 65529, 0, 131068, 65533, 196609, 131068, 65532, 196609, 131068, 65531, 196609, 131068, 65530, 196609, 131068, 65528, 196609, 131068, 65527, 196609, 131068, 65526, 196609, 131068, 65525, 196609, 131069, 65525, 196609, 131069, 65524, 196609, 131069, 65523, 196609, 131070, 65523, 196609, 131071, 65523, 196609, 65536, 65523, 196609, 65537, 65523, 196609, 65538, 65523, 196609, 65538, 65524, 196609, 65538, 65525, 196609, 65539, 65525, 196609, 65539, 65526, 196609, 65539, 65527, 196609, 65540, 65526, 196609, 65541, 65527, 196609, 65541, 65529, 196609, 65541, 65530, 196609, 65541, 65531, 196609, 65539, 65530, 196609, 65539, 65531, 196609, 65539, 65532, 196609, 65539, 65533, 196609, 65541, 65533, 196609, 65542, 65534, 196609, 65543, 65534, 196609, 65544, 65534, 196609, 65545, 65533, 196609, 65545, 65532, 196609, 65545, 65531, 196609, 65544, 65530, 196609, 65543, 65530, 196609, 65542, 65530, 196609, 65545, 65529, 196609, 65545, 65528, 196609, 65545, 65527, 196609, 65544, 65526, 196609, 65543, 65526, 196609, 65542, 65526, 196609, 131067, 65531, 196609, 131066, 65531, 196609, 131065, 65531, 196609, 131064, 65530, 196609, 131064, 65529, 196609, 131064, 65528, 196609, 131064, 65527, 196609, 131065, 65526, 196609, 131066, 65526, 196609, 131067, 65526, 196609, 65540, 65533, 196609, 65545, 65534, 196609, 65545, 65535, 196609, 65545, 0, 196609, 65545, 1, 196609, 65545, 2, 196609, 65545, 3, 196609, 65544, 3, 196609, 65543, 3, 196609, 65542, 3, 196609, 65541, 3, 196609, 65540, 3, 196609, 65539, 65534, 0, 3, 65534, 1, 4, 65534, 1, 4, 65535, 1, 5, 65535, 1, 6, 65535, 1, 5, 65534, 1, 6, 0, 1, 7, 0, 1, 7, 65535, 1, 8, 65535, 1, 8, 0, 1, 9, 0, 1, 9, 1, 1, 8, 1, 1, 8, 2, 1, 9, 2, 1, 8, 3, 1, 7, 3, 1, 7, 2, 1, 6, 2, 1, 7, 1, 1, 5, 2, 1, 6, 1, 1, 5, 1, 1, 5, 0, 1, 4, 0, 1, 4, 1, 1, 4, 2, 1, 4, 3, 1, 3, 65528, 1, 196600, 65527, 196609, 196600, 65528, 196609, 196600, 65529, 196609, 196600, 65530, 196609, 196601, 65526, 196609, 196601, 65531, 196609, 196601, 65534, 196609, 196601, 65535, 196609, 196601, 0, 196609, 196602, 65526, 196609, 196602, 65531, 196609, 196602, 65534, 196609, 196602, 0, 196609, 196603, 65526, 196609, 196603, 65531, 196609, 196603, 65534, 196609, 196603, 0, 196609, 196604, 65525, 196609, 196604, 65526, 196609, 196604, 65527, 196609, 196604, 65528, 196609, 196604, 65530, 196609, 196604, 65531, 196609, 196604, 65532, 196609, 196604, 65533, 196609, 196604, 65534, 196609, 196604, 0, 196609, 196604, 1, 196609, 196604, 2, 196609, 196604, 3, 196609, 196605, 65523, 196609, 196605, 65524, 196609, 196605, 65525, 196609, 196605, 3, 196609, 196606, 65523, 196609, 196606, 65535, 196609, 196606, 0, 196609, 196606, 2, 196609, 196606, 3, 196609, 196607, 65523, 196609, 196607, 65535, 196609, 196607, 4, 196609, 131072, 65523, 196609, 131072, 65535, 196609, 131072, 4, 196609, 131073, 65523, 196609, 131073, 65535, 196609, 131073, 0, 196609, 131073, 2, 196609, 131073, 3, 196609, 131074, 65523, 196609, 131074, 65524, 196609, 131074, 65525, 196609, 131074, 3, 196609, 131075, 65525, 196609, 131075, 65526, 196609, 131075, 65527, 196609, 131075, 65530, 196609, 131075, 65531, 196609, 131075, 65532, 196609, 131075, 65533, 196609, 131075, 65535, 196609, 131075, 0, 196609, 131075, 1, 196609, 131075, 2, 196609, 131075, 3, 196609, 131076, 65526, 196609, 131076, 65533, 196609, 131076, 3, 196609, 131077, 65527, 196609, 131077, 65529, 196609, 131077, 65530, 196609, 131077, 65531, 196609, 131077, 65533, 196609, 131077, 3, 196609, 131078, 65526, 196609, 131078, 65530, 196609, 131078, 65534, 196609, 131078, 3, 196609, 131079, 65526, 196609, 131079, 65530, 196609, 131079, 65534, 196609, 131079, 3, 196609, 131080, 65526, 196609, 131080, 65530, 196609, 131080, 65534, 196609, 131080, 3, 196609, 131081, 65527, 196609, 131081, 65528, 196609, 131081, 65529, 196609, 131081, 65531, 196609, 131081, 65532, 196609, 131081, 65533, 196609, 131081, 65534, 196609, 131081, 65535, 196609, 131081, 0, 196609, 131081, 1, 196609, 131081, 2, 196609, 131081, 3, 196609, 196604, 65529, 196609, 196604, 65535, 196609, 196606, 1, 196609, 131073, 1, 196609, 131075, 65534, 196609, 131077, 65532, 196609, 131077, 65528, 196609)
+"cells": PackedInt32Array(65535, 0, 1, 65535, 1, 1, 0, 1, 1, 0, 65535, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 65534, 0, 1, 65534, 1, 1, 131070, 0, 196609, 65537, 0, 196609, 131070, 65535, 196609, 131071, 65535, 196609, 65536, 65535, 196609, 65537, 65535, 196609, 65537, 2, 196609, 131070, 2, 196609, 131070, 3, 196609, 131071, 4, 196609, 65536, 4, 196609, 65537, 3, 196609, 131069, 3, 196609, 131068, 3, 196609, 131068, 2, 196609, 131068, 1, 196609, 131068, 0, 196609, 65538, 3, 196609, 65539, 3, 196609, 65539, 2, 196609, 65539, 1, 196609, 65539, 0, 196609, 65539, 65535, 196609, 131067, 0, 196609, 131067, 65534, 196609, 131066, 0, 196609, 131065, 0, 196609, 131065, 65535, 196609, 131065, 65534, 196609, 131066, 65534, 196609, 131068, 65534, 196609, 131068, 65535, 0, 0, 2, 1, 65535, 2, 1, 0, 3, 1, 65535, 3, 1, 65533, 2, 1, 65533, 1, 1, 65533, 0, 1, 65533, 65535, 1, 65532, 65535, 1, 65531, 65535, 1, 65530, 0, 1, 65530, 65535, 1, 2, 2, 1, 2, 1, 1, 2, 0, 1, 2, 65535, 1, 65533, 65534, 1, 65535, 65534, 1, 65534, 65534, 1, 0, 65534, 1, 1, 65534, 1, 2, 65534, 1, 65533, 65533, 1, 65534, 65533, 1, 65535, 65533, 1, 1, 65533, 1, 0, 65533, 1, 2, 65533, 1, 2, 65531, 1, 2, 65532, 1, 1, 65532, 1, 0, 65532, 1, 65535, 65532, 1, 65534, 65532, 1, 65533, 65532, 1, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 1, 0, 65531, 1, 1, 65531, 1, 2, 65530, 1, 1, 65530, 1, 0, 65530, 1, 65535, 65530, 1, 65534, 65530, 1, 65533, 65530, 1, 65533, 65529, 1, 65534, 65529, 1, 65534, 65528, 1, 65535, 65528, 1, 0, 65528, 1, 1, 65528, 1, 1, 65529, 1, 2, 65529, 1, 3, 65529, 1, 0, 65529, 1, 65535, 65529, 1, 65533, 65528, 1, 65535, 65527, 1, 0, 65527, 1, 2, 65528, 1, 2, 65527, 1, 1, 65527, 1, 65534, 65527, 1, 65533, 65527, 1, 65533, 65526, 1, 65534, 65526, 1, 65535, 65526, 1, 0, 65526, 1, 1, 65526, 1, 2, 65526, 1, 65534, 65525, 1, 65535, 65525, 1, 0, 65525, 1, 1, 65525, 1, 65534, 65524, 1, 65535, 65524, 1, 0, 65524, 1, 1, 65524, 1, 65532, 65529, 1, 65531, 65529, 1, 65531, 65528, 1, 65531, 65527, 1, 65530, 65527, 1, 65529, 65527, 1, 65529, 65528, 1, 65530, 65528, 1, 65530, 65529, 1, 65529, 65529, 1, 65531, 65530, 1, 65530, 65530, 1, 65529, 65530, 1, 4, 65528, 1, 4, 65529, 1, 4, 65530, 1, 4, 65531, 1, 4, 65532, 1, 5, 65528, 1, 4, 65527, 1, 6, 65527, 1, 6, 65528, 1, 6, 65529, 1, 7, 65529, 1, 8, 65529, 1, 8, 65528, 1, 8, 65527, 1, 7, 65527, 1, 7, 65528, 1, 5, 65532, 1, 6, 65531, 1, 6, 65532, 1, 7, 65532, 1, 7, 65533, 1, 6, 65533, 1, 8, 65533, 1, 8, 65532, 1, 7, 65531, 1, 8, 65531, 1, 4, 65533, 1, 65541, 65528, 0, 65541, 65532, 0, 131068, 65529, 0, 131068, 65533, 196609, 131068, 65532, 196609, 131068, 65531, 196609, 131068, 65530, 196609, 131068, 65528, 196609, 131068, 65527, 196609, 131068, 65526, 196609, 131068, 65525, 196609, 131069, 65525, 196609, 131069, 65524, 196609, 131069, 65523, 196609, 131070, 65523, 196609, 131071, 65523, 196609, 65536, 65523, 196609, 65537, 65523, 196609, 65538, 65523, 196609, 65538, 65524, 196609, 65538, 65525, 196609, 65539, 65525, 196609, 65539, 65526, 196609, 65539, 65527, 196609, 65540, 65526, 196609, 65541, 65527, 196609, 65541, 65529, 196609, 65541, 65530, 196609, 65541, 65531, 196609, 65539, 65530, 196609, 65539, 65531, 196609, 65539, 65532, 196609, 65539, 65533, 196609, 65541, 65533, 196609, 65542, 65534, 196609, 65543, 65534, 196609, 65544, 65534, 196609, 65545, 65533, 196609, 65545, 65532, 196609, 65545, 65531, 196609, 65544, 65530, 196609, 65543, 65530, 196609, 65542, 65530, 196609, 65545, 65529, 196609, 65545, 65528, 196609, 65545, 65527, 196609, 65544, 65526, 196609, 65543, 65526, 196609, 65542, 65526, 196609, 131067, 65531, 196609, 131066, 65531, 196609, 131065, 65531, 196609, 131064, 65530, 196609, 131064, 65529, 196609, 131064, 65528, 196609, 131064, 65527, 196609, 131065, 65526, 196609, 131066, 65526, 196609, 131067, 65526, 196609, 65540, 65533, 196609, 65545, 65534, 196609, 65545, 65535, 196609, 65545, 0, 196609, 65545, 1, 196609, 65545, 2, 196609, 65545, 3, 196609, 65544, 3, 196609, 65543, 3, 196609, 65542, 3, 196609, 65541, 3, 196609, 65540, 3, 196609, 65539, 65534, 0, 3, 65534, 1, 4, 65534, 1, 4, 65535, 1, 5, 65535, 1, 6, 65535, 1, 5, 65534, 1, 6, 0, 1, 7, 0, 1, 7, 65535, 1, 8, 65535, 1, 8, 0, 1, 9, 0, 1, 9, 1, 1, 8, 1, 1, 8, 2, 1, 9, 2, 1, 8, 3, 1, 7, 3, 1, 7, 2, 1, 6, 2, 1, 7, 1, 1, 5, 2, 1, 6, 1, 1, 5, 1, 1, 5, 0, 1, 4, 0, 1, 4, 1, 1, 4, 2, 1, 4, 3, 1, 3, 65528, 1, 196600, 65527, 196609, 196600, 65528, 196609, 196600, 65529, 196609, 196600, 65530, 196609, 196601, 65526, 196609, 196601, 65531, 196609, 196601, 65534, 196609, 196601, 65535, 196609, 196601, 0, 196609, 196602, 65526, 196609, 196602, 65531, 196609, 196602, 65534, 196609, 196602, 0, 196609, 196603, 65526, 196609, 196603, 65531, 196609, 196603, 65534, 196609, 196603, 0, 196609, 196604, 65525, 196609, 196604, 65526, 196609, 196604, 65527, 196609, 196604, 65528, 196609, 196604, 65530, 196609, 196604, 65531, 196609, 196604, 65532, 196609, 196604, 65533, 196609, 196604, 65534, 196609, 196604, 0, 196609, 196604, 1, 196609, 196604, 2, 196609, 196604, 3, 196609, 196605, 65523, 196609, 196605, 65524, 196609, 196605, 65525, 196609, 196605, 3, 196609, 196606, 65523, 196609, 196606, 65535, 196609, 196606, 0, 196609, 196606, 2, 196609, 196606, 3, 196609, 196607, 65523, 196609, 196607, 65535, 196609, 196607, 4, 196609, 131072, 65523, 196609, 131072, 65535, 196609, 131072, 4, 196609, 131073, 65523, 196609, 131073, 65535, 196609, 131073, 0, 196609, 131073, 2, 196609, 131073, 3, 196609, 131074, 65523, 196609, 131074, 65524, 196609, 131074, 65525, 196609, 131074, 3, 196609, 131075, 65525, 196609, 131075, 65526, 196609, 131075, 65527, 196609, 131075, 65530, 196609, 131075, 65531, 196609, 131075, 65532, 196609, 131075, 65533, 196609, 131075, 65535, 196609, 131075, 0, 196609, 131075, 1, 196609, 131075, 2, 196609, 131075, 3, 196609, 131076, 65526, 196609, 131076, 65533, 196609, 131076, 3, 196609, 131077, 65527, 196609, 131077, 65529, 196609, 131077, 65530, 196609, 131077, 65531, 196609, 131077, 65533, 196609, 131077, 3, 196609, 131078, 65526, 196609, 131078, 65530, 196609, 131078, 65534, 196609, 131078, 3, 196609, 131079, 65526, 196609, 131079, 65530, 196609, 131079, 65534, 196609, 131079, 3, 196609, 131080, 65526, 196609, 131080, 65530, 196609, 131080, 65534, 196609, 131080, 3, 196609, 131081, 65527, 196609, 131081, 65528, 196609, 131081, 65529, 196609, 131081, 65531, 196609, 131081, 65532, 196609, 131081, 65533, 196609, 131081, 65534, 196609, 131081, 65535, 196609, 131081, 0, 196609, 131081, 1, 196609, 131081, 2, 196609, 131081, 3, 196609, 196604, 65529, 196609, 196604, 65535, 196609, 196606, 1, 196609, 131073, 1, 196609, 131075, 65534, 196609, 131077, 65532, 196609, 131077, 65528, 196609)
 }
-metadata/_editor_floor_ = Vector3(0, 2, 0)
+metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Spawn" type="Node3D" parent="." unique_id=1081816024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 0)
@@ -70,6 +321,34 @@ cull_mask = 524287
 projection = 2
 fov = 105.3
 size = 0.13
+
+[node name="Left Door" type="Area2D" parent="Control/SubViewportContainer" unique_id=1154829595]
+position = Vector2(83, 326)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/SubViewportContainer/Left Door" unique_id=19769691]
+position = Vector2(8.5, 5.5)
+shape = SubResource("RectangleShape2D_x02sa")
+
+[node name="Left Light" type="Area2D" parent="Control/SubViewportContainer" unique_id=159990149]
+position = Vector2(91, 437)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/SubViewportContainer/Left Light" unique_id=1219278336]
+position = Vector2(0.5, 4)
+shape = SubResource("RectangleShape2D_x02sa")
+
+[node name="Right Door" type="Area2D" parent="Control/SubViewportContainer" unique_id=1616256097]
+position = Vector2(1630, 336)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/SubViewportContainer/Right Door" unique_id=2050402295]
+position = Vector2(16, -4)
+shape = SubResource("RectangleShape2D_x02sa")
+
+[node name="Right Light" type="Area2D" parent="Control/SubViewportContainer" unique_id=1526950513]
+position = Vector2(1626, 428)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/SubViewportContainer/Right Light" unique_id=1609241929]
+position = Vector2(20, 13.5)
+shape = SubResource("RectangleShape2D_x02sa")
 
 [node name="Panel" type="Panel" parent="Control" unique_id=532076500]
 material = SubResource("ShaderMaterial_8ssk6")
@@ -145,3 +424,285 @@ priority = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Control2/TurnRight3" unique_id=1038262665]
 position = Vector2(59.5, 1)
 shape = SubResource("RectangleShape2D_dh13w")
+
+[node name="light_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=888821857]
+stream = ExtResource("5_xmy25")
+max_distance = 4096.0
+panning_strength = 0.0
+
+[node name="door_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=1833362700]
+stream = ExtResource("6_p1kp7")
+max_distance = 4096.0
+panning_strength = 0.0
+
+[node name="ambiance_1" type="AudioStreamPlayer2D" parent="Control" unique_id=2114096799]
+stream = ExtResource("6_6xc40")
+volume_db = -10.0
+autoplay = true
+max_distance = 4096.0
+panning_strength = 0.0
+
+[node name="ambiance_2" type="AudioStreamPlayer2D" parent="Control" unique_id=1794660167]
+stream = ExtResource("7_6xc40")
+volume_db = -10.0
+autoplay = true
+max_distance = 4096.0
+panning_strength = 0.0
+
+[node name="CamFlip" type="AnimatedSprite2D" parent="Control" unique_id=1450589449]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_u0057")
+animation = &"close"
+frame = 12
+frame_progress = 1.0
+centered = false
+
+[node name="camFlip_open_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=1319707601]
+stream = ExtResource("21_vytrw")
+max_distance = 4096.0
+panning_strength = 0.0
+
+[node name="camFlip_close_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=265034219]
+stream = ExtResource("22_21b6a")
+max_distance = 4096.0
+panning_strength = 0.0
+
+[node name="Control3" type="Control" parent="Control" unique_id=1224201570]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CamButton" type="Area2D" parent="Control/Control3" unique_id=1752927887]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Control3/CamButton" unique_id=765667619]
+position = Vector2(0, -37.5)
+shape = SubResource("RectangleShape2D_0m5ra")
+
+[node name="FadeIn" type="ColorRect" parent="Control" unique_id=905392275]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="FadeInAni" type="AnimationPlayer" parent="Control" unique_id=2079348458]
+libraries/ = SubResource("AnimationLibrary_0m5ra")
+script = ExtResource("23_21b6a")
+
+[node name="LeftButtons" type="Node3D" parent="." unique_id=1022301468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9874398, -1.0302126, 2.213819)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftButtons" unique_id=600955224]
+material_override = SubResource("StandardMaterial3D_xmy25")
+mesh = SubResource("BoxMesh_6xc40")
+surface_material_override/0 = SubResource("StandardMaterial3D_m34ca")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="LeftButtons" unique_id=1441837949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034157276, 0.12169403, 0)
+mesh = SubResource("BoxMesh_g52et")
+surface_material_override/0 = SubResource("StandardMaterial3D_p1kp7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="LeftButtons" unique_id=1277762191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034157276, -0.104086995, 0)
+mesh = SubResource("BoxMesh_g52et")
+surface_material_override/0 = SubResource("StandardMaterial3D_8og6k")
+
+[node name="Label3D" type="Label3D" parent="LeftButtons" unique_id=1547111895]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.025620222, 0.01672244, 0)
+pixel_size = 0.0015
+shaded = true
+outline_modulate = Color(0, 0, 0, 0)
+text = "DOOR"
+
+[node name="Label3D2" type="Label3D" parent="LeftButtons" unique_id=1694341723]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.025620222, -0.20855331, 0)
+pixel_size = 0.0015
+shaded = true
+outline_modulate = Color(0, 0, 0, 0)
+text = "LIGHT"
+
+[node name="Right Buttons" type="Node3D" parent="." unique_id=1518126708]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.987, -1.03, 2.214)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right Buttons" unique_id=201336961]
+material_override = SubResource("StandardMaterial3D_xmy25")
+mesh = SubResource("BoxMesh_6xc40")
+surface_material_override/0 = SubResource("StandardMaterial3D_m34ca")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Right Buttons" unique_id=2084576240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034157276, 0.12169403, 0)
+mesh = SubResource("BoxMesh_g52et")
+surface_material_override/0 = SubResource("StandardMaterial3D_p1kp7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Right Buttons" unique_id=885718195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034157276, -0.104086995, 0)
+mesh = SubResource("BoxMesh_g52et")
+surface_material_override/0 = SubResource("StandardMaterial3D_8og6k")
+
+[node name="Label3D" type="Label3D" parent="Right Buttons" unique_id=43728191]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.025620222, 0.01672244, 0)
+pixel_size = 0.0015
+shaded = true
+outline_modulate = Color(0, 0, 0, 0)
+text = "DOOR"
+
+[node name="Label3D2" type="Label3D" parent="Right Buttons" unique_id=2128145988]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.025620222, -0.20855331, 0)
+pixel_size = 0.0015
+shaded = true
+outline_modulate = Color(0, 0, 0, 0)
+text = "LIGHT"
+
+[node name="LeftDoor" parent="." unique_id=878979255 instance=ExtResource("7_t883d")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.2, -1, 1)
+move_direction = Vector3(0, 1, 0)
+close_time = -1.0
+
+[node name="RightDoor" parent="." unique_id=1171833949 instance=ExtResource("7_t883d")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2, -1, 1)
+move_direction = Vector3(0, 1, 0)
+close_time = -1.0
+
+[node name="Controler" type="Node" parent="." unique_id=60918113]
+script = ExtResource("8_h5ams")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=964434489]
+environment = SubResource("Environment_x02sa")
+
+[node name="Roof" type="CSGBox3D" parent="." unique_id=1989042516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.453247, 1.5, -10.512451)
+material_override = SubResource("StandardMaterial3D_6xc40")
+size = Vector3(40.020264, 1, 38.325684)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=937408443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48273075, 0.5694494)
+light_color = Color(1, 0.98, 0.92, 1)
+light_energy = 0.5
+light_size = 0.1
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1322333458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8764596, 0.48273075, 0.5694494)
+light_color = Color(1, 0.98, 0.92, 1)
+light_energy = 0.5
+light_size = 0.1
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=37964885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.876, 0.483, 0.569)
+light_color = Color(1, 0.98, 0.92, 1)
+light_energy = 0.5
+light_size = 0.1
+shadow_enabled = true
+
+[node name="LeftLightBlock" type="Node3D" parent="." unique_id=484946992]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, -1, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftLightBlock" unique_id=1202300800]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="LeftLightBlock" unique_id=2025866642]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.049999952, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="LeftLightBlock" unique_id=851013269]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.10000014, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="LeftLightBlock" unique_id=1111136706]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.1500001, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="LeftLightBlock" unique_id=454131988]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.20000005, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="LeftLightBlock" unique_id=1574199714]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.25, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="LeftLightBlock" unique_id=1623763436]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.29999995, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="RightLightBlock" type="Node3D" parent="." unique_id=1186531496]
+transform = Transform3D(-0.5, 0, -8.742278e-08, 0, 1, 0, 4.371139e-08, 0, -1, 2.3, -1, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightLightBlock" unique_id=1185349133]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RightLightBlock" unique_id=1863435443]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.049999952, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="RightLightBlock" unique_id=1506452907]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.10000014, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="RightLightBlock" unique_id=1591830646]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.1500001, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="RightLightBlock" unique_id=1146731637]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.20000005, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="RightLightBlock" unique_id=157619435]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.25, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="RightLightBlock" unique_id=1552722878]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.29999995, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="Table" type="CSGCombiner3D" parent="." unique_id=579832762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.344964, -1)
+material_override = SubResource("StandardMaterial3D_b2wjk")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table" unique_id=794399213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_gm3eh")
+size = Vector3(3, 0.15, 1.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Table" unique_id=2062216865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Table" unique_id=541359911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Table" unique_id=1202042200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Table" unique_id=339465241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[connection signal="input_event" from="Control/SubViewportContainer/Left Door" to="Controler" method="_on_left_door_input_event"]
+[connection signal="input_event" from="Control/SubViewportContainer/Left Light" to="Controler" method="_on_left_light_input_event"]
+[connection signal="input_event" from="Control/SubViewportContainer/Right Door" to="Controler" method="_on_right_door_input_event"]
+[connection signal="input_event" from="Control/SubViewportContainer/Right Light" to="Controler" method="_on_right_light_input_event"]
+[connection signal="animation_finished" from="Control/CamFlip" to="Controler" method="_on_cam_flip_animation_finished"]
+[connection signal="mouse_entered" from="Control/Control3/CamButton" to="Controler" method="_on_cam_button_mouse_entered"]
+[connection signal="animation_finished" from="Control/FadeInAni" to="Control/FadeInAni" method="_on_animation_finished"]
+[connection signal="closed" from="LeftDoor" to="Controler" method="_set_left_door_state" binds= [0]]
+[connection signal="opened" from="LeftDoor" to="Controler" method="_set_left_door_state" binds= [2]]
+[connection signal="start_close" from="LeftDoor" to="Control/door_sound" method="play"]
+[connection signal="start_open" from="LeftDoor" to="Control/door_sound" method="play"]
+[connection signal="closed" from="RightDoor" to="Controler" method="_set_right_door_state" binds= [0]]
+[connection signal="opened" from="RightDoor" to="Controler" method="_set_right_door_state" binds= [2]]
+[connection signal="start_close" from="RightDoor" to="Control/door_sound" method="play"]
+[connection signal="start_open" from="RightDoor" to="Control/door_sound" method="play"]
+[connection signal="DoorLeft" from="Controler" to="LeftDoor" method="_open"]
+[connection signal="DoorRight" from="Controler" to="RightDoor" method="_open"]

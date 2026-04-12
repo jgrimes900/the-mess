@@ -8,6 +8,9 @@ extends AnimatableBody3D
 signal opened()
 signal closed()
 
+signal start_open()
+signal start_close()
+
 var state: int = 0
 var openness: float = 0.0
 var close_timer: float = 0.0
@@ -23,8 +26,10 @@ func _on_touch(_body_rid, body, _body_shape_index = null, _local_shape_index = n
 
 func _open():
 	if state == 0:
+		emit_signal("start_open")
 		state = 1
 	elif state == 2:
+		emit_signal("start_close")
 		state = 3
 
 func _physics_process(delta: float) -> void:
