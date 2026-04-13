@@ -15,6 +15,7 @@ extends Sprite3D
 var velocity: Vector3
 var timer = 0
 @onready var player = get_node("/root/Player") as Player;
+@onready var Inv = get_node("/root/Player/Inv")
 
 const COLLIDER_SIZE: Vector2 = Vector2(0.4,0.6)
 
@@ -36,6 +37,7 @@ func _ready() -> void:
 	Collider.shape = Shape
 	Hitbox.connect("body_shape_entered", collect.unbind(2))
 	connect("collected", player.recive_currency.bind("SHaR_Coin"))
+	connect("collected", Inv.recive_currency.bind("SHaR_Coin", 1))
 	
 
 func collect(_a, body):

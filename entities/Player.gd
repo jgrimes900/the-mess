@@ -35,6 +35,7 @@ var current_map: String = "hl1_c1a0"  # Default to starting map
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
 @onready var sound_player: AudioStreamPlayer3D = $AudioTele
 @onready var sound_step: AudioStreamPlayer3D = $AudioStep
+@onready var inv: Control = $Inv
 
 const coin_sounds = {
 	SHaR_Coin = 3,
@@ -185,6 +186,20 @@ func _input(event: InputEvent) -> void:
 			elif new_pitch <= -1.5:
 				pivot.rotation = Vector3(0, pivot.rotation.y, 1.5)
 				view_pitch_set = -1
+	if Input.is_action_just_pressed("open_inv"):
+		if inv.visible:
+			inv.visible = false
+			in_control = true
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			mouse_captured = true
+			$Pivot/glock._set_control(true)
+		else:
+			inv.visible = true
+			in_control = false
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			mouse_captured = false
+			$Pivot/glock._set_control(false)
+		
 func recive_currency(_index, type: String):
 	if coin_sounds[type]:
 		sound_player.stream = coin_sounds[type + str(randi_range(1,coin_sounds[type]))]

@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://dfa0xcrr4cjr0" path="res://assets/textures/v_hl1_glock/v_hl1_glock_top.png" id="15_2c4y0"]
 [ext_resource type="AudioStream" uid="uid://btlcj7opvssw5" path="res://assets/sounds/tele.ogg" id="16_w4pj3"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="17_r1s2y"]
+[ext_resource type="Script" uid="uid://cris617752oit" path="res://GUI/inv.gd" id="18_22xyk"]
+[ext_resource type="Texture2D" uid="uid://dotvhc43bepmm" path="res://assets/sprites/shar_coin.png" id="18_f2e50"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jhsr"]
 resource_name = "gclip.bmp"
@@ -407,6 +409,186 @@ blend_shape_mode = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5anan"]
 size = Vector3(0.75, 1.8, 0.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22xyk"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3tw4"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmymu"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf0v6"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv2ms"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g56qp"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axxvs"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay5dx"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5loxu"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh7kr"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jxos"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c4y0"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4pj3"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1s2y"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0anbp"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3k5d"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v6jp"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwbmn"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3or85"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxohq"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hvlk"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btr86"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(64, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30w5g"]
+atlas = ExtResource("18_f2e50")
+region = Rect2(128, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_envas"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22xyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3tw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmymu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf0v6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cv2ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g56qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axxvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay5dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5loxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh7kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jxos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c4y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4pj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1s2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0anbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3k5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v6jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwbmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3or85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxohq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hvlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btr86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30w5g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pp8wu"]
+font_size = 32
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ipj2g"]
+font_size = 32
+font_color = Color(0.21499999, 0.6, 0.18, 1)
+outline_size = 4
+outline_color = Color(0.12973334, 0.28, 0.08400001, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=1837370831]
 script = ExtResource("1_edtk3")
@@ -881,6 +1063,121 @@ volume_db = -30.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2092488387]
 shape = SubResource("BoxShape3D_5anan")
+
+[node name="Inv" type="Control" parent="." unique_id=1294379492]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_22xyk")
+
+[node name="TabContainer" type="TabContainer" parent="Inv" unique_id=565700907]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tab_0/title = "Currency"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inv/TabContainer" unique_id=2072009274]
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 0
+metadata/_tab_name = "Currency"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inv/TabContainer/VBoxContainer" unique_id=1432463978]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=1254410151]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Panel" type="Panel" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=292782823]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Inv/TabContainer/VBoxContainer/HBoxContainer/Panel" unique_id=468736139]
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_envas")
+frame_progress = 0.695264
+centered = false
+offset = Vector2(4, 4)
+
+[node name="ColorRect3" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=1962288592]
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=212469890]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "SHaR Coins"
+label_settings = SubResource("LabelSettings_pp8wu")
+
+[node name="Label2" type="Label" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=1704654048]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0"
+label_settings = SubResource("LabelSettings_pp8wu")
+horizontal_alignment = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=1237016676]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Inv/TabContainer/VBoxContainer" unique_id=862064814]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=925367676]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Panel" type="Panel" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=816480437]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2/Panel" unique_id=2083281665]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "USD"
+label_settings = SubResource("LabelSettings_ipj2g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=237433956]
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=1163482360]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Dollars"
+label_settings = SubResource("LabelSettings_pp8wu")
+
+[node name="Label2" type="Label" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=1154818871]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0"
+label_settings = SubResource("LabelSettings_pp8wu")
+horizontal_alignment = 2
+
+[node name="ColorRect3" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=630856414]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
 
 [node name="Health" type="Node" parent="." unique_id=1039321172]
 script = ExtResource("17_r1s2y")
