@@ -1,6 +1,7 @@
 extends Control
 
 @onready var office = $SubViewportContainer
+@onready var CamCam = $CamCam
 
 var move = 0
 var speed_mod = 500
@@ -13,6 +14,9 @@ var def_y = 648
 @onready var rl_pos = Vector2($"SubViewportContainer/Right Light".position.x/def_x, $"SubViewportContainer/Right Light".position.y/def_y)
 
 var cam_def = Vector2(0.6, 0.6)
+var cam_static_def = Vector2(0.9, 0.9)
+var camcam_dir = 1
+var camcam_state = 0
 
 @onready var dl_size = Vector2(133.0/def_x, 107.0/def_y)
 
@@ -30,7 +34,8 @@ func _ready() -> void:
 	$Control2/TurnRight1.connect("mouse_exited", _right_exit)
 	$Control2/TurnRight2.connect("mouse_exited", _right_exit)
 	$Control2/TurnRight3.connect("mouse_exited", _right_exit)
-
+	$CamStatic.play()
+	$CamStatic/AnimatedSprite2D.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -52,12 +57,25 @@ func _process(delta: float) -> void:
 	$"SubViewportContainer/Right Light/CollisionShape2D".shape.size = self.size*dl_size
 	
 	$CamFlip.scale = cam_def*(self.size/Vector2(def_x, def_y))
+	$CamStatic.scale = cam_static_def*(self.size/Vector2(def_x, def_y))
 	
 	office.position.x += move*(self.size.x/speed_mod)
 	if office.position.x > 0:
 		office.position.x = 0
 	if office.position.x < -self.size.x/2:
 		office.position.x = -self.size.x/2
+		
+	CamCam.position.x += camcam_dir*(self.size.x/speed_mod/2)
+	if CamCam.position.x > 0:
+		CamCam.position.x = 0
+		camcam_state = 1
+		camcam_dir = 0
+		$CamCam/Wait.start()
+	if CamCam.position.x < -self.size.x/2:
+		CamCam.position.x = -self.size.x/2
+		camcam_state = 0
+		camcam_dir = 0
+		$CamCam/Wait.start()
 
 func _left_enter():
 	move += 1
@@ -70,3 +88,11 @@ func _right_enter():
 	
 func _right_exit():
 	move += 1
+
+
+func _on_wait_timeout() -> void:
+	if camcam_state == 0:
+		camcam_dir = 1
+	else:
+		camcam_dir = -1
+		

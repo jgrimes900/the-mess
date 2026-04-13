@@ -27,9 +27,18 @@
 [ext_resource type="Texture2D" uid="uid://nwrl25wrppgy" path="res://assets/sprites/fnaf/cam/0010.png" id="18_f62u3"]
 [ext_resource type="Texture2D" uid="uid://cekxrpd3rowd6" path="res://assets/sprites/fnaf/cam/0011.png" id="19_nlvlt"]
 [ext_resource type="Texture2D" uid="uid://puqt61ru36fo" path="res://assets/sprites/fnaf/cam/0012.png" id="20_42ne2"]
+[ext_resource type="Texture2D" uid="uid://7b8bck0m1mkn" path="res://assets/sprites/fnaf/static/1.png" id="21_f62u3"]
+[ext_resource type="Shader" uid="uid://cu7xahjatqabd" path="res://shaders/additive_canvas.gdshader" id="21_nlvlt"]
 [ext_resource type="AudioStream" uid="uid://gjhfsj186vkj" path="res://assets/sounds/fnaf1/CAMERA_VIDEO_LOA_60105303.wav" id="21_vytrw"]
 [ext_resource type="AudioStream" uid="uid://bltgxf7thl037" path="res://assets/sounds/fnaf1/put down.wav" id="22_21b6a"]
+[ext_resource type="Texture2D" uid="uid://dqfq3bh5swrkp" path="res://assets/sprites/fnaf/static/2.png" id="22_nlvlt"]
 [ext_resource type="Script" uid="uid://crctdq67n1vmm" path="res://maps/fnaf like/fade_in_ani.gd" id="23_21b6a"]
+[ext_resource type="Texture2D" uid="uid://qchj3m640yai" path="res://assets/sprites/fnaf/static/3.png" id="23_42ne2"]
+[ext_resource type="Texture2D" uid="uid://1pvl11i065fr" path="res://assets/sprites/fnaf/static/4.png" id="24_u0057"]
+[ext_resource type="Texture2D" uid="uid://c5yrbkl58mm8n" path="res://assets/sprites/fnaf/static/5.png" id="25_1ioi7"]
+[ext_resource type="Texture2D" uid="uid://cq4kjoy46yj45" path="res://assets/sprites/fnaf/cam_border.png" id="27_u0057"]
+[ext_resource type="Texture2D" uid="uid://ba52f430qjaqb" path="res://assets/sprites/fnaf/cam_dot.png" id="28_1ioi7"]
+[ext_resource type="AudioStream" uid="uid://cdqlwdnv7j21x" path="res://assets/sounds/fnaf1/blip3.wav" id="29_nlvlt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x02sa"]
 size = Vector2(133, 107)
@@ -139,6 +148,52 @@ animations = [{
 "loop": false,
 "name": &"open",
 "speed": 45.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2qh8p"]
+shader = ExtResource("21_nlvlt")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcvmc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_f62u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_nlvlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_42ne2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_u0057")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1ioi7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u0057"]
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_f62u3"]
+line_spacing = -6.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbdp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_1ioi7")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0m5ra"]
@@ -350,6 +405,62 @@ position = Vector2(1626, 428)
 position = Vector2(20, 13.5)
 shape = SubResource("RectangleShape2D_x02sa")
 
+[node name="CamCam" type="SubViewportContainer" parent="Control" unique_id=2015143389]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.5000001
+anchor_bottom = 1.0
+offset_right = 2.999878
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Control/CamCam" unique_id=2140020946]
+handle_input_locally = false
+size = Vector2i(1731, 648)
+render_target_update_mode = 0
+
+[node name="LHallC" type="Node3D" parent="Control/CamCam/SubViewport" unique_id=370215849]
+transform = Transform3D(-0.82334447, -0.45177656, 0.343514, 0, 0.6052663, 0.79602313, -0.567542, 0.65540123, -0.4983426, -4.3607416, 0.4428435, 2.2282326)
+
+[node name="RHallC" type="Node3D" parent="Control/CamCam/SubViewport" unique_id=181701846]
+transform = Transform3D(-0.5678436, 0.65565276, -0.4976676, 0, 0.6045991, 0.79652995, 0.82313645, 0.45230442, -0.34331775, 4.361, 0.443, 2.228)
+
+[node name="LHall" type="Node3D" parent="Control/CamCam/SubViewport" unique_id=600645913]
+transform = Transform3D(0.9977786, 0.04503603, -0.049087472, -0.02598999, 0.94163513, 0.33563045, 0.061337948, -0.33360904, 0.94071394, -5.676129, 0.64373946, 0.9195461)
+
+[node name="RHall" type="Node3D" parent="Control/CamCam/SubViewport" unique_id=173672306]
+transform = Transform3D(0.97401875, 0.04503603, 0.22194438, -0.11558278, 0.94163513, 0.31617066, -0.19475155, -0.33360904, 0.9223757, 5.676, 0.644, 0.92)
+
+[node name="Bath" type="Node3D" parent="Control/CamCam/SubViewport" unique_id=1476925766]
+transform = Transform3D(-0.43028426, 0.23942372, -0.870363, -0.11558277, 0.9416352, 0.31617063, 0.89526314, 0.23664223, -0.37749752, 5.6193113, 0.644, -17.77747)
+
+[node name="Room" type="Node3D" parent="Control/CamCam/SubViewport" unique_id=104287181]
+transform = Transform3D(0.96624255, -0.06802917, 0.24849023, -0.021449378, 0.93991786, 0.34072623, -0.25673974, -0.3345541, 0.9067294, 2.3505068, 0.644, -4.9268255)
+
+[node name="Stage" type="Node3D" parent="Control/CamCam/SubViewport" unique_id=1130238649]
+transform = Transform3D(0.53187567, 0.44420093, -0.72096735, 0.015931105, 0.8459802, 0.5329764, 0.84667265, -0.29496297, 0.44287968, -3.9162636, 0.644, -22.89576)
+
+[node name="Maint" type="Node3D" parent="Control/CamCam/SubViewport" unique_id=734111960]
+transform = Transform3D(0.82952875, -0.30878526, 0.46533188, 0.015931059, 0.84598017, 0.5329764, -0.5582368, -0.434706, 0.7066841, -9.80537, 0.644, -12.58734)
+
+[node name="Closit" type="Node3D" parent="Control/CamCam/SubViewport" unique_id=1707024140]
+transform = Transform3D(0.7414303, -0.32591328, 0.58656776, -0.26739678, 0.65823215, 0.7037254, -0.6154512, -0.6786096, 0.40088508, -8.174362, 0.644, -2.2903743)
+
+[node name="Camera" type="Camera3D" parent="Control/CamCam/SubViewport" unique_id=797532305]
+transform = Transform3D(0.7414303, -0.32591325, 0.5865677, -0.26739678, 0.6582321, 0.70372546, -0.6154512, -0.67860955, 0.40088502, -8.174362, 0.644, -2.2903743)
+keep_aspect = 0
+cull_mask = 524287
+projection = 2
+fov = 105.3
+size = 0.13
+
+[node name="Wait" type="Timer" parent="Control/CamCam" unique_id=1280103125]
+wait_time = 4.0
+one_shot = true
+
 [node name="Panel" type="Panel" parent="Control" unique_id=532076500]
 material = SubResource("ShaderMaterial_8ssk6")
 layout_mode = 1
@@ -452,10 +563,289 @@ panning_strength = 0.0
 [node name="CamFlip" type="AnimatedSprite2D" parent="Control" unique_id=1450589449]
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_u0057")
-animation = &"close"
-frame = 12
-frame_progress = 1.0
+animation = &"open"
 centered = false
+
+[node name="CamStatic" type="AnimatedSprite2D" parent="Control" unique_id=987783070]
+visible = false
+self_modulate = Color(1, 1, 1, 0.23529412)
+material = SubResource("ShaderMaterial_2qh8p")
+scale = Vector2(0.9, 0.9000001)
+sprite_frames = SubResource("SpriteFrames_pcvmc")
+frame_progress = 0.5023232
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic" unique_id=1647393745]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/ColorRect" unique_id=479236912]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.4444
+offset_top = 73.33333
+offset_right = 83.5556
+offset_bottom = 136.33333
+grow_horizontal = 2
+text = "- Nope -"
+label_settings = SubResource("LabelSettings_u0057")
+
+[node name="CAM_1A" type="ColorRect" parent="Control/CamStatic" unique_id=220519045]
+offset_left = 947.7777
+offset_top = 573.3332
+offset_right = 1007.77765
+offset_bottom = 615.5554
+color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic/CAM_1A" unique_id=1379088574]
+layout_mode = 0
+offset_left = 1.111111
+offset_top = 1.1111109
+offset_right = 58.88888
+offset_bottom = 41.11111
+mouse_filter = 2
+color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/CAM_1A/ColorRect" unique_id=614862922]
+layout_mode = 0
+offset_right = 57.77777
+offset_bottom = 40.0
+text = "CAM
+1A"
+label_settings = SubResource("LabelSettings_f62u3")
+
+[node name="CAM_2A" type="ColorRect" parent="Control/CamStatic" unique_id=129446163]
+offset_left = 1078.8889
+offset_top = 573.33325
+offset_right = 1138.8888
+offset_bottom = 615.5555
+color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic/CAM_2A" unique_id=516354841]
+layout_mode = 0
+offset_left = 1.111111
+offset_top = 1.1111109
+offset_right = 58.88888
+offset_bottom = 41.11111
+mouse_filter = 2
+color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/CAM_2A/ColorRect" unique_id=710763627]
+layout_mode = 0
+offset_right = 57.77777
+offset_bottom = 40.0
+text = "CAM
+2A"
+label_settings = SubResource("LabelSettings_f62u3")
+
+[node name="CAM_1B" type="ColorRect" parent="Control/CamStatic" unique_id=1946944568]
+offset_left = 947.7777
+offset_top = 517.7777
+offset_right = 1007.77765
+offset_bottom = 560.0
+color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic/CAM_1B" unique_id=807789286]
+layout_mode = 0
+offset_left = 1.111111
+offset_top = 1.1111109
+offset_right = 58.88888
+offset_bottom = 41.11111
+mouse_filter = 2
+color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/CAM_1B/ColorRect" unique_id=1643353065]
+layout_mode = 0
+offset_right = 57.77777
+offset_bottom = 40.0
+text = "CAM
+1B"
+label_settings = SubResource("LabelSettings_f62u3")
+
+[node name="CAM_2B" type="ColorRect" parent="Control/CamStatic" unique_id=2091658927]
+offset_left = 1078.8889
+offset_top = 517.7778
+offset_right = 1138.8888
+offset_bottom = 560.0
+color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic/CAM_2B" unique_id=1070425742]
+layout_mode = 0
+offset_left = 1.111111
+offset_top = 1.1111109
+offset_right = 58.88888
+offset_bottom = 41.11111
+mouse_filter = 2
+color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/CAM_2B/ColorRect" unique_id=32988369]
+layout_mode = 0
+offset_right = 57.77777
+offset_bottom = 40.0
+text = "CAM
+2B"
+label_settings = SubResource("LabelSettings_f62u3")
+
+[node name="CAM_3A" type="ColorRect" parent="Control/CamStatic" unique_id=626587082]
+offset_left = 872.2222
+offset_top = 482.2222
+offset_right = 932.2221
+offset_bottom = 524.4444
+color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic/CAM_3A" unique_id=1646824947]
+layout_mode = 0
+offset_left = 1.111111
+offset_top = 1.1111109
+offset_right = 58.88888
+offset_bottom = 41.11111
+mouse_filter = 2
+color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/CAM_3A/ColorRect" unique_id=1041330099]
+layout_mode = 0
+offset_right = 57.77777
+offset_bottom = 40.0
+text = "CAM
+3A"
+label_settings = SubResource("LabelSettings_f62u3")
+
+[node name="CAM_4A" type="ColorRect" parent="Control/CamStatic" unique_id=825360626]
+offset_left = 1014.4444
+offset_top = 446.66663
+offset_right = 1074.4442
+offset_bottom = 488.88882
+color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic/CAM_4A" unique_id=698012582]
+layout_mode = 0
+offset_left = 1.111111
+offset_top = 1.1111109
+offset_right = 58.88888
+offset_bottom = 41.11111
+mouse_filter = 2
+color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/CAM_4A/ColorRect" unique_id=1304779000]
+layout_mode = 0
+offset_right = 57.77777
+offset_bottom = 40.0
+text = "CAM
+4A"
+label_settings = SubResource("LabelSettings_f62u3")
+
+[node name="CAM_4B" type="ColorRect" parent="Control/CamStatic" unique_id=1757028656]
+offset_left = 978.88885
+offset_top = 324.4444
+offset_right = 1038.8888
+offset_bottom = 366.6666
+color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic/CAM_4B" unique_id=1441891353]
+layout_mode = 0
+offset_left = 1.111111
+offset_top = 1.1111109
+offset_right = 58.88888
+offset_bottom = 41.11111
+mouse_filter = 2
+color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/CAM_4B/ColorRect" unique_id=1267954950]
+layout_mode = 0
+offset_right = 57.77777
+offset_bottom = 40.0
+text = "CAM
+4B"
+label_settings = SubResource("LabelSettings_f62u3")
+
+[node name="CAM_5A" type="ColorRect" parent="Control/CamStatic" unique_id=1067593161]
+offset_left = 875.55554
+offset_top = 351.11105
+offset_right = 935.5554
+offset_bottom = 393.33325
+color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic/CAM_5A" unique_id=771777750]
+layout_mode = 0
+offset_left = 1.111111
+offset_top = 1.1111109
+offset_right = 58.88888
+offset_bottom = 41.11111
+mouse_filter = 2
+color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/CAM_5A/ColorRect" unique_id=231703887]
+layout_mode = 0
+offset_right = 57.77777
+offset_bottom = 40.0
+text = "CAM
+5A"
+label_settings = SubResource("LabelSettings_f62u3")
+
+[node name="CAM_6A" type="ColorRect" parent="Control/CamStatic" unique_id=2037614762]
+offset_left = 1125.5555
+offset_top = 365.5555
+offset_right = 1185.5554
+offset_bottom = 407.7777
+color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic/CAM_6A" unique_id=788299352]
+layout_mode = 0
+offset_left = 1.111111
+offset_top = 1.1111109
+offset_right = 58.88888
+offset_bottom = 41.11111
+mouse_filter = 2
+color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/CAM_6A/ColorRect" unique_id=961789603]
+layout_mode = 0
+offset_right = 57.77777
+offset_bottom = 40.0
+text = "CAM
+6A"
+label_settings = SubResource("LabelSettings_f62u3")
+
+[node name="CAM_7A" type="ColorRect" parent="Control/CamStatic" unique_id=754954401]
+offset_left = 1174.4445
+offset_top = 498.88882
+offset_right = 1234.4443
+offset_bottom = 541.1111
+color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/CamStatic/CAM_7A" unique_id=1563041175]
+layout_mode = 0
+offset_left = 1.111111
+offset_top = 1.1111109
+offset_right = 58.88888
+offset_bottom = 41.11111
+mouse_filter = 2
+color = Color(0.103743516, 0.103743546, 0.10374347, 1)
+
+[node name="Label" type="Label" parent="Control/CamStatic/CAM_7A/ColorRect" unique_id=1954039658]
+layout_mode = 0
+offset_right = 57.77777
+offset_bottom = 40.0
+text = "CAM
+7A"
+label_settings = SubResource("LabelSettings_f62u3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/CamStatic" unique_id=702361423]
+texture = ExtResource("27_u0057")
+centered = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/CamStatic" unique_id=597460970]
+position = Vector2(90, 91.1111)
+sprite_frames = SubResource("SpriteFrames_hbdp2")
+frame_progress = 0.33001304
 
 [node name="camFlip_open_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=1319707601]
 stream = ExtResource("21_vytrw")
@@ -464,6 +854,11 @@ panning_strength = 0.0
 
 [node name="camFlip_close_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=265034219]
 stream = ExtResource("22_21b6a")
+max_distance = 4096.0
+panning_strength = 0.0
+
+[node name="cam_change_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=1328694]
+stream = ExtResource("29_nlvlt")
 max_distance = 4096.0
 panning_strength = 0.0
 
@@ -588,10 +983,55 @@ light_energy = 0.5
 light_size = 0.1
 shadow_enabled = true
 
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1661815364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.690743, 0.48273075, -18.330381)
+light_color = Color(1, 0.98, 0.92, 1)
+light_energy = 0.5
+light_size = 0.1
+shadow_enabled = true
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=1240490396]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.09608483, 0.48273075, -21.966883)
+light_color = Color(1, 0.98, 0.92, 1)
+light_energy = 0.5
+light_size = 0.1
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1333591561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09608483, 0.48273075, -14.171902)
+light_color = Color(1, 0.98, 0.92, 1)
+light_energy = 0.5
+light_size = 0.1
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=328090281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09608483, 0.48273075, -7.008061)
+light_color = Color(1, 0.98, 0.92, 1)
+light_energy = 0.5
+light_size = 0.1
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="." unique_id=1318679169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.837942, 0.48273075, -16.079578)
+light_color = Color(1, 0.98, 0.92, 1)
+light_energy = 0.5
+light_size = 0.1
+shadow_enabled = true
+
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1322333458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8764596, 0.48273075, 0.5694494)
 light_color = Color(1, 0.98, 0.92, 1)
 light_energy = 0.5
+light_size = 0.1
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D2" unique_id=1552803407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8578944, 0.48273075, -3.566104)
+light_color = Color(1, 0.98, 0.92, 1)
+light_energy = 0.25
 light_size = 0.1
 shadow_enabled = true
 
@@ -693,7 +1133,19 @@ size = Vector3(0.2, 1, 0.2)
 [connection signal="input_event" from="Control/SubViewportContainer/Left Light" to="Controler" method="_on_left_light_input_event"]
 [connection signal="input_event" from="Control/SubViewportContainer/Right Door" to="Controler" method="_on_right_door_input_event"]
 [connection signal="input_event" from="Control/SubViewportContainer/Right Light" to="Controler" method="_on_right_light_input_event"]
+[connection signal="timeout" from="Control/CamCam/Wait" to="Control" method="_on_wait_timeout"]
 [connection signal="animation_finished" from="Control/CamFlip" to="Controler" method="_on_cam_flip_animation_finished"]
+[connection signal="animation_finished" from="Control/CamStatic" to="Controler" method="_on_cam_flip_animation_finished"]
+[connection signal="gui_input" from="Control/CamStatic/CAM_1A" to="Controler" method="_on_cam_button_input_event" binds= ["1A"]]
+[connection signal="gui_input" from="Control/CamStatic/CAM_2A" to="Controler" method="_on_cam_button_input_event" binds= ["2A"]]
+[connection signal="gui_input" from="Control/CamStatic/CAM_1B" to="Controler" method="_on_cam_button_input_event" binds= ["1B"]]
+[connection signal="gui_input" from="Control/CamStatic/CAM_2B" to="Controler" method="_on_cam_button_input_event" binds= ["2B"]]
+[connection signal="gui_input" from="Control/CamStatic/CAM_3A" to="Controler" method="_on_cam_button_input_event" binds= ["3A"]]
+[connection signal="gui_input" from="Control/CamStatic/CAM_4A" to="Controler" method="_on_cam_button_input_event" binds= ["4A"]]
+[connection signal="gui_input" from="Control/CamStatic/CAM_4B" to="Controler" method="_on_cam_button_input_event" binds= ["4B"]]
+[connection signal="gui_input" from="Control/CamStatic/CAM_5A" to="Controler" method="_on_cam_button_input_event" binds= ["5A"]]
+[connection signal="gui_input" from="Control/CamStatic/CAM_6A" to="Controler" method="_on_cam_button_input_event" binds= ["6A"]]
+[connection signal="gui_input" from="Control/CamStatic/CAM_7A" to="Controler" method="_on_cam_button_input_event" binds= ["7A"]]
 [connection signal="mouse_entered" from="Control/Control3/CamButton" to="Controler" method="_on_cam_button_mouse_entered"]
 [connection signal="animation_finished" from="Control/FadeInAni" to="Control/FadeInAni" method="_on_animation_finished"]
 [connection signal="closed" from="LeftDoor" to="Controler" method="_set_left_door_state" binds= [0]]

@@ -11,6 +11,8 @@ signal DoorRight()
 @onready var CamSprite: AnimatedSprite2D = $"../Control/CamFlip"
 @onready var CamOpenSound: AudioStreamPlayer2D = $"../Control/camFlip_open_sound"
 @onready var CamCloseSound: AudioStreamPlayer2D = $"../Control/camFlip_close_sound"
+@onready var CamStaticSprite: AnimatedSprite2D = $"../Control/CamStatic"
+@onready var CamCamSVC: SubViewportContainer = $"../Control/CamCam"
 
 @onready var player: CharacterBody3D = get_node("/root/Player")
 
@@ -20,8 +22,22 @@ signal DoorRight()
 var DoorLeft_state = 0
 var DoorRight_state = 0
 var Cam_State = 0
+var CamView = "none"
 
 var LightState = 0
+
+@onready var cams = {
+	"1A"=$"../Control/CamCam/SubViewport/LHallC",
+	"2A"=$"../Control/CamCam/SubViewport/RHallC",
+	"1B"=$"../Control/CamCam/SubViewport/LHall",
+	"2B"=$"../Control/CamCam/SubViewport/RHall",
+	"3A"=$"../Control/CamCam/SubViewport/Closit",
+	"4A"=$"../Control/CamCam/SubViewport/Room",
+	"4B"=$"../Control/CamCam/SubViewport/Stage",
+	"5A"=$"../Control/CamCam/SubViewport/Maint",
+	"6A"=$"../Control/CamCam/SubViewport/Bath",
+	"7A"=$"../Control/CamCam/SubViewport/Bath" #Dummy
+}
 
 
 func _process(delta: float) -> void:
@@ -100,6 +116,9 @@ func _on_cam_button_mouse_entered() -> void:
 		CamCloseSound.stop()
 	if Cam_State == 2:
 		Cam_State = 3
+		CamSprite.visible = true
+		CamStaticSprite.visible = false
+		CamCamSVC.visible = false
 		CamSprite.play("close")
 		CamCloseSound.play()
 		CamOpenSound.stop()
@@ -111,5 +130,20 @@ func _on_cam_button_mouse_entered() -> void:
 func _on_cam_flip_animation_finished() -> void:
 	if Cam_State == 1:
 		Cam_State = 2
+		CamSprite.visible = false
+		CamStaticSprite.visible = true
+		CamCamSVC.visible = true
 	else:
 		Cam_State = 0
+		
+func _on_cam_button_input_event(event: InputEvent, cam: String):
+	if Input.is_action_pressed("gui_left_click") && Cam_State == 2  && CamView != cam:
+		if cams[cam]:
+			if cam != "7A":
+				$"../Control/CamCam/SubViewport/Camera".position = cams[cam].position
+				$"../Control/CamCam/SubViewport/Camera".rotation = cams[cam].rotation
+				$"../Control/CamStatic/ColorRect".visible = false
+			else:
+				$"../Control/CamStatic/ColorRect".visible = true
+			CamView = cam
+			$"../Control/cam_change_sound".play()
