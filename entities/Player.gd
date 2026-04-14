@@ -75,6 +75,7 @@ func _physics_process(delta: float) -> void:
 		var direction := Vector3.ZERO
 		
 		if !dead:
+			up_direction = Basis.from_euler(rot_temp).y
 			if Input.is_action_just_pressed("use"):
 				var space_state = get_world_3d().direct_space_state
 				var query = PhysicsRayQueryParameters3D.create(pivot.global_position, (pivot.global_basis.x.normalized() * -use_distance) + pivot.global_position)
@@ -98,18 +99,18 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_pressed("crouch") and not crouched:
 				var shape: BoxShape3D = collision_shape.shape
 				shape.size = collision_size * collision_mult_crouched
-				collision_shape.position.y += collision_size.y * collision_mult_crouched.y
-				pivot.position.y += shape.size.y/2
-				local_pos.y -= shape.size.y/2
+				collision_shape.position.y += (collision_size.y * collision_mult_crouched.y)
+				pivot.position.y += (shape.size.y/2)
+				local_pos = local_pos - (up_direction * (shape.size.y/2))
 				speed_cap = speed_cap/2
 				crouched = true
 			elif not Input.is_action_pressed("crouch") and crouched:
 				var shape: BoxShape3D = collision_shape.shape
 				shape.size = collision_size
-				collision_shape.position.y -= collision_size.y * collision_mult_crouched.y
-				position.y += collision_size.y * collision_mult_crouched.y
+				collision_shape.position.y -= (collision_size.y * collision_mult_crouched.y)
+				position = position + (up_direction * (collision_size.y * collision_mult_crouched.y))
 				pivot.position.y -= (collision_size.y * collision_mult_crouched.y)/2
-				local_pos.y += (collision_size.y * collision_mult_crouched.y)/2
+				local_pos = local_pos + ( up_direction *( (collision_size.y * collision_mult_crouched.y)/2))
 				speed_cap = speed_cap*2
 				crouched = false
 
@@ -138,7 +139,6 @@ func _physics_process(delta: float) -> void:
 		
 		last_y = local_pos.y
 		
-		up_direction = Basis.from_euler(rot_temp).y
 		velocity = Basis.from_euler(rot_temp) * target_velocity
 		
 		move_and_slide()
@@ -186,19 +186,6 @@ func _input(event: InputEvent) -> void:
 			elif new_pitch <= -1.5:
 				pivot.rotation = Vector3(0, pivot.rotation.y, 1.5)
 				view_pitch_set = -1
-	if Input.is_action_just_pressed("open_inv"):
-		if inv.visible:
-			inv.visible = false
-			in_control = true
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			mouse_captured = true
-			$Pivot/glock._set_control(true)
-		else:
-			inv.visible = true
-			in_control = false
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			mouse_captured = false
-			$Pivot/glock._set_control(false)
 		
 func recive_currency(_index, type: String):
 	if coin_sounds[type]:

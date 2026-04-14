@@ -18,8 +18,20 @@
 [ext_resource type="Texture2D" uid="uid://dfa0xcrr4cjr0" path="res://assets/textures/v_hl1_glock/v_hl1_glock_top.png" id="15_2c4y0"]
 [ext_resource type="AudioStream" uid="uid://btlcj7opvssw5" path="res://assets/sounds/tele.ogg" id="16_w4pj3"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="17_r1s2y"]
+[ext_resource type="AudioStream" uid="uid://drtprupubkrbs" path="res://assets/sounds/hl1/weapons/pl_gun3.wav" id="17_r3tw4"]
 [ext_resource type="Script" uid="uid://cris617752oit" path="res://GUI/inv.gd" id="18_22xyk"]
 [ext_resource type="Texture2D" uid="uid://dotvhc43bepmm" path="res://assets/sprites/shar_coin.png" id="18_f2e50"]
+[ext_resource type="TileSet" uid="uid://ddp8fcog0h7ly" path="res://GUI/WorldMapTiles.tres" id="18_gf0v6"]
+[ext_resource type="Script" uid="uid://dxt4rhv4nns4q" path="res://GUI/hud.gd" id="18_nmymu"]
+[ext_resource type="Script" uid="uid://dpumg6u6p8mhm" path="res://GUI/beads/fnaf_like.gd" id="23_w4pj3"]
+[ext_resource type="Texture2D" uid="uid://dgul2c2ipjnh7" path="res://assets/sprites/beads/fnaf_like/base.png" id="24_r1s2y"]
+[ext_resource type="Texture2D" uid="uid://bq7dax0qxaexg" path="res://assets/sprites/beads/fnaf_like/night_1.png" id="25_0anbp"]
+[ext_resource type="Texture2D" uid="uid://c3l2w2xenaf8o" path="res://assets/sprites/beads/fnaf_like/night_2.png" id="26_e3k5d"]
+[ext_resource type="Texture2D" uid="uid://dabryysch68np" path="res://assets/sprites/beads/fnaf_like/night_3.png" id="27_2v6jp"]
+[ext_resource type="Texture2D" uid="uid://bf3dbaru61cun" path="res://assets/sprites/beads/fnaf_like/night_4.png" id="28_dwbmn"]
+[ext_resource type="Texture2D" uid="uid://cc1cq6initxmd" path="res://assets/sprites/beads/fnaf_like/night_5.png" id="29_3or85"]
+[ext_resource type="Texture2D" uid="uid://dpjcnhy4ttlhw" path="res://assets/sprites/beads/fnaf_like/night_6.png" id="30_gxohq"]
+[ext_resource type="Texture2D" uid="uid://6ml4pt8lxs2o" path="res://assets/sprites/beads/fnaf_like/night_7.png" id="31_6hvlk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jhsr"]
 resource_name = "gclip.bmp"
@@ -407,6 +419,37 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf0v6"]
+bg_color = Color(0, 0, 0, 0.44705883)
+skew = Vector2(0.25, 0)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv2ms"]
+bg_color = Color(0.28535995, 0.87, 0.13920002, 1)
+skew = Vector2(0.25, 0)
+border_width_left = 2
+border_color = Color(0.11550004, 0.63, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id="Theme_g56qp"]
+ProgressBar/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 16
+ProgressBar/fonts/font = null
+ProgressBar/styles/background = SubResource("StyleBoxFlat_gf0v6")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_cv2ms")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_5anan"]
 size = Vector3(0.75, 1.8, 0.75)
 
@@ -592,55 +635,6 @@ outline_color = Color(0.12973334, 0.28, 0.08400001, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=1837370831]
 script = ExtResource("1_edtk3")
-
-[node name="Control" type="Control" parent="." unique_id=1266802537]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_f2e50")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=722110074]
-layout_mode = 0
-offset_left = -80.0
-offset_top = -130.0
-offset_right = 120.0
-offset_bottom = 170.0
-alignment = 1
-
-[node name="Respawn" type="Button" parent="Control/VBoxContainer" unique_id=1323298739]
-layout_mode = 2
-text = "Respawn"
-
-[node name="Continue" type="Button" parent="Control/VBoxContainer" unique_id=127470908]
-layout_mode = 2
-text = "Continue"
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/VBoxContainer" unique_id=1948239193]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/PanelContainer" unique_id=1033047848]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1991701913]
-layout_mode = 2
-size_flags_vertical = 0
-text = "Sensitivity"
-horizontal_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="Control/VBoxContainer/PanelContainer/VBoxContainer" unique_id=33597138]
-layout_mode = 2
-size_flags_vertical = 8
-min_value = 1.0
-value = 100.0
 
 [node name="Pivot" type="Node3D" parent="." unique_id=50831465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62031054, 0)
@@ -1052,6 +1046,106 @@ cull_mask = 524288
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6488433, 1.3726187, -1.4737365)
 layers = 524288
 
+[node name="GunSounds" type="AudioStreamPlayer3D" parent="Pivot/glock" unique_id=967592462]
+stream = ExtResource("17_r3tw4")
+volume_db = -10.0
+max_db = -5.0
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="HUD" type="Control" parent="." unique_id=1183936384]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("18_nmymu")
+
+[node name="HealthBar" type="ProgressBar" parent="HUD" unique_id=758588286]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.95
+anchor_right = 0.25
+anchor_bottom = 0.95
+offset_top = -27.0
+offset_right = 4.0
+grow_vertical = 0
+theme = SubResource("Theme_g56qp")
+value = 10.0
+show_percentage = false
+
+[node name="Control" type="Control" parent="HUD" unique_id=786115294]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="HUD/Control" unique_id=1336934328]
+scale = Vector2(0.25, 0.25)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAIAAAD//wAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAP//AAAAAAIAAAAAAAEAAAAAAAIAAAA=")
+tile_set = ExtResource("18_gf0v6")
+rendering_quadrant_size = 4
+collision_enabled = false
+
+[node name="Control" type="Control" parent="." unique_id=1266802537]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_f2e50")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=722110074]
+layout_mode = 0
+offset_left = -80.0
+offset_top = -130.0
+offset_right = 120.0
+offset_bottom = 170.0
+alignment = 1
+
+[node name="Respawn" type="Button" parent="Control/VBoxContainer" unique_id=1323298739]
+layout_mode = 2
+text = "Respawn"
+
+[node name="Continue" type="Button" parent="Control/VBoxContainer" unique_id=127470908]
+layout_mode = 2
+text = "Continue"
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/VBoxContainer" unique_id=1948239193]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/PanelContainer" unique_id=1033047848]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1991701913]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Sensitivity"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Control/VBoxContainer/PanelContainer/VBoxContainer" unique_id=33597138]
+layout_mode = 2
+size_flags_vertical = 8
+min_value = 1.0
+value = 100.0
+
 [node name="AudioTele" type="AudioStreamPlayer3D" parent="." unique_id=1907641354]
 stream = ExtResource("16_w4pj3")
 volume_db = -30.0
@@ -1081,70 +1175,70 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
-tab_0/title = "Currency"
+current_tab = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Inv/TabContainer" unique_id=2072009274]
+[node name="Currency" type="VBoxContainer" parent="Inv/TabContainer" unique_id=2072009274]
+visible = false
 layout_mode = 2
 alignment = 1
 metadata/_tab_index = 0
 metadata/_tab_name = "Currency"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Inv/TabContainer/VBoxContainer" unique_id=1432463978]
+[node name="SHaR_Coin" type="HBoxContainer" parent="Inv/TabContainer/Currency" unique_id=1432463978]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=1254410151]
+[node name="ColorRect" type="ColorRect" parent="Inv/TabContainer/Currency/SHaR_Coin" unique_id=1254410151]
 custom_minimum_size = Vector2(40, 10)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Panel" type="Panel" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=292782823]
+[node name="Panel" type="Panel" parent="Inv/TabContainer/Currency/SHaR_Coin" unique_id=292782823]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Inv/TabContainer/VBoxContainer/HBoxContainer/Panel" unique_id=468736139]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Inv/TabContainer/Currency/SHaR_Coin/Panel" unique_id=468736139]
 scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_envas")
-frame_progress = 0.695264
+frame_progress = 0.07429329
 centered = false
 offset = Vector2(4, 4)
 
-[node name="ColorRect3" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=1962288592]
+[node name="ColorRect3" type="ColorRect" parent="Inv/TabContainer/Currency/SHaR_Coin" unique_id=1962288592]
 custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Label" type="Label" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=212469890]
+[node name="Label" type="Label" parent="Inv/TabContainer/Currency/SHaR_Coin" unique_id=212469890]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "SHaR Coins"
 label_settings = SubResource("LabelSettings_pp8wu")
 
-[node name="Label2" type="Label" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=1704654048]
+[node name="Label2" type="Label" parent="Inv/TabContainer/Currency/SHaR_Coin" unique_id=1704654048]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "0"
 label_settings = SubResource("LabelSettings_pp8wu")
 horizontal_alignment = 2
 
-[node name="ColorRect2" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer" unique_id=1237016676]
+[node name="ColorRect2" type="ColorRect" parent="Inv/TabContainer/Currency/SHaR_Coin" unique_id=1237016676]
 custom_minimum_size = Vector2(40, 10)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Inv/TabContainer/VBoxContainer" unique_id=862064814]
+[node name="USD" type="HBoxContainer" parent="Inv/TabContainer/Currency" unique_id=862064814]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=925367676]
+[node name="ColorRect" type="ColorRect" parent="Inv/TabContainer/Currency/USD" unique_id=925367676]
 custom_minimum_size = Vector2(40, 10)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Panel" type="Panel" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=816480437]
+[node name="Panel" type="Panel" parent="Inv/TabContainer/Currency/USD" unique_id=816480437]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2/Panel" unique_id=2083281665]
+[node name="Label" type="Label" parent="Inv/TabContainer/Currency/USD/Panel" unique_id=2083281665]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1156,37 +1250,149 @@ label_settings = SubResource("LabelSettings_ipj2g")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=237433956]
+[node name="ColorRect2" type="ColorRect" parent="Inv/TabContainer/Currency/USD" unique_id=237433956]
 custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Label" type="Label" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=1163482360]
+[node name="Label" type="Label" parent="Inv/TabContainer/Currency/USD" unique_id=1163482360]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "Dollars"
 label_settings = SubResource("LabelSettings_pp8wu")
 
-[node name="Label2" type="Label" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=1154818871]
+[node name="Label2" type="Label" parent="Inv/TabContainer/Currency/USD" unique_id=1154818871]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "0"
 label_settings = SubResource("LabelSettings_pp8wu")
 horizontal_alignment = 2
 
-[node name="ColorRect3" type="ColorRect" parent="Inv/TabContainer/VBoxContainer/HBoxContainer2" unique_id=630856414]
+[node name="ColorRect3" type="ColorRect" parent="Inv/TabContainer/Currency/USD" unique_id=630856414]
 custom_minimum_size = Vector2(40, 10)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
+[node name="Beads" type="TabContainer" parent="Inv/TabContainer" unique_id=1788741967]
+layout_mode = 2
+current_tab = 0
+tab_0/hidden = true
+metadata/_tab_index = 1
+metadata/_tab_name = "Beads"
+
+[node name="FNaF Like" type="PanelContainer" parent="Inv/TabContainer/Beads" unique_id=1805252319]
+layout_mode = 2
+script = ExtResource("23_w4pj3")
+metadata/_tab_index = 0
+
+[node name="Control" type="Control" parent="Inv/TabContainer/Beads/FNaF Like" unique_id=1058305121]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Base" type="Sprite2D" parent="Inv/TabContainer/Beads/FNaF Like/Control" unique_id=106332531]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("24_r1s2y")
+
+[node name="night_1" type="Sprite2D" parent="Inv/TabContainer/Beads/FNaF Like/Control" unique_id=2127957034]
+visible = false
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("25_0anbp")
+
+[node name="night_2" type="Sprite2D" parent="Inv/TabContainer/Beads/FNaF Like/Control" unique_id=1743362788]
+visible = false
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("26_e3k5d")
+
+[node name="night_3" type="Sprite2D" parent="Inv/TabContainer/Beads/FNaF Like/Control" unique_id=772916797]
+visible = false
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("27_2v6jp")
+
+[node name="night_4" type="Sprite2D" parent="Inv/TabContainer/Beads/FNaF Like/Control" unique_id=545418296]
+visible = false
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("28_dwbmn")
+
+[node name="night_5" type="Sprite2D" parent="Inv/TabContainer/Beads/FNaF Like/Control" unique_id=1834823380]
+visible = false
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("29_3or85")
+
+[node name="night_6" type="Sprite2D" parent="Inv/TabContainer/Beads/FNaF Like/Control" unique_id=360004395]
+visible = false
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("30_gxohq")
+
+[node name="night_7" type="Sprite2D" parent="Inv/TabContainer/Beads/FNaF Like/Control" unique_id=892451260]
+visible = false
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("31_6hvlk")
+
+[node name="DEBUG" type="HBoxContainer" parent="Inv/TabContainer/Beads/FNaF Like" unique_id=1276337278]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="Inv/TabContainer/Beads/FNaF Like/DEBUG" unique_id=873925306]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.23333335, 1, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Inv/TabContainer/Beads/FNaF Like/DEBUG" unique_id=688070974]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.23333335, 1, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Inv/TabContainer/Beads/FNaF Like/DEBUG" unique_id=1807626671]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.23333335, 1, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Inv/TabContainer/Beads/FNaF Like/DEBUG" unique_id=955885588]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.23333335, 1, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Inv/TabContainer/Beads/FNaF Like/DEBUG" unique_id=1723184839]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.23333335, 1, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Inv/TabContainer/Beads/FNaF Like/DEBUG" unique_id=902465812]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.8919764, 0.861878, 1.92523e-06, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="Inv/TabContainer/Beads/FNaF Like/DEBUG" unique_id=1213086608]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(1, 0.23000002, 0.25566667, 1)
+
 [node name="Health" type="Node" parent="." unique_id=1039321172]
 script = ExtResource("17_r1s2y")
 
+[connection signal="animation_finished" from="Pivot/glock/AnimationPlayer" to="Pivot/glock" method="_idle_animation" unbinds=1]
 [connection signal="control" from="Control" to="Pivot/glock" method="_set_control"]
 [connection signal="pressed" from="Control/VBoxContainer/Respawn" to="Control" method="_gui_input_respawn"]
 [connection signal="pressed" from="Control/VBoxContainer/Continue" to="Control" method="_gui_input_continue"]
 [connection signal="value_changed" from="Control/VBoxContainer/PanelContainer/VBoxContainer/HSlider" to="." method="set_look_sensitivity"]
-[connection signal="animation_finished" from="Pivot/glock/AnimationPlayer" to="Pivot/glock" method="_idle_animation" unbinds=1]
+[connection signal="mouse_entered" from="Inv/TabContainer/Beads/FNaF Like/DEBUG/ColorRect" to="Inv/TabContainer/Beads/FNaF Like" method="_unlock" binds= [0]]
+[connection signal="mouse_entered" from="Inv/TabContainer/Beads/FNaF Like/DEBUG/ColorRect2" to="Inv/TabContainer/Beads/FNaF Like" method="_unlock" binds= [1]]
+[connection signal="mouse_entered" from="Inv/TabContainer/Beads/FNaF Like/DEBUG/ColorRect3" to="Inv/TabContainer/Beads/FNaF Like" method="_unlock" binds= [2]]
+[connection signal="mouse_entered" from="Inv/TabContainer/Beads/FNaF Like/DEBUG/ColorRect4" to="Inv/TabContainer/Beads/FNaF Like" method="_unlock" binds= [3]]
+[connection signal="mouse_entered" from="Inv/TabContainer/Beads/FNaF Like/DEBUG/ColorRect5" to="Inv/TabContainer/Beads/FNaF Like" method="_unlock" binds= [4]]
+[connection signal="mouse_entered" from="Inv/TabContainer/Beads/FNaF Like/DEBUG/ColorRect6" to="Inv/TabContainer/Beads/FNaF Like" method="_unlock" binds= [5]]
+[connection signal="mouse_entered" from="Inv/TabContainer/Beads/FNaF Like/DEBUG/ColorRect7" to="Inv/TabContainer/Beads/FNaF Like" method="_unlock" binds= [6]]
 [connection signal="dead" from="Health" to="." method="_kill"]
 [connection signal="dead" from="Health" to="Pivot/glock" method="_player_dead"]
 [connection signal="reset" from="Health" to="." method="_unkill"]

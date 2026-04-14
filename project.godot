@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Player="*uid://spg4pujovl52"
-GDAIMCPRuntime="*uid://dcne7ryelpxmn"
 WorldMap="res://GUI/WorldMap.tscn"
 
 [dotnet]

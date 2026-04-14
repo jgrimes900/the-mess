@@ -61,8 +61,13 @@ func _process(delta: float) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.get_node("Control")._2d_ify()
+	player.get_node("Pivot/glock/SVC").visible = false
+	player.get_node("HUD").visible = false
+	player.get_node("Pivot/glock")._set_control(false)
 	emit_signal("DoorLeft")
 	emit_signal("DoorRight")
+	get_node("/root").move_child($"..", 0)
+	player.get_node("Inv")._unlock_beads(0)
 
 
 func _on_left_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -81,7 +86,7 @@ func _on_left_light_input_event(viewport: Node, event: InputEvent, shape_idx: in
 	if Input.is_action_pressed("gui_left_click") && Cam_State == 0:
 		LightLeft.visible = true
 		if LightState == 2:
-			LightRight.visible = false
+			LightRight.visible = true
 			LightState = 1
 		elif LightState == 1:
 			LightState = 0
@@ -93,7 +98,7 @@ func _on_right_light_input_event(viewport: Node, event: InputEvent, shape_idx: i
 	if Input.is_action_pressed("gui_left_click") && Cam_State == 0:
 		LightRight.visible = true
 		if LightState == 1:
-			LightLeft.visible = false
+			LightLeft.visible = true
 			LightState = 2
 		elif LightState == 2:
 			LightState = 0

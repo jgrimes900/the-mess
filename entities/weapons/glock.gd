@@ -12,6 +12,7 @@ extends Node3D
 @onready var gun: RayCast3D = $Gun
 @onready var silencer: MeshInstance3D = $"SVC/SubViewport/v_9mmhandgun_qc_skeleton/Skeleton3D/glock_reference(silencer)"
 @onready var SVC: SubViewportContainer = $SVC
+@onready var Sounds: AudioStreamPlayer3D = $GunSounds
 
 var player_dead = false
 var in_control: bool = false
@@ -22,9 +23,10 @@ func _ready() -> void:
 
 # TODO: Add sound, ammo, silencer, missing animations, and make the player have to pick it up first
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("fire_left") and !player_dead and in_control:
-		gun._fire()
-		aniplay.play("v_9mmhandgun_animation_lib/shoot")
+	if Input.is_action_just_pressed("fire_left") and !player_dead and in_control:
+		if gun._fire():
+			Sounds.play()
+			aniplay.play("v_9mmhandgun_animation_lib/shoot")
 
 func _idle_animation():
 	aniplay.play("v_9mmhandgun_animation_lib/idle"+str(randi_range(1,3)))

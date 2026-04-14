@@ -572,7 +572,7 @@ self_modulate = Color(1, 1, 1, 0.23529412)
 material = SubResource("ShaderMaterial_2qh8p")
 scale = Vector2(0.9, 0.9000001)
 sprite_frames = SubResource("SpriteFrames_pcvmc")
-frame_progress = 0.5023232
+frame_progress = 0.16218352
 centered = false
 
 [node name="ColorRect" type="ColorRect" parent="Control/CamStatic" unique_id=1647393745]
@@ -845,7 +845,7 @@ centered = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/CamStatic" unique_id=597460970]
 position = Vector2(90, 91.1111)
 sprite_frames = SubResource("SpriteFrames_hbdp2")
-frame_progress = 0.33001304
+frame_progress = 0.9564256
 
 [node name="camFlip_open_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=1319707601]
 stream = ExtResource("21_vytrw")
