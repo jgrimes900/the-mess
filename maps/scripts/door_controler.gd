@@ -33,8 +33,12 @@ var time = 0
 
 var night = 1
 
+# 0: GMan		(Freddy)
+# 1: Barney		(Bonnie)
+# 2: Scientist	(Chica)
+# 3: Grunt		(Foxy)
 var ais = [
-	[0,0,0,0],
+	[0,0,20,0],
 	[0,3,2,2],
 	[0,5,5,5],
 	[2,7,6,8],
@@ -84,7 +88,7 @@ func _ready() -> void:
 	player.get_node("Pivot/glock")._set_control(false)
 	emit_signal("DoorLeft")
 	emit_signal("DoorRight")
-	get_node("/root").move_child($"..", 0)
+#	get_node("/root").move_child($"..", 0)
 	player.get_node("Inv")._unlock_beads(0)
 	player.get_node("panel_fuck").visible = false
 	player.get_node("Control").retrun_code = _return_a
@@ -105,9 +109,11 @@ func _reset():
 		get_node("/root/Player/Control").open = true
 		get_node("/root/Player/Control")._gui_input_return()
 	else:
-		$"../Barney".posi = 0
-		$"../Barney".ai = ais[night-1][1]
-		$"../Barney"._ready()
+		init_char($"../Gman", 0)
+		init_char($"../Barney", 1)
+		init_char($"../Scientist", 2)
+		init_char($"../Grunt", 3)
+		
 		if DoorLeft_state == 0:
 			emit_signal("DoorLeft")
 		if DoorRight_state == 0:
@@ -116,6 +122,11 @@ func _reset():
 		$"../Control/ambiance_2".play()
 		$"../Control/HUD/Time".text = "12 A.M."
 		$"../Hour".start()
+
+func init_char(char, id):
+	char.posi = 0
+	char.ai = ais[night-1][id]
+	char._ready()
 
 func _return_a():
 	print("squid")
@@ -250,6 +261,10 @@ func _on_hour_timeout() -> void:
 		$"../Barney".ai += 1
 	elif time == 3:
 		$"../Barney".ai += 1
+		$"../Scientist".ai += 1
+		$"../Grunt".ai += 1
 	elif time == 4:
 		$"../Barney".ai += 1
+		$"../Scientist".ai += 1
+		$"../Grunt".ai += 1
 	$"../Control/HUD/Time".text = str(time)+" A.M. "
