@@ -36,6 +36,7 @@ func _ready() -> void:
 	$Control2/TurnRight3.connect("mouse_exited", _right_exit)
 	$CamStatic.play()
 	$CamStatic/AnimatedSprite2D.play()
+	$DeathStatic.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -58,6 +59,7 @@ func _process(delta: float) -> void:
 	
 	$CamFlip.scale = cam_def*(self.size/Vector2(def_x, def_y))
 	$CamStatic.scale = cam_static_def*(self.size/Vector2(def_x, def_y))
+	$DeathStatic.scale = cam_static_def*(self.size/Vector2(def_x, def_y))
 	
 	office.position.x += move*(self.size.x/speed_mod)
 	if office.position.x > 0:

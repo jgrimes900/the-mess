@@ -2,11 +2,13 @@ extends Node3D
 
 @export var is_offset: bool = false
 @export var offset: Vector3 = Vector3.ZERO
+@export var main: bool = true
 
 signal on_spawn()
 
 func _ready() -> void:
-	spawn()
+	if main:
+		spawn()
 
 func spawn():
 	if is_offset:

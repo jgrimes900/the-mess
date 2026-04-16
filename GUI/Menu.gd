@@ -4,6 +4,8 @@ var open = true
 var mode_2d = false
 signal control(a: bool)
 
+var retrun_code: Callable
+
 @onready var player = get_node("/root/Player") as Player;
 
 
@@ -18,6 +20,10 @@ func _input(event: InputEvent) -> void:
 		visible = true
 		open = true
 		emit_signal("control", false)
+		if get_node_or_null("/root/Node3D/ExitWarp"):
+			$VBoxContainer/Return.visible = true
+		else:
+			$VBoxContainer/Return.visible = false
 	if Input.is_action_just_pressed("open_inv"):
 		if get_node("/root/Player").inv.visible:
 			get_node("/root/Player").inv.visible = false
@@ -39,7 +45,24 @@ func _gui_input_respawn():
 		get_node("/root/Player/Health").reset_health()
 		get_node("/root/Player/Health").iframes = 5
 		_gui_input_continue()
-		
+
+var call_return_a = Callable(return_a);
+var map_from = ""
+
+func _gui_input_return():
+	if open:
+		OnLoad.connect("level_loaded", call_return_a)
+		retrun_code.call()
+		map_from = get_node("/root/Player").current_map
+		get_node("/root/Node3D/ExitWarp").MapChange.call_deferred()
+		_gui_input_continue()
+
+func return_a():
+	get_node("/root/Node3D/Spawn_"+map_from).Respawn.call_deferred()
+	OnLoad.disconnect("level_loaded", call_return_a)
+			
+
+
 func _gui_input_continue():
 	if open:
 		if !mode_2d:

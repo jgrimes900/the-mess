@@ -58,11 +58,14 @@ func rotate_ply(rotation_a: Vector3):
 	rotation_degrees = rotation_a + rotation_mod
 
 func _kill():
+	if !dead:
+		$ani_fuck.play("fuck")
 	dead = true
 	rotate_ply(death_rotation)
 func _unkill():
 	dead = false
 	rotate_ply(alive_rotation)
+	$ani_fuck.play("RESET")
 
 func _physics_process(delta: float) -> void:
 	get_node("Health").iframes -= 1

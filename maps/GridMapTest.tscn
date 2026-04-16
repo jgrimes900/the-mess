@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bnijdfm8dpeuu"]
 
+[ext_resource type="Script" uid="uid://y5l84q5odctl" path="res://entities/map.gd" id="1_lumrj"]
 [ext_resource type="MeshLibrary" uid="uid://doqsed0qkm4q6" path="res://assets/GridMapTest_Tiles.res" id="1_mj7vu"]
 [ext_resource type="Script" uid="uid://fb88cl62hy1j" path="res://maps/scripts/GridMapTest_Controler.gd" id="2_dbiju"]
 [ext_resource type="Script" uid="uid://psu6r5aime4d" path="res://entities/AreaHurt3D.gd" id="3_s6tu6"]
@@ -38,6 +39,7 @@ material = SubResource("StandardMaterial3D_t883d")
 size = Vector2(2, 2)
 
 [node name="Node3D" type="Node3D" unique_id=1193290923]
+script = ExtResource("1_lumrj")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=662195545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
@@ -88,6 +90,11 @@ mesh = SubResource("BoxMesh_fl54b")
 [node name="Spawn" type="Node3D" parent="." unique_id=1509810602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.993747, 0, 6.584504)
 script = ExtResource("4_lumrj")
+
+[node name="Spawn_FNaF_Like" type="Node3D" parent="." unique_id=416750081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -7)
+script = ExtResource("4_lumrj")
+main = false
 
 [node name="Exit Teleport Trigger" type="Area3D" parent="." unique_id=249695176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.219816, -0.9912679, -10.405805)

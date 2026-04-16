@@ -4,12 +4,15 @@
 [ext_resource type="Script" uid="uid://dll73x1nfi3gr" path="res://maps/fnaf like/control.gd" id="2_00ggd"]
 [ext_resource type="Shader" uid="uid://kdataqgjbvo7" path="res://shaders/clickteam_perspective.gdshader" id="2_c7deq"]
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="2_e6eqk"]
+[ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="3_hbdp2"]
+[ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="4_2qh8p"]
 [ext_resource type="Texture2D" uid="uid://cotm4ug7wd84k" path="res://assets/textures/hl1_c1a0/c1a0_texture_71.png" id="5_dh13w"]
 [ext_resource type="AudioStream" uid="uid://bj1jdfbsucegp" path="res://assets/sounds/fnaf1/BallastHumMedium2.wav" id="5_xmy25"]
 [ext_resource type="AudioStream" uid="uid://bse608jo4yv6a" path="res://assets/sounds/fnaf1/Buzz_Fan_Florescent2.wav" id="6_6xc40"]
 [ext_resource type="Texture2D" uid="uid://dsvuyuvis6224" path="res://assets/textures/hl1_c1a0/c1a0_texture_4.png" id="6_h5ams"]
 [ext_resource type="AudioStream" uid="uid://bcy45kwldvui7" path="res://assets/sounds/fnaf1/Door.wav" id="6_p1kp7"]
 [ext_resource type="AudioStream" uid="uid://cvtivc4mas0k0" path="res://assets/sounds/fnaf1/ColdPresc B.wav" id="7_6xc40"]
+[ext_resource type="AudioStream" uid="uid://n8vsutiurfqc" path="res://assets/sounds/hl1/buttons/button11.wav" id="7_7kj5v"]
 [ext_resource type="PackedScene" uid="uid://c22wldk8v3xb2" path="res://prefabs/door_gridmap.tscn" id="7_t883d"]
 [ext_resource type="Script" uid="uid://b3cbkhmp5jpsn" path="res://maps/scripts/door_controler.gd" id="8_h5ams"]
 [ext_resource type="Texture2D" uid="uid://c4r6mna26f23k" path="res://assets/sprites/fnaf/cam/0001.png" id="9_0t5t8"]
@@ -36,9 +39,18 @@
 [ext_resource type="Texture2D" uid="uid://qchj3m640yai" path="res://assets/sprites/fnaf/static/3.png" id="23_42ne2"]
 [ext_resource type="Texture2D" uid="uid://1pvl11i065fr" path="res://assets/sprites/fnaf/static/4.png" id="24_u0057"]
 [ext_resource type="Texture2D" uid="uid://c5yrbkl58mm8n" path="res://assets/sprites/fnaf/static/5.png" id="25_1ioi7"]
+[ext_resource type="Texture2D" uid="uid://dypcvdkllms7o" path="res://assets/sprites/fnaf/static/black.png" id="25_62qni"]
 [ext_resource type="Texture2D" uid="uid://cq4kjoy46yj45" path="res://assets/sprites/fnaf/cam_border.png" id="27_u0057"]
 [ext_resource type="Texture2D" uid="uid://ba52f430qjaqb" path="res://assets/sprites/fnaf/cam_dot.png" id="28_1ioi7"]
 [ext_resource type="AudioStream" uid="uid://cdqlwdnv7j21x" path="res://assets/sounds/fnaf1/blip3.wav" id="29_nlvlt"]
+[ext_resource type="Script" uid="uid://d01r5sm4ydf7o" path="res://maps/scripts/death_static.gd" id="36_mbdr4"]
+[ext_resource type="AudioStream" uid="uid://blwnpuxbnigbc" path="res://assets/sounds/fnaf1/static.wav" id="37_dbmyc"]
+[ext_resource type="Script" uid="uid://cwk3u3mt5nadq" path="res://maps/scripts/control_2.gd" id="39_mbdr4"]
+[ext_resource type="AudioStream" uid="uid://bqd0tgytjcjmi" path="res://assets/sounds/fnaf1/chimes 2.wav" id="40_dbmyc"]
+[ext_resource type="PackedScene" uid="uid://htbr6ob6akas" path="res://assets/models/hl1/barney.fbx" id="42_2qh8p"]
+[ext_resource type="Script" uid="uid://bgxucfyqojq7d" path="res://maps/scripts/barney.gd" id="42_pcvmc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pcvmc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x02sa"]
 size = Vector2(133, 107)
@@ -155,6 +167,14 @@ shader = ExtResource("21_nlvlt")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pcvmc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_62qni")
+}],
+"loop": true,
+"name": &"blackness",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("21_f62u3")
@@ -284,6 +304,14 @@ _data = {
 &"fade_in": SubResource("Animation_21b6a")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_62qni"]
+font_size = 46
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dbmyc"]
+font_size = 64
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmy25"]
 albedo_texture = ExtResource("5_dh13w")
 
@@ -327,7 +355,7 @@ albedo_texture = ExtResource("13_g52et")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gm3eh"]
 albedo_texture = ExtResource("14_p1kp7")
 
-[node name="FNaFLike" type="Node3D" unique_id=404573582]
+[node name="Node3D" type="Node3D" unique_id=404573582]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=820282187]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, -2)
@@ -336,6 +364,20 @@ data = {
 "cells": PackedInt32Array(65535, 0, 1, 65535, 1, 1, 0, 1, 1, 0, 65535, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 65534, 0, 1, 65534, 1, 1, 131070, 0, 196609, 65537, 0, 196609, 131070, 65535, 196609, 131071, 65535, 196609, 65536, 65535, 196609, 65537, 65535, 196609, 65537, 2, 196609, 131070, 2, 196609, 131070, 3, 196609, 131071, 4, 196609, 65536, 4, 196609, 65537, 3, 196609, 131069, 3, 196609, 131068, 3, 196609, 131068, 2, 196609, 131068, 1, 196609, 131068, 0, 196609, 65538, 3, 196609, 65539, 3, 196609, 65539, 2, 196609, 65539, 1, 196609, 65539, 0, 196609, 65539, 65535, 196609, 131067, 0, 196609, 131067, 65534, 196609, 131066, 0, 196609, 131065, 0, 196609, 131065, 65535, 196609, 131065, 65534, 196609, 131066, 65534, 196609, 131068, 65534, 196609, 131068, 65535, 0, 0, 2, 1, 65535, 2, 1, 0, 3, 1, 65535, 3, 1, 65533, 2, 1, 65533, 1, 1, 65533, 0, 1, 65533, 65535, 1, 65532, 65535, 1, 65531, 65535, 1, 65530, 0, 1, 65530, 65535, 1, 2, 2, 1, 2, 1, 1, 2, 0, 1, 2, 65535, 1, 65533, 65534, 1, 65535, 65534, 1, 65534, 65534, 1, 0, 65534, 1, 1, 65534, 1, 2, 65534, 1, 65533, 65533, 1, 65534, 65533, 1, 65535, 65533, 1, 1, 65533, 1, 0, 65533, 1, 2, 65533, 1, 2, 65531, 1, 2, 65532, 1, 1, 65532, 1, 0, 65532, 1, 65535, 65532, 1, 65534, 65532, 1, 65533, 65532, 1, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 1, 0, 65531, 1, 1, 65531, 1, 2, 65530, 1, 1, 65530, 1, 0, 65530, 1, 65535, 65530, 1, 65534, 65530, 1, 65533, 65530, 1, 65533, 65529, 1, 65534, 65529, 1, 65534, 65528, 1, 65535, 65528, 1, 0, 65528, 1, 1, 65528, 1, 1, 65529, 1, 2, 65529, 1, 3, 65529, 1, 0, 65529, 1, 65535, 65529, 1, 65533, 65528, 1, 65535, 65527, 1, 0, 65527, 1, 2, 65528, 1, 2, 65527, 1, 1, 65527, 1, 65534, 65527, 1, 65533, 65527, 1, 65533, 65526, 1, 65534, 65526, 1, 65535, 65526, 1, 0, 65526, 1, 1, 65526, 1, 2, 65526, 1, 65534, 65525, 1, 65535, 65525, 1, 0, 65525, 1, 1, 65525, 1, 65534, 65524, 1, 65535, 65524, 1, 0, 65524, 1, 1, 65524, 1, 65532, 65529, 1, 65531, 65529, 1, 65531, 65528, 1, 65531, 65527, 1, 65530, 65527, 1, 65529, 65527, 1, 65529, 65528, 1, 65530, 65528, 1, 65530, 65529, 1, 65529, 65529, 1, 65531, 65530, 1, 65530, 65530, 1, 65529, 65530, 1, 4, 65528, 1, 4, 65529, 1, 4, 65530, 1, 4, 65531, 1, 4, 65532, 1, 5, 65528, 1, 4, 65527, 1, 6, 65527, 1, 6, 65528, 1, 6, 65529, 1, 7, 65529, 1, 8, 65529, 1, 8, 65528, 1, 8, 65527, 1, 7, 65527, 1, 7, 65528, 1, 5, 65532, 1, 6, 65531, 1, 6, 65532, 1, 7, 65532, 1, 7, 65533, 1, 6, 65533, 1, 8, 65533, 1, 8, 65532, 1, 7, 65531, 1, 8, 65531, 1, 4, 65533, 1, 65541, 65528, 0, 65541, 65532, 0, 131068, 65529, 0, 131068, 65533, 196609, 131068, 65532, 196609, 131068, 65531, 196609, 131068, 65530, 196609, 131068, 65528, 196609, 131068, 65527, 196609, 131068, 65526, 196609, 131068, 65525, 196609, 131069, 65525, 196609, 131069, 65524, 196609, 131069, 65523, 196609, 131070, 65523, 196609, 131071, 65523, 196609, 65536, 65523, 196609, 65537, 65523, 196609, 65538, 65523, 196609, 65538, 65524, 196609, 65538, 65525, 196609, 65539, 65525, 196609, 65539, 65526, 196609, 65539, 65527, 196609, 65540, 65526, 196609, 65541, 65527, 196609, 65541, 65529, 196609, 65541, 65530, 196609, 65541, 65531, 196609, 65539, 65530, 196609, 65539, 65531, 196609, 65539, 65532, 196609, 65539, 65533, 196609, 65541, 65533, 196609, 65542, 65534, 196609, 65543, 65534, 196609, 65544, 65534, 196609, 65545, 65533, 196609, 65545, 65532, 196609, 65545, 65531, 196609, 65544, 65530, 196609, 65543, 65530, 196609, 65542, 65530, 196609, 65545, 65529, 196609, 65545, 65528, 196609, 65545, 65527, 196609, 65544, 65526, 196609, 65543, 65526, 196609, 65542, 65526, 196609, 131067, 65531, 196609, 131066, 65531, 196609, 131065, 65531, 196609, 131064, 65530, 196609, 131064, 65529, 196609, 131064, 65528, 196609, 131064, 65527, 196609, 131065, 65526, 196609, 131066, 65526, 196609, 131067, 65526, 196609, 65540, 65533, 196609, 65545, 65534, 196609, 65545, 65535, 196609, 65545, 0, 196609, 65545, 1, 196609, 65545, 2, 196609, 65545, 3, 196609, 65544, 3, 196609, 65543, 3, 196609, 65542, 3, 196609, 65541, 3, 196609, 65540, 3, 196609, 65539, 65534, 0, 3, 65534, 1, 4, 65534, 1, 4, 65535, 1, 5, 65535, 1, 6, 65535, 1, 5, 65534, 1, 6, 0, 1, 7, 0, 1, 7, 65535, 1, 8, 65535, 1, 8, 0, 1, 9, 0, 1, 9, 1, 1, 8, 1, 1, 8, 2, 1, 9, 2, 1, 8, 3, 1, 7, 3, 1, 7, 2, 1, 6, 2, 1, 7, 1, 1, 5, 2, 1, 6, 1, 1, 5, 1, 1, 5, 0, 1, 4, 0, 1, 4, 1, 1, 4, 2, 1, 4, 3, 1, 3, 65528, 1, 196600, 65527, 196609, 196600, 65528, 196609, 196600, 65529, 196609, 196600, 65530, 196609, 196601, 65526, 196609, 196601, 65531, 196609, 196601, 65534, 196609, 196601, 65535, 196609, 196601, 0, 196609, 196602, 65526, 196609, 196602, 65531, 196609, 196602, 65534, 196609, 196602, 0, 196609, 196603, 65526, 196609, 196603, 65531, 196609, 196603, 65534, 196609, 196603, 0, 196609, 196604, 65525, 196609, 196604, 65526, 196609, 196604, 65527, 196609, 196604, 65528, 196609, 196604, 65530, 196609, 196604, 65531, 196609, 196604, 65532, 196609, 196604, 65533, 196609, 196604, 65534, 196609, 196604, 0, 196609, 196604, 1, 196609, 196604, 2, 196609, 196604, 3, 196609, 196605, 65523, 196609, 196605, 65524, 196609, 196605, 65525, 196609, 196605, 3, 196609, 196606, 65523, 196609, 196606, 65535, 196609, 196606, 0, 196609, 196606, 2, 196609, 196606, 3, 196609, 196607, 65523, 196609, 196607, 65535, 196609, 196607, 4, 196609, 131072, 65523, 196609, 131072, 65535, 196609, 131072, 4, 196609, 131073, 65523, 196609, 131073, 65535, 196609, 131073, 0, 196609, 131073, 2, 196609, 131073, 3, 196609, 131074, 65523, 196609, 131074, 65524, 196609, 131074, 65525, 196609, 131074, 3, 196609, 131075, 65525, 196609, 131075, 65526, 196609, 131075, 65527, 196609, 131075, 65530, 196609, 131075, 65531, 196609, 131075, 65532, 196609, 131075, 65533, 196609, 131075, 65535, 196609, 131075, 0, 196609, 131075, 1, 196609, 131075, 2, 196609, 131075, 3, 196609, 131076, 65526, 196609, 131076, 65533, 196609, 131076, 3, 196609, 131077, 65527, 196609, 131077, 65529, 196609, 131077, 65530, 196609, 131077, 65531, 196609, 131077, 65533, 196609, 131077, 3, 196609, 131078, 65526, 196609, 131078, 65530, 196609, 131078, 65534, 196609, 131078, 3, 196609, 131079, 65526, 196609, 131079, 65530, 196609, 131079, 65534, 196609, 131079, 3, 196609, 131080, 65526, 196609, 131080, 65530, 196609, 131080, 65534, 196609, 131080, 3, 196609, 131081, 65527, 196609, 131081, 65528, 196609, 131081, 65529, 196609, 131081, 65531, 196609, 131081, 65532, 196609, 131081, 65533, 196609, 131081, 65534, 196609, 131081, 65535, 196609, 131081, 0, 196609, 131081, 1, 196609, 131081, 2, 196609, 131081, 3, 196609, 196604, 65529, 196609, 196604, 65535, 196609, 196606, 1, 196609, 131073, 1, 196609, 131075, 65534, 196609, 131077, 65532, 196609, 131077, 65528, 196609)
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="ExitWarp" type="Area3D" parent="." unique_id=761259311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.219816, -0.9912679, 10.821481)
+script = ExtResource("3_hbdp2")
+LevelDef = "GridMapTest"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitWarp" unique_id=2089642148]
+shape = SubResource("BoxShape3D_pcvmc")
+
+[node name="Sprite3D" type="Sprite3D" parent="ExitWarp" unique_id=1054413791]
+pixel_size = 0.02
+billboard = 1
+alpha_scissor_threshold = 0.484
+texture = ExtResource("4_2qh8p")
 
 [node name="Spawn" type="Node3D" parent="." unique_id=1081816024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 0)
@@ -536,6 +578,12 @@ priority = 3
 position = Vector2(59.5, 1)
 shape = SubResource("RectangleShape2D_dh13w")
 
+[node name="locked_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=1060508442]
+stream = ExtResource("7_7kj5v")
+max_distance = 4096.0
+max_polyphony = 4
+panning_strength = 0.0
+
 [node name="light_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=888821857]
 stream = ExtResource("5_xmy25")
 max_distance = 4096.0
@@ -560,6 +608,135 @@ autoplay = true
 max_distance = 4096.0
 panning_strength = 0.0
 
+[node name="JumpScare" type="Control" parent="Control" unique_id=1584023325]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="barney" type="Control" parent="Control/JumpScare" unique_id=1475816209]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/JumpScare/barney" unique_id=1218596331]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.1075, 0.43, 1)
+
+[node name="Label" type="Label" parent="Control/JumpScare/barney" unique_id=942797604]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BARNEY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sci" type="Control" parent="Control/JumpScare" unique_id=1576277779]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/JumpScare/sci" unique_id=956074480]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25, 0.25, 0.25, 1)
+
+[node name="Label" type="Label" parent="Control/JumpScare/sci" unique_id=1964111193]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SCIENTIST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gman" type="Control" parent="Control/JumpScare" unique_id=255543122]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/JumpScare/gman" unique_id=961383948]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39069945, 0.18924868, 0, 1)
+
+[node name="Label" type="Label" parent="Control/JumpScare/gman" unique_id=85383069]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GMAN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="grunt" type="Control" parent="Control/JumpScare" unique_id=1209071984]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/JumpScare/grunt" unique_id=1777851312]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2275, 0.39, 0, 1)
+
+[node name="Label" type="Label" parent="Control/JumpScare/grunt" unique_id=1674368699]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GRUNT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TEMP_Timer" type="Timer" parent="Control/JumpScare" unique_id=354746101]
+wait_time = 5.0
+one_shot = true
+
 [node name="CamFlip" type="AnimatedSprite2D" parent="Control" unique_id=1450589449]
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_u0057")
@@ -572,7 +749,7 @@ self_modulate = Color(1, 1, 1, 0.23529412)
 material = SubResource("ShaderMaterial_2qh8p")
 scale = Vector2(0.9, 0.9000001)
 sprite_frames = SubResource("SpriteFrames_pcvmc")
-frame_progress = 0.16218352
+frame_progress = 0.06376851
 centered = false
 
 [node name="ColorRect" type="ColorRect" parent="Control/CamStatic" unique_id=1647393745]
@@ -845,7 +1022,7 @@ centered = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/CamStatic" unique_id=597460970]
 position = Vector2(90, 91.1111)
 sprite_frames = SubResource("SpriteFrames_hbdp2")
-frame_progress = 0.9564256
+frame_progress = 0.55258924
 
 [node name="camFlip_open_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=1319707601]
 stream = ExtResource("21_vytrw")
@@ -878,7 +1055,23 @@ grow_vertical = 0
 position = Vector2(0, -37.5)
 shape = SubResource("RectangleShape2D_0m5ra")
 
+[node name="DeathStatic" type="AnimatedSprite2D" parent="Control" unique_id=1648986985]
+visible = false
+scale = Vector2(0.9, 0.9000001)
+sprite_frames = SubResource("SpriteFrames_pcvmc")
+centered = false
+script = ExtResource("36_mbdr4")
+
+[node name="Timer" type="Timer" parent="Control/DeathStatic" unique_id=1831405137]
+wait_time = 2.0
+
+[node name="death_sound" type="AudioStreamPlayer2D" parent="Control" unique_id=1503637255]
+stream = ExtResource("37_dbmyc")
+max_distance = 4096.0
+panning_strength = 0.0
+
 [node name="FadeIn" type="ColorRect" parent="Control" unique_id=905392275]
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -890,6 +1083,174 @@ color = Color(0, 0, 0, 1)
 [node name="FadeInAni" type="AnimationPlayer" parent="Control" unique_id=2079348458]
 libraries/ = SubResource("AnimationLibrary_0m5ra")
 script = ExtResource("23_21b6a")
+
+[node name="HUD" type="Control" parent="Control" unique_id=670882517]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -223.0
+offset_bottom = 95.0
+grow_horizontal = 0
+
+[node name="Time" type="Label" parent="Control/HUD" unique_id=505223006]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "12 A.M. "
+label_settings = SubResource("LabelSettings_62qni")
+
+[node name="Control2" type="Control" parent="." unique_id=344898938]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("39_mbdr4")
+
+[node name="ColorRect" type="ColorRect" parent="Control2" unique_id=1143327597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="a" type="Control" parent="Control2" unique_id=83852012]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="b" type="Control" parent="Control2/a" unique_id=1871467512]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control2/a/b" unique_id=2114961830]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -44.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5
+6"
+label_settings = SubResource("LabelSettings_dbmyc")
+
+[node name="ColorRect3" type="ColorRect" parent="Control2/a/b" unique_id=1677737116]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = 30.0
+offset_right = -3.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control2/a/b" unique_id=2076332367]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -121.0
+offset_right = -2.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="Control2/a" unique_id=1499978433]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -44.0
+offset_right = 136.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A.M."
+label_settings = SubResource("LabelSettings_dbmyc")
+
+[node name="b" type="Control" parent="Control2" unique_id=397421108]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control2/b" unique_id=1277965990]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -44.0
+offset_right = 111.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Night 2"
+label_settings = SubResource("LabelSettings_dbmyc")
+
+[node name="Timer" type="Timer" parent="Control2" unique_id=1326574669]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="Control2" unique_id=1680978972]
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="Control2" unique_id=514671748]
+wait_time = 4.0
+one_shot = true
+
+[node name="chimes" type="AudioStreamPlayer2D" parent="Control2" unique_id=518272090]
+stream = ExtResource("40_dbmyc")
+max_distance = 4096.0
+max_polyphony = 4
+panning_strength = 0.0
 
 [node name="LeftButtons" type="Node3D" parent="." unique_id=1022301468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9874398, -1.0302126, 2.213819)
@@ -984,61 +1345,74 @@ light_size = 0.1
 shadow_enabled = true
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1661815364]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.690743, 0.48273075, -18.330381)
-light_color = Color(1, 0.98, 0.92, 1)
-light_energy = 0.5
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.690743, 0.48273075, -18.124132)
+light_color = Color(0.70980394, 0.73333335, 0.76862746, 1)
+light_energy = 0.25
+light_size = 0.1
+shadow_enabled = true
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=946403818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.690743, -0.6754161, -14.533589)
+light_color = Color(0.39560002, 0.40936, 0.43, 1)
+light_energy = 0.25
+light_size = 0.1
+shadow_enabled = true
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="." unique_id=1589676284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.690743, -0.6754161, -11.7038145)
+light_color = Color(0.24840002, 0.25704, 0.27, 1)
+light_energy = 0.25
 light_size = 0.1
 shadow_enabled = true
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=1240490396]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.09608483, 0.48273075, -21.966883)
-light_color = Color(1, 0.98, 0.92, 1)
-light_energy = 0.5
-light_size = 0.1
-shadow_enabled = true
-omni_range = 8.0
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1333591561]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09608483, 0.48273075, -14.171902)
-light_color = Color(1, 0.98, 0.92, 1)
-light_energy = 0.5
+light_color = Color(0.70980394, 0.73333335, 0.76862746, 1)
+light_energy = 0.25
 light_size = 0.1
 shadow_enabled = true
 omni_range = 8.0
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=328090281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09608483, 0.48273075, -7.008061)
-light_color = Color(1, 0.98, 0.92, 1)
-light_energy = 0.5
+light_color = Color(0.7084, 0.7320133, 0.77, 1)
+light_energy = 0.25
 light_size = 0.1
 shadow_enabled = true
 omni_range = 8.0
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="." unique_id=1318679169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.837942, 0.48273075, -16.079578)
-light_color = Color(1, 0.98, 0.92, 1)
-light_energy = 0.5
+light_color = Color(0.70980394, 0.73333335, 0.76862746, 1)
+light_energy = 0.25
 light_size = 0.1
 shadow_enabled = true
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1322333458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8764596, 0.48273075, 0.5694494)
-light_color = Color(1, 0.98, 0.92, 1)
-light_energy = 0.5
+light_color = Color(0.70980394, 0.73333335, 0.76862746, 1)
+light_energy = 0.25
 light_size = 0.1
 shadow_enabled = true
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D2" unique_id=1552803407]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8578944, 0.48273075, -3.566104)
-light_color = Color(1, 0.98, 0.92, 1)
-light_energy = 0.25
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5163636, 0.48273075, -3.566104)
+light_color = Color(0.70980394, 0.73333335, 0.76862746, 1)
+light_energy = 0.08
+light_size = 0.1
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="OmniLight3D2" unique_id=459336737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2302413, 0.48273075, -3.566104)
+light_color = Color(0.70980394, 0.73333335, 0.76862746, 1)
+light_energy = 0.04
 light_size = 0.1
 shadow_enabled = true
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=37964885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.876, 0.483, 0.569)
-light_color = Color(1, 0.98, 0.92, 1)
-light_energy = 0.5
+light_color = Color(0.70980394, 0.73333335, 0.76862746, 1)
+light_energy = 0.25
 light_size = 0.1
 shadow_enabled = true
 
@@ -1104,6 +1478,99 @@ mesh = SubResource("QuadMesh_t883d")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.29999995, 0, 0)
 mesh = SubResource("QuadMesh_t883d")
 
+[node name="LeftHallBlock" type="Node3D" parent="." unique_id=73459423]
+transform = Transform3D(-8.742278e-08, 0, -1, 0, 2, 0, 2, 0, -4.371139e-08, -5, 0, -3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftHallBlock" unique_id=587930575]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="LeftHallBlock" unique_id=1472475641]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.049999952, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="LeftHallBlock" unique_id=622745020]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.10000014, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="LeftHallBlock" unique_id=951668334]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.1500001, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="LeftHallBlock" unique_id=483886913]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.20000005, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="LeftHallBlock" unique_id=191934155]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.25, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="LeftHallBlock" unique_id=1073576859]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.29999995, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="RightHallBlock" type="Node3D" parent="." unique_id=1418334041]
+transform = Transform3D(-8.742278e-08, 0, -1, 0, 2, 0, 2, 0, -4.371139e-08, 5, 0, -3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightHallBlock" unique_id=346910831]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RightHallBlock" unique_id=680384164]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.049999952, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="RightHallBlock" unique_id=1505271351]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.10000014, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="RightHallBlock" unique_id=1168641407]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.1500001, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="RightHallBlock" unique_id=1079697391]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.20000005, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="RightHallBlock" unique_id=1229967999]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.25, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="RightHallBlock" unique_id=149926305]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.29999995, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="RightHallBlock2" type="Node3D" parent="." unique_id=882165062]
+transform = Transform3D(-2.1855695e-07, 0, -6, 0, 2, 0, 5, 0, -2.6226832e-07, 0, 0, -13.283872)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightHallBlock2" unique_id=1642875515]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RightHallBlock2" unique_id=409375402]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.049999952, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="RightHallBlock2" unique_id=147466846]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.10000014, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="RightHallBlock2" unique_id=503494649]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.1500001, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="RightHallBlock2" unique_id=134155624]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.20000005, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="RightHallBlock2" unique_id=140228183]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.25, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="RightHallBlock2" unique_id=1691171053]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.29999995, 0, 0)
+mesh = SubResource("QuadMesh_t883d")
+
 [node name="Table" type="CSGCombiner3D" parent="." unique_id=579832762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.344964, -1)
 material_override = SubResource("StandardMaterial3D_b2wjk")
@@ -1129,11 +1596,303 @@ size = Vector3(0.2, 1, 0.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, -0.6)
 size = Vector3(0.2, 1, 0.2)
 
+[node name="Table2" type="CSGCombiner3D" parent="." unique_id=1355357016]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.409153, -2.344964, -11.836353)
+material_override = SubResource("StandardMaterial3D_b2wjk")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table2" unique_id=625502009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_gm3eh")
+size = Vector3(3, 0.15, 1.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Table2" unique_id=259545071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Table2" unique_id=1675095131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Table2" unique_id=1545969417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Table2" unique_id=1494516091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="Table3" type="CSGCombiner3D" parent="." unique_id=1763217517]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.409153, -2.344964, -6.726217)
+material_override = SubResource("StandardMaterial3D_b2wjk")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table3" unique_id=280197626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_gm3eh")
+size = Vector3(3, 0.15, 1.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Table3" unique_id=1349663210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Table3" unique_id=1296745802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Table3" unique_id=2127851453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Table3" unique_id=609574606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="Table6" type="CSGCombiner3D" parent="." unique_id=122559037]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.364042, -2.344964, -11.836353)
+material_override = SubResource("StandardMaterial3D_b2wjk")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table6" unique_id=2085283081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_gm3eh")
+size = Vector3(3, 0.15, 1.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Table6" unique_id=1548536579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Table6" unique_id=406924107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Table6" unique_id=1672815640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Table6" unique_id=1457310505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="Table7" type="CSGCombiner3D" parent="." unique_id=707040698]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.364042, -2.344964, -6.726217)
+material_override = SubResource("StandardMaterial3D_b2wjk")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table7" unique_id=1526492515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_gm3eh")
+size = Vector3(3, 0.15, 1.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Table7" unique_id=1211556276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Table7" unique_id=1177935849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Table7" unique_id=1079132177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Table7" unique_id=505599229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="Table4" type="CSGCombiner3D" parent="." unique_id=1361191024]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5285215, -2.344964, -11.836353)
+material_override = SubResource("StandardMaterial3D_b2wjk")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table4" unique_id=507225255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_gm3eh")
+size = Vector3(3, 0.15, 1.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Table4" unique_id=784433531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Table4" unique_id=2059989777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Table4" unique_id=418922503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Table4" unique_id=1791159191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="Table5" type="CSGCombiner3D" parent="." unique_id=761437257]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5285215, -2.344964, -6.726217)
+material_override = SubResource("StandardMaterial3D_b2wjk")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Table5" unique_id=252629480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_gm3eh")
+size = Vector3(3, 0.15, 1.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Table5" unique_id=1688143970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Table5" unique_id=386950989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, 0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Table5" unique_id=991842910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Table5" unique_id=1136159970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.5, -0.6)
+size = Vector3(0.2, 1, 0.2)
+
+[node name="Barney" type="Node3D" parent="." unique_id=823812251]
+script = ExtResource("42_pcvmc")
+
+[node name="stage" parent="Barney" unique_id=2127239272 instance=ExtResource("42_2qh8p")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.6965731, -1.9985552, -24.127438)
+
+[node name="Skeleton3D" parent="Barney/stage/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(2127239272, 782107584) index="0" unique_id=852036002]
+bones/14/scale = Vector3(1.0000001, 1, 1)
+bones/16/rotation = Quaternion(0.0662861, 0.52766603, -0.16010918, 0.83158875)
+bones/16/scale = Vector3(1.000001, 1, 0.9999994)
+bones/17/rotation = Quaternion(0.011849161, 0.11807123, -0.09912696, 0.987974)
+bones/17/scale = Vector3(1.0000001, 1, 0.99999976)
+bones/20/rotation = Quaternion(-0.59804904, 0.10311894, 0.79477286, 0.0063217776)
+bones/20/scale = Vector3(0.9999993, 1.0000005, 0.99999905)
+bones/21/rotation = Quaternion(-0.04600873, -0.44590735, -0.15830545, 0.8797666)
+bones/21/scale = Vector3(1.0000006, 0.99999994, 0.9999996)
+bones/22/rotation = Quaternion(-0.02047, -0.20401846, -0.097709164, 0.97386366)
+bones/22/scale = Vector3(1.0000004, 1, 0.9999996)
+bones/26/scale = Vector3(0.9999996, 1.0000005, 0.99999976)
+bones/27/scale = Vector3(0.9999999, 1.0000004, 1)
+
+[node name="dine" parent="Barney" unique_id=426373166 instance=ExtResource("42_2qh8p")]
+transform = Transform3D(0.69318485, 0, 0.2863473, 0, 0.75, 0, -0.2863473, 0, 0.69318485, -0.04532206, -1.9985552, -10.121912)
+
+[node name="Skeleton3D" parent="Barney/dine/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(426373166, 782107584) index="0" unique_id=852036002]
+bones/14/scale = Vector3(1.0000001, 1, 1)
+bones/16/rotation = Quaternion(0.0662861, 0.52766603, -0.16010918, 0.83158875)
+bones/16/scale = Vector3(1.000001, 1, 0.9999994)
+bones/17/rotation = Quaternion(0.011849161, 0.11807123, -0.09912696, 0.987974)
+bones/17/scale = Vector3(1.0000001, 1, 0.99999976)
+bones/20/rotation = Quaternion(-0.59804904, 0.10311894, 0.79477286, 0.0063217776)
+bones/20/scale = Vector3(0.9999993, 1.0000005, 0.99999905)
+bones/21/rotation = Quaternion(-0.04600873, -0.44590735, -0.15830545, 0.8797666)
+bones/21/scale = Vector3(1.0000006, 0.99999994, 0.9999996)
+bones/22/rotation = Quaternion(-0.02047, -0.20401846, -0.097709164, 0.97386366)
+bones/22/scale = Vector3(1.0000004, 1, 0.9999996)
+bones/26/scale = Vector3(0.9999996, 1.0000005, 0.99999976)
+bones/27/scale = Vector3(0.9999999, 1.0000004, 1)
+
+[node name="pas" parent="Barney" unique_id=232738695 instance=ExtResource("42_2qh8p")]
+transform = Transform3D(0.71921515, 0, -0.21267264, 0, 0.75, 0, 0.21267264, 0, 0.71921515, -9.57238, -1.9985552, -15.565045)
+
+[node name="Skeleton3D" parent="Barney/pas/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(232738695, 782107584) index="0" unique_id=852036002]
+bones/14/scale = Vector3(1.0000001, 1, 1)
+bones/16/rotation = Quaternion(0.0662861, 0.52766603, -0.16010918, 0.83158875)
+bones/16/scale = Vector3(1.000001, 1, 0.9999994)
+bones/17/rotation = Quaternion(0.011849161, 0.11807123, -0.09912696, 0.987974)
+bones/17/scale = Vector3(1.0000001, 1, 0.99999976)
+bones/20/rotation = Quaternion(-0.59804904, 0.10311894, 0.79477286, 0.0063217776)
+bones/20/scale = Vector3(0.9999993, 1.0000005, 0.99999905)
+bones/21/rotation = Quaternion(-0.04600873, -0.44590735, -0.15830545, 0.8797666)
+bones/21/scale = Vector3(1.0000006, 0.99999994, 0.9999996)
+bones/22/rotation = Quaternion(-0.02047, -0.20401846, -0.097709164, 0.97386366)
+bones/22/scale = Vector3(1.0000004, 1, 0.9999996)
+bones/26/scale = Vector3(0.9999996, 1.0000005, 0.99999976)
+bones/27/scale = Vector3(0.9999999, 1.0000004, 1)
+
+[node name="lhall" parent="Barney" unique_id=223526091 instance=ExtResource("42_2qh8p")]
+transform = Transform3D(0.7499643, 0, -0.0073302835, 0, 0.7500001, 0, 0.0073302835, 0, 0.7499643, -5.062002, -1.9985552, -2.826414)
+
+[node name="Skeleton3D" parent="Barney/lhall/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(223526091, 782107584) index="0" unique_id=852036002]
+bones/14/scale = Vector3(1.0000001, 1, 1)
+bones/16/rotation = Quaternion(0.0662861, 0.52766603, -0.16010918, 0.83158875)
+bones/16/scale = Vector3(1.000001, 1, 0.9999994)
+bones/17/rotation = Quaternion(0.011849161, 0.11807123, -0.09912696, 0.987974)
+bones/17/scale = Vector3(1.0000001, 1, 0.99999976)
+bones/20/rotation = Quaternion(-0.59804904, 0.10311894, 0.79477286, 0.0063217776)
+bones/20/scale = Vector3(0.9999993, 1.0000005, 0.99999905)
+bones/21/rotation = Quaternion(-0.04600873, -0.44590735, -0.15830545, 0.8797666)
+bones/21/scale = Vector3(1.0000006, 0.99999994, 0.9999996)
+bones/22/rotation = Quaternion(-0.02047, -0.20401846, -0.097709164, 0.97386366)
+bones/22/scale = Vector3(1.0000004, 1, 0.9999996)
+bones/26/scale = Vector3(0.9999996, 1.0000005, 0.99999976)
+bones/27/scale = Vector3(0.9999999, 1.0000004, 1)
+
+[node name="lhallc" parent="Barney" unique_id=1731997760 instance=ExtResource("42_2qh8p")]
+transform = Transform3D(-0.73472637, 0, 0.15059057, 0, 0.75000036, 0, -0.15059057, 0, -0.73472637, -5.062002, -1.9985552, 3.1084669)
+
+[node name="Skeleton3D" parent="Barney/lhallc/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(1731997760, 782107584) index="0" unique_id=852036002]
+bones/14/scale = Vector3(1.0000001, 1, 1)
+bones/16/rotation = Quaternion(0.0662861, 0.52766603, -0.16010918, 0.83158875)
+bones/16/scale = Vector3(1.000001, 1, 0.9999994)
+bones/17/rotation = Quaternion(0.011849161, 0.11807123, -0.09912696, 0.987974)
+bones/17/scale = Vector3(1.0000001, 1, 0.99999976)
+bones/20/rotation = Quaternion(-0.59804904, 0.10311894, 0.79477286, 0.0063217776)
+bones/20/scale = Vector3(0.9999993, 1.0000005, 0.99999905)
+bones/21/rotation = Quaternion(-0.04600873, -0.44590735, -0.15830545, 0.8797666)
+bones/21/scale = Vector3(1.0000006, 0.99999994, 0.9999996)
+bones/22/rotation = Quaternion(-0.02047, -0.20401846, -0.097709164, 0.97386366)
+bones/22/scale = Vector3(1.0000004, 1, 0.9999996)
+bones/26/scale = Vector3(0.9999996, 1.0000005, 0.99999976)
+bones/27/scale = Vector3(0.9999999, 1.0000004, 1)
+
+[node name="ldoor" parent="Barney" unique_id=1679245286 instance=ExtResource("42_2qh8p")]
+transform = Transform3D(0.55385053, 0, 0.5057172, 0, 0.7500001, 0, -0.5057172, 0, 0.55385053, -2.8669295, -1.9985552, 0.6069852)
+
+[node name="Skeleton3D" parent="Barney/ldoor/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(1679245286, 782107584) index="0" unique_id=852036002]
+bones/14/scale = Vector3(1.0000001, 1, 1)
+bones/16/rotation = Quaternion(0.0662861, 0.52766603, -0.16010918, 0.83158875)
+bones/16/scale = Vector3(1.000001, 1, 0.9999994)
+bones/17/rotation = Quaternion(0.011849161, 0.11807123, -0.09912696, 0.987974)
+bones/17/scale = Vector3(1.0000001, 1, 0.99999976)
+bones/20/rotation = Quaternion(-0.59804904, 0.10311894, 0.79477286, 0.0063217776)
+bones/20/scale = Vector3(0.9999993, 1.0000005, 0.99999905)
+bones/21/rotation = Quaternion(-0.04600873, -0.44590735, -0.15830545, 0.8797666)
+bones/21/scale = Vector3(1.0000006, 0.99999994, 0.9999996)
+bones/22/rotation = Quaternion(-0.02047, -0.20401846, -0.097709164, 0.97386366)
+bones/22/scale = Vector3(1.0000004, 1, 0.9999996)
+bones/26/scale = Vector3(0.9999996, 1.0000005, 0.99999976)
+bones/27/scale = Vector3(0.9999999, 1.0000004, 1)
+
+[node name="closit" parent="Barney" unique_id=1891056620 instance=ExtResource("42_2qh8p")]
+transform = Transform3D(0.33930275, 0, 0.6688601, 0, 0.75000024, 0, -0.6688601, 0, 0.33930275, -9.3827915, -1.9985552, -3.1432884)
+
+[node name="Skeleton3D" parent="Barney/closit/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(1891056620, 782107584) index="0" unique_id=852036002]
+bones/14/scale = Vector3(1.0000001, 1, 1)
+bones/16/rotation = Quaternion(0.0662861, 0.52766603, -0.16010918, 0.83158875)
+bones/16/scale = Vector3(1.000001, 1, 0.9999994)
+bones/17/rotation = Quaternion(0.011849161, 0.11807123, -0.09912696, 0.987974)
+bones/17/scale = Vector3(1.0000001, 1, 0.99999976)
+bones/20/rotation = Quaternion(-0.59804904, 0.10311894, 0.79477286, 0.0063217776)
+bones/20/scale = Vector3(0.9999993, 1.0000005, 0.99999905)
+bones/21/rotation = Quaternion(-0.04600873, -0.44590735, -0.15830545, 0.8797666)
+bones/21/scale = Vector3(1.0000006, 0.99999994, 0.9999996)
+bones/22/rotation = Quaternion(-0.02047, -0.20401846, -0.097709164, 0.97386366)
+bones/22/scale = Vector3(1.0000004, 1, 0.9999996)
+bones/25/position = Vector3(0.02452245, -3.428932e-08, -1.868661e-07)
+bones/25/rotation = Quaternion(-0.030323204, 0.025059298, -0.30546662, 0.9513899)
+bones/25/scale = Vector3(1.0000004, 1.0000005, 1.0000001)
+bones/26/scale = Vector3(0.9999996, 1.0000005, 0.99999976)
+bones/27/scale = Vector3(0.9999999, 1.0000004, 1)
+
+[node name="Timer" type="Timer" parent="Barney" unique_id=2009390853]
+wait_time = 3.23
+autostart = true
+
+[node name="Hour" type="Timer" parent="." unique_id=1094978007]
+wait_time = 80.0
+autostart = true
+
+[connection signal="body_shape_entered" from="ExitWarp" to="ExitWarp" method="MapChange" unbinds=1]
 [connection signal="input_event" from="Control/SubViewportContainer/Left Door" to="Controler" method="_on_left_door_input_event"]
 [connection signal="input_event" from="Control/SubViewportContainer/Left Light" to="Controler" method="_on_left_light_input_event"]
 [connection signal="input_event" from="Control/SubViewportContainer/Right Door" to="Controler" method="_on_right_door_input_event"]
 [connection signal="input_event" from="Control/SubViewportContainer/Right Light" to="Controler" method="_on_right_light_input_event"]
 [connection signal="timeout" from="Control/CamCam/Wait" to="Control" method="_on_wait_timeout"]
+[connection signal="timeout" from="Control/JumpScare/TEMP_Timer" to="Barney" method="_on_temp_timer_timeout"]
 [connection signal="animation_finished" from="Control/CamFlip" to="Controler" method="_on_cam_flip_animation_finished"]
 [connection signal="animation_finished" from="Control/CamStatic" to="Controler" method="_on_cam_flip_animation_finished"]
 [connection signal="gui_input" from="Control/CamStatic/CAM_1A" to="Controler" method="_on_cam_button_input_event" binds= ["1A"]]
@@ -1147,7 +1906,12 @@ size = Vector3(0.2, 1, 0.2)
 [connection signal="gui_input" from="Control/CamStatic/CAM_6A" to="Controler" method="_on_cam_button_input_event" binds= ["6A"]]
 [connection signal="gui_input" from="Control/CamStatic/CAM_7A" to="Controler" method="_on_cam_button_input_event" binds= ["7A"]]
 [connection signal="mouse_entered" from="Control/Control3/CamButton" to="Controler" method="_on_cam_button_mouse_entered"]
+[connection signal="timeout" from="Control/DeathStatic/Timer" to="Control/DeathStatic" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="Control/FadeInAni" to="Control/FadeInAni" method="_on_animation_finished"]
+[connection signal="timeout" from="Control2/Timer" to="Control2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Control2/Timer2" to="Control2" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Control2/Timer3" to="Control2" method="_on_timer_3_timeout"]
+[connection signal="finished" from="Control2/chimes" to="Control2" method="_on_chimes_finished"]
 [connection signal="closed" from="LeftDoor" to="Controler" method="_set_left_door_state" binds= [0]]
 [connection signal="opened" from="LeftDoor" to="Controler" method="_set_left_door_state" binds= [2]]
 [connection signal="start_close" from="LeftDoor" to="Control/door_sound" method="play"]
@@ -1158,3 +1922,13 @@ size = Vector3(0.2, 1, 0.2)
 [connection signal="start_open" from="RightDoor" to="Control/door_sound" method="play"]
 [connection signal="DoorLeft" from="Controler" to="LeftDoor" method="_open"]
 [connection signal="DoorRight" from="Controler" to="RightDoor" method="_open"]
+[connection signal="timeout" from="Barney/Timer" to="Barney" method="_on_timer_timeout"]
+[connection signal="timeout" from="Hour" to="Controler" method="_on_hour_timeout"]
+
+[editable path="Barney/stage"]
+[editable path="Barney/dine"]
+[editable path="Barney/pas"]
+[editable path="Barney/lhall"]
+[editable path="Barney/lhallc"]
+[editable path="Barney/ldoor"]
+[editable path="Barney/closit"]

@@ -24,7 +24,25 @@ var DoorRight_state = 0
 var Cam_State = 0
 var CamView = "none"
 
+var ldisable = false
+var rdisable = false
+
 var LightState = 0
+
+var time = 0
+
+var night = 1
+
+var ais = [
+	[0,0,0,0],
+	[0,3,2,2],
+	[0,5,5,5],
+	[2,7,6,8],
+	[4,8,8,12],
+	[6,11,10,16],
+	[20,20,20,20]
+]
+
 
 @onready var cams = {
 	"1A"=$"../Control/CamCam/SubViewport/LHallC",
@@ -68,22 +86,71 @@ func _ready() -> void:
 	emit_signal("DoorRight")
 	get_node("/root").move_child($"..", 0)
 	player.get_node("Inv")._unlock_beads(0)
+	player.get_node("panel_fuck").visible = false
+	player.get_node("Control").retrun_code = _return_a
+	for n in player.get_node("Inv/TabContainer/Beads/FNaF Like").unlocked:
+		if n:
+			night += 1
+	_reset()
+	
+func _restet_a():
+	if Cam_State == 2:
+		_on_cam_button_mouse_entered()
+	LightLeft.visible = true
+	LightRight.visible = true
+	LightState = 0
 
+func _reset():
+	if night > 7:
+		get_node("/root/Player/Control").open = true
+		get_node("/root/Player/Control")._gui_input_return()
+	else:
+		$"../Barney".posi = 0
+		$"../Barney".ai = ais[night-1][1]
+		$"../Barney"._ready()
+		if DoorLeft_state == 0:
+			emit_signal("DoorLeft")
+		if DoorRight_state == 0:
+			emit_signal("DoorRight")
+		$"../Control/ambiance_1".play()
+		$"../Control/ambiance_2".play()
+		$"../Control/HUD/Time".text = "12 A.M."
+		$"../Hour".start()
+
+func _return_a():
+	print("squid")
+	player.get_node("Control")._un_2d()
+	player.get_node("Pivot/glock/SVC").visible = true
+	player.get_node("HUD").visible = true
+	player.get_node("Pivot/glock")._set_control(true)
+	player.get_node("panel_fuck").visible = true
+
+func do_disabled():
+	$"../Control/locked_sound".play()
 
 func _on_left_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_action_pressed("gui_left_click") && Cam_State == 0:
+	if Input.is_action_just_pressed("gui_left_click") && Cam_State == 0:
+		if ldisable:
+			do_disabled()
+			return
 		emit_signal("DoorLeft")
 		DoorLeft_state = 1
 
 
 func _on_right_door_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_action_pressed("gui_left_click") && Cam_State == 0:
+	if Input.is_action_just_pressed("gui_left_click") && Cam_State == 0:
+		if rdisable:
+			do_disabled()
+			return
 		emit_signal("DoorRight")
 		DoorRight_state = 1
 
 
 func _on_left_light_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_action_pressed("gui_left_click") && Cam_State == 0:
+	if Input.is_action_just_pressed("gui_left_click") && Cam_State == 0:
+		if ldisable:
+			do_disabled()
+			return
 		LightLeft.visible = true
 		if LightState == 2:
 			LightRight.visible = true
@@ -95,7 +162,10 @@ func _on_left_light_input_event(viewport: Node, event: InputEvent, shape_idx: in
 
 
 func _on_right_light_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_action_pressed("gui_left_click") && Cam_State == 0:
+	if Input.is_action_just_pressed("gui_left_click") && Cam_State == 0:
+		if rdisable:
+			do_disabled()
+			return
 		LightRight.visible = true
 		if LightState == 1:
 			LightLeft.visible = true
@@ -142,7 +212,7 @@ func _on_cam_flip_animation_finished() -> void:
 		Cam_State = 0
 		
 func _on_cam_button_input_event(event: InputEvent, cam: String):
-	if Input.is_action_pressed("gui_left_click") && Cam_State == 2  && CamView != cam:
+	if Input.is_action_just_pressed("gui_left_click") && Cam_State == 2  && CamView != cam:
 		if cams[cam]:
 			if cam != "7A":
 				$"../Control/CamCam/SubViewport/Camera".position = cams[cam].position
@@ -152,3 +222,32 @@ func _on_cam_button_input_event(event: InputEvent, cam: String):
 				$"../Control/CamStatic/ColorRect".visible = true
 			CamView = cam
 			$"../Control/cam_change_sound".play()
+
+func _disable_controls(which: int):
+	match which:
+		0:
+			ldisable = true
+			if LightState == 1:
+				LightLeft.visible = true
+				LightState = 0
+		1:
+			rdisable = true
+			if LightState == 2:
+				LightRight.visible = true
+				LightState = 0
+
+
+func _on_hour_timeout() -> void:
+	time += 1
+	if time == 6:
+		$"../Control2".visible = true
+		$"../Control2"._start()
+		$"../Hour".stop()
+		time = 0
+	elif time == 2:
+		$"../Barney".ai += 1
+	elif time == 3:
+		$"../Barney".ai += 1
+	elif time == 4:
+		$"../Barney".ai += 1
+	$"../Control/HUD/Time".text = str(time)+" A.M. "
