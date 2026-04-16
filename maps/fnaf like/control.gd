@@ -37,9 +37,16 @@ func _ready() -> void:
 	$CamStatic.play()
 	$CamStatic/AnimatedSprite2D.play()
 	$DeathStatic.play()
+	get_window().size_changed.connect(_on_window_resized)
+	precalc_a = -self.size.x/2
+	precalc_b = self.size.x/speed_mod
+	precalc_c = self.size.x/speed_mod/2
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+var precalc_a
+var precalc_b
+var precalc_c
+
+func _on_window_resized():
 	$Control/TurnLeft1/CollisionShape2D.shape.size.y = self.size.y
 	$Control/TurnLeft2/CollisionShape2D.shape.size.y = self.size.y
 	$Control/TurnLeft3/CollisionShape2D.shape.size.y = self.size.y
@@ -60,21 +67,29 @@ func _process(delta: float) -> void:
 	$CamFlip.scale = cam_def*(self.size/Vector2(def_x, def_y))
 	$CamStatic.scale = cam_static_def*(self.size/Vector2(def_x, def_y))
 	$DeathStatic.scale = cam_static_def*(self.size/Vector2(def_x, def_y))
+	precalc_a = -self.size.x/2
+	precalc_b = self.size.x/speed_mod
+	precalc_c = self.size.x/speed_mod/2
 	
-	office.position.x += move*(self.size.x/speed_mod)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	
+	
+	office.position.x += move*precalc_b
 	if office.position.x > 0:
 		office.position.x = 0
-	if office.position.x < -self.size.x/2:
-		office.position.x = -self.size.x/2
+	if office.position.x < precalc_a:
+		office.position.x = precalc_a
 		
-	CamCam.position.x += camcam_dir*(self.size.x/speed_mod/2)
+	CamCam.position.x += camcam_dir*precalc_c
 	if CamCam.position.x > 0:
 		CamCam.position.x = 0
 		camcam_state = 1
 		camcam_dir = 0
 		$CamCam/Wait.start()
-	if CamCam.position.x < -self.size.x/2:
-		CamCam.position.x = -self.size.x/2
+	if CamCam.position.x < precalc_a:
+		CamCam.position.x = precalc_a
 		camcam_state = 0
 		camcam_dir = 0
 		$CamCam/Wait.start()

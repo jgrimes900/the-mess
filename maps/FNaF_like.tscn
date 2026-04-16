@@ -1071,6 +1071,7 @@ max_distance = 4096.0
 panning_strength = 0.0
 
 [node name="FadeIn" type="ColorRect" parent="Control" unique_id=905392275]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15

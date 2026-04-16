@@ -197,6 +197,7 @@ func _on_cam_button_mouse_entered() -> void:
 		CamSprite.play("close")
 		CamCloseSound.play()
 		CamOpenSound.stop()
+		$"../Control/SubViewportContainer".visible = true
 	LightLeft.visible = true
 	LightRight.visible = true
 	LightState = 0
@@ -208,6 +209,7 @@ func _on_cam_flip_animation_finished() -> void:
 		CamSprite.visible = false
 		CamStaticSprite.visible = true
 		CamCamSVC.visible = true
+		$"../Control/SubViewportContainer".visible = false
 	else:
 		Cam_State = 0
 		
