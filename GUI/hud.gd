@@ -1,5 +1,8 @@
 extends Control
 
+var popups_open = 0
+
+var popup_asset: Resource = preload("res://prefabs/UI/popup.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

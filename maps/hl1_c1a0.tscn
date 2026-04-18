@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bck1kpbmbaj8n"]
 
+[ext_resource type="Script" uid="uid://y5l84q5odctl" path="res://entities/map.gd" id="1_t7t8s"]
 [ext_resource type="ArrayMesh" uid="uid://dewspllqh8or3" path="res://assets/models/C1A0.res" id="1_uxeic"]
 [ext_resource type="Shape3D" uid="uid://d1w5p7fpv5t5t" path="res://assets/models/C1A0_collision.res" id="2_5jp1s"]
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="3_s03oy"]
@@ -27,6 +28,7 @@ size = Vector3(0.5, 0.5, 0.5)
 size = Vector3(1, 3.5, 5)
 
 [node name="Node3D" type="Node3D" unique_id=2064185158]
+script = ExtResource("1_t7t8s")
 
 [node name="C1A0" type="Node3D" parent="." unique_id=567256315]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.270777, -5.3833103, 10.190255)

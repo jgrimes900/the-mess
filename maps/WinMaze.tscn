@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://etjjb3ij7ot4"]
 
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="1_iqqqs"]
+[ext_resource type="Script" uid="uid://y5l84q5odctl" path="res://entities/map.gd" id="1_uhf6p"]
 [ext_resource type="MeshLibrary" uid="uid://cd2uwqa068rvp" path="res://assets/WinMaze_Tiles.tres" id="2_wgwhi"]
 [ext_resource type="PackedScene" uid="uid://cpl5g6ucti1gr" path="res://prefabs/WinMaze/gravity_flipper.tscn" id="3_wgwhi"]
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="4_h5mn7"]
@@ -9,6 +10,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_733ue"]
 
 [node name="Node3D" type="Node3D" unique_id=2048975526]
+script = ExtResource("1_uhf6p")
 
 [node name="Spawn" type="Node3D" parent="." unique_id=1359064323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 1)

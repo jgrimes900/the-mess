@@ -38,7 +38,7 @@ var night = 1
 # 2: Scientist	(Chica)
 # 3: Grunt		(Foxy)
 var ais = [
-	[0,0,20,0],
+	[0,0,0,0],
 	[0,3,2,2],
 	[0,5,5,5],
 	[2,7,6,8],
@@ -88,7 +88,7 @@ func _ready() -> void:
 	player.get_node("Pivot/glock")._set_control(false)
 	emit_signal("DoorLeft")
 	emit_signal("DoorRight")
-#	get_node("/root").move_child($"..", 0)
+	get_node("/root").move_child.call_deferred($"..", 0)
 	player.get_node("Inv")._unlock_beads(0)
 	player.get_node("panel_fuck").visible = false
 	player.get_node("Control").retrun_code = _return_a

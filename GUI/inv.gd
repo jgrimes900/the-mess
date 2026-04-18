@@ -6,8 +6,8 @@ extends Control
 }
 
 var coin_counts = {
-	SHaR_Coin = 0,
-	USD = 0
+	"SHaR_Coin" = 0,
+	"USD" = 0
 }
 
 # Called when the node enters the scene tree for the first time.

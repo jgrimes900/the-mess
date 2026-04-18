@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xwm1wyqw5vv3"]
 
 [ext_resource type="ArrayMesh" uid="uid://wocgs47ibflf" path="res://assets/models/Starkron/block_out_v4.res" id="1_h7adf"]
+[ext_resource type="Script" uid="uid://y5l84q5odctl" path="res://entities/map.gd" id="1_jabkh"]
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="2_cmqfk"]
 [ext_resource type="Shape3D" uid="uid://3d8of500lp84" path="res://assets/models/Starkron/block_out_v4_collider.shape" id="2_ymd38"]
 [ext_resource type="Material" uid="uid://bmcuaiimjayw2" path="res://assets/materials/starkron/checkard Test orange.tres" id="3_ymd38"]
@@ -27,6 +28,7 @@ sky = SubResource("Sky_3e7qf")
 size = Vector3(1, 3.5, 5)
 
 [node name="Node3D" type="Node3D" unique_id=161666672]
+script = ExtResource("1_jabkh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1747992459]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://duwe7fbbmyi1r"
+path="res://.godot/imported/sm64_color.png-936888e96eca2a5700e1bf6c01ab1dc0.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/sm64_color.png"
+dest_files=["res://.godot/imported/sm64_color.png-936888e96eca2a5700e1bf6c01ab1dc0.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("48-57", "63", "196", "214", "220", "65-90", "34", "39", "33", "97-98", "38", "37", "99-104", "42", "105", "32")
+kerning_pairs=PackedStringArray()
+columns=14
+rows=4
+image_margin=Rect2i(0, 3, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=true
+scaling_mode=1

@@ -37,12 +37,15 @@ func _on_chimes_finished() -> void:
 
 
 func _on_timer_2_timeout() -> void:
-	$a.visible = false
-	$b.visible = true
 	$"../Controler".night += 1
-	$b/Label.text = "Night "+str($"../Controler".night)
-	$Timer3.start()
-	$"../Control/cam_change_sound".play()
+	if $"../Controler".night > 7:
+		$"../Controler"._reset()
+	else:
+		$a.visible = false
+		$b.visible = true
+		$b/Label.text = "Night "+str($"../Controler".night)
+		$Timer3.start()
+		$"../Control/cam_change_sound".play()
 
 func _on_timer_3_timeout() -> void:
 	visible = false

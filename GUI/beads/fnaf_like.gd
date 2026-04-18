@@ -20,11 +20,17 @@ var unlocked = [
 	false
 ]
 
+var popup_sprites = [
+	preload("res://assets/sprites/beads/fnaf_like/popup/green_sf.tres"),
+	preload("res://assets/sprites/beads/fnaf_like/popup/orange_sf.tres"),
+	preload("res://assets/sprites/beads/fnaf_like/popup/red_sf.tres")
+]
+
 var count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -41,3 +47,13 @@ func _process(delta: float) -> void:
 	
 func _unlock(id: int, value: bool = true):
 	unlocked[id] = value
+	var popup: Control = $"../../../../HUD".popup_asset.instantiate()
+	match id:
+		5:
+			popup.sprite = popup_sprites[1]
+		6:
+			popup.sprite = popup_sprites[2]
+		_:
+			popup.sprite = popup_sprites[0]
+	popup.text = "Bead Obtained!"
+	$"../../../..".add_child(popup)

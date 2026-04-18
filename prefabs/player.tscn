@@ -23,6 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://dotvhc43bepmm" path="res://assets/sprites/shar_coin.png" id="18_f2e50"]
 [ext_resource type="TileSet" uid="uid://ddp8fcog0h7ly" path="res://GUI/WorldMapTiles.tres" id="18_gf0v6"]
 [ext_resource type="Script" uid="uid://dxt4rhv4nns4q" path="res://GUI/hud.gd" id="18_nmymu"]
+[ext_resource type="FontFile" uid="uid://duwe7fbbmyi1r" path="res://assets/fonts/sm64_color.png" id="19_e3k5d"]
+[ext_resource type="LabelSettings" uid="uid://iyu8m2lgy0f2" path="res://assets/fonts/sm64_large_2x.tres" id="20_3or85"]
+[ext_resource type="Script" uid="uid://ei3fp4k5dg6d" path="res://prefabs/debug/label_2.gd" id="21_3or85"]
 [ext_resource type="Script" uid="uid://dpumg6u6p8mhm" path="res://GUI/beads/fnaf_like.gd" id="23_w4pj3"]
 [ext_resource type="Texture2D" uid="uid://dgul2c2ipjnh7" path="res://assets/sprites/beads/fnaf_like/base.png" id="24_r1s2y"]
 [ext_resource type="Texture2D" uid="uid://bq7dax0qxaexg" path="res://assets/sprites/beads/fnaf_like/night_1.png" id="25_0anbp"]
@@ -33,6 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://dpjcnhy4ttlhw" path="res://assets/sprites/beads/fnaf_like/night_6.png" id="30_gxohq"]
 [ext_resource type="Texture2D" uid="uid://6ml4pt8lxs2o" path="res://assets/sprites/beads/fnaf_like/night_7.png" id="31_6hvlk"]
 [ext_resource type="Shader" uid="uid://ckxcubwbv7y7" path="res://shaders/quantize_canvas.gdshader" id="33_r1s2y"]
+[ext_resource type="Script" uid="uid://dp6g72ue80n5h" path="res://entities/save.gd" id="34_0anbp"]
+[ext_resource type="Script" uid="uid://rd5m8o6wooeh" path="res://GUI/stars.gd" id="36_gxohq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jhsr"]
 resource_name = "gclip.bmp"
@@ -450,6 +455,10 @@ ProgressBar/font_sizes/font_size = 16
 ProgressBar/fonts/font = null
 ProgressBar/styles/background = SubResource("StyleBoxFlat_gf0v6")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_cv2ms")
+
+[sub_resource type="LabelSettings" id="LabelSettings_2v6jp"]
+font = ExtResource("19_e3k5d")
+font_size = 32
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0anbp"]
 shader = ExtResource("33_r1s2y")
@@ -1139,6 +1148,33 @@ tile_set = ExtResource("18_gf0v6")
 rendering_quadrant_size = 4
 collision_enabled = false
 
+[node name="Label" type="Label" parent="HUD" unique_id=1083333980]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0123456789 !?%&*\"'
+ÄÖÜ abcdefghi
+
+THIS IS A \"TEST\"
+ARE YOU SURE?
+100%
+
+dM24 h255 e121"
+label_settings = SubResource("LabelSettings_2v6jp")
+
+[node name="Label2" type="Label" parent="HUD" unique_id=1927603795]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "!\"!"
+label_settings = ExtResource("20_3or85")
+script = ExtResource("21_3or85")
+
 [node name="panel_fuck" type="Panel" parent="." unique_id=1363549028]
 material = SubResource("ShaderMaterial_0anbp")
 anchors_preset = 15
@@ -1335,12 +1371,13 @@ color = Color(1, 1, 1, 0)
 
 [node name="Beads" type="TabContainer" parent="Inv/TabContainer" unique_id=1788741967]
 layout_mode = 2
-current_tab = 0
+current_tab = 1
 tab_0/hidden = true
 metadata/_tab_index = 1
 metadata/_tab_name = "Beads"
 
 [node name="FNaF Like" type="PanelContainer" parent="Inv/TabContainer/Beads" unique_id=1805252319]
+visible = false
 layout_mode = 2
 script = ExtResource("23_w4pj3")
 metadata/_tab_index = 0
@@ -1438,8 +1475,24 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 color = Color(1, 0.23000002, 0.25566667, 1)
 
+[node name="Stars" type="ScrollContainer" parent="Inv/TabContainer/Beads" unique_id=1640132267]
+layout_mode = 2
+script = ExtResource("36_gxohq")
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inv/TabContainer/Beads/Stars" unique_id=936695812]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Health" type="Node" parent="." unique_id=1039321172]
 script = ExtResource("17_r1s2y")
+
+[node name="Save" type="Node" parent="." unique_id=583477854]
+script = ExtResource("34_0anbp")
+
+[node name="Timer" type="Timer" parent="Save" unique_id=1572122708]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="animation_finished" from="Pivot/glock/AnimationPlayer" to="Pivot/glock" method="_idle_animation" unbinds=1]
 [connection signal="control" from="Control" to="Pivot/glock" method="_set_control"]
@@ -1458,3 +1511,4 @@ script = ExtResource("17_r1s2y")
 [connection signal="dead" from="Health" to="Pivot/glock" method="_player_dead"]
 [connection signal="reset" from="Health" to="." method="_unkill"]
 [connection signal="reset" from="Health" to="Pivot/glock" method="_player_undead"]
+[connection signal="timeout" from="Save/Timer" to="Save" method="_on_timer_timeout"]

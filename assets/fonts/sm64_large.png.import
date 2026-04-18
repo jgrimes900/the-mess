@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://c2nll2g7ra6sm"
+path="res://.godot/imported/sm64_large.png-eb743aa3a2dcea42e76e263035eb331e.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/sm64_large.png"
+dest_files=["res://.godot/imported/sm64_large.png-eb743aa3a2dcea42e76e263035eb331e.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("33-33 -5", "34-34 -4", "0x100-0x100 -4", "38-38 -2", "39-39 -6", "44-44 -6", "45-45 -5", "46-46 -6", "58-58 -6", "63-63 -3", "40-40 -5", "0x101-0x101 -4", "41-41 -5", "48-57 -3", "0x102-0x102 -2", "37-37 -3", "42-42 -4", "65-72 -4", "73-73 -5", "74-75 -4", "76-76 -5", "77-78 -2", "79-83 -4", "84-84 -5", "85-86 -4", "87-87 -2", "88-88 -3", "89-90 -4", "97-97 -4", "98-99 -5", "100-100 -4", "101-102 -5", "103-103 -4", "104-104 -5", "105-105 -6", "106-107 -5", "108-108 -7", "109-109 -3", "110-112 -5", "113-113 -4", "114-118 -5", "119-120 -3", "121-122 -5", "223-223 -5", "199-199 -4", "231-231 -5", "0x103-0x103 -6", "0x104-0x107 -2", "0x108-0x109 -3", "0x10A-0x10A -4", "0x10B-0x10C -3", "0x20-0x20 -5", "126-126 -2", "0x10D-0x110 -10", "0x111-0x111 -5", "0x112-0x112", "0x113-0x113 -1", "0x114-0x115")
+kerning_pairs=PackedStringArray()
+columns=13
+rows=8
+image_margin=Rect2i(0, 1, 0, 0)
+character_margin=Rect2i(0, 0, 0, 1)
+ascent=0
+descent=0
+fallbacks=[]
+compress=true
+scaling_mode=2
