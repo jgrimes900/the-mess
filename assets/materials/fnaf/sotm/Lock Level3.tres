@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bjdeuhicogjjh"]
+
+[ext_resource type="Texture2D" uid="uid://bg72612ahb52k" path="res://assets/textures/fnaf/sotm/Lock Level3.png" id="1_036eu"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_036eu")

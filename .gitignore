@@ -1,9 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
-/android/
 /addons/
 passkey.txt
-/wiki/
-/Build/
-Godot RL Agents.sln
-Godot RL Agents.csproj

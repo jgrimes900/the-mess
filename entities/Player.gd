@@ -84,9 +84,7 @@ func _physics_process(delta: float) -> void:
 				var query = PhysicsRayQueryParameters3D.create(pivot.global_position, (pivot.global_basis.x.normalized() * -use_distance) + pivot.global_position)
 				var result = space_state.intersect_ray(query)
 				if result:
-					print(result.collider)
 					if result.collider.get("can_use"):
-						print("used")
 						result.collider._on_use()
 			# Movement stuff
 			if Input.is_action_pressed("move_right"):

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs4yhbkhdqntr"
-path.s3tc="res://.godot/imported/rat.png-f0b521b8c9f77b93daafa1e7358cdd83.s3tc.ctex"
+uid="uid://c8benl7ay7ho"
+path.s3tc="res://.godot/imported/Lock.png-4d344ac6fdd0814c95c56175bf85032c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/WinMaze/rat.png"
-dest_files=["res://.godot/imported/rat.png-f0b521b8c9f77b93daafa1e7358cdd83.s3tc.ctex"]
+source_file="res://assets/textures/fnaf/sotm/Lock.png"
+dest_files=["res://.godot/imported/Lock.png-4d344ac6fdd0814c95c56175bf85032c.s3tc.ctex"]
 
 [params]
 
