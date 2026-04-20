@@ -2096,7 +2096,6 @@ close_time = -1.0
 
 [node name="RightDoor" parent="." unique_id=1171833949 instance=ExtResource("7_t883d")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2, -1, 1)
-visible = false
 move_direction = Vector3(0, 1, 0)
 close_time = -1.0
 
@@ -3496,7 +3495,7 @@ wait_time = 2.98
 autostart = true
 
 [node name="Hour" type="Timer" parent="." unique_id=1094978007]
-wait_time = 3.0
+wait_time = 80.0
 autostart = true
 
 [connection signal="body_shape_entered" from="ExitWarp" to="ExitWarp" method="MapChange" unbinds=1]

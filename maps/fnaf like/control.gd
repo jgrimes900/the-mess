@@ -41,6 +41,7 @@ func _ready() -> void:
 	precalc_a = -self.size.x/2
 	precalc_b = self.size.x/speed_mod
 	precalc_c = self.size.x/speed_mod/2
+	_on_window_resized()
 
 var precalc_a
 var precalc_b

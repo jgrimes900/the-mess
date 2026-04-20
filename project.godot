@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Mess"
-run/main_scene="uid://bnijdfm8dpeuu"
+run/main_scene="uid://bck1kpbmbaj8n"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

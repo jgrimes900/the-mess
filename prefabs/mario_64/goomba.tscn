@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://xeyxv38k41dl" path="res://assets/materials/mario_64/goomba/face.tres" id="5_sv24b"]
 [ext_resource type="Script" uid="uid://u0vglhwhkt7o" path="res://entities/starkron/attack_area.gd" id="6_3ca5y"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="6_d1ji4"]
+[ext_resource type="Script" uid="uid://dp70mb5dxp0a6" path="res://entities/components/save/save_goomba.gd" id="8_bkya0"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rjif6"]
 resource_name = "Goomba_goomba"
@@ -196,6 +197,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 [node name="Collision" type="CollisionShape3D" parent="StompArea" unique_id=1479392184]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3304863, 0)
 shape = SubResource("CylinderShape3D_3ca5y")
+
+[node name="Save" type="Node" parent="." unique_id=97491495]
+script = ExtResource("8_bkya0")
 
 [connection signal="attack" from="." to="HurtArea3D" method="_attack"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

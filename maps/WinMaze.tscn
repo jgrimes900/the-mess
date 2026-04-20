@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="4_h5mn7"]
 [ext_resource type="Script" uid="uid://dcko05ad6bmyy" path="res://maps/scripts/WinMaze_Controler.gd" id="4_y734m"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="5_uhf6p"]
+[ext_resource type="Script" uid="uid://b42appp87lr2e" path="res://entities/components/save/save_pos.gd" id="8_no4j0"]
 [ext_resource type="Texture2D" uid="uid://bs4yhbkhdqntr" path="res://assets/textures/WinMaze/rat.png" id="8_sygei"]
 [ext_resource type="Script" uid="uid://brisgwkcr7ycx" path="res://entities/rat.gd" id="9_no4j0"]
 
@@ -14,6 +15,7 @@
 
 [node name="Node3D" type="Node3D" unique_id=2048975526]
 script = ExtResource("1_uhf6p")
+persitent = false
 
 [node name="Spawn" type="Node3D" parent="." unique_id=1359064323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 1)
@@ -41,6 +43,9 @@ pixel_size = 0.02
 billboard = 1
 alpha_scissor_threshold = 0.484
 texture = ExtResource("5_uhf6p")
+
+[node name="Save" type="Node" parent="c1a0 Teleport Trigger" unique_id=1487470903]
+script = ExtResource("8_no4j0")
 
 [node name="Rat" type="Sprite3D" parent="." unique_id=1734812381 node_paths=PackedStringArray("Map")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1, 0.45, 1)

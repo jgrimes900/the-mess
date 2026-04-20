@@ -1371,13 +1371,12 @@ color = Color(1, 1, 1, 0)
 
 [node name="Beads" type="TabContainer" parent="Inv/TabContainer" unique_id=1788741967]
 layout_mode = 2
-current_tab = 1
+current_tab = 0
 tab_0/hidden = true
 metadata/_tab_index = 1
 metadata/_tab_name = "Beads"
 
 [node name="FNaF Like" type="PanelContainer" parent="Inv/TabContainer/Beads" unique_id=1805252319]
-visible = false
 layout_mode = 2
 script = ExtResource("23_w4pj3")
 metadata/_tab_index = 0
@@ -1476,6 +1475,7 @@ layout_mode = 2
 color = Color(1, 0.23000002, 0.25566667, 1)
 
 [node name="Stars" type="ScrollContainer" parent="Inv/TabContainer/Beads" unique_id=1640132267]
+visible = false
 layout_mode = 2
 script = ExtResource("36_gxohq")
 metadata/_tab_index = 1

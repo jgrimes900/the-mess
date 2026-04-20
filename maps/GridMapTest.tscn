@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cddmtyqjy7hcs" path="res://entities/SM64_Tree.gd" id="7_hdov8"]
 [ext_resource type="Script" uid="uid://dqv5ofqwkns6b" path="res://entities/coin_spawner.gd" id="9_lumrj"]
 [ext_resource type="PackedScene" uid="uid://dfbuo56xepf6o" path="res://prefabs/starkron/bug.tscn" id="12_lumrj"]
+[ext_resource type="Script" uid="uid://dicrtoikq4iq3" path="res://entities/components/save/save_coinline.gd" id="13_wu73p"]
 [ext_resource type="Script" uid="uid://drl3ms0grcmo4" path="res://entities/ButtonSliding.gd" id="13_xqyr0"]
 [ext_resource type="PackedScene" uid="uid://c256f6gnhf0fr" path="res://assets/models/fnaf/sotm/SotM Lock.fbx" id="14_hr8cw"]
 [ext_resource type="Texture2D" uid="uid://c8benl7ay7ho" path="res://assets/textures/fnaf/sotm/Lock.png" id="15_wu73p"]
@@ -173,6 +174,9 @@ shadow_enabled = true
 [node name="TestCoinLine" type="Node3D" parent="." unique_id=1352645367]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 3.001, -1.5, 5)
 script = ExtResource("9_lumrj")
+
+[node name="Save" type="Node" parent="TestCoinLine" unique_id=235614890]
+script = ExtResource("13_wu73p")
 
 [node name="LightBlock" type="Node3D" parent="." unique_id=1543526748]
 transform = Transform3D(-2, 0, -8.742278e-08, 0, 1, 0, 1.7484555e-07, 0, -1, 9.6, -1, -7)

@@ -1,4 +1,12 @@
 extends Node
+class_name SaveNode
+
+var Map_Chuncks = {
+	
+}
+
+signal saving()
+signal loading()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +38,23 @@ func _ready() -> void:
 						OnLoad.connect("level_loaded", set_ply_pos.bind(pos))
 					5:
 						$"../Inv/TabContainer/Beads/Stars".unlocked = get_bool_array(file)
+					6:
+						$"../Health".max_health = file.get_float()
+						$"../Health".health = file.get_float()
+						if file.get_8() == 1:
+							$".."._kill()
+					0x200:
+						var map = get_string(file)
+						var map_chunck_cont = true
+						Map_Chuncks[map] = {}
+						while map_chunck_cont:
+							id = file.get_16()
+							if id:
+								if id != 0xFFFF:
+									var id2 = get_string(file)
+									Map_Chuncks[map][id2] = (file.get_buffer(id))
+								else:
+									map_chunck_cont = false
 					_:
 						print("Unknown save chunk ID : "+str(id))
 			else:
@@ -42,8 +67,14 @@ func set_ply_pos(pos):
 		$Timer.start()
 	set_pos.call_deferred()
 	
+var frame_1 = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if frame_1 == 1:
+		emit_signal("loading")
+		frame_1 = 2
+	if frame_1 == 0:
+		frame_1 = 1
 	if Input.is_action_just_pressed("save"):
 		var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
 		file.store_16(4)
@@ -58,13 +89,14 @@ func _process(delta: float) -> void:
 		store_position(file, $"..".position)
 		file.store_16(5)
 		store_bool_array(file, $"../Inv/TabContainer/Beads/Stars".unlocked)
-		file.store_16(0xFFFF)
-		file.close()
-		print("saved")
-		var popup: Control = $"../HUD".popup_asset.instantiate()
-		popup.text = "Saved!"
-		#popup.sprite = popup_sprites[0]
-		$"..".add_child(popup)
+		file.store_16(6)
+		file.store_float($"../Health".max_health)
+		file.store_float($"../Health".health)
+		file.store_8(int($"..".dead))
+		
+		Map_Chuncks[$"..".current_map] = {}
+		emit_signal("saving")
+		save_end.call_deferred(file)
 	if Input.is_action_just_pressed("delete_save"):
 		var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
 		file.store_16(0xFFFF)
@@ -74,6 +106,25 @@ func _process(delta: float) -> void:
 		popup.text = "Saved Deleted!"
 		#popup.sprite = popup_sprites[0]
 		$"..".add_child(popup)
+
+func save_end(file: FileAccess):
+	for map in Map_Chuncks:
+		file.store_16(0x0200)
+		store_string(file, map)
+		for data in Map_Chuncks[map]:
+			file.store_16(len(Map_Chuncks[map][data]))
+			store_string(file,data)
+			file.store_buffer(Map_Chuncks[map][data])
+		file.store_16(0xFFFF)
+	file.store_16(0xFFFF)
+	file.close()
+	print("saved")
+	var popup: Control = $"../HUD".popup_asset.instantiate()
+	popup.text = "Saved!"
+	popup.sprite = load("res://assets/sprites/smiley.tres")
+	(popup.get_node("Icon/AnimatedSprite2D") as AnimatedSprite2D).scale *= 0.5
+	(popup.get_node("Icon/AnimatedSprite2D") as AnimatedSprite2D).offset *= 2
+	$"..".add_child(popup)
 
 func store_position(file: FileAccess,pos: Vector3):
 	file.store_float(pos.x)

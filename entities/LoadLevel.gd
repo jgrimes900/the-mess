@@ -26,6 +26,7 @@ func MapChange2(_a = null,body: Node3D = get_node("/root/Player"),level: String 
 		callable.call_deferred(level)
 		
 func DoTheThing(level: String):
+	$"/root/Player/Save".emit_signal("saving")
 	get_node("/root/Player").current_map = level
 	if KNOWN_MAPS.has(level): # Load map UID if key is used, otherwise assume 'level' is a path or UID
 		level = KNOWN_MAPS[level]
