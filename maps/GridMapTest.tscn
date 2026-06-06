@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://c8benl7ay7ho" path="res://assets/textures/fnaf/sotm/Lock.png" id="15_wu73p"]
 [ext_resource type="Material" uid="uid://bjdeuhicogjjh" path="res://assets/materials/fnaf/sotm/Lock Level3.tres" id="16_pniwy"]
 [ext_resource type="Script" uid="uid://cepl30smg4isf" path="res://entities/components/AutoConnect.gd" id="17_hr8cw"]
+[ext_resource type="PackedScene" uid="uid://brf1n5ap71gw" path="res://prefabs/shar_coin.tscn" id="19_fnf02"]
+[ext_resource type="ArrayMesh" uid="uid://dei5k65vf0b18" path="res://assets/models/old_room_assets/storageBox_a001.mesh" id="19_pniwy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba6ci"]
 size = Vector3(2, 2, 2)
@@ -49,6 +51,9 @@ albedo_texture = ExtResource("15_wu73p")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2y1ab"]
 size = Vector3(0.032, 0.01682422, 0.065)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fnf02"]
+size = Vector3(0.577, 0.274, 0.335)
 
 [node name="Node3D" type="Node3D" unique_id=1193290923]
 script = ExtResource("1_lumrj")
@@ -301,6 +306,39 @@ script = ExtResource("17_hr8cw")
 path = "../../GridMap/x-4y1z-4"
 signal_name = "closed"
 function = "_open"
+
+[node name="fuckyou_coin" parent="." unique_id=1854968160 instance=ExtResource("19_fnf02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.679, 17)
+
+[node name="TestBoxes" type="Node3D" parent="." unique_id=869395459]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12.582498, -0.99092025, 0)
+
+[node name="Box1" type="RigidBody3D" parent="TestBoxes" unique_id=1711120137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31797504, -0.29827702, 0)
+
+[node name="StorageBoxA001" type="MeshInstance3D" parent="TestBoxes/Box1" unique_id=772371551]
+mesh = ExtResource("19_pniwy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBoxes/Box1" unique_id=992749766]
+shape = SubResource("BoxShape3D_fnf02")
+
+[node name="Box2" type="RigidBody3D" parent="TestBoxes" unique_id=1378692807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28639698, -0.29827702, 0)
+
+[node name="StorageBoxA001" type="MeshInstance3D" parent="TestBoxes/Box2" unique_id=1855834199]
+mesh = ExtResource("19_pniwy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBoxes/Box2" unique_id=1417586328]
+shape = SubResource("BoxShape3D_fnf02")
+
+[node name="Box3" type="RigidBody3D" parent="TestBoxes" unique_id=830968916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023033142, -0.020191908, 0)
+
+[node name="StorageBoxA001" type="MeshInstance3D" parent="TestBoxes/Box3" unique_id=316751823]
+mesh = ExtResource("19_pniwy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBoxes/Box3" unique_id=2122650934]
+shape = SubResource("BoxShape3D_fnf02")
 
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
 [connection signal="body_shape_entered" from="FNaF Teleport Trigger" to="FNaF Teleport Trigger" method="MapChange" unbinds=4]

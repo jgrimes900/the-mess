@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bhypi04ojviqq"]
+
+[ext_resource type="FontFile" uid="uid://c2nll2g7ra6sm" path="res://assets/fonts/sm64_large.png" id="1_byumy"]
+
+[resource]
+line_spacing = 0.0
+font = ExtResource("1_byumy")

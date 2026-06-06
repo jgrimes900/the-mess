@@ -24,8 +24,10 @@
 [ext_resource type="TileSet" uid="uid://ddp8fcog0h7ly" path="res://GUI/WorldMapTiles.tres" id="18_gf0v6"]
 [ext_resource type="Script" uid="uid://dxt4rhv4nns4q" path="res://GUI/hud.gd" id="18_nmymu"]
 [ext_resource type="FontFile" uid="uid://duwe7fbbmyi1r" path="res://assets/fonts/sm64_color.png" id="19_e3k5d"]
-[ext_resource type="LabelSettings" uid="uid://iyu8m2lgy0f2" path="res://assets/fonts/sm64_large_2x.tres" id="20_3or85"]
+[ext_resource type="LabelSettings" uid="uid://bhypi04ojviqq" path="res://assets/fonts/sm64_large_1x.tres" id="20_gxohq"]
 [ext_resource type="Script" uid="uid://ei3fp4k5dg6d" path="res://prefabs/debug/label_2.gd" id="21_3or85"]
+[ext_resource type="Texture2D" uid="uid://b8ldylbubrn2w" path="res://assets/textures/rpgmaker/TextBox Border.png" id="22_6hvlk"]
+[ext_resource type="Texture2D" uid="uid://2pvior03rhtx" path="res://assets/textures/ui/sims3_gradient.png" id="23_btr86"]
 [ext_resource type="Script" uid="uid://dpumg6u6p8mhm" path="res://GUI/beads/fnaf_like.gd" id="23_w4pj3"]
 [ext_resource type="Texture2D" uid="uid://dgul2c2ipjnh7" path="res://assets/sprites/beads/fnaf_like/base.png" id="24_r1s2y"]
 [ext_resource type="Texture2D" uid="uid://bq7dax0qxaexg" path="res://assets/sprites/beads/fnaf_like/night_1.png" id="25_0anbp"]
@@ -459,6 +461,44 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_cv2ms")
 [sub_resource type="LabelSettings" id="LabelSettings_2v6jp"]
 font = ExtResource("19_e3k5d")
 font_size = 32
+
+[sub_resource type="Gradient" id="Gradient_btr86"]
+colors = PackedColorArray(0.019607844, 0.09411765, 0.32156864, 1, 0.25490198, 0.39215687, 0.61960787, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_30w5g"]
+gradient = SubResource("Gradient_btr86")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_envas"]
+texture = ExtResource("22_6hvlk")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+axis_stretch_vertical = 1
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pp8wu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_envas"]
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp8wu"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.03529412, 0.2509804, 0.62352943, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="MeshTexture" id="MeshTexture_6hvlk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0anbp"]
 shader = ExtResource("33_r1s2y")
@@ -1172,10 +1212,197 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "!\"!"
-label_settings = ExtResource("20_3or85")
+label_settings = ExtResource("20_gxohq")
 script = ExtResource("21_3or85")
 
+[node name="Control2" type="Control" parent="HUD" unique_id=1027347668]
+custom_minimum_size = Vector2(0, 62)
+anchors_preset = 0
+offset_right = 231.0
+offset_bottom = 62.0
+
+[node name="Back" type="TextureRect" parent="HUD/Control2" unique_id=1542158132]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_30w5g")
+expand_mode = 1
+flip_v = true
+
+[node name="Front" type="Panel" parent="HUD/Control2" unique_id=1572429408]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_envas")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control2" unique_id=592001023]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 58.0
+offset_bottom = 48.0
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Control2/HBoxContainer" unique_id=1367777366]
+texture_filter = 1
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_pp8wu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Control2/HBoxContainer" unique_id=958166311]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Hello!
+I am a test.
+Test Test Test"
+label_settings = ExtResource("20_gxohq")
+
+[node name="Control4" type="Control" parent="HUD" unique_id=315030002]
+anchors_preset = 0
+offset_right = 236.0
+offset_bottom = 127.0
+
+[node name="Control3" type="Control" parent="HUD/Control4" unique_id=439522932]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="HUD/Control4/Control3" unique_id=879021171]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_envas")
+
+[node name="Back" type="TextureRect" parent="HUD/Control4/Control3/Panel" unique_id=1214174125]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("23_btr86")
+expand_mode = 1
+flip_v = true
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Control4/Control3" unique_id=1899287663]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pp8wu")
+
+[node name="Control4" type="Control" parent="HUD/Control4" unique_id=1022695735]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 68.0
+offset_bottom = 68.0
+
+[node name="Panel" type="Panel" parent="HUD/Control4/Control4" unique_id=712168805]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_envas")
+
+[node name="Back" type="TextureRect" parent="HUD/Control4/Control4/Panel" unique_id=1961444119]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("23_btr86")
+expand_mode = 1
+flip_v = true
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Control4/Control4" unique_id=638256147]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pp8wu")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Control4/Control4" unique_id=882127147]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038000003
+anchor_top = 0.038000003
+anchor_right = 0.9620001
+anchor_bottom = 0.9620001
+offset_left = 0.02399993
+offset_top = 0.02399993
+offset_right = -0.024002075
+offset_bottom = -0.024002075
+texture = SubResource("MeshTexture_6hvlk")
+
+[node name="LabelName" type="Label" parent="HUD/Control4" unique_id=107687623]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.975
+offset_left = 73.0
+offset_top = 16.0
+offset_right = -0.1000061
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0.09803922, 0.34901962, 1)
+theme_override_colors/font_outline_color = Color(0, 0.09803922, 0.34901962, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Seed of Doom"
+
+[node name="LabelQuality" type="Label" parent="HUD/Control4" unique_id=1034102552]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.975
+offset_left = 16.0
+offset_top = 74.0
+offset_right = -0.1000061
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 9
+text = "Normal Quality"
+
+[node name="LabelRarity" type="Label" parent="HUD/Control4" unique_id=602660609]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.975
+offset_left = 16.0
+offset_top = 97.0
+offset_right = -0.1000061
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0, 0.09803922, 0.34901962, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 9
+text = "Rarity: Special"
+
 [node name="panel_fuck" type="Panel" parent="." unique_id=1363549028]
+visible = false
 material = SubResource("ShaderMaterial_0anbp")
 anchors_preset = 15
 anchor_right = 1.0
