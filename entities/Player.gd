@@ -29,6 +29,8 @@ var rotation_mod_unit: Vector3
 var rot_temp: Vector3
 var local_pos: Vector3
 var current_map: String = "hl1_c1a0"  # Default to starting map
+var last_map: String = ""
+var spawned: bool = false
 
 @onready var last_pos: Vector3 = self.global_position
 @onready var pivot: Node3D = $Pivot

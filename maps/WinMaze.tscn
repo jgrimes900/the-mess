@@ -13,13 +13,17 @@
 [ext_resource type="Shader" uid="uid://0umywmj3w6un" path="res://shaders/wall_fade.gdshader" id="11_n06p1"]
 [ext_resource type="Texture2D" uid="uid://cj5sv18iyx5oi" path="res://assets/textures/WinMaze/wall_dither.png" id="12_ie6ok"]
 [ext_resource type="Material" uid="uid://b05g0qqdyr8ip" path="res://assets/materials/WinMaze/Wall.tres" id="13_lucb6"]
-[ext_resource type="Texture2D" uid="uid://cwkjdwoxmqp2" path="res://assets/textures/hl1_c1a0/c1a0_texture_6.png" id="14_sdx28"]
+[ext_resource type="Texture2D" uid="uid://cwb3fwtbl2w5c" path="res://assets/textures/hl1_c1a0/c1a0_texture_6.png" id="14_sdx28"]
 [ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="15_mkp5w"]
 [ext_resource type="Material" uid="uid://bmsvhvrbe3iw6" path="res://assets/materials/WinMaze/Floor.tres" id="16_fq7wg"]
 [ext_resource type="Script" uid="uid://drl3ms0grcmo4" path="res://entities/ButtonSliding.gd" id="17_howkw"]
 [ext_resource type="PackedScene" uid="uid://c256f6gnhf0fr" path="res://assets/models/fnaf/sotm/SotM Lock.fbx" id="18_d5221"]
 [ext_resource type="Texture2D" uid="uid://c8benl7ay7ho" path="res://assets/textures/fnaf/sotm/Lock.png" id="19_ekhpa"]
 [ext_resource type="Material" uid="uid://bjdeuhicogjjh" path="res://assets/materials/fnaf/sotm/Lock Level3.tres" id="20_ydscv"]
+[ext_resource type="Texture2D" uid="uid://c4c0puvmcu82c" path="res://assets/textures/hl1_c1a0/c1a0_texture_4.png" id="21_grqno"]
+[ext_resource type="Texture2D" uid="uid://der5nx8on5fo" path="res://assets/textures/hl1_c1a0/c1a0_texture_31.png" id="22_elns3"]
+[ext_resource type="Texture2D" uid="uid://do4v5a3swqyt8" path="res://assets/textures/hl1_c1a0/c1a0_texture_32.png" id="23_t16ig"]
+[ext_resource type="ArrayMesh" uid="uid://donjr6fbwwdyt" path="res://assets/models/C1A0_001.res" id="24_iip7e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_733ue"]
 
@@ -68,12 +72,42 @@ albedo_texture = ExtResource("14_sdx28")
 [sub_resource type="PlaneMesh" id="PlaneMesh_13ybn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rkn7v"]
-size = Vector3(2, 0.1, 2)
+margin = 0.0
+size = Vector3(2, 0.09, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grqno"]
 albedo_texture = ExtResource("19_ekhpa")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_elns3"]
+size = Vector3(0.032, 0.01682422, 0.065)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5kiq"]
+albedo_texture = ExtResource("21_grqno")
+uv1_scale = Vector3(4, 4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mn6f7"]
+albedo_texture = ExtResource("22_elns3")
+uv1_scale = Vector3(2, 4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53t4y"]
+albedo_texture = ExtResource("23_t16ig")
+emission_enabled = true
+emission_texture = ExtResource("23_t16ig")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ap46u"]
+albedo_texture = ExtResource("14_sdx28")
+uv1_scale = Vector3(2, 1, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_grqno"]
+data = PackedVector3Array(-3, -1, -6, -3, 0, -6, -3, -1, 0, -3, -1, -6, -3, -1, 0, -1.005, -1, -4.005, -3, 0, -6, -1.005, 0, -1.995, -3, 0, -4, -3, -1, -6, 3, -1, -6, -3, 0, -6, -3, -1, -6, -1.005, -1, -4.005, 3, -1, -6, -3, 0, -6, -1.005, 0, -4.005, -1.005, 0, -1.995, -3, 0, -6, 1.005, 0, -4.005, -1.005, 0, -4.005, -3, 0, -6, -3, 0, -4, -3, -1, 0, -3, 0, -4, -1.005, 0, -1.995, -3, 0, -2.2351742e-07, -3, 0, -4, -3, -2.3841858e-07, 0, -3, -1, 0, -3, -2.3841858e-07, 0, -3, 0, 0, -1.1000061, 0, 0, -1.005, -1, -4.005, -3, -1, 0, -1.005, -1, -1.995, -3, -1, 0, -3, -2.3841858e-07, 0, 1.1572876, 0, 0, -3, 0, -2.2351742e-07, -1.005, 0, -1.995, -1.1000061, 0, -1.3858107e-07, -3, -1, 0, 1.005, -1, -1.995, -1.005, -1, -1.995, -1.005, 0, -1.995, 1.1572876, 0, -3.767218e-08, -1.1000061, 0, -1.3858107e-07, -3, -2.3841858e-07, 0, -1.1000061, 0, 0, 1.1572876, 0, 0, -3, 0, -6, 3, 0, -6, 1.005, 0, -4.005, -3, 0, -6, 3, -1, -6, 3, 0, -6, -1.005, -1, -4.005, 1.005, -1, -4.005, 3, -1, -6, 1.005, -1, -4.005, 1.005, -1, -1.995, 3, -1, -6, 3, -1, -6, 3, 0, -4, 3, 0, -6, 1.005, 0, -4.005, 3, 0, -6, 3, 0, -4, 1.005, 0, -4.005, 3, 0, 0, 1.005, 0, -1.995, -3, -1, 0, 3, -1, 0, 1.005, -1, -1.995, -3, -1, 0, 1.1572876, 0, 0, 2, 0, 0, -3, -1, 0, 2, 0, 0, 3, 0, 0, 1.1572876, 0, -3.767218e-08, -1.005, 0, -1.995, 2, 0, 0, -3, -1, 0, 3, -2.3841858e-07, 0, 3, -1, 0, -3, -1, 0, 3, 0, 0, 3, -2.3841858e-07, 0, -1.005, 0, -1.995, 1.005, 0, -1.995, 3, 0, 0, -1.005, 0, -1.995, 3, 0, 0, 2, 0, 0, 3, -1, -6, 1.005, -1, -1.995, 3, -1, 0, 1.005, 0, -4.005, 3, 0, -4, 3, 0, 0, 3, -1, -6, 3, -1, 0, 3, 0, -4, 3, 0, -4, 3, -1, 0, 3, -2.3841858e-07, 0, -1.005, -1, -4.005, -1.005, -1, -1.995, -1.005, 0, -4.005, -1.005, -1, -4.005, -1.005, 0, -4.005, 1.005, -1, -4.005, -1.005, 0, -4.005, -1.005, -1, -1.995, -1.005, 0, -1.995, -1.005, -1, -1.995, 1.005, 0, -1.995, -1.005, 0, -1.995, -1.005, 0, -4.005, 1.005, 0, -4.005, 1.005, -1, -4.005, 1.005, -1, -4.005, 1.005, 0, -4.005, 1.005, 0, -1.995, -1.005, -1, -1.995, 1.005, -1, -1.995, 1.005, 0, -1.995, 1.005, -1, -4.005, 1.005, 0, -1.995, 1.005, -1, -1.995, -3.0000002, 4, -6, -3, 4, -6, -3.0000002, 5, -6, -3.0000002, 4, -6, -3.0000002, 5, -6, -2.9999998, 5, 2.3841858e-07, -3, 4, -6, -3, 4, -3, -0.8000001, 4, -3.991, -3.0000002, 5, -6, -3, 4, -6, 2.9999998, 5, -6, -3, 4, -6, -0.8000001, 4, -3.991, 0.79999995, 4, -3.9910002, -3.0000002, 5, -6, 0.79999995, 5, -3.9910002, -0.8000001, 5, -3.991, -3, 4, -3, -2.9999998, 4, -4.4703473e-08, -0.79999995, 4, -2.0089998, -3.0000002, 4, -6, -2.9999998, 5, 2.3841858e-07, -3, 4, -3, -3.0000002, 5, -6, -0.8000001, 5, -3.991, -2.9999998, 5, 2.3841858e-07, -3, 4, -3, -2.9999998, 5, 2.3841858e-07, -2.9999998, 4, -4.4703473e-08, -2.9999998, 4, 2.3841858e-07, -2.9999998, 4, -4.4703473e-08, -2.9999998, 5, 2.3841858e-07, -2.9999998, 4, 2.3841858e-07, -2.9999998, 5, 2.3841858e-07, -0.71999985, 4, 5.7220465e-08, -0.8000001, 4, -3.991, -3, 4, -3, -0.79999995, 4, -2.0089998, -0.8000001, 5, -3.991, -0.79999995, 5, -2.0089998, -2.9999998, 5, 2.3841858e-07, -2.9999998, 4, -4.4703473e-08, -0.71999985, 4, 5.7220465e-08, -0.79999995, 4, -2.0089998, -2.9999998, 5, 2.3841858e-07, -0.79999995, 5, -2.0089998, 3.0000002, 5, -2.3841858e-07, -2.9999998, 5, 2.3841858e-07, 3, 4, -2.3841856e-07, -0.71999985, 4, 5.7220465e-08, -3, 4, -6, 0.79999995, 4, -3.9910002, 2.9999998, 4, -6, -3.0000002, 5, -6, 2.9999998, 5, -6, 0.79999995, 5, -3.9910002, -3, 4, -6, 2.9999998, 4, -6, 2.9999998, 5, -6, 0.79999995, 5, -3.9910002, 2.9999998, 5, -6, 0.8000001, 5, -2.009, 0.79999995, 4, -3.9910002, 3, 4, -3, 2.9999998, 4, -6, 2.9999998, 4, -6, 3, 4, -3, 2.9999998, 5, -6, 0.79999995, 4, -3.9910002, 0.8000001, 4, -2.009, 3, 4, -3, -0.79999995, 4, -2.0089998, -0.71999985, 4, 5.7220465e-08, 3, 4, -2.3841856e-07, -0.79999995, 4, -2.0089998, 3, 4, -2.3841856e-07, 0.8000001, 4, -2.009, -0.79999995, 5, -2.0089998, 0.8000001, 5, -2.009, 3.0000002, 5, -2.3841858e-07, -2.9999998, 5, 2.3841858e-07, 3.0000002, 5, -2.3841858e-07, 3, 4, -2.3841856e-07, 0.8000001, 4, -2.009, 3, 4, -2.3841856e-07, 3, 4, -3, 2.9999998, 5, -6, 3.0000002, 5, -2.3841858e-07, 0.8000001, 5, -2.009, 2.9999998, 5, -6, 3, 4, -3, 3.0000002, 4, -2.3841858e-07, 2.9999998, 5, -6, 3.0000002, 4, -2.3841858e-07, 3.0000002, 5, -2.3841858e-07, 3, 4, -2.3841856e-07, 3.0000002, 5, -2.3841858e-07, 3.0000002, 4, -2.3841858e-07, -0.8000001, 4, -3.991, -0.79999995, 4, -2.0089998, 0.8000001, 4, -2.009, -0.8000001, 5, -3.991, 0.79999995, 5, -3.9910002, -0.79999995, 5, -2.0089998, -0.8000001, 4, -3.991, 0.8000001, 4, -2.009, 0.79999995, 4, -3.9910002, -0.79999995, 5, -2.0089998, 0.79999995, 5, -3.9910002, 0.8000001, 5, -2.009, 3, 1.1920929e-07, -6, 4, -2.3841858e-07, 0, 4, 1.1920929e-07, -6, 3, 1.1920929e-07, -6, 4, 1.1920929e-07, -6, 4, 4, -6, 4, 1.1920929e-07, -6, 4, -2.3841858e-07, 0, 4, 4, -6, 3, 1.1920929e-07, -6, 3, 0, -4, 4, -2.3841858e-07, 0, 3, 0, -4, 3, -2.3841858e-07, 0, 4, -2.3841858e-07, 0, 3, 0, 0, 4, -2.3841858e-07, 0, 3, -2.3841858e-07, 0, 3, 1.1920929e-07, -6, 3, 4, 0, 3, 0, -4, 3, 0, -4, 3, 4, 0, 3, 0, 0, 3, 0, 0, 3, 4, 0, 4, -2.3841858e-07, 0, 3, 1.1920929e-07, -6, 4, 4, -6, 3, 4, -6, 3, 1.1920929e-07, -6, 3, 4, -6, 3, 4, -3, 3, 4, -6, 4, 4, -6, 3, 4, -3, 3, 1.1920929e-07, -6, 3, 4, -3, 3, 4, -2.3841856e-07, 3, 1.1920929e-07, -6, 3, 4, -2.3841856e-07, 3, 4, 0, 4, -2.3841858e-07, 0, 4, 4, 0, 4, 4, -6, 4, -2.3841858e-07, 0, 3, 4, 0, 4, 4, 0, 4, 4, -6, 3.0000002, 4, -2.3841858e-07, 3, 4, -3, 4, 4, -6, 4, 4, 0, 3.0000002, 4, -2.3841858e-07, 3, 4, 0, 3, 4, -2.3841856e-07, 3.0000002, 4, -2.3841858e-07, 3, 4, 0, 3.0000002, 4, -2.3841858e-07, 4, 4, 0, -4, 1.1920929e-07, -6, -3, 0, -4, -3, 1.1920929e-07, -6, -4, 1.1920929e-07, -6, -3, 1.1920929e-07, -6, -3, 4, -6, -3, 1.1920929e-07, -6, -3, 0, -4, -3, 4, -6, -4, 1.1920929e-07, -6, -3, -2.3841858e-07, 0, -3, 0, -4, -4, 1.1920929e-07, -6, -4, -2.3841858e-07, 0, -3, -2.3841858e-07, 0, -4, -2.3841858e-07, 0, -3, 0, 0, -3, -2.3841858e-07, 0, -4, 1.1920929e-07, -6, -4, 4, 0, -4, -2.3841858e-07, 0, -3, 0, -4, -3, 0, -2.2351742e-07, -3, 4, -3, -4, -2.3841858e-07, 0, -4, 4, 0, -3, 0, 0, -4, 1.1920929e-07, -6, -3.0000002, 4, -6, -4, 4, -6, -4, 1.1920929e-07, -6, -3, 4, -6, -3.0000002, 4, -6, -4, 1.1920929e-07, -6, -4, 4, -6, -4, 4, 0, -3, 0, -4, -3, 4, -3, -3, 4, -6, -4, 4, -6, -3.0000002, 4, -6, -4, 4, 0, -3, 0, 0, -4, 4, 0, -3, 4, 0, -3, 0, -2.2351742e-07, -3, 4, -4.4703484e-08, -3, 4, -3, -3.0000002, 4, -6, -3, 4, -3, -4, 4, 0, -3, 4, -3, -3, 4, -4.4703484e-08, -4, 4, 0, -4, 4, 0, -3, 4, -4.4703484e-08, -3, 4, 0, -3, 0, -7, -3, 4, -7, -3, 0, -6, -3, 1.1920929e-07, -6, -3, 0, -6, -3, 4, -7, -3, 0, -7, -3, 0, -6, 3, 0, -7, -3, 1.1920929e-07, -6, 2.9999998, 4, -6, -3, 0, -6, -3, 0, -7, 3, 0, -7, -3, 4, -7, -3, 1.1920929e-07, -6, -3, 4, -7, -3, 4, -6, -3, 1.1920929e-07, -6, -3, 4, -6, 2.9999998, 4, -6, -3, 4, -7, 2.9999998, 4, -6, -3, 4, -6, -3, 0, -6, 3, 0, -6, 3, 0, -7, -3, 0, -6, 3, 4, -6, 3, 0, -6, 3, 0, -7, 3, 0, -6, 3, 4, -6, -3, 0, -6, 2.9999998, 4, -6, 3, 4, -6, -3, 4, -7, 3, 0, -7, 3, 4, -7, -3, 4, -7, 3, 4, -7, 2.9999998, 4, -6, 3, 0, -7, 3, 4, -6, 3, 4, -7, 2.9999998, 4, -6, 3, 4, -7, 3, 4, -6, -3, 0, 0, -3, 0, 0.33056617, -1.1000061, 0, 0.33056626, -3, 0, 0, -3, 4, 0, -3, 0, 0.33056617, -3, 0, -2.2351742e-07, -1.1000061, 0, -1.3858107e-07, -3, 4, -4.4703484e-08, -3, 0, 0, -1.1000061, 0, 0.33056626, -1.1000061, 0, 0, -3, 0, 0.33056617, -1.1000061, 3.1149902, 0.3305664, -1.1000061, 0, 0.33056626, -3, 0, 0.33056617, -3, 4, 0, -3, 4, 0.33056635, -3, 0, 0.33056617, -3, 4, 0.33056635, -1.1000061, 3.1149902, 0.3305664, -3, 4, -4.4703484e-08, -1.1000061, 0, -1.3858107e-07, -2.9999998, 4, -4.4703473e-08, -3, 4, -4.4703484e-08, -2.9999998, 4, 2.3841858e-07, -3, 4, 0, -3, 4, -4.4703484e-08, -2.9999998, 4, -4.4703473e-08, -2.9999998, 4, 2.3841858e-07, -3, 4, 0, -2.9999998, 4, 2.3841858e-07, -3, 4, 0.33056635, -2.9999998, 4, 2.3841858e-07, -0.71999985, 4, 5.7220465e-08, -3, 4, 0.33056635, -2.9999998, 4, -4.4703473e-08, -1.1000061, 0, -1.3858107e-07, -1.1000061, 3.1149902, 6.6984285e-10, -0.71999985, 4, 5.7220465e-08, -1.1000061, 3.1149902, 6.6984285e-10, 1.1572876, 3.1149902, 1.01578735e-07, -2.9999998, 4, -4.4703473e-08, -1.1000061, 3.1149902, 6.6984285e-10, -0.71999985, 4, 5.7220465e-08, -3, 4, 0.33056635, 3, 4, 0.33056664, -1.1000061, 3.1149902, 0.3305664, -3, 4, 0.33056635, -0.71999985, 4, 5.7220465e-08, 3, 4, 0.33056664, 2, 0, 0, 1.1572876, 0, 0, 1.1572876, 0, 0.055714443, 3, 0, 0.33056647, 1.1572876, 0, 0.055714443, 1.1572876, 0, 0.33056638, 2, 0, 0, 1.1572876, 3.1149902, 1.01578735e-07, 1.1572876, 0, -3.767218e-08, 2, 0, 0, 1.1572876, 0, 0.055714443, 3, 0, 4.4703484e-08, 3, 0, 4.4703484e-08, 1.1572876, 0, 0.055714443, 3, 0, 0.33056647, 2, 0, 0, 3, 0, 4.4703484e-08, 1.1572876, 3.1149902, 1.01578735e-07, 3, 0, 0.33056647, 1.1572876, 0, 0.33056638, 3, 4, 0.33056664, 3, 0, 4.4703484e-08, 3, 0, 0.33056647, 3, 4, 0.33056664, 3, 4, 0.33056664, 1.1572876, 0, 0.33056638, 1.1572876, 3.1149902, 0.33056653, 3, 4, 0.33056664, 1.1572876, 3.1149902, 0.33056653, -1.1000061, 3.1149902, 0.3305664, -0.71999985, 4, 5.7220465e-08, 1.1572876, 3.1149902, 1.01578735e-07, 3, 4, 2.2351742e-07, -0.71999985, 4, 5.7220465e-08, 3, 4, 2.2351742e-07, 3, 4, 0.33056664, 3, 0, 4.4703484e-08, 3, 4, 2.2351742e-07, 1.1572876, 3.1149902, 1.01578735e-07, 3, 0, 4.4703484e-08, 3, 4, 0.33056664, 3, 4, 2.2351742e-07, -1.1000061, 0, -1.3858107e-07, 1.1572876, 0, -3.767218e-08, -1.1000061, 0, 0, -1.1000061, 0, -1.3858107e-07, -1.1000061, 0, 0, -1.1000061, 3.1149902, 0.3305664, -1.1000061, 3.1149902, 0.3305664, -1.1000061, 0, 0, -1.1000061, 0, 0.33056626, -1.1000061, 0, -1.3858107e-07, -1.1000061, 3.1149902, 0.3305664, -1.1000061, 3.1149902, 6.6984285e-10, -1.1000061, 3.1149902, 0.3305664, 1.1572876, 3.1149902, 0.33056653, -1.1000061, 3.1149902, 6.6984285e-10, 1.1572876, 0, 0, -1.1000061, 0, 0, 1.1572876, 0, -3.767218e-08, 1.1572876, 0, 0, 1.1572876, 0, -3.767218e-08, 1.1572876, 0, 0.055714443, 1.1572876, 0, -3.767218e-08, 1.1572876, 3.1149902, 1.01578735e-07, 1.1572876, 0, 0.055714443, 1.1572876, 0, 0.33056638, 1.1572876, 0, 0.055714443, 1.1572876, 3.1149902, 1.01578735e-07, -1.1000061, 3.1149902, 6.6984285e-10, 1.1572876, 3.1149902, 0.33056653, 1.1572876, 3.1149902, 1.01578735e-07, 1.1572876, 0, 0.33056638, 1.1572876, 3.1149902, 1.01578735e-07, 1.1572876, 3.1149902, 0.33056653)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5c7ph"]
+size = Vector3(0.002, 0.028, 0.016)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gawj7"]
+albedo_texture = ExtResource("19_ekhpa")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4346p"]
 size = Vector3(0.032, 0.01682422, 0.065)
 
 [node name="Node3D" type="Node3D" unique_id=2048975526]
@@ -97,6 +131,7 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1, 1, 3)
 [node name="c1a0 Teleport Trigger" type="Area3D" parent="." unique_id=1150069787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -5)
 script = ExtResource("4_h5mn7")
+LevelDef = "hl1_c1a0"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="c1a0 Teleport Trigger" unique_id=1463581642]
 shape = SubResource("BoxShape3D_733ue")
@@ -237,7 +272,110 @@ surface_material_override/1 = ExtResource("20_ydscv")
 transform = Transform3D(7.5, 0, 0, 0, -3.278354e-07, 7.5, 0, -7.5, -3.278354e-07, 0.0037593842, -0.051766157, 0.057886124)
 shape = SubResource("BoxShape3D_elns3")
 
-[connection signal="body_shape_entered" from="c1a0 Teleport Trigger" to="c1a0 Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
+[node name="Node3D" type="Node3D" parent="." unique_id=760113947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.306, 2.164, -24.749)
+
+[node name="WinMaze Exit Room" type="Node3D" parent="." unique_id=1659739881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 16, -2)
+
+[node name="Room" type="StaticBody3D" parent="WinMaze Exit Room" unique_id=1185056991]
+
+[node name="Visual" type="CSGCombiner3D" parent="WinMaze Exit Room/Room" unique_id=698022574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00031280518, 0.00027251244, -0.00022125244)
+
+[node name="Floor" type="CSGBox3D" parent="WinMaze Exit Room/Room/Visual" unique_id=14947098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -3)
+size = Vector3(6, 1, 6)
+material = SubResource("StandardMaterial3D_d5kiq")
+
+[node name="Floor2" type="CSGBox3D" parent="WinMaze Exit Room/Room/Visual" unique_id=1836743399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -3)
+operation = 2
+size = Vector3(2.01, 1, 2.01)
+material = SubResource("StandardMaterial3D_d5kiq")
+
+[node name="Ceil" type="CSGBox3D" parent="WinMaze Exit Room/Room/Visual" unique_id=704399359]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 4.5, -3)
+size = Vector3(6, 1, 6)
+material = SubResource("StandardMaterial3D_mn6f7")
+
+[node name="Light" type="CSGBox3D" parent="WinMaze Exit Room/Room/Visual" unique_id=2040290355]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 4.5, -3)
+size = Vector3(1.982, 1, 1.6)
+material = SubResource("StandardMaterial3D_53t4y")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="WinMaze Exit Room/Room/Visual" unique_id=801485202]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.5, 2, -3)
+size = Vector3(1, 6, 4)
+material = SubResource("StandardMaterial3D_ap46u")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="WinMaze Exit Room/Room/Visual" unique_id=1474278498]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.5, 2, -3)
+size = Vector3(1, 6, 4)
+material = SubResource("StandardMaterial3D_ap46u")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="WinMaze Exit Room/Room/Visual" unique_id=1286803379]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 0, 2, -6.5)
+size = Vector3(1, 6, 4)
+material = SubResource("StandardMaterial3D_ap46u")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="WinMaze Exit Room/Room/Visual" unique_id=1933524817]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 0, 2, 0.1652832)
+size = Vector3(0.3305664, 6, 4)
+material = SubResource("StandardMaterial3D_ap46u")
+
+[node name="DoorHole" type="CSGBox3D" parent="WinMaze Exit Room/Room/Visual" unique_id=1282653003]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 0.028640747, 1.5574951, 0.16052246)
+operation = 2
+size = Vector3(0.3400879, 2.2572937, 3.1149902)
+material = SubResource("StandardMaterial3D_ap46u")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="WinMaze Exit Room/Room" unique_id=1251518874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00031280518, 0.00027251244, -0.00022125244)
+shape = SubResource("ConcavePolygonShape3D_grqno")
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="WinMaze Exit Room" unique_id=873794700]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.00031280518, 3.3889177, -3.0002222)
+light_energy = 2.0
+light_size = 0.213
+
+[node name="Door4" type="AnimatableBody3D" parent="WinMaze Exit Room" unique_id=404928220]
+transform = Transform3D(0, 1.9106855e-15, 1, -4.371139e-08, 1, -1.9106855e-15, -1, -4.371139e-08, -8.351872e-23, 0.042312622, 1.4052725, 0.19977856)
+script = ExtResource("15_mkp5w")
+lip = 2.4
+
+[node name="C1a0001" type="MeshInstance3D" parent="WinMaze Exit Room/Door4" unique_id=294183990]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+mesh = ExtResource("24_iip7e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="WinMaze Exit Room/Door4" unique_id=340752697]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0.00049972534)
+shape = SubResource("BoxShape3D_5c7ph")
+
+[node name="doorlock_out" type="AnimatableBody3D" parent="WinMaze Exit Room" unique_id=419114426]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0639095, 1.6212726, -0.00022125244)
+script = ExtResource("17_howkw")
+
+[node name="SotM Lock" parent="WinMaze Exit Room/doorlock_out" unique_id=1234032411 instance=ExtResource("18_d5221")]
+
+[node name="Skeleton3D" parent="WinMaze Exit Room/doorlock_out/SotM Lock/SotM Lock Rig" parent_id_path=PackedInt32Array(1234032411, 14589791) index="0" unique_id=1434248103]
+bones/1/position = Vector3(0.00045568487, 0.007100416, -0.027087338)
+bones/1/rotation = Quaternion(1.126339e-08, 0.97697073, -0.21337326, 3.066872e-07)
+bones/1/scale = Vector3(1, 1, 0.99999994)
+
+[node name="SotM Lock" parent="WinMaze Exit Room/doorlock_out/SotM Lock/SotM Lock Rig/Skeleton3D" index="0" unique_id=152199536]
+surface_material_override/0 = SubResource("StandardMaterial3D_gawj7")
+surface_material_override/1 = ExtResource("20_ydscv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WinMaze Exit Room/doorlock_out" unique_id=1519589087]
+transform = Transform3D(7.5, 0, 0, 0, -3.278354e-07, 7.5, 0, -7.5, -3.278354e-07, 0.0037593842, -0.051766157, 0.057886124)
+shape = SubResource("BoxShape3D_4346p")
+
+[connection signal="body_shape_entered" from="c1a0 Teleport Trigger" to="c1a0 Teleport Trigger" method="MapChange" unbinds=2]
+[connection signal="opened" from="Lift" to="c1a0 Teleport Trigger" method="MapChange2"]
 [connection signal="closed" from="test_doorlock_in" to="Lift" method="_open"]
+[connection signal="closed" from="WinMaze Exit Room/doorlock_out" to="WinMaze Exit Room/Door4" method="_open"]
+[connection signal="opened" from="WinMaze Exit Room/doorlock_out" to="WinMaze Exit Room/Door4" method="_open"]
 
 [editable path="test_doorlock_in/SotM Lock"]
+[editable path="WinMaze Exit Room/doorlock_out/SotM Lock"]

@@ -22,8 +22,13 @@
 [ext_resource type="PackedScene" uid="uid://c256f6gnhf0fr" path="res://assets/models/fnaf/sotm/SotM Lock.fbx" id="12_q28ir"]
 [ext_resource type="Texture2D" uid="uid://c8benl7ay7ho" path="res://assets/textures/fnaf/sotm/Lock.png" id="13_0gtl4"]
 [ext_resource type="Material" uid="uid://bjdeuhicogjjh" path="res://assets/materials/fnaf/sotm/Lock Level3.tres" id="14_ducml"]
+[ext_resource type="Material" uid="uid://bmsvhvrbe3iw6" path="res://assets/materials/WinMaze/Floor.tres" id="14_rkeft"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0f65"]
+albedo_texture = ExtResource("4_rkeft")
+uv1_scale = Vector3(4, 4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8w5rr"]
 albedo_texture = ExtResource("4_rkeft")
 uv1_scale = Vector3(4, 4, 1)
 
@@ -51,6 +56,12 @@ albedo_texture = ExtResource("13_0gtl4")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_doqcj"]
 size = Vector3(0.032, 0.01682422, 0.065)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wd5nl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c7rwn"]
+margin = 0.0
+size = Vector3(2, 0.1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jbgc"]
 
@@ -95,6 +106,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00031280518, 0.00027251244,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -3)
 size = Vector3(6, 1, 6)
 material = SubResource("StandardMaterial3D_p0f65")
+
+[node name="Floor2" type="CSGBox3D" parent="C1A0/World/WinMaze Exit Room/Room/Visual" unique_id=1826608318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -3.000001)
+operation = 2
+size = Vector3(2.01, 1, 2.01)
+material = SubResource("StandardMaterial3D_8w5rr")
 
 [node name="Ceil" type="CSGBox3D" parent="C1A0/World/WinMaze Exit Room/Room/Visual" unique_id=555541180]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 4.5, -3)
@@ -172,6 +189,22 @@ surface_material_override/1 = ExtResource("14_ducml")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="C1A0/World/WinMaze Exit Room/doorlock_out" unique_id=646932201]
 transform = Transform3D(7.5, 0, 0, 0, -3.278354e-07, 7.5, 0, -7.5, -3.278354e-07, 0.0037593842, -0.051766157, 0.057886124)
 shape = SubResource("BoxShape3D_doqcj")
+
+[node name="Lift" type="AnimatableBody3D" parent="C1A0/World/WinMaze Exit Room" unique_id=871336720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+script = ExtResource("8_b5rxj")
+move_speed = 1.0
+lip = 16.0
+close_time = -1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="C1A0/World/WinMaze Exit Room/Lift" unique_id=184565855]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_wd5nl")
+surface_material_override/0 = ExtResource("14_rkeft")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="C1A0/World/WinMaze Exit Room/Lift" unique_id=968728296]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.05, 0)
+shape = SubResource("BoxShape3D_c7rwn")
 
 [node name="GridMapTest Teleport Trigger" type="Area3D" parent="C1A0" unique_id=988615940]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.612649, 3.0487177, -3.5050173)
@@ -394,6 +427,8 @@ texture = ExtResource("4_7fnmf")
 [node name="Spawn" type="Node3D" parent="." unique_id=917287883]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9184103, -2.1957545, 0.5974302)
 script = ExtResource("5_jgvh2")
+main = false
+from_maps = ["GridMapTest", "StarkronDemo1"]
 
 [node name="Door_Switch" type="Area3D" parent="." unique_id=1020892607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0087261, -1.8915762, 3.2998955)
@@ -446,6 +481,14 @@ shape = SubResource("BoxShape3D_t7t8s")
 
 [node name="Vending" parent="." unique_id=505541132 instance=ExtResource("11_pe3st")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.078497, -3.219, -13.67)
+
+[node name="Spawn_WinMaze" type="Node3D" parent="." unique_id=1713845823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.576777, -2.2193103, -17.558746)
+script = ExtResource("5_jgvh2")
+is_offset = true
+offset = Vector3(-36.577, -19.219, -12.559)
+main = false
+from_maps = ["WinMap"]
 
 [connection signal="closed" from="C1A0/World/WinMaze Exit Room/doorlock_out" to="C1A0/World/WinMaze Exit Room/Door4" method="_open"]
 [connection signal="opened" from="C1A0/World/WinMaze Exit Room/doorlock_out" to="C1A0/World/WinMaze Exit Room/Door4" method="_open"]

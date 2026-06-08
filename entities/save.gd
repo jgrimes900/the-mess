@@ -33,6 +33,8 @@ func _ready() -> void:
 								$"../Inv".recive_currency(null, key, 0)
 					1:
 						LoadLevel.MapChange2(null,get_node("/root/Player"),get_string(file))
+					7:
+						get_node("/root/Player").last_map = get_string(file)
 					0x100:
 						var pos = get_position(file)
 						OnLoad.connect("level_loaded", set_ply_pos.bind(pos))
@@ -85,6 +87,8 @@ func _process(delta: float) -> void:
 		store_dictionary_int32(file,$"../Inv".coin_counts)
 		file.store_16(1)
 		store_string(file, $"..".current_map)
+		file.store_16(7)
+		store_string(file, $"..".last_map)
 		file.store_16(0x100)
 		store_position(file, $"..".position)
 		file.store_16(5)
