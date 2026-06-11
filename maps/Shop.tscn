@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bphgf2sjkj8gk"]
+
+[ext_resource type="MeshLibrary" uid="uid://vny6echmfea1" path="res://assets/Shop_Tiles.tres" id="1_3kiyp"]
+[ext_resource type="Script" uid="uid://b76jopsv3bwot" path="res://entities/store/shelf_slot.gd" id="2_st76n"]
+[ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="4_4mjqg"]
+[ext_resource type="Script" uid="uid://j8afr4w6h2on" path="res://maps/store/item_defs_test.gd" id="4_68kpe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mjqg"]
+size = Vector3(2, 1.6, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_68kpe"]
+size = Vector3(1, 0.65, 0.8)
+
+[node name="Shop" type="Node3D" unique_id=1813644063]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1313137316]
+mesh_library = ExtResource("1_3kiyp")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(-1, 65535, 0, -1, 0, 0, -65536, 0, 0, -65536, 65535, 0, -2, 65535, 0, -2, 0, 0, -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65534, 0, 0, -65534, 65535, 0, -65535, 65535, 0, -65535, 0, 0, -65534, 65534, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0, -2, 65534, 0, -3, 65534, 0, -3, 65535, 0, -3, 0, 0, -3, 1, 0, -65534, 2, 0, -65535, 2, 0, -65536, 2, 0, -1, 2, 0, -2, 2, 0, -3, 2, 0, -65534, 65533, 0, -65535, 65533, 0, -65536, 65533, 0, -1, 65533, 0, -2, 65533, 0, -3, 65533, 0, -4, 65533, 0, -4, 65534, 0, -4, 65535, 0, -4, 0, 0, -4, 1, 0, -4, 2, 0, -65533, 2, 0, -65533, 1, 0, -65533, 0, 0, -65533, 65535, 0, -65533, 65534, 0, -65533, 65533, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Shelf" type="StaticBody3D" parent="." unique_id=900501459]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Shelf" unique_id=1608651076]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Shelf/CSGCombiner3D" unique_id=785009977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+size = Vector3(2, 0.1, 0.8)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Shelf/CSGCombiner3D" unique_id=1196807651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+size = Vector3(2, 0.1, 0.8)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Shelf/CSGCombiner3D" unique_id=883391590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 0)
+size = Vector3(2, 0.1, 0.8)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Shelf/CSGCombiner3D" unique_id=858382374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -0.45)
+size = Vector3(2, 1.6, 0.1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf" unique_id=413858044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -0.05)
+shape = SubResource("BoxShape3D_4mjqg")
+
+[node name="Slot1" type="Node3D" parent="Shelf" unique_id=207692507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.1, 0)
+script = ExtResource("2_st76n")
+item_tags = Array[String](["cold", "hot"])
+
+[node name="Tag" type="Node3D" parent="Shelf/Slot1" unique_id=657602030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025, 0.41)
+
+[node name="Price" type="Label3D" parent="Shelf/Slot1/Tag" unique_id=798047625]
+pixel_size = 0.0025
+text = "$0.00"
+
+[node name="Collider" type="Area3D" parent="Shelf/Slot1" unique_id=1466851317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.325, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf/Slot1/Collider" unique_id=367027686]
+shape = SubResource("BoxShape3D_68kpe")
+
+[node name="ItemDefs" type="Node" parent="." unique_id=1200432357]
+script = ExtResource("4_68kpe")
+
+[node name="Spawn" type="Node3D" parent="." unique_id=238806020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1.923)
+script = ExtResource("4_4mjqg")

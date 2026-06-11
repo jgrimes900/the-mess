@@ -341,9 +341,24 @@ mesh = ExtResource("19_pniwy")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestBoxes/Box3" unique_id=2122650934]
 shape = SubResource("BoxShape3D_fnf02")
 
+[node name="Shop Teleport Trigger" type="Area3D" parent="." unique_id=1676556142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.099049, -0.9912679, 11.426108)
+script = ExtResource("5_5c4qy")
+LevelDef = "uid://bphgf2sjkj8gk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shop Teleport Trigger" unique_id=1624207209]
+shape = SubResource("BoxShape3D_js533")
+
+[node name="Sprite3D" type="Sprite3D" parent="Shop Teleport Trigger" unique_id=668575929]
+pixel_size = 0.02
+billboard = 1
+alpha_scissor_threshold = 0.484
+texture = ExtResource("6_fl54b")
+
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
 [connection signal="body_shape_entered" from="FNaF Teleport Trigger" to="FNaF Teleport Trigger" method="MapChange" unbinds=4]
 [connection signal="body_shape_entered" from="WinMap Teleport Trigger" to="WinMap Teleport Trigger" method="MapChange" unbinds=2 binds= ["WinMap"]]
+[connection signal="body_shape_entered" from="Shop Teleport Trigger" to="Shop Teleport Trigger" method="MapChange" unbinds=2]
 
 [editable path="test_doorlock_out/SotM Lock"]
 [editable path="test_doorlock_in/SotM Lock"]

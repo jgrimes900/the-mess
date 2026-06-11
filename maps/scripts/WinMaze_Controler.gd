@@ -40,10 +40,10 @@ func _ready() -> void:
 	$"../Gravity_Flipper".position.x += 1
 	$"../Gravity_Flipper".position.z += 1
 	$"../Gravity_Flipper".position.y += 1
-	$"../c1a0 Teleport Trigger".position = _corner()*2 as Vector3
-	$"../c1a0 Teleport Trigger".position.x += 1
-	$"../c1a0 Teleport Trigger".position.z += 1
-	$"../c1a0 Teleport Trigger".position.y += 1
+#	$"../c1a0 Teleport Trigger".position = _corner()*2 as Vector3
+#	$"../c1a0 Teleport Trigger".position.x += 1
+#	$"../c1a0 Teleport Trigger".position.z += 1
+#	$"../c1a0 Teleport Trigger".position.y += 1
 	
 func _hall_corner() -> Vector3i:
 	var dirs_keys_shuff = dirs_keys

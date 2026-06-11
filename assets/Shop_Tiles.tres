@@ -1,0 +1,19 @@
+[gd_resource type="MeshLibrary" format=3 uid="uid://vny6echmfea1"]
+
+[ext_resource type="Material" uid="uid://bmsvhvrbe3iw6" path="res://assets/materials/WinMaze/Floor.tres" id="1_o6o3g"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vl0uq"]
+material = ExtResource("1_o6o3g")
+size = Vector2(1, 1)
+center_offset = Vector3(0, 0.5, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s8jla"]
+
+[resource]
+item/0/name = "Floor"
+item/0/mesh = SubResource("PlaneMesh_vl0uq")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/mesh_cast_shadow = 1
+item/0/shapes = [SubResource("BoxShape3D_s8jla"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
