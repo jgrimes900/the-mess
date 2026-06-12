@@ -33,16 +33,4 @@ func parce_string(str: String, codes: Dictionary, delim: String = "\\"):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text = parce_string("!\"@rq&',-.:?(@uq)
-0123456789@coin%*
-ABCDEFGHIJKLM
-NOPQRSTUVWXYZ
-abcdefghijklm
-nopqrstuvwxyz
-ßÇç@dot@up@down@left@right@A@B@C@Z@R
- ~@..a@^a@fsa@bsa@hook@)(@<->@true@false
-
-1@right@rightI should do a test...
-THIS IS A \"TEST!@rq
-2@right@rightAre you sure?
-1@right@right100%", sm64_large, "@")
+	text = parce_string(text, sm64_large, "@")

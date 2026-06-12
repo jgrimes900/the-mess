@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dqt3861t255c2"]
+
+[ext_resource type="FontFile" uid="uid://c2nll2g7ra6sm" path="res://assets/fonts/sm64_large.png" id="1_xhmtc"]
+
+[resource]
+line_spacing = 0.0
+paragraph_spacing = 8.0
+font = ExtResource("1_xhmtc")
+font_size = 32
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)

@@ -24,6 +24,7 @@
 [ext_resource type="TileSet" uid="uid://ddp8fcog0h7ly" path="res://GUI/WorldMapTiles.tres" id="18_gf0v6"]
 [ext_resource type="Script" uid="uid://dxt4rhv4nns4q" path="res://GUI/hud.gd" id="18_nmymu"]
 [ext_resource type="FontFile" uid="uid://duwe7fbbmyi1r" path="res://assets/fonts/sm64_color.png" id="19_e3k5d"]
+[ext_resource type="LabelSettings" uid="uid://dqt3861t255c2" path="res://assets/fonts/sm64_large_shadow_2x.tres" id="20_btr86"]
 [ext_resource type="LabelSettings" uid="uid://bhypi04ojviqq" path="res://assets/fonts/sm64_large_1x.tres" id="20_gxohq"]
 [ext_resource type="Script" uid="uid://ei3fp4k5dg6d" path="res://prefabs/debug/label_2.gd" id="21_3or85"]
 [ext_resource type="Texture2D" uid="uid://b8ldylbubrn2w" path="res://assets/textures/rpgmaker/TextBox Border.png" id="22_6hvlk"]
@@ -459,6 +460,11 @@ ProgressBar/styles/background = SubResource("StyleBoxFlat_gf0v6")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_cv2ms")
 
 [sub_resource type="LabelSettings" id="LabelSettings_2v6jp"]
+font = ExtResource("19_e3k5d")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_6hvlk"]
+line_spacing = 0.0
 font = ExtResource("19_e3k5d")
 font_size = 32
 
@@ -1167,7 +1173,7 @@ theme = SubResource("Theme_g56qp")
 value = 10.0
 show_percentage = false
 
-[node name="Control" type="Control" parent="HUD" unique_id=786115294]
+[node name="Crosshair" type="Control" parent="HUD" unique_id=786115294]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1181,7 +1187,7 @@ offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TileMapLayer" type="TileMapLayer" parent="HUD/Control" unique_id=1336934328]
+[node name="TileMapLayer" type="TileMapLayer" parent="HUD/Crosshair" unique_id=1336934328]
 scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAIAAAD//wAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAP//AAAAAAIAAAAAAAEAAAAAAAIAAAA=")
 tile_set = ExtResource("18_gf0v6")
@@ -1205,23 +1211,42 @@ ARE YOU SURE?
 dM24 h255 e121"
 label_settings = SubResource("LabelSettings_2v6jp")
 
-[node name="Label2" type="Label" parent="HUD" unique_id=1927603795]
+[node name="sm64_course_finish_text" type="Label" parent="HUD" unique_id=1927603795]
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "!\"!"
-label_settings = ExtResource("20_gxohq")
+offset_left = 150.0
+offset_top = 159.0
+offset_right = 486.0
+offset_bottom = 231.0
+text = "  COURSE 1
+    BEHIND CHAIN CHOMP'S GATE"
+label_settings = ExtResource("20_btr86")
 script = ExtResource("21_3or85")
 
-[node name="Control2" type="Control" parent="HUD" unique_id=1027347668]
-custom_minimum_size = Vector2(0, 62)
-anchors_preset = 0
-offset_right = 231.0
-offset_bottom = 62.0
+[node name="TheStar" type="Label" parent="HUD/sm64_course_finish_text" unique_id=1079028390]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 36.0
+text = "
+e"
+label_settings = SubResource("LabelSettings_6hvlk")
 
-[node name="Back" type="TextureRect" parent="HUD/Control2" unique_id=1542158132]
+[node name="RPGMaker_dialog_box" type="Control" parent="HUD" unique_id=1027347668]
+visible = false
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 1
+anchor_left = 0.504
+anchor_top = 1.0
+anchor_right = 0.504
+anchor_bottom = 1.0
+offset_left = -115.60803
+offset_top = -88.0
+offset_right = 115.39197
+offset_bottom = -26.0
+
+[node name="Back" type="TextureRect" parent="HUD/RPGMaker_dialog_box" unique_id=1542158132]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -1236,7 +1261,7 @@ texture = SubResource("GradientTexture2D_30w5g")
 expand_mode = 1
 flip_v = true
 
-[node name="Front" type="Panel" parent="HUD/Control2" unique_id=1572429408]
+[node name="Front" type="Panel" parent="HUD/RPGMaker_dialog_box" unique_id=1572429408]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -1246,21 +1271,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_envas")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control2" unique_id=592001023]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/RPGMaker_dialog_box" unique_id=592001023]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 58.0
 offset_bottom = 48.0
 
-[node name="TextureRect" type="TextureRect" parent="HUD/Control2/HBoxContainer" unique_id=1367777366]
+[node name="TextureRect" type="TextureRect" parent="HUD/RPGMaker_dialog_box/HBoxContainer" unique_id=1367777366]
 texture_filter = 1
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_pp8wu")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="HUD/Control2/HBoxContainer" unique_id=958166311]
+[node name="Label" type="Label" parent="HUD/RPGMaker_dialog_box/HBoxContainer" unique_id=958166311]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1270,12 +1295,18 @@ I am a test.
 Test Test Test"
 label_settings = ExtResource("20_gxohq")
 
-[node name="Control4" type="Control" parent="HUD" unique_id=315030002]
-anchors_preset = 0
+[node name="sims3_item_popup" type="Control" parent="HUD" unique_id=315030002]
+visible = false
+z_index = -1
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_right = 236.0
 offset_bottom = 127.0
 
-[node name="Control3" type="Control" parent="HUD/Control4" unique_id=439522932]
+[node name="Control3" type="Control" parent="HUD/sims3_item_popup" unique_id=439522932]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1283,7 +1314,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="HUD/Control4/Control3" unique_id=879021171]
+[node name="Panel" type="Panel" parent="HUD/sims3_item_popup/Control3" unique_id=879021171]
 clip_children = 1
 layout_mode = 1
 anchors_preset = 15
@@ -1293,7 +1324,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_envas")
 
-[node name="Back" type="TextureRect" parent="HUD/Control4/Control3/Panel" unique_id=1214174125]
+[node name="Back" type="TextureRect" parent="HUD/sims3_item_popup/Control3/Panel" unique_id=1214174125]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -1303,7 +1334,7 @@ texture = ExtResource("23_btr86")
 expand_mode = 1
 flip_v = true
 
-[node name="PanelContainer" type="PanelContainer" parent="HUD/Control4/Control3" unique_id=1899287663]
+[node name="PanelContainer" type="PanelContainer" parent="HUD/sims3_item_popup/Control3" unique_id=1899287663]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1312,7 +1343,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pp8wu")
 
-[node name="Control4" type="Control" parent="HUD/Control4" unique_id=1022695735]
+[node name="Control4" type="Control" parent="HUD/sims3_item_popup" unique_id=1022695735]
 layout_mode = 1
 anchors_preset = 0
 offset_left = 16.0
@@ -1320,7 +1351,7 @@ offset_top = 16.0
 offset_right = 68.0
 offset_bottom = 68.0
 
-[node name="Panel" type="Panel" parent="HUD/Control4/Control4" unique_id=712168805]
+[node name="Panel" type="Panel" parent="HUD/sims3_item_popup/Control4" unique_id=712168805]
 clip_children = 1
 layout_mode = 1
 anchors_preset = 15
@@ -1330,7 +1361,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_envas")
 
-[node name="Back" type="TextureRect" parent="HUD/Control4/Control4/Panel" unique_id=1961444119]
+[node name="Back" type="TextureRect" parent="HUD/sims3_item_popup/Control4/Panel" unique_id=1961444119]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -1340,7 +1371,7 @@ texture = ExtResource("23_btr86")
 expand_mode = 1
 flip_v = true
 
-[node name="PanelContainer" type="PanelContainer" parent="HUD/Control4/Control4" unique_id=638256147]
+[node name="PanelContainer" type="PanelContainer" parent="HUD/sims3_item_popup/Control4" unique_id=638256147]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1349,7 +1380,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pp8wu")
 
-[node name="TextureRect" type="TextureRect" parent="HUD/Control4/Control4" unique_id=882127147]
+[node name="TextureRect" type="TextureRect" parent="HUD/sims3_item_popup/Control4" unique_id=882127147]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.038000003
@@ -1362,7 +1393,7 @@ offset_right = -0.024002075
 offset_bottom = -0.024002075
 texture = SubResource("MeshTexture_6hvlk")
 
-[node name="LabelName" type="Label" parent="HUD/Control4" unique_id=107687623]
+[node name="LabelName" type="Label" parent="HUD/sims3_item_popup" unique_id=107687623]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.975
@@ -1377,7 +1408,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
 text = "Seed of Doom"
 
-[node name="LabelQuality" type="Label" parent="HUD/Control4" unique_id=1034102552]
+[node name="LabelQuality" type="Label" parent="HUD/sims3_item_popup" unique_id=1034102552]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.975
@@ -1390,7 +1421,7 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 9
 text = "Normal Quality"
 
-[node name="LabelRarity" type="Label" parent="HUD/Control4" unique_id=602660609]
+[node name="LabelRarity" type="Label" parent="HUD/sims3_item_popup" unique_id=602660609]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.975
@@ -1600,12 +1631,13 @@ color = Color(1, 1, 1, 0)
 
 [node name="Beads" type="TabContainer" parent="Inv/TabContainer" unique_id=1788741967]
 layout_mode = 2
-current_tab = 0
+current_tab = 1
 tab_0/hidden = true
 metadata/_tab_index = 1
 metadata/_tab_name = "Beads"
 
 [node name="FNaF Like" type="PanelContainer" parent="Inv/TabContainer/Beads" unique_id=1805252319]
+visible = false
 layout_mode = 2
 script = ExtResource("23_w4pj3")
 metadata/_tab_index = 0
@@ -1704,7 +1736,6 @@ layout_mode = 2
 color = Color(1, 0.23000002, 0.25566667, 1)
 
 [node name="Stars" type="ScrollContainer" parent="Inv/TabContainer/Beads" unique_id=1640132267]
-visible = false
 layout_mode = 2
 script = ExtResource("36_gxohq")
 metadata/_tab_index = 1

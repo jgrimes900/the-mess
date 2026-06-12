@@ -11,7 +11,7 @@ size = Vector3(2, 1.6, 0.9)
 [sub_resource type="BoxShape3D" id="BoxShape3D_68kpe"]
 size = Vector3(1, 0.65, 0.8)
 
-[node name="Shop" type="Node3D" unique_id=1813644063]
+[node name="Node3D" type="Node3D" unique_id=1813644063]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1313137316]
 mesh_library = ExtResource("1_3kiyp")

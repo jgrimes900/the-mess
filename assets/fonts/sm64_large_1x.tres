@@ -5,3 +5,4 @@
 [resource]
 line_spacing = 0.0
 font = ExtResource("1_byumy")
+shadow_offset = Vector2(2, 2)

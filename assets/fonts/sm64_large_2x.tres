@@ -3,5 +3,7 @@
 [ext_resource type="FontFile" uid="uid://c2nll2g7ra6sm" path="res://assets/fonts/sm64_large.png" id="1_vn5g6"]
 
 [resource]
+line_spacing = 0.0
 font = ExtResource("1_vn5g6")
 font_size = 32
+shadow_offset = Vector2(4, 4)

@@ -428,7 +428,15 @@ texture = ExtResource("4_7fnmf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9184103, -2.1957545, 0.5974302)
 script = ExtResource("5_jgvh2")
 main = false
-from_maps = ["GridMapTest", "StarkronDemo1"]
+from_maps = ["GridMapTest"]
+
+[node name="Spawn_Starkron_Demo1" type="Node3D" parent="." unique_id=318784193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9184103, -2.1957545, 0.5974302)
+script = ExtResource("5_jgvh2")
+is_offset = true
+offset = Vector3(0, 2, 0)
+main = false
+from_maps = ["StarkronDemo1"]
 
 [node name="Door_Switch" type="Area3D" parent="." unique_id=1020892607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0087261, -1.8915762, 3.2998955)
@@ -479,6 +487,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.225634, -1.461638, 0.76281
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Transition_A/Area3D" unique_id=733247452]
 shape = SubResource("BoxShape3D_t7t8s")
 
+[node name="Timer" type="Timer" parent="Transition_A" unique_id=1018043764]
+one_shot = true
+
 [node name="Vending" parent="." unique_id=505541132 instance=ExtResource("11_pe3st")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.078497, -3.219, -13.67)
 
@@ -495,9 +506,11 @@ from_maps = ["WinMap"]
 [connection signal="body_shape_entered" from="C1A0/GridMapTest Teleport Trigger" to="C1A0/GridMapTest Teleport Trigger" method="MapChange" unbinds=2 binds= ["GridMapTest"]]
 [connection signal="body_shape_entered" from="C1A0/OOB Trigger" to="Spawn" method="Respawn" unbinds=4]
 [connection signal="body_shape_entered" from="GBJ Teleport Trigger" to="GBJ Teleport Trigger" method="MapChange" unbinds=2 binds= ["gbj"]]
+[connection signal="on_spawn" from="Spawn_Starkron_Demo1" to="Transition_A/Timer" method="start"]
 [connection signal="body_shape_entered" from="Door_Switch" to="Transition_A/DoorIn" method="trigger"]
 [connection signal="timeout" from="Transition_A/Starkron_Demo1 Teleport Trigger2/Timer" to="Transition_A/Starkron_Demo1 Teleport Trigger2" method="MapChange2"]
 [connection signal="body_shape_entered" from="Transition_A/Area3D" to="Transition_A/Starkron_Demo1 Teleport Trigger2/Timer" method="start_player"]
 [connection signal="body_shape_entered" from="Transition_A/Area3D" to="Transition_A/DoorIn" method="trigger"]
+[connection signal="timeout" from="Transition_A/Timer" to="Transition_A/DoorIn" method="trigger" binds= [false, NodePath("/root/Player")]]
 
 [editable path="C1A0/World/WinMaze Exit Room/doorlock_out/SotM Lock"]
