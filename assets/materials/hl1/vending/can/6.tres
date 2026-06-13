@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d34sresdhaqwq"]
+
+[ext_resource type="Texture2D" uid="uid://dxkyrxfqgjh7q" path="res://assets/textures/hl1/vending/can/gensoda6.bmp" id="1_06yye"]
+
+[resource]
+resource_name = "gensoda"
+albedo_texture = ExtResource("1_06yye")
+metallic = 0.5

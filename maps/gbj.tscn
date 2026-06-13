@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://y5l84q5odctl" path="res://entities/map.gd" id="1_q72r2"]
 [ext_resource type="PackedScene" uid="uid://uunyi8xrjboa" path="res://prefabs/gbj_section.tscn" id="1_u5o4e"]
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="2_q72r2"]
+[ext_resource type="Script" uid="uid://g1fcem8c11ws" path="res://maps/gbj/move.gd" id="4_a6waf"]
 
 [sub_resource type="Environment" id="Environment_u5o4e"]
 fog_enabled = true
@@ -14,6 +15,9 @@ fog_depth_curve = 0.23325865
 fog_depth_begin = 4.0
 fog_depth_end = 40.0
 volumetric_fog_density = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hk4eb"]
+size = Vector3(20, 100, 120)
 
 [node name="Node3D" type="Node3D" unique_id=747981294]
 script = ExtResource("1_q72r2")
@@ -50,3 +54,35 @@ script = ExtResource("2_q72r2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=392318429]
 environment = SubResource("Environment_u5o4e")
+
+[node name="Move -X" type="Area3D" parent="." unique_id=742894793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 50, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Move -X" unique_id=708526706]
+shape = SubResource("BoxShape3D_hk4eb")
+
+[node name="Move +X" type="Area3D" parent="." unique_id=520772407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Move +X" unique_id=374890555]
+shape = SubResource("BoxShape3D_hk4eb")
+
+[node name="Move +Z" type="Area3D" parent="." unique_id=1886834484]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 50, 50)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Move +Z" unique_id=103212910]
+shape = SubResource("BoxShape3D_hk4eb")
+
+[node name="Move -Z" type="Area3D" parent="." unique_id=65541540]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 50, -50)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Move -Z" unique_id=1495207300]
+shape = SubResource("BoxShape3D_hk4eb")
+
+[node name="Move" type="Node" parent="." unique_id=351748966]
+script = ExtResource("4_a6waf")
+
+[connection signal="body_entered" from="Move -X" to="Move" method="_move" unbinds=1 binds= [Vector3(40, 0, 0)]]
+[connection signal="body_entered" from="Move +X" to="Move" method="_move" unbinds=1 binds= [Vector3(-40, 0, 0)]]
+[connection signal="body_entered" from="Move +Z" to="Move" method="_move" unbinds=1 binds= [Vector3(0, 0, -40)]]
+[connection signal="body_entered" from="Move -Z" to="Move" method="_move" unbinds=1 binds= [Vector3(0, 0, 40)]]

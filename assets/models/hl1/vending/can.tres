@@ -1,0 +1,90 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://cka7e6euosvgf"]
+
+[ext_resource type="Texture2D" uid="uid://bdsmxniy2nc1g" path="res://assets/textures/hl1/vending/can/canbutt.bmp" id="1_w1eqr"]
+[ext_resource type="Material" uid="uid://ckml2ck0jcsk6" path="res://assets/materials/hl1/vending/can/1.tres" id="2_4qos3"]
+[ext_resource type="Texture2D" uid="uid://cnfvyy2qfg8bm" path="res://assets/textures/hl1/vending/can/cantop.bmp" id="3_r7y84"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdox6"]
+resource_name = "canbutt"
+albedo_texture = ExtResource("1_w1eqr")
+metallic = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_foalh"]
+resource_name = "cantop"
+albedo_texture = ExtResource("3_r7y84")
+metallic = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_divxx"]
+_surfaces = [{
+"aabb": AABB(0.158254, -0.003751, -0.101581, 0.0013210028, 0.178396, 0.18247),
+"format": 34896613377,
+"index_count": 21,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAUABgABAAQABQABAAcABwABAAYA"),
+"name": "canbutt",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("6TpRNJboAAD4gyeGe4AAAA2tAACoggAA///VMBYbAAAAABim//8AAIf1wKEAAAAAgCj//1S3AABplRH+tUUAAA==")
+}, {
+"aabb": AABB(-0.177735, -0.004805, -0.104152, 0.33731002, 0.17945, 0.18504101),
+"format": 34896613377,
+"index_count": 42,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAACAAQAAQAFAAMABgAAAAQABQAHAAMABgAEAAgABQAJAAcACgAGAAgACQALAAcACgAIAAwACQANAAsADQAKAAwADQAMAAsA"),
+"name": "gensoda",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("Of+DNenoAACr/4ABZoQAADsAAjRc5QAArQAAANmAAAAAAHqlcfwAAP//DDJEHgAA/v6fpv//AADQAIswtxoAACgA2f7ItAAA9P9Ooo4DAAAm////VrgAAMUAKKEAAAAAlQDu/L5EAACU/xT+TEgAAA==")
+}, {
+"aabb": AABB(-0.177735, -0.004805, -0.104152, 0.0010710061, 0.178646, 0.18247199),
+"format": 34896613377,
+"index_count": 21,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAUABgABAAQABQABAAcABwABAAYA"),
+"name": "cantop",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("ctUAAKqCAACJolKGe4AAAKlIPjSX6AAAAAA4pv//AAD//8MwFxsAALcx//9UtwAAFvPioQAAAABJuBL+tUUAAA==")
+}]
+blend_shape_mode = 0
+
+[resource]
+_surfaces = [{
+"aabb": AABB(0.158254, -0.003751, -0.101581, 0.0013210028, 0.178396, 0.18247),
+"attribute_data": PackedByteArray("ISLt7nd3h4gAAIeIISIhIpmZ//+ZmQAA//+6u///VFU="),
+"format": 34896613399,
+"index_count": 21,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAUABgABAAQABQABAAcABwABAAYA"),
+"material": SubResource("StandardMaterial3D_hdox6"),
+"name": "canbutt",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("6TpRNJboZyr4gyeGe4DyKg2tAACogiwr///VMBYbZyoAABim//8vKof1wKEAAF8rgCj//1S39CpplRH+tUUhLCMqtSrMKmIqESs/KiMqtSrhKdYqTSsgKs0qYSo+LKgp")
+}, {
+"aabb": AABB(-0.177735, -0.004805, -0.104152, 0.33731002, 0.17945, 0.18504101),
+"attribute_data": PackedByteArray("CCH//wAA//8IIQAAAAAAAFJKAABSSv//WmsAAFpr//9ijAAAYoz//2qtAABqrf//tNYAALTW/////wAA/////w=="),
+"format": 34896613399,
+"index_count": 42,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAACAAQABQAAAAQABQAEAAYABwAFAAYABwAGAAgACQAHAAgACQAIAAoACwAJAAoACwAKAAwADQALAAwADQAMAA4ADwANAA4A"),
+"material": ExtResource("2_4qos3"),
+"name": "gensoda",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("Of+DNenon8Kr/4ABZoSM0TsAAjRc5Z7GrQAAANmA+9gAAHqlcfwowP7+n6b//6XBKADZ/si0Dskm////Vrgnz5UA7vy+RMLclP8U/kxIGuXFACihAAA89fT/TqKOA2D+0ACLMLcaBvH//wwyRB4r6K0AAADZgO7Yq/+AAWaEkdHNFb3qHSgS2NUdkuKmLH3TnftLBent1RI630sho9nSJj7RAC8ezSczZcW7OrnAbT8pOKzHHDTly5wsatMfKBfY")
+}, {
+"aabb": AABB(-0.177735, -0.004805, -0.104152, 0.0010710061, 0.178646, 0.18247199),
+"attribute_data": PackedByteArray("AACHiHd3h4ghIu3umZn//yEiISL//7q7mZkAAP//VFU="),
+"format": 34896613399,
+"index_count": 21,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAUABgABAAQABQABAAcABwABAAYA"),
+"material": SubResource("StandardMaterial3D_foalh"),
+"name": "cantop",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("ctUAAKqC9tWJolKGe4C91alIPjSX6DPVAAA4pv//+9T//8MwFxsz1bcx//9Ut77VFvPioQAAKdZJuBL+tUXv1qfVDtVi1THVu9SF1XfUqNW71IXVZNUw1eTV8NTO1nrU")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_divxx")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d21p1ess5umoq"]
 
-[ext_resource type="ArrayMesh" uid="uid://cfdojx3ewlcpk" path="res://assets/models/hl1/vending/Body.tres" id="1_t2w5k"]
+[ext_resource type="ArrayMesh" uid="uid://cuce0gda8subt" path="res://assets/models/hl1/vending/Body.tres" id="1_t2w5k"]
 [ext_resource type="Material" uid="uid://dtc104x7jtr4v" path="res://assets/materials/hl1/vending/Front_A.tres" id="2_ib2g2"]
 [ext_resource type="Material" uid="uid://buaj8mkurkgkf" path="res://assets/materials/hl1/vending/Side_A.tres" id="3_h8ue5"]
 [ext_resource type="Material" uid="uid://d3iirdgfkq7mw" path="res://assets/materials/hl1/vending/Back_A.tres" id="4_4f840"]
@@ -10,12 +10,16 @@
 [ext_resource type="ArrayMesh" uid="uid://8onli1jkyj1b" path="res://assets/models/hl1/vending/Button3.tres" id="8_x7ok1"]
 [ext_resource type="ArrayMesh" uid="uid://cgc4e8of3oso2" path="res://assets/models/hl1/vending/Button4.tres" id="9_kiuii"]
 [ext_resource type="ArrayMesh" uid="uid://dpcahfa27s77m" path="res://assets/models/hl1/vending/Button5.tres" id="10_o2jmo"]
+[ext_resource type="Script" uid="uid://dfpvxdlpp2vxe" path="res://entities/can_spawner.gd" id="11_ib2g2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uthg3"]
 size = Vector3(1.8, 2.8, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vpma"]
 size = Vector3(0.28141242, 0.13301198, 0.23546886)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uji6a"]
+size = Vector3(0.5, 0.1, 0.3)
 
 [node name="Vending" type="Node3D" unique_id=505541132]
 
@@ -106,3 +110,21 @@ mesh = ExtResource("10_o2jmo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Button5" unique_id=288924363]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.696, 0.874, 0.447)
 shape = SubResource("BoxShape3D_2vpma")
+
+[node name="can_spawner" type="Node3D" parent="." unique_id=1023640656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9144206, 0.41569257)
+script = ExtResource("11_ib2g2")
+stock = 10
+
+[node name="can_collider" type="StaticBody3D" parent="." unique_id=1299521563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3691709, 0.35003495)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="can_collider" unique_id=1953053678]
+shape = SubResource("BoxShape3D_uji6a")
+
+[connection signal="opened" from="Button1" to="can_spawner" method="_spawn"]
+[connection signal="opened" from="Button2" to="can_spawner" method="_spawn"]
+[connection signal="opened" from="Button3" to="can_spawner" method="_spawn"]
+[connection signal="opened" from="Button4" to="can_spawner" method="_spawn"]
+[connection signal="opened" from="Button5" to="can_spawner" method="_spawn"]

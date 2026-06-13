@@ -1,7 +1,7 @@
 extends GridMap
 
 # West and East are swaped in cell names, because I'm dumb
-enum CELLS {NW,N_,_W,__}
+enum CELLS {NW,N_,_W,__,_WExit}
 
 var dirs = {}
 var dirs_keys = []
@@ -19,11 +19,15 @@ func _ready() -> void:
 				dirs_temp = dirs_temp & 0x0111
 			CELLS._W:
 				dirs_temp = dirs_temp & 0x1011
+			CELLS._WExit:
+				dirs_temp = dirs_temp & 0x1011
 		cell_mod.x -= 1
 		match get_cell_item(cell_mod):
 			CELLS.NW:
 				dirs_temp = dirs_temp & 0x1110
 			CELLS._W:
+				dirs_temp = dirs_temp & 0x1110
+			CELLS._WExit:
 				dirs_temp = dirs_temp & 0x1110
 		cell_mod.x += 1
 		cell_mod.z += 1

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c84bpg6qt2r5m"]
+
+[ext_resource type="Script" uid="uid://bprm8t0tiebj1" path="res://entities/hl1_can.gd" id="1_8lukn"]
+[ext_resource type="ArrayMesh" uid="uid://cka7e6euosvgf" path="res://assets/models/hl1/vending/can.tres" id="2_byi3b"]
+[ext_resource type="AudioStream" uid="uid://b2j68q721acvw" path="res://assets/sounds/hl1/weapons/g_bounce3.wav" id="3_lojjo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7ok1"]
+size = Vector3(0.33731002, 0.17945, 0.18504101)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kiuii"]
+size = Vector3(0.437, 0.279, 0.285)
+
+[node name="Can" type="AnimatableBody3D" unique_id=302281910]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_8lukn")
+
+[node name="mesh" type="MeshInstance3D" parent="." unique_id=1073683952]
+mesh = ExtResource("2_byi3b")
+
+[node name="collider" type="CollisionShape3D" parent="." unique_id=1641924472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009079993, 0.084920004, -0.011631496)
+shape = SubResource("BoxShape3D_x7ok1")
+
+[node name="pickup_area3d" type="Area3D" parent="." unique_id=503446919]
+
+[node name="collider" type="CollisionShape3D" parent="pickup_area3d" unique_id=1278388514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009079993, 0.08491999, -0.011631489)
+shape = SubResource("BoxShape3D_kiuii")
+
+[node name="sound_player" type="AudioStreamPlayer3D" parent="." unique_id=422408053]
+stream = ExtResource("3_lojjo")
+volume_db = -10.0
+max_db = 0.0
+
+[connection signal="body_entered" from="pickup_area3d" to="." method="_on_pickup_area_3d_body_entered"]
