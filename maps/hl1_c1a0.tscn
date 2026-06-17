@@ -219,6 +219,20 @@ billboard = 1
 alpha_scissor_threshold = 0.484
 texture = ExtResource("4_7fnmf")
 
+[node name="PkMn_RB Teleport Trigger2" type="Area3D" parent="C1A0" unique_id=1997226919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.54924, 3.0487177, -8.852212)
+script = ExtResource("3_s03oy")
+LevelDef = "res://maps/PokemonRedBlue.tscn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="C1A0/PkMn_RB Teleport Trigger2" unique_id=1518087768]
+shape = SubResource("BoxShape3D_7jbgc")
+
+[node name="Sprite3D" type="Sprite3D" parent="C1A0/PkMn_RB Teleport Trigger2" unique_id=1170998432]
+pixel_size = 0.02
+billboard = 1
+alpha_scissor_threshold = 0.484
+texture = ExtResource("4_7fnmf")
+
 [node name="Lights" type="Node3D" parent="C1A0" unique_id=179350413]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="C1A0/Lights" unique_id=302776198]
@@ -504,6 +518,7 @@ from_maps = ["WinMap"]
 [connection signal="closed" from="C1A0/World/WinMaze Exit Room/doorlock_out" to="C1A0/World/WinMaze Exit Room/Door4" method="_open"]
 [connection signal="opened" from="C1A0/World/WinMaze Exit Room/doorlock_out" to="C1A0/World/WinMaze Exit Room/Door4" method="_open"]
 [connection signal="body_shape_entered" from="C1A0/GridMapTest Teleport Trigger" to="C1A0/GridMapTest Teleport Trigger" method="MapChange" unbinds=2 binds= ["GridMapTest"]]
+[connection signal="body_shape_entered" from="C1A0/PkMn_RB Teleport Trigger2" to="C1A0/PkMn_RB Teleport Trigger2" method="MapChange" unbinds=2]
 [connection signal="body_shape_entered" from="C1A0/OOB Trigger" to="Spawn" method="Respawn" unbinds=4]
 [connection signal="body_shape_entered" from="GBJ Teleport Trigger" to="GBJ Teleport Trigger" method="MapChange" unbinds=2 binds= ["gbj"]]
 [connection signal="on_spawn" from="Spawn_Starkron_Demo1" to="Transition_A/Timer" method="start"]

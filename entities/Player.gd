@@ -39,6 +39,9 @@ var spawned: bool = false
 @onready var sound_step: AudioStreamPlayer3D = $AudioStep
 @onready var inv: Control = $Inv
 
+@onready var pkmn_ply: CharacterBody2D = $pokemon_rb_player
+var ply_mode: String = "normal"
+
 const coin_sounds = {
 	SHaR_Coin = 3,
 	SHaR_Coin1 = preload("uid://do0hcpe20agk3"),
@@ -69,7 +72,28 @@ func _unkill():
 	rotate_ply(alive_rotation)
 	$ani_fuck.play("RESET")
 
+
+
 func _physics_process(delta: float) -> void:
+	match ply_mode:
+		"normal":
+			normal_mode_physics_process(delta)
+		"pkmn_rb":
+			pkmn_rb_mode_physics_process(delta)
+	
+func pkmn_rb_mode_physics_process(delta: float) -> void:
+	var direction := Vector2.ZERO
+	if Input.is_action_pressed("move_right"):
+		direction.x += 1.0
+	if Input.is_action_pressed("move_left"):
+		direction.x -= 1.0
+	if Input.is_action_pressed("move_back"):
+		direction.y += 1.0
+	if Input.is_action_pressed("move_forward"):
+		direction.y -= 1.0
+	pkmn_ply.move_and_collide(direction)
+		
+func normal_mode_physics_process(delta: float) -> void:
 	get_node("Health").iframes -= 1
 	if dead:
 		rot_temp = rotation - Vector3(deg_to_rad(death_rotation.x),deg_to_rad(death_rotation.y),deg_to_rad(death_rotation.z))

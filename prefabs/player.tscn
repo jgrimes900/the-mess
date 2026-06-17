@@ -730,6 +730,12 @@ font_color = Color(0.21499999, 0.6, 0.18, 1)
 outline_size = 4
 outline_color = Color(0.12973334, 0.28, 0.08400001, 1)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_btr86"]
+size = Vector2(4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_envas"]
+size = Vector2(16, 16)
+
 [node name="Player" type="CharacterBody3D" unique_id=1837370831]
 script = ExtResource("1_edtk3")
 
@@ -1753,6 +1759,22 @@ script = ExtResource("34_0anbp")
 [node name="Timer" type="Timer" parent="Save" unique_id=1572122708]
 wait_time = 0.2
 one_shot = true
+
+[node name="pokemon_rb_player" type="CharacterBody2D" parent="." unique_id=1658328274]
+z_index = 1
+texture_filter = 1
+collision_layer = 3
+collision_mask = 3
+motion_mode = 1
+
+[node name="graphic" type="Sprite2D" parent="pokemon_rb_player" unique_id=1243956707]
+scale = Vector2(4, 4)
+texture = SubResource("PlaceholderTexture2D_btr86")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pokemon_rb_player" unique_id=1273247609]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_envas")
 
 [connection signal="animation_finished" from="Pivot/glock/AnimationPlayer" to="Pivot/glock" method="_idle_animation" unbinds=1]
 [connection signal="control" from="Control" to="Pivot/glock" method="_set_control"]
