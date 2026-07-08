@@ -70,7 +70,8 @@ func _deactivate():
 	
 func _climb(body):
 	if(player == body):
-		previous_speed_cap = player.speed_cap
+		if state == 0:
+			previous_speed_cap = player.speed_cap
 		player.speed_cap = jump_speed
 		player.position.x = position.x
 		player.position.z = position.z

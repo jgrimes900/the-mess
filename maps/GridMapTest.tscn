@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://cepl30smg4isf" path="res://entities/components/AutoConnect.gd" id="17_hr8cw"]
 [ext_resource type="PackedScene" uid="uid://brf1n5ap71gw" path="res://prefabs/shar_coin.tscn" id="19_fnf02"]
 [ext_resource type="ArrayMesh" uid="uid://dei5k65vf0b18" path="res://assets/models/old_room_assets/storageBox_a001.mesh" id="19_pniwy"]
+[ext_resource type="ArrayMesh" uid="uid://de3pt6j305c2t" path="res://assets/models/wallart_001.res" id="21_2y1ab"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba6ci"]
 size = Vector3(2, 2, 2)
@@ -71,12 +72,14 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9926934, 4.999866, 5.4829307)
 light_energy = 2.795
 light_size = 1.0
+shadow_enabled = true
 omni_range = 10.0
 
 [node name="Light_ExitRoom" type="OmniLight3D" parent="GridMap" unique_id=284338664]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9926934, 4.999866, -7.0934606)
 light_energy = 2.795
 light_size = 1.0
+shadow_enabled = true
 omni_range = 10.0
 
 [node name="InstantDeathCube" type="Area3D" parent="GridMap" unique_id=1344035598]
@@ -354,6 +357,11 @@ pixel_size = 0.02
 billboard = 1
 alpha_scissor_threshold = 0.484
 texture = ExtResource("6_fl54b")
+
+[node name="Wallart001" type="MeshInstance3D" parent="." unique_id=2048470400]
+editor_description = "2x size"
+transform = Transform3D(-6.993822e-09, -0.16, -6.993822e-09, 0, -6.993822e-09, 0.16, -0.16, 6.993822e-09, 3.0570968e-16, 7.9996467, -0.13656007, 9.034295)
+mesh = ExtResource("21_2y1ab")
 
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
 [connection signal="body_shape_entered" from="FNaF Teleport Trigger" to="FNaF Teleport Trigger" method="MapChange" unbinds=4]

@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://duogdv8jmpqcj"
+path="res://.godot/imported/f_up.png-ee3d9091f016c8cccd12ebfec3b4540c.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/f_up.png"
+dest_files=["res://.godot/imported/f_up.png-ee3d9091f016c8cccd12ebfec3b4540c.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("0x100-0x1ff")
+kerning_pairs=PackedStringArray()
+columns=16
+rows=16
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=true
+scaling_mode=2

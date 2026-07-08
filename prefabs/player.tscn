@@ -25,8 +25,10 @@
 [ext_resource type="Script" uid="uid://dxt4rhv4nns4q" path="res://GUI/hud.gd" id="18_nmymu"]
 [ext_resource type="FontFile" uid="uid://duwe7fbbmyi1r" path="res://assets/fonts/sm64_color.png" id="19_e3k5d"]
 [ext_resource type="LabelSettings" uid="uid://dqt3861t255c2" path="res://assets/fonts/sm64_large_shadow_2x.tres" id="20_btr86"]
+[ext_resource type="FontFile" uid="uid://duogdv8jmpqcj" path="res://assets/fonts/f_up.png" id="20_envas"]
 [ext_resource type="LabelSettings" uid="uid://bhypi04ojviqq" path="res://assets/fonts/sm64_large_1x.tres" id="20_gxohq"]
 [ext_resource type="Script" uid="uid://ei3fp4k5dg6d" path="res://prefabs/debug/label_2.gd" id="21_3or85"]
+[ext_resource type="Script" uid="uid://bu0duy2kmnu6n" path="res://prefabs/add_0x100.gd" id="21_pp8wu"]
 [ext_resource type="Texture2D" uid="uid://b8ldylbubrn2w" path="res://assets/textures/rpgmaker/TextBox Border.png" id="22_6hvlk"]
 [ext_resource type="Texture2D" uid="uid://2pvior03rhtx" path="res://assets/textures/ui/sims3_gradient.png" id="23_btr86"]
 [ext_resource type="Script" uid="uid://dpumg6u6p8mhm" path="res://GUI/beads/fnaf_like.gd" id="23_w4pj3"]
@@ -461,6 +463,11 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_cv2ms")
 
 [sub_resource type="LabelSettings" id="LabelSettings_2v6jp"]
 font = ExtResource("19_e3k5d")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_y0gq2"]
+line_spacing = 0.0
+font = ExtResource("20_envas")
 font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_6hvlk"]
@@ -1217,6 +1224,27 @@ ARE YOU SURE?
 dM24 h255 e121"
 label_settings = SubResource("LabelSettings_2v6jp")
 
+[node name="Label2" type="Label" parent="HUD" unique_id=1322239002]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 288.0
+grow_horizontal = 2
+text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0123456789 !?%&*\"'
+ÄÖÜ abcdefghi
+
+THIS IS A \"TEST\"
+ARE YOU SURE?
+100%
+
+dM24 h255 e121"
+label_settings = SubResource("LabelSettings_y0gq2")
+autowrap_mode = 1
+script = ExtResource("21_pp8wu")
+
 [node name="sm64_course_finish_text" type="Label" parent="HUD" unique_id=1927603795]
 visible = false
 texture_filter = 1
@@ -1305,6 +1333,7 @@ label_settings = ExtResource("20_gxohq")
 visible = false
 z_index = -1
 layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

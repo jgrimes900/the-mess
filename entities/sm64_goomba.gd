@@ -44,6 +44,7 @@ func _setup_home():
 	var shape = SphereShape3D.new()
 	shape.radius = home_radius
 	home_area_collider.shape = shape
+	home_area.set_collision_mask_value(2, true)
 	home_area.add_child(home_area_collider)
 	get_node("../").add_child(home_area)
 	home_area.global_position = global_position
