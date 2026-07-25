@@ -44,6 +44,7 @@ shape = ExtResource("2_ymd38")
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=51383646]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5, 0)
 use_collision = true
+collision_layer = 3
 size = Vector3(200, 1, 200)
 material = ExtResource("3_ymd38")
 
@@ -112,7 +113,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1.6, 0.7)
 
 [node name="DoorOut" parent="Transition_A" unique_id=2034007918 instance=ExtResource("9_ds621")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.25, -1.6, 0.7)
-state = true
 
 [node name="Area3D" type="Area3D" parent="Transition_A" unique_id=746520221]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.602395, -1.461638, 0.76281285)

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bw5ga3qhpwgtg" path="res://entities/signal_toggle.gd" id="1_ksxvg"]
 [ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="2_fk5ga"]
-[ext_resource type="ArrayMesh" uid="uid://5q1ahs5jvmaa" path="res://assets/models/hl1_bigdoor_C1A0_006.res" id="3_6gxou"]
+[ext_resource type="ArrayMesh" uid="uid://ccbicyixoxxom" path="res://assets/models/hl1_bigdoor_C1A0_006.res" id="3_6gxou"]
 [ext_resource type="ArrayMesh" uid="uid://56fgg6yqde3k" path="res://assets/models/hl1_bigdoor_C1A0_007.res" id="4_io3nv"]
-[ext_resource type="ArrayMesh" uid="uid://d228iq4p0qhyy" path="res://assets/models/hl1_bigdoor_C1A0_005.res" id="5_4nt1x"]
-[ext_resource type="ArrayMesh" uid="uid://cs3xllc4eck6m" path="res://assets/models/hl1_bigdoor_C1A0_004.res" id="6_0bphr"]
+[ext_resource type="ArrayMesh" uid="uid://lxtpcv4atw0d" path="res://assets/models/hl1_bigdoor_C1A0_005.res" id="5_4nt1x"]
+[ext_resource type="ArrayMesh" uid="uid://cfkdx21gdbgfy" path="res://assets/models/hl1_bigdoor_C1A0_004.res" id="6_0bphr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2shil"]
 size = Vector3(0.80108833, 4.024521, 1.6005859)
@@ -31,6 +31,7 @@ radius = 0.39990234
 
 [node name="Door" type="Node3D" unique_id=1357455180]
 script = ExtResource("1_ksxvg")
+state = true
 
 [node name="Top" type="AnimatableBody3D" parent="." unique_id=638972383]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, -0.7)
@@ -154,6 +155,8 @@ shape = SubResource("CylinderShape3D_78pbg")
 [connection signal="state_true" from="." to="Top_Bar" method="_on_touch"]
 [connection signal="state_true" from="." to="Bottom_Bar" method="_on_touch"]
 [connection signal="closed" from="Top" to="Top_Bar" method="_open"]
+[connection signal="opened" from="Top" to="." method="_set_state" binds= [false]]
 [connection signal="closed" from="Bottom" to="Bottom_Bar" method="_open"]
+[connection signal="closed" from="Top_Bar" to="." method="_set_state" binds= [true]]
 [connection signal="opened" from="Top_Bar" to="Top" method="_open"]
 [connection signal="opened" from="Bottom_Bar" to="Bottom" method="_open"]

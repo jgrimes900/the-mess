@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4q0f332n0gj0"
-path.s3tc="res://.godot/imported/wallart_001.png-d5ce48fbdcb9ca28ace9ff4fda226056.s3tc.ctex"
+uid="uid://buay5p5aaj28p"
+path.s3tc="res://.godot/imported/app_small_001_app_small_001_ring1.png-5c4f5849b0c459e3e31d00c93690cebe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "34f8b162b180d4a53640fc907c044f90"
+"md5": "88d3d981945ce4374189b47dbb8be591"
 }
 
 [deps]
 
-source_file="res://assets/textures/wallart_001.png"
-dest_files=["res://.godot/imported/wallart_001.png-d5ce48fbdcb9ca28ace9ff4fda226056.s3tc.ctex"]
+source_file="res://assets/models/irl/app_small_001_app_small_001_ring1.png"
+dest_files=["res://.godot/imported/app_small_001_app_small_001_ring1.png-5c4f5849b0c459e3e31d00c93690cebe.s3tc.ctex"]
 
 [params]
 

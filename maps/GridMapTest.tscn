@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="5_5c4qy"]
 [ext_resource type="Material" uid="uid://bi2jqwdylnu4m" path="res://assets/materials/Debug_Green.tres" id="5_lumrj"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="6_fl54b"]
+[ext_resource type="PackedScene" uid="uid://dfiv5cnx0ql6o" path="res://assets/models/irl/toy_radio.glb" id="7_3f7tq"]
 [ext_resource type="Script" uid="uid://cddmtyqjy7hcs" path="res://entities/SM64_Tree.gd" id="7_hdov8"]
 [ext_resource type="Script" uid="uid://dqv5ofqwkns6b" path="res://entities/coin_spawner.gd" id="9_lumrj"]
 [ext_resource type="PackedScene" uid="uid://dfbuo56xepf6o" path="res://prefabs/starkron/bug.tscn" id="12_lumrj"]
@@ -19,8 +20,9 @@
 [ext_resource type="Material" uid="uid://bjdeuhicogjjh" path="res://assets/materials/fnaf/sotm/Lock Level3.tres" id="16_pniwy"]
 [ext_resource type="Script" uid="uid://cepl30smg4isf" path="res://entities/components/AutoConnect.gd" id="17_hr8cw"]
 [ext_resource type="PackedScene" uid="uid://brf1n5ap71gw" path="res://prefabs/shar_coin.tscn" id="19_fnf02"]
-[ext_resource type="ArrayMesh" uid="uid://dei5k65vf0b18" path="res://assets/models/old_room_assets/storageBox_a001.mesh" id="19_pniwy"]
-[ext_resource type="ArrayMesh" uid="uid://de3pt6j305c2t" path="res://assets/models/wallart_001.res" id="21_2y1ab"]
+[ext_resource type="ArrayMesh" uid="uid://dei5k65vf0b18" path="res://assets/models/irl/old_room_assets/storageBox_a001.mesh" id="19_pniwy"]
+[ext_resource type="ArrayMesh" uid="uid://de3pt6j305c2t" path="res://assets/models/irl/wallart_001.res" id="21_2y1ab"]
+[ext_resource type="PackedScene" uid="uid://x221shcp4uic" path="res://assets/models/irl/app_small_001.glb" id="23_atcwo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba6ci"]
 size = Vector3(2, 2, 2)
@@ -56,6 +58,18 @@ size = Vector3(0.032, 0.01682422, 0.065)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fnf02"]
 size = Vector3(0.577, 0.274, 0.335)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_a1t16"]
+size = Vector3(1, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_egron"]
+size = Vector3(1, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hv0v0"]
+size = Vector3(1, 1, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pfqyr"]
+size = Vector3(1, 1, 2)
+
 [node name="Node3D" type="Node3D" unique_id=1193290923]
 script = ExtResource("1_lumrj")
 
@@ -70,6 +84,7 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Light_SpawnRoom" type="OmniLight3D" parent="GridMap" unique_id=936054419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9926934, 4.999866, 5.4829307)
+layers = 524289
 light_energy = 2.795
 light_size = 1.0
 shadow_enabled = true
@@ -77,6 +92,7 @@ omni_range = 10.0
 
 [node name="Light_ExitRoom" type="OmniLight3D" parent="GridMap" unique_id=284338664]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9926934, 4.999866, -7.0934606)
+layers = 524289
 light_energy = 2.795
 light_size = 1.0
 shadow_enabled = true
@@ -106,6 +122,9 @@ shape = SubResource("BoxShape3D_ba6ci")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GridMap/SlowDeathCube" unique_id=234074431]
 mesh = SubResource("BoxMesh_fl54b")
+
+[node name="toy_radio" parent="GridMap" unique_id=1693516002 instance=ExtResource("7_3f7tq")]
+transform = Transform3D(0.07725424, -0.23776414, -1.0393e-08, 0, -1.0927847e-08, 0.25, -0.23776414, -0.07725424, -3.3768903e-09, 7.542952, 3.1461725, 11.085934)
 
 [node name="Spawn" type="Node3D" parent="." unique_id=1509810602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.993747, 0, 6.584504)
@@ -177,6 +196,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -17.596764, 0.12591088, -0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=83429287]
 transform = Transform3D(-0.040032804, -0.8778472, 0.4772647, -0.25250715, 0.47103232, 0.84520346, -0.96676666, -0.08667728, -0.2405192, 0.8803215, 8.589771, 0)
+layers = 524289
 shadow_enabled = true
 
 [node name="TestCoinLine" type="Node3D" parent="." unique_id=1352645367]
@@ -362,6 +382,28 @@ texture = ExtResource("6_fl54b")
 editor_description = "2x size"
 transform = Transform3D(-6.993822e-09, -0.16, -6.993822e-09, 0, -6.993822e-09, 0.16, -0.16, 6.993822e-09, 3.0570968e-16, 7.9996467, -0.13656007, 9.034295)
 mesh = ExtResource("21_2y1ab")
+
+[node name="app_small_001" parent="." unique_id=1358186134 instance=ExtResource("23_atcwo")]
+transform = Transform3D(-0.049240388, 0, -0.008682411, 0, 0.05, 0, 0.008682411, 0, -0.049240388, 7.3272057, -1, 8.169065)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1434282982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -1.5, 10)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1659810390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+shape = SubResource("BoxShape3D_a1t16")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=669126399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+mesh = SubResource("BoxMesh_egron")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1708501815]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5, 0, 1.5)
+shape = SubResource("BoxShape3D_hv0v0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D" unique_id=1914490637]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5, 0, 1.5)
+mesh = SubResource("BoxMesh_pfqyr")
 
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
 [connection signal="body_shape_entered" from="FNaF Teleport Trigger" to="FNaF Teleport Trigger" method="MapChange" unbinds=4]

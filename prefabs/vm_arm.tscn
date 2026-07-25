@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://nu7tu0pbhfax"]
+
+[ext_resource type="PackedScene" uid="uid://8q0ugg2ovbq" path="res://assets/models/irl/vm_arm.glb" id="1_k2wen"]
+
+[node name="vm_arm" unique_id=109445895 instance=ExtResource("1_k2wen")]
+
+[node name="Armature" parent="." index="0" unique_id=736117531]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0.628, 0.058, -0.374)
+
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=2125366099]
+bones/0/rotation = Quaternion(-0.17664784, 0.27266556, 0.83321804, 0.4474336)
+bones/1/rotation = Quaternion(0.4658485, 0.31284732, -0.29948652, 0.7716344)
+bones/2/rotation = Quaternion(-0.20238379, 0.006585364, -0.02527319, 0.9789581)
+bones/3/rotation = Quaternion(0.577737, 0.0735184, 0.07943588, 0.80901486)
+bones/4/position = Vector3(0.15722243, 0.40706888, 0.025689092)
+bones/4/rotation = Quaternion(0.89788055, -0.050439157, 0.016387723, 0.43703318)
+bones/5/rotation = Quaternion(0.09794583, 0.091361426, 0.006926654, 0.99096507)
+bones/6/rotation = Quaternion(0.2086501, 0.055664916, 0.040086627, 0.97558177)
+bones/7/rotation = Quaternion(0.15091977, 0.0012373393, 0.009331671, 0.98850125)
+bones/8/rotation = Quaternion(-0.0010687651, 0.005417031, -0.0011728535, 0.99998415)
+bones/10/position = Vector3(-0.12326006, 0.3714515, 0.05942817)
+bones/10/rotation = Quaternion(0.9478554, -0.104172684, -0.0027532033, 0.30118218)
+bones/11/rotation = Quaternion(0.73217154, -0.047997694, -0.036046855, 0.6784702)
+bones/12/rotation = Quaternion(0.9176926, -0.00096057163, 0.03158385, 0.39603284)
+bones/13/position = Vector3(-0.2547264, 0.37892696, 0.01748789)
+bones/13/rotation = Quaternion(0.9289288, -0.10982499, 0.11394147, 0.3347344)
+bones/14/rotation = Quaternion(0.66438556, -0.020883922, -0.10384086, 0.73984647)
+bones/15/rotation = Quaternion(0.8877555, 0.073300414, -0.19383554, 0.4110294)
+bones/16/rotation = Quaternion(0.2534645, -0.38803878, -0.42120755, 0.77959335)
+bones/17/rotation = Quaternion(0.64241, -0.23717447, -0.12981528, 0.71708137)
+bones/18/rotation = Quaternion(0.018652698, 0.05914517, -0.013110156, 0.99798906)
+
+[node name="Circle_001" parent="Armature/Skeleton3D" index="0" unique_id=1747545721]
+layers = 524288

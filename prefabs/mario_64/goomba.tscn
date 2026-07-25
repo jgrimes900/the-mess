@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://u0vglhwhkt7o" path="res://entities/starkron/attack_area.gd" id="6_3ca5y"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="6_d1ji4"]
 [ext_resource type="Script" uid="uid://dp70mb5dxp0a6" path="res://entities/components/save/save_goomba.gd" id="8_bkya0"]
-[ext_resource type="Script" uid="uid://bgjsvxv2kfwsb" path="res://entities/push_collision_area.gd" id="8_sv24b"]
+[ext_resource type="AudioStream" uid="uid://dmmpe6po8d8tp" path="res://assets/sounds/sm64/bounce.wav" id="9_sv24b"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rjif6"]
 resource_name = "Goomba_goomba"
@@ -73,7 +73,7 @@ bind/2/bone = -1
 bind/2/pose = Transform3D(0.42839506, 0.1404248, 0.22366552, 0.09513882, -0.47965974, 0.11892361, 0.2463617, -0.058949936, -0.43485472, -1.976484, 6.7512274, 0.8297223)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sx7nq"]
-height = 1.2
+height = 0.8
 
 [sub_resource type="Animation" id="Animation_gol3d"]
 resource_name = "Walk"
@@ -112,11 +112,7 @@ radius = 0.7
 [sub_resource type="SphereShape3D" id="SphereShape3D_3ca5y"]
 radius = 5.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_3ca5y"]
-height = 1.2
-
 [node name="Goomba" type="CharacterBody3D" unique_id=1214246322]
-collision_layer = 2
 script = ExtResource("1_ix2ue")
 
 [node name="Body_Root" type="Node3D" parent="." unique_id=543992519]
@@ -165,7 +161,7 @@ skin = SubResource("Skin_bdu5t")
 skeleton = NodePath("..")
 
 [node name="World_Collision" type="CollisionShape3D" parent="." unique_id=1189705959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3304863, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
 shape = SubResource("CylinderShape3D_sx7nq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1422316640]
@@ -193,17 +189,15 @@ max_health = 5.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Notice_Area" unique_id=1369792712]
 shape = SubResource("SphereShape3D_3ca5y")
 
-[node name="Player_Collision_Area" type="Area3D" parent="." unique_id=1978541601]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0)
-script = ExtResource("8_sv24b")
-
-[node name="Collision" type="CollisionShape3D" parent="Player_Collision_Area" unique_id=1479392184]
-shape = SubResource("CylinderShape3D_3ca5y")
-
 [node name="Save" type="Node" parent="." unique_id=97491495]
 script = ExtResource("8_bkya0")
 
+[node name="bounce_sound" type="AudioStreamPlayer" parent="." unique_id=157335733]
+stream = ExtResource("9_sv24b")
+volume_db = -5.0
+
 [connection signal="attack" from="." to="HurtArea3D" method="_attack"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+[connection signal="body_shape_entered" from="HurtArea3D" to="." method="_stomp" unbinds=2]
 [connection signal="dead" from="Health" to="." method="_stomp"]
 [connection signal="body_shape_entered" from="Notice_Area" to="." method="_on_notice_area_enter"]

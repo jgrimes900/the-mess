@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cgr6yf5xx8ppq" path="res://entities/weapons/glock.gd" id="2_q2wkl"]
 [ext_resource type="AnimationLibrary" uid="uid://dhrj8rc4n3g1j" path="res://assets/models/v_hl1_glock/v_9mmhandgun_animation_lib.res" id="3_f2e50"]
 [ext_resource type="Script" uid="uid://cpuo877xwybdf" path="res://entities/Gun.gd" id="4_22xyk"]
+[ext_resource type="Script" uid="uid://booe35jvkw7o8" path="res://scripts/copy_translation.gd" id="5_ipj2g"]
 [ext_resource type="Texture2D" uid="uid://cfmeb53qfopgv" path="res://assets/textures/v_hl1_glock/v_hl1_glock_gclip.png" id="5_r3tw4"]
 [ext_resource type="Material" uid="uid://ddw68vxhl07uf" path="res://assets/materials/v_hl1_glock/bulletCHROME.res" id="6_nmymu"]
 [ext_resource type="Texture2D" uid="uid://bcrajy3hh5xtn" path="res://assets/textures/v_hl1_glock/v_hl1_glock_gclipinside.png" id="7_gf0v6"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cp01ftyq3v6hq" path="res://assets/textures/v_hl1_glock/v_hl1_glock_side.png" id="13_sh7kr"]
 [ext_resource type="Material" uid="uid://b5b58n2egybih" path="res://assets/materials/v_hl1_glock/chrome.res" id="14_8jxos"]
 [ext_resource type="Texture2D" uid="uid://dfa0xcrr4cjr0" path="res://assets/textures/v_hl1_glock/v_hl1_glock_top.png" id="15_2c4y0"]
+[ext_resource type="PackedScene" uid="uid://nu7tu0pbhfax" path="res://prefabs/vm_arm.tscn" id="16_pp8wu"]
 [ext_resource type="AudioStream" uid="uid://btlcj7opvssw5" path="res://assets/sounds/tele.ogg" id="16_w4pj3"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="17_r1s2y"]
 [ext_resource type="AudioStream" uid="uid://drtprupubkrbs" path="res://assets/sounds/hl1/weapons/pl_gun3.wav" id="17_r3tw4"]
@@ -43,6 +45,22 @@
 [ext_resource type="Shader" uid="uid://ckxcubwbv7y7" path="res://shaders/quantize_canvas.gdshader" id="33_r1s2y"]
 [ext_resource type="Script" uid="uid://dp6g72ue80n5h" path="res://entities/save.gd" id="34_0anbp"]
 [ext_resource type="Script" uid="uid://rd5m8o6wooeh" path="res://GUI/stars.gd" id="36_gxohq"]
+
+[sub_resource type="Animation" id="Animation_ipj2g"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y0gq2"]
+_data = {
+&"RESET": SubResource("Animation_ipj2g")
+}
+
+[sub_resource type="Animation" id="Animation_n05fx"]
+resource_name = "idle1"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_84k71"]
+_data = {
+&"idle1": SubResource("Animation_n05fx")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jhsr"]
 resource_name = "gclip.bmp"
@@ -743,6 +761,9 @@ size = Vector2(4, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_envas"]
 size = Vector2(16, 16)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_envas"]
+size = Vector3(0.9, 1.8, 0.9)
+
 [node name="Player" type="CharacterBody3D" unique_id=1837370831]
 script = ExtResource("1_edtk3")
 
@@ -758,9 +779,10 @@ current = true
 transform = Transform3D(-3.6280452e-09, 0, -0.083, 0, 0.083, 0, 0.083, 0, -3.6280452e-09, 0, 0, 0)
 script = ExtResource("2_q2wkl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Pivot/glock" unique_id=412984522]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Pivot/glock" unique_id=15034688]
 root_node = NodePath("../SVC/SubViewport")
-libraries/v_9mmhandgun_animation_lib = ExtResource("3_f2e50")
+libraries/ = SubResource("AnimationLibrary_y0gq2")
+libraries/vm_arm_lib = SubResource("AnimationLibrary_84k71")
 
 [node name="Gun" type="RayCast3D" parent="Pivot/glock" unique_id=1651856622 node_paths=PackedStringArray("parent")]
 transform = Transform3D(-3.590641e-07, -1.6757912e-07, 12.048193, -12.048193, -5.2664325e-07, -3.5906413e-07, 5.2664325e-07, -12.048193, -1.6757912e-07, 0, 0, 0)
@@ -769,25 +791,25 @@ parent = NodePath("../../..")
 damage = 5.0
 
 [node name="SVC" type="SubViewportContainer" parent="Pivot/glock" unique_id=728559446]
-anchors_preset = -1
-anchor_left = 0.38541666
-anchor_top = 0.074074075
-anchor_right = 0.90625
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-size_flags_horizontal = 8
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
 size_flags_vertical = 10
 mouse_filter = 2
 stretch = true
-metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="Pivot/glock/SVC" unique_id=202891358]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(600, 600)
+size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="v_9mmhandgun_qc_skeleton" type="Node3D" parent="Pivot/glock/SVC/SubViewport" unique_id=1610806081]
 transform = Transform3D(-0.083, 0, 1.1544525e-09, 0, 0.083, 0, -1.1544525e-09, 0, -0.083, 0, 0.62031054, 0)
+visible = false
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Pivot/glock/SVC/SubViewport/v_9mmhandgun_qc_skeleton" unique_id=193908824]
 bones/0/name = "Hands biped"
@@ -1116,7 +1138,7 @@ bones/46/name = "Bone02"
 bones/46/parent = 45
 bones/46/rest = Transform3D(1, -3.8816555e-16, -2.5977818e-07, 1.5992446e-14, 1, 6.006771e-08, 2.5977818e-07, -6.006771e-08, 1, 2.8406801, -1.5672721, 5.515505e-06)
 bones/46/enabled = true
-bones/46/position = Vector3(2.8406782, -1.5672699, -5.0456447e-07)
+bones/46/position = Vector3(2.8406801, -1.5672721, 5.515505e-06)
 bones/46/rotation = Quaternion(-3.0033856e-08, -1.2988909e-07, 4.0951527e-15, 1)
 bones/46/scale = Vector3(1, 1, 1)
 bones/47/name = "Box02"
@@ -1148,19 +1170,25 @@ mesh = SubResource("ArrayMesh_wl840")
 skin = SubResource("Skin_2wnpc")
 skeleton = NodePath("..")
 
-[node name="Camera3D2" type="Camera3D" parent="Pivot/glock/SVC/SubViewport" unique_id=532604201]
-transform = Transform3D(1, 0, 7.351371e-08, 0, 1, 0, -7.351371e-08, 0, 1, 0, 0.62031054, 0)
+[node name="Camera3D2" type="Camera3D" parent="Pivot/glock/SVC/SubViewport" unique_id=532604201 node_paths=PackedStringArray("to_copy")]
+transform = Transform3D(1, 0, 7.351371e-08, 0, 1, 0, -7.351371e-08, 0, 1, 0, 0.62, 0)
 cull_mask = 524288
+fov = 45.0
+script = ExtResource("5_ipj2g")
+to_copy = NodePath("../../../../Camera3D")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Pivot/glock/SVC/SubViewport" unique_id=1350528894]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6488433, 1.3726187, -1.4737365)
-layers = 524288
+[node name="vm_arm" parent="Pivot/glock/SVC/SubViewport/Camera3D2" unique_id=1228354462 instance=ExtResource("16_pp8wu")]
+transform = Transform3D(1, 0, -7.351371e-08, 0, 1, 0, 7.351371e-08, 0, 1, 0, -0.62, 0)
 
 [node name="GunSounds" type="AudioStreamPlayer3D" parent="Pivot/glock" unique_id=967592462]
 stream = ExtResource("17_r3tw4")
 volume_db = -10.0
 max_db = -5.0
 attenuation_filter_cutoff_hz = 20500.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pivot/glock" unique_id=412984522]
+root_node = NodePath("../SVC/SubViewport")
+libraries/v_9mmhandgun_animation_lib = ExtResource("3_f2e50")
 
 [node name="HUD" type="Control" parent="." unique_id=1183936384]
 layout_mode = 3
@@ -1340,6 +1368,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_right = 236.0
 offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Control3" type="Control" parent="HUD/sims3_item_popup" unique_id=439522932]
 layout_mode = 1
@@ -1805,6 +1835,13 @@ centered = false
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_envas")
 
+[node name="rigidbody_collider" type="AnimatableBody3D" parent="." unique_id=1086388060]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rigidbody_collider" unique_id=156378288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("BoxShape3D_envas")
+
+[connection signal="animation_finished" from="Pivot/glock/AnimationPlayer2" to="Pivot/glock" method="_idle_animation" unbinds=1]
 [connection signal="animation_finished" from="Pivot/glock/AnimationPlayer" to="Pivot/glock" method="_idle_animation" unbinds=1]
 [connection signal="control" from="Control" to="Pivot/glock" method="_set_control"]
 [connection signal="pressed" from="Control/VBoxContainer/Return" to="Control" method="_gui_input_return"]

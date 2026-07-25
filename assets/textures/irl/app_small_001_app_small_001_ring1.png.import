@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c80wjevk3aije"
-path.s3tc="res://.godot/imported/old_room_bright.jpg-11c083dc0e6946445fe8b99670459064.s3tc.ctex"
+uid="uid://c7ou0tycpihiy"
+path.s3tc="res://.godot/imported/app_small_001_app_small_001_ring1.png-b3dfc5c0c7a0adf627c2a057991cc872.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "88d3d981945ce4374189b47dbb8be591"
+}
 
 [deps]
 
-source_file="res://assets/textures/projection_maps/old_room_bright.jpg"
-dest_files=["res://.godot/imported/old_room_bright.jpg-11c083dc0e6946445fe8b99670459064.s3tc.ctex"]
+source_file="res://assets/textures/irl/app_small_001_app_small_001_ring1.png"
+dest_files=["res://.godot/imported/app_small_001_app_small_001_ring1.png-b3dfc5c0c7a0adf627c2a057991cc872.s3tc.ctex"]
 
 [params]
 
@@ -37,5 +40,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=128
 detect_3d/compress_to=0

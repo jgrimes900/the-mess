@@ -72,6 +72,8 @@ func _unkill():
 	rotate_ply(alive_rotation)
 	$ani_fuck.play("RESET")
 
+func _ready() -> void:
+	add_collision_exception_with($rigidbody_collider)
 
 
 func _physics_process(delta: float) -> void:
@@ -182,6 +184,7 @@ func normal_mode_physics_process(delta: float) -> void:
 					step = 0
 					
 		last_pos = global_position
+		$rigidbody_collider.global_position = last_pos
 		
 func do_gravity(delta: float, velocity_in: Vector3):
 	velocity_in.y -= gravity * delta

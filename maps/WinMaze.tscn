@@ -353,6 +353,7 @@ shape = SubResource("ConcavePolygonShape3D_grqno")
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="WinMaze Exit Room" unique_id=873794700]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.00031280518, 3.3889177, -3.0002222)
+layers = 524289
 light_energy = 2.0
 light_size = 0.213
 

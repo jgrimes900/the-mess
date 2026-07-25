@@ -1,14 +1,8 @@
 extends CharacterBody3D
 
-# The ground enemy from Drillgon's current school project, Starkron
-
-# If I limit it to only being in GridMap based levels,
-# I might be able to implement the original method of pathing.
-
 @onready var aniplay: AnimationPlayer = $AnimationPlayer
 @onready var attack_area: Area3D = $HurtArea3D
 @onready var notice_area: Area3D = $Notice_Area
-@onready var stomp_area: Area3D = $StompArea
 @onready var Body: Node3D = $Body_Root
 @onready var player = get_node("/root/Player")
 
@@ -52,7 +46,7 @@ func _setup_home():
 
 func _process(delta: float) -> void:
 	attack_timer += delta
-	if attack_area.has_target and attack_timer >= attack_delay:
+	if attack_area.has_target and attack_timer >= attack_delay and !stomped:
 		attack_timer = 0.0
 		emit_signal("attack")
 		_jump()
@@ -88,8 +82,10 @@ func _spawn_coin(pos, coin):
 	
 
 func _stomp(_a = null, body = player):
-	if body == player and body.velocity.y <= 0:
+	if body == player and body.velocity.y <= 0 and !body.is_on_floor() and !stomped:
 		stomped = true
+		body.target_velocity.y = 10
+		$bounce_sound.play()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
