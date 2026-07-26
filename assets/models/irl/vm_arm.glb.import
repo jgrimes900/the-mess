@@ -2095,6 +2095,13 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 }
+},
+"materials": {
+"Material.004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/irl/vm_arm.tres",
+"use_external/path": "uid://cxi7yvgbxawr3"
+}
 }
 }
 gltf/naming_version=2

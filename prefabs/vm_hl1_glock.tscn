@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dfmpxhqrar0s5"]
+
+[ext_resource type="PackedScene" uid="uid://5gngwnuhmhhw" path="res://assets/models/v_hl1_glock/v_hl1_glock.glb" id="1_gnows"]
+[ext_resource type="AnimationLibrary" uid="uid://rjv4j6u37uni" path="res://assets/models/v_hl1_glock/glock.res" id="2_gnows"]
+
+[node name="v_hl1_glock" unique_id=723113414 instance=ExtResource("1_gnows")]
+
+[node name="v_9mmhandgun_qc_skeleton_001" parent="." index="0" unique_id=1984918445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+
+[node name="Skeleton3D" parent="v_9mmhandgun_qc_skeleton_001" index="0" unique_id=1662775800]
+bones/0/rotation = Quaternion(-0.061234385, 0.07260266, -0.94566244, 0.31096926)
+bones/1/rotation = Quaternion(-2.6919391e-08, -1.4506732e-07, -0.35790738, 0.93375707)
+bones/2/position = Vector3(0.9875909, 8.36565e-05, 2.833528e-06)
+bones/2/rotation = Quaternion(0.7065821, 0.14091459, -0.018432718, 0.6932136)
+bones/3/position = Vector3(0.09782558, 0.009033066, 0.11801461)
+bones/3/rotation = Quaternion(-0.86025494, -0.3972674, 0.06274614, 0.31337383)
+bones/4/position = Vector3(0.20620117, 1.5549138e-05, -1.3415377e-07)
+bones/4/rotation = Quaternion(-7.775957e-07, 8.210566e-07, 0.25024205, 0.9681833)
+bones/5/position = Vector3(0.09312072, -1.3343421e-05, -9.239063e-07)
+bones/5/rotation = Quaternion(7.8117495e-07, -3.4253267e-07, 0.38249916, 0.9239559)
+bones/6/position = Vector3(0.32919073, -0.00010085047, 0.09880449)
+bones/6/rotation = Quaternion(-0.008139861, -0.07801543, 0.108444676, 0.99100316)
+bones/7/position = Vector3(0.09876111, -4.468481e-06, 2.430744e-06)
+bones/7/rotation = Quaternion(1.2974573e-06, 3.8706817e-06, 0.16066286, 0.98700935)
+bones/8/rotation = Quaternion(-1.5011503e-06, -3.020162e-06, 0.30885613, 0.95110875)
+bones/9/position = Vector3(0.32920426, -4.5559427e-05, 0.032962687)
+bones/9/rotation = Quaternion(-0.0074262614, -0.038542666, 0.19909823, 0.9791932)
+bones/10/position = Vector3(0.115221046, -1.1524186e-05, 1.1533493e-05)
+bones/10/rotation = Quaternion(5.8969607e-07, 2.1811031e-06, 0.28805527, 0.9576138)
+bones/11/position = Vector3(0.115222275, -8.190711e-06, 1.2589561e-05)
+bones/11/rotation = Quaternion(-7.487472e-07, -9.867922e-07, 0.6222316, 0.7828332)
+bones/12/position = Vector3(0.32920858, 7.3292704e-06, -0.0328786)
+bones/12/rotation = Quaternion(0.00039204324, -7.658468e-05, 0.19071229, 0.98164594)
+bones/13/position = Vector3(0.09876341, -1.00736515e-05, 9.089757e-06)
+bones/13/rotation = Quaternion(-2.3847465e-06, -4.7851167e-06, 0.3336422, 0.9426998)
+bones/14/position = Vector3(0.09875478, -7.5042626e-06, 1.0190574e-05)
+bones/14/rotation = Quaternion(-1.2825272e-07, -8.063796e-07, 0.5443804, 0.83883846)
+bones/15/position = Vector3(0.32920974, 5.9191083e-05, -0.09871786)
+bones/15/rotation = Quaternion(0.019100724, 0.017197415, 0.14220257, 0.9895039)
+bones/16/position = Vector3(0.0822973, -6.368732e-06, 7.765375e-06)
+bones/16/rotation = Quaternion(4.5797316e-07, 1.0461e-06, 0.37036738, 0.92888534)
+bones/17/position = Vector3(0.08230074, -7.008078e-06, 5.9925815e-06)
+bones/17/rotation = Quaternion(9.434286e-09, 5.0717045e-07, 0.4144844, 0.9100564)
+bones/19/position = Vector3(0.24677412, -0.13615005, -6.083957e-06)
+bones/20/position = Vector3(-12.082544, -29.333797, -8.329674)
+bones/20/rotation = Quaternion(0.0011378437, 0.008646085, 0.13047756, 0.991413)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=455222354]
+libraries/glock = ExtResource("2_gnows")

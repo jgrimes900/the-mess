@@ -8,10 +8,10 @@ extends Node3D
 
 @export var has_silencer: bool = false
 
-@onready var aniplay: AnimationPlayer = $AnimationPlayer
+@onready var arms_anim: AnimationPlayer = $"../vm_arm/AnimationPlayer"
+@onready var glock_anim: AnimationPlayer = $"v_hl1_glock/AnimationPlayer"
 @onready var gun: RayCast3D = $Gun
-@onready var silencer: MeshInstance3D = $"SVC/SubViewport/v_9mmhandgun_qc_skeleton/Skeleton3D/glock_reference(silencer)"
-@onready var SVC: SubViewportContainer = $SVC
+@onready var silencer: MeshInstance3D = $"v_hl1_glock/v_9mmhandgun_qc_skeleton_001/Skeleton3D/glock_reference(silencer)"
 @onready var Sounds: AudioStreamPlayer3D = $GunSounds
 
 var player_dead = false
@@ -26,18 +26,21 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("fire_left") and !player_dead and in_control:
 		if gun._fire():
 			Sounds.play()
-			aniplay.play("v_9mmhandgun_animation_lib/shoot")
+			glock_anim.stop()
+			arms_anim.stop()
+			glock_anim.play("glock/shoot")
+			arms_anim.play("vm_arm_lib/glock_shoot")
 
 func _idle_animation():
-	aniplay.play("v_9mmhandgun_animation_lib/idle"+str(randi_range(1,3)))
-
+	#aniplay.play("v_9mmhandgun_animation_lib/idle"+str(randi_range(1,3)))
+	pass
 
 func _player_dead() -> void:
-	SVC.visible = false
+	$v_hl1_glock.visible = false
 	player_dead = true
 	
 func _player_undead() -> void:
-	SVC.visible = true
+	$v_hl1_glock.visible = true
 	player_dead = false
 
 func _set_control(a: bool):

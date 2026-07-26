@@ -8,22 +8,28 @@ var retrun_code: Callable
 
 @onready var player = get_node("/root/Player") as Player;
 
+func _ready() -> void:
+	Engine.time_scale = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("pause") and !open:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		get_node("/root/Player").mouse_captured = false
-		visible = true
-		open = true
-		emit_signal("control", false)
-		if get_node_or_null("/root/Node3D/ExitWarp"):
-			$VBoxContainer/Return.visible = true
+	if Input.is_action_just_pressed("pause"):
+		if !open:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			get_node("/root/Player").mouse_captured = false
+			visible = true
+			open = true
+			emit_signal("control", false)
+			if get_node_or_null("/root/Node3D/ExitWarp"):
+				$VBoxContainer/Return.visible = true
+			else:
+				$VBoxContainer/Return.visible = false
+			Engine.time_scale = 0
 		else:
-			$VBoxContainer/Return.visible = false
+			_gui_input_continue()
 	if Input.is_action_just_pressed("open_inv"):
 		if get_node("/root/Player").inv.visible:
 			get_node("/root/Player").inv.visible = false
@@ -71,6 +77,7 @@ func _gui_input_continue():
 		get_node("/root/Player").mouse_captured = true
 		visible = false
 		open = false
+		Engine.time_scale = 1
 		
 func _2d_ify():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

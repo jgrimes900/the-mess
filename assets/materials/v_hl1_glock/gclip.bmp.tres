@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://r6gof2muqqsp"]
+
+[ext_resource type="Texture2D" uid="uid://c80bone4f3246" path="res://assets/models/v_hl1_glock/v_hl1_glock_gclip.png" id="1_r1nue"]
+
+[resource]
+resource_name = "gclip.bmp"
+cull_mode = 2
+albedo_texture = ExtResource("1_r1nue")
+use_z_clip_scale = true
+z_clip_scale = 0.75

@@ -3,6 +3,14 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_s
 
 uniform sampler2D PanoramicTexture;
 
+uniform float z_clip_scale : hint_range(0.0, 1.0) = 1.0;
+
+void vertex() {
+    vec4 clip_pos = PROJECTION_MATRIX * MODELVIEW_MATRIX * vec4(VERTEX, 1.0);
+    clip_pos.z = mix(clip_pos.w, clip_pos.z, z_clip_scale);
+   	POSITION = clip_pos;
+}
+
 void fragment() {
 	vec3 view_dir = VIEW;
 	vec3 normal = NORMAL;
