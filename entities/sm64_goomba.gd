@@ -83,9 +83,12 @@ func _spawn_coin(pos, coin):
 
 func _stomp(_a = null, body = player):
 	if body == player and body.velocity.y <= 0 and !body.is_on_floor() and !stomped:
-		stomped = true
+		_die_with_squish_anim()
 		body.target_velocity.y = 10
 		$bounce_sound.play()
+
+func _die_with_squish_anim():
+	stomped = true
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -112,7 +115,7 @@ func _physics_process(delta: float) -> void:
 			if notice_state == false:
 				_jump()
 				notice_state = true
-			target_rot = deg_to_rad(atan2(player.position.x-position.x, player.position.z-position.z)*PI*18-90)
+			target_rot = deg_to_rad(atan2(player.global_position.x-global_position.x, player.global_position.z-global_position.z)*PI*18-90)
 			target_velocity.x += delta
 		else:
 			notice_state = false
@@ -120,7 +123,7 @@ func _physics_process(delta: float) -> void:
 			choice_time -= delta
 		
 		if home_exists and not home_area.overlaps_body(self):
-			target_rot = deg_to_rad(atan2(home_area.position.x-position.x, home_area.position.z-position.z)*PI*18-90)
+			target_rot = deg_to_rad(atan2(home_area.global_position.x-global_position.x, home_area.global_position.z-global_position.z)*PI*18-90)
 			
 		rotation.y = rotate_toward(rotation.y, target_rot, delta*2.5)
 		

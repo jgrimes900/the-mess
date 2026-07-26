@@ -102,6 +102,10 @@ delete_save={
 ]
 }
 
+[layer_names]
+
+3d_render/layer_20="View Model"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

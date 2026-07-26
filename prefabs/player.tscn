@@ -808,7 +808,7 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="v_9mmhandgun_qc_skeleton" type="Node3D" parent="Pivot/glock/SVC/SubViewport" unique_id=1610806081]
-transform = Transform3D(-0.083, 0, 1.1544525e-09, 0, 0.083, 0, -1.1544525e-09, 0, -0.083, 0, 0.62031054, 0)
+transform = Transform3D(-0.083, 0, 1.1544525e-09, 0, 0.083, 0, -1.1544525e-09, 0, -0.083, 0, 0.7, 0)
 visible = false
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Pivot/glock/SVC/SubViewport/v_9mmhandgun_qc_skeleton" unique_id=193908824]
@@ -1171,14 +1171,14 @@ skin = SubResource("Skin_2wnpc")
 skeleton = NodePath("..")
 
 [node name="Camera3D2" type="Camera3D" parent="Pivot/glock/SVC/SubViewport" unique_id=532604201 node_paths=PackedStringArray("to_copy")]
-transform = Transform3D(1, 0, 7.351371e-08, 0, 1, 0, -7.351371e-08, 0, 1, 0, 0.62, 0)
+transform = Transform3D(1, 0, 7.351371e-08, 0, 1, 0, -7.351371e-08, 0, 1, 0, 0.7, 0)
 cull_mask = 524288
 fov = 45.0
 script = ExtResource("5_ipj2g")
 to_copy = NodePath("../../../../Camera3D")
 
-[node name="vm_arm" parent="Pivot/glock/SVC/SubViewport/Camera3D2" unique_id=1228354462 instance=ExtResource("16_pp8wu")]
-transform = Transform3D(1, 0, -7.351371e-08, 0, 1, 0, 7.351371e-08, 0, 1, 0, -0.62, 0)
+[node name="vm_arm" parent="Pivot/glock/SVC/SubViewport/Camera3D2" unique_id=507124459 instance=ExtResource("16_pp8wu")]
+transform = Transform3D(0.4, 0, -2.9405484e-08, 0, 0.4, 0, 2.9405484e-08, 0, 0.4, 0, -0.4, 0)
 
 [node name="GunSounds" type="AudioStreamPlayer3D" parent="Pivot/glock" unique_id=967592462]
 stream = ExtResource("17_r3tw4")

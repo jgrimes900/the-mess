@@ -71,6 +71,7 @@ offset = Vector3(0, -2, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1011247846]
 transform = Transform3D(0.9085947, -0.27877787, 0.31102836, -0.12767535, 0.523641, 0.8423177, -0.3976866, -0.8050361, 0.44018432, 0, 10.177189, 0)
+layers = 524289
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1589594522]

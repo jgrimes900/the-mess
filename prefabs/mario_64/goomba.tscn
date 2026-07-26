@@ -145,14 +145,14 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(0.9736458, 0.1890462, -0.12757339, 0.21319948, -0.9531107, 0.21476926, -0.080990255, -0.23630787, -0.9682967, 0, 7.08336, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 7.08336, 0)
-bones/1/rotation = Quaternion(0.98679453, 0.10190716, -0.052838683, -0.11427841)
+bones/1/rotation = Quaternion(0.98679453, 0.10190718, -0.052838687, -0.114278406)
 bones/1/scale = Vector3(0.9999998, 0.99999994, 0.99999964)
 bones/2/name = "Foot.R"
 bones/2/parent = 0
 bones/2/rest = Transform3D(0.85124475, 0.18904617, 0.48953408, 0.27903193, -0.9531107, -0.117136896, 0.44443604, 0.23630789, -0.86408025, 0, 7.08336, 0)
 bones/2/enabled = true
 bones/2/position = Vector3(0, 7.08336, 0)
-bones/2/rotation = Quaternion(0.9576581, 0.12219343, 0.24381623, 0.09226801)
+bones/2/rotation = Quaternion(0.9576581, 0.12219345, 0.24381624, 0.092268005)
 bones/2/scale = Vector3(0.9999999, 0.99999994, 0.99999964)
 
 [node name="goomba" type="MeshInstance3D" parent="Body_Root/Body/Armature/Skeleton3D" unique_id=55667391]
@@ -199,5 +199,5 @@ volume_db = -5.0
 [connection signal="attack" from="." to="HurtArea3D" method="_attack"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="body_shape_entered" from="HurtArea3D" to="." method="_stomp" unbinds=2]
-[connection signal="dead" from="Health" to="." method="_stomp"]
+[connection signal="dead" from="Health" to="." method="_die_with_squish_anim"]
 [connection signal="body_shape_entered" from="Notice_Area" to="." method="_on_notice_area_enter"]
