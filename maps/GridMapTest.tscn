@@ -23,6 +23,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dei5k65vf0b18" path="res://assets/models/irl/old_room_assets/storageBox_a001.mesh" id="19_pniwy"]
 [ext_resource type="ArrayMesh" uid="uid://de3pt6j305c2t" path="res://assets/models/irl/wallart_001.res" id="21_2y1ab"]
 [ext_resource type="PackedScene" uid="uid://x221shcp4uic" path="res://assets/models/irl/app_small_001.glb" id="23_atcwo"]
+[ext_resource type="PackedScene" uid="uid://dg2370ht27uli" path="res://assets/models/irl/keyboard.glb" id="24_a1t16"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba6ci"]
 size = Vector3(2, 2, 2)
@@ -404,6 +405,9 @@ shape = SubResource("BoxShape3D_hv0v0")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D" unique_id=1914490637]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5, 0, 1.5)
 mesh = SubResource("BoxMesh_pfqyr")
+
+[node name="keyboard" parent="." unique_id=1168344158 instance=ExtResource("24_a1t16")]
+transform = Transform3D(-0.027902592, 0, -0.39902565, 0, 0.4, 0, 0.39902565, 0, -0.027902592, 7.0989027, -1, 9.231479)
 
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
 [connection signal="body_shape_entered" from="FNaF Teleport Trigger" to="FNaF Teleport Trigger" method="MapChange" unbinds=4]

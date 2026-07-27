@@ -119,6 +119,8 @@ albedo_texture = ExtResource("19_ekhpa")
 [sub_resource type="BoxShape3D" id="BoxShape3D_4346p"]
 size = Vector3(0.032, 0.01682422, 0.065)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_t16ig"]
+
 [node name="Node3D" type="Node3D" unique_id=2048975526]
 script = ExtResource("1_uhf6p")
 persitent = false
@@ -389,11 +391,26 @@ surface_material_override/1 = ExtResource("20_ydscv")
 transform = Transform3D(7.5, 0, 0, 0, -3.278354e-07, 7.5, 0, -7.5, -3.278354e-07, 0.0037593842, -0.051766157, 0.057886124)
 shape = SubResource("BoxShape3D_4346p")
 
+[node name="terrain_test Teleport Trigger" type="Area3D" parent="." unique_id=2143931285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 7)
+script = ExtResource("4_h5mn7")
+LevelDef = "terrain_test"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain_test Teleport Trigger" unique_id=830121534]
+shape = SubResource("BoxShape3D_t16ig")
+
+[node name="Sprite3D" type="Sprite3D" parent="terrain_test Teleport Trigger" unique_id=1178328083]
+pixel_size = 0.02
+billboard = 1
+alpha_scissor_threshold = 0.484
+texture = ExtResource("5_uhf6p")
+
 [connection signal="body_shape_entered" from="c1a0 Teleport Trigger" to="c1a0 Teleport Trigger" method="MapChange" unbinds=2]
 [connection signal="opened" from="Lift" to="c1a0 Teleport Trigger" method="MapChange2"]
 [connection signal="closed" from="test_doorlock_in" to="Lift" method="_open"]
 [connection signal="closed" from="WinMaze Exit Room/doorlock_out" to="WinMaze Exit Room/Door4" method="_open"]
 [connection signal="opened" from="WinMaze Exit Room/doorlock_out" to="WinMaze Exit Room/Door4" method="_open"]
+[connection signal="body_shape_entered" from="terrain_test Teleport Trigger" to="terrain_test Teleport Trigger" method="MapChange" unbinds=2]
 
 [editable path="test_doorlock_in/SotM Lock"]
 [editable path="WinMaze Exit Room/doorlock_out/SotM Lock"]

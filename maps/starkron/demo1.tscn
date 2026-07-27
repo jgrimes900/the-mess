@@ -15,12 +15,12 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ymd38"]
 
-[sub_resource type="Sky" id="Sky_3e7qf"]
+[sub_resource type="Sky" id="Sky_jabkh"]
 sky_material = SubResource("ProceduralSkyMaterial_ymd38")
 
 [sub_resource type="Environment" id="Environment_tgcle"]
 background_mode = 2
-sky = SubResource("Sky_3e7qf")
+sky = SubResource("Sky_jabkh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_axtdh"]
 

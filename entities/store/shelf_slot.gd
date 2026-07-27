@@ -10,7 +10,7 @@ var size: Vector3
 @onready var collider: Area3D = $"Collider"
 @onready var itemDefs = $"../../ItemDefs"
 
-var item = 0
+@export var item = 0
 var count = 1000000
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +22,7 @@ func _ready() -> void:
 	var offset: Vector3 = size - itemDefs.Items[item].size
 	offset = Vector3(-offset.x/2, itemDefs.Items[item].size.y/2, -offset.z/2)
 	var count2 = 0
-	
+	offset += itemDefs.Items[item].offset
 	var stack: int
 	if itemDefs.Items[item].tags.has("stackable"):
 		stack = temp2.y

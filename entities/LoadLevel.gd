@@ -8,7 +8,8 @@ const KNOWN_MAPS = {
 	GridMapTest = "uid://bnijdfm8dpeuu",
 	WinMap = "uid://etjjb3ij7ot4",
 	StarkronDemo1 = "uid://xwm1wyqw5vv3",
-	FNaF_Like = "uid://co6qx8gvin1ec"
+	FNaF_Like = "uid://co6qx8gvin1ec",
+	terrain_test = "uid://x5c25rive5s6"
 }
 
 @export var LevelDef: String

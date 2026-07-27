@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://x5c25rive5s6"]
+
+[ext_resource type="Texture2D" uid="uid://c664e8dbp81k6" path="res://assets/textures/terrain/starkron/checkardTest_terrain.png" id="1_52wwa"]
+[ext_resource type="Script" uid="uid://y5l84q5odctl" path="res://entities/map.gd" id="1_e4jf1"]
+[ext_resource type="Texture2D" uid="uid://yqp5bay1gh10" path="res://assets/textures/terrain/hl1/c0a0e_texture_31.png" id="2_e4jf1"]
+[ext_resource type="Image" uid="uid://b1pqsvalm3qxx" path="res://maps/terrain_test/Heightmap_0_0.res" id="3_863k3"]
+[ext_resource type="Image" uid="uid://dcexv8580aqmw" path="res://maps/terrain_test/Splatmap_0_0_0.res" id="4_e31x1"]
+[ext_resource type="Image" uid="uid://dox2fsucoefm6" path="res://maps/terrain_test/Color_0_1.res" id="5_kjmdv"]
+[ext_resource type="Image" uid="uid://chjciw4dccvpa" path="res://maps/terrain_test/Heightmap_0_1.res" id="6_5f81l"]
+[ext_resource type="Image" uid="uid://csokni72r3bfs" path="res://maps/terrain_test/Splatmap_0_1_0.res" id="7_rgyuw"]
+[ext_resource type="Image" uid="uid://c5f2t2447tx3v" path="res://maps/terrain_test/Heightmap_-1_0.res" id="8_j6lnq"]
+[ext_resource type="Image" uid="uid://clwb2au2rt85j" path="res://maps/terrain_test/Splatmap_-1_0_0.res" id="9_5sb5b"]
+[ext_resource type="Image" uid="uid://bvs185cs2ubd2" path="res://maps/terrain_test/Heightmap_-1_1.res" id="10_8qmf0"]
+[ext_resource type="Image" uid="uid://r2xh53k3ai78" path="res://maps/terrain_test/Splatmap_-1_1_0.res" id="11_3il8r"]
+[ext_resource type="Image" uid="uid://y0f0gpvk0v6i" path="res://maps/terrain_test/Heightmap_1_0.res" id="12_567ud"]
+[ext_resource type="Image" uid="uid://byiy273bo2ftd" path="res://maps/terrain_test/Splatmap_1_0_0.res" id="13_m38m1"]
+[ext_resource type="Image" uid="uid://thtcfqmqiglh" path="res://maps/terrain_test/Heightmap_1_1.res" id="14_03xea"]
+[ext_resource type="Image" uid="uid://dlwie32hcgnkv" path="res://maps/terrain_test/Splatmap_1_1_0.res" id="15_ymk1n"]
+[ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="16_n1qxw"]
+[ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="17_sjl1l"]
+[ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="18_147sb"]
+
+[sub_resource type="TextureSetResource" id="TextureSetResource_6bxk8"]
+albedoTexture = ExtResource("1_52wwa")
+
+[sub_resource type="TextureSetResource" id="TextureSetResource_wt1wa"]
+albedoTexture = ExtResource("2_e4jf1")
+
+[sub_resource type="TextureSetsResource" id="TextureSetsResource_mw2n6"]
+textureSets = Array[TextureSetResource]([SubResource("TextureSetResource_6bxk8"), SubResource("TextureSetResource_wt1wa")])
+
+[sub_resource type="ZoneResource" id="ZoneResource_lg2be"]
+heightMapImage = ExtResource("3_863k3")
+splatmapsImage = Array[Image]([ExtResource("4_e31x1")])
+
+[sub_resource type="ZoneResource" id="ZoneResource_7nnbb"]
+zonePosition = Vector2i(0, 1)
+heightMapImage = ExtResource("6_5f81l")
+colorImage = ExtResource("5_kjmdv")
+splatmapsImage = Array[Image]([ExtResource("7_rgyuw")])
+
+[sub_resource type="ZoneResource" id="ZoneResource_i48fe"]
+zonePosition = Vector2i(-1, 0)
+heightMapImage = ExtResource("8_j6lnq")
+splatmapsImage = Array[Image]([ExtResource("9_5sb5b")])
+
+[sub_resource type="ZoneResource" id="ZoneResource_f0fgh"]
+zonePosition = Vector2i(-1, 1)
+heightMapImage = ExtResource("10_8qmf0")
+splatmapsImage = Array[Image]([ExtResource("11_3il8r")])
+
+[sub_resource type="ZoneResource" id="ZoneResource_om80h"]
+zonePosition = Vector2i(1, 0)
+heightMapImage = ExtResource("12_567ud")
+splatmapsImage = Array[Image]([ExtResource("13_m38m1")])
+
+[sub_resource type="ZoneResource" id="ZoneResource_yomxi"]
+zonePosition = Vector2i(1, 1)
+heightMapImage = ExtResource("14_03xea")
+splatmapsImage = Array[Image]([ExtResource("15_ymk1n")])
+
+[sub_resource type="ZonesResource" id="ZonesResource_ko5lu"]
+zones = Array[ZoneResource]([SubResource("ZoneResource_lg2be"), SubResource("ZoneResource_7nnbb"), SubResource("ZoneResource_i48fe"), SubResource("ZoneResource_f0fgh"), SubResource("ZoneResource_om80h"), SubResource("ZoneResource_yomxi")])
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4nds"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_52wwa"]
+
+[sub_resource type="Sky" id="Sky_3e7qf"]
+sky_material = SubResource("ProceduralSkyMaterial_52wwa")
+
+[sub_resource type="Environment" id="Environment_e4jf1"]
+background_mode = 2
+sky = SubResource("Sky_3e7qf")
+
+[node name="Node3D" type="Node3D" unique_id=1445642513]
+script = ExtResource("1_e4jf1")
+
+[node name="TerraBrush" type="TerraBrush" parent="." unique_id=476771462]
+dataPath = "res://maps/terrain_test"
+textureSets = SubResource("TextureSetsResource_mw2n6")
+useAntiTile = false
+terrainZones = SubResource("ZonesResource_ko5lu")
+physics_interpolation_mode = 2
+metadata/_edit_lock_ = false
+
+[node name="Spawn" type="Node3D" parent="." unique_id=1920763249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 2, 180)
+script = ExtResource("16_n1qxw")
+
+[node name="Teleport Trigger" type="Area3D" parent="." unique_id=1570165226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.386293, 27.561226, 291.23538)
+script = ExtResource("17_sjl1l")
+LevelDef = "GridMapTest"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport Trigger" unique_id=1242831711]
+shape = SubResource("BoxShape3D_g4nds")
+
+[node name="Sprite3D" type="Sprite3D" parent="Teleport Trigger" unique_id=1291024664]
+pixel_size = 0.02
+billboard = 1
+alpha_scissor_threshold = 0.484
+texture = ExtResource("18_147sb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1436436292]
+transform = Transform3D(0.9085947, -0.27877787, 0.31102836, -0.12767535, 0.523641, 0.8423177, -0.3976866, -0.8050361, 0.44018432, 0, 10.177189, 0)
+layers = 524289
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1465069497]
+environment = SubResource("Environment_e4jf1")
+
+[connection signal="body_shape_entered" from="Teleport Trigger" to="Teleport Trigger" method="MapChange" unbinds=2]
