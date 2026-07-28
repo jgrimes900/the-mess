@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://cr55jmj5xr6l8"
+path="res://.godot/imported/erroricon.vmt-cc458f00f86b06eddc008cafeafa5f08.vmt.res"
+
+[deps]
+
+source_file="res://materials/editor/erroricon.vmt"
+dest_files=["res://.godot/imported/erroricon.vmt-cc458f00f86b06eddc008cafeafa5f08.vmt.res"]
+
+[params]
+

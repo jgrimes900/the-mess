@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://f7f441aythe5"
+path="res://.godot/imported/env_soundscape.vtf-8d5b5ea5c87279cb4dd2999bcb8978de.vtf.res"
+
+[deps]
+
+source_file="res://materials/editor/env_soundscape.vtf"
+dest_files=["res://.godot/imported/env_soundscape.vtf-8d5b5ea5c87279cb4dd2999bcb8978de.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

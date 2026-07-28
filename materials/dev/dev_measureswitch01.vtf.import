@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://5f6e028bn8xy"
+path="res://.godot/imported/dev_measureswitch01.vtf-4fa1b4003ae2257a1b11f28afcc50a70.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measureswitch01.vtf"
+dest_files=["res://.godot/imported/dev_measureswitch01.vtf-4fa1b4003ae2257a1b11f28afcc50a70.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

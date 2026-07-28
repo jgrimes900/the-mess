@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://celnae4ypqenl"
+path="res://.godot/imported/dev_measuredesk.vmt-8ed2242449e890edbc63f1305f540dd3.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measuredesk.vmt"
+dest_files=["res://.godot/imported/dev_measuredesk.vmt-8ed2242449e890edbc63f1305f540dd3.vmt.res"]
+
+[params]
+

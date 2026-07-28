@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bewuy2tjvlqaq"
+path="res://.godot/imported/trigger_relay.vtf-dad6729632a5404df9c11308ed53ae9b.vtf.res"
+
+[deps]
+
+source_file="res://materials/editor/trigger_relay.vtf"
+dest_files=["res://.godot/imported/trigger_relay.vtf-dad6729632a5404df9c11308ed53ae9b.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

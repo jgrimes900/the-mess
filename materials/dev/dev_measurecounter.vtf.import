@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://b0pwd0eqv32ta"
+path="res://.godot/imported/dev_measurecounter.vtf-aeb282a61bc65dbf9733f5b7e3ff1a5b.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurecounter.vtf"
+dest_files=["res://.godot/imported/dev_measurecounter.vtf-aeb282a61bc65dbf9733f5b7e3ff1a5b.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

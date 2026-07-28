@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bjomcb1rxmt42"
+path="res://.godot/imported/logic_auto.vtf-317a656df8f7bbb51e1ccc6cd78095d9.vtf.res"
+
+[deps]
+
+source_file="res://materials/editor/logic_auto.vtf"
+dest_files=["res://.godot/imported/logic_auto.vtf-317a656df8f7bbb51e1ccc6cd78095d9.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

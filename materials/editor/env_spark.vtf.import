@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://dkbxbfhx40oct"
+path="res://.godot/imported/env_spark.vtf-42c6d59877c5790e81a6645bbef0e9d0.vtf.res"
+
+[deps]
+
+source_file="res://materials/editor/env_spark.vtf"
+dest_files=["res://.godot/imported/env_spark.vtf-42c6d59877c5790e81a6645bbef0e9d0.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

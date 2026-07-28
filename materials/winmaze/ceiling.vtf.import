@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://b4trhcav5lyjd"
+path="res://.godot/imported/ceiling.vtf-d29fbb70ee94ee7ea75a95c442526b79.vtf.res"
+
+[deps]
+
+source_file="res://materials/winmaze/ceiling.vtf"
+dest_files=["res://.godot/imported/ceiling.vtf-d29fbb70ee94ee7ea75a95c442526b79.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

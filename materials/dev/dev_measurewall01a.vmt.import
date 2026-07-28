@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://gnm4fux113xs"
+path="res://.godot/imported/dev_measurewall01a.vmt-522532232f402948c86879179f1fa95d.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurewall01a.vmt"
+dest_files=["res://.godot/imported/dev_measurewall01a.vmt-522532232f402948c86879179f1fa95d.vmt.res"]
+
+[params]
+

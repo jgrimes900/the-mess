@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://bbo2y1jwbbe2k"
+path="res://.godot/imported/dev_measurebarrel.vmt-6a137762a95b220f13eadba981a4a301.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurebarrel.vmt"
+dest_files=["res://.godot/imported/dev_measurebarrel.vmt-6a137762a95b220f13eadba981a4a301.vmt.res"]
+
+[params]
+

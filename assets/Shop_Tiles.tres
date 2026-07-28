@@ -1,6 +1,6 @@
 [gd_resource type="MeshLibrary" format=3 uid="uid://vny6echmfea1"]
 
-[ext_resource type="Material" uid="uid://bmsvhvrbe3iw6" path="res://assets/materials/WinMaze/Floor.tres" id="1_o6o3g"]
+[ext_resource type="Material" uid="uid://bmsvhvrbe3iw6" path="res://materials/winmaze/Floor.tres" id="1_o6o3g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vl0uq"]
 material = ExtResource("1_o6o3g")

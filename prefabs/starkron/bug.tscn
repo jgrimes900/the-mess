@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://dfbuo56xepf6o"]
 
-[ext_resource type="AnimationLibrary" uid="uid://yxryqjjmef1b" path="res://assets/models/Starkron/anim_lib_bug.tres" id="2_8vvbe"]
+[ext_resource type="AnimationLibrary" uid="uid://yxryqjjmef1b" path="res://models/Starkron/anim_lib_bug.tres" id="2_8vvbe"]
 [ext_resource type="Script" uid="uid://d4fdqa6vudcr" path="res://entities/starkron/bug.gd" id="2_r2x7f"]
-[ext_resource type="Material" uid="uid://bw3dtal3hvd0u" path="res://assets/materials/starkron/lambert1.tres" id="2_wgh4v"]
+[ext_resource type="Material" uid="uid://bw3dtal3hvd0u" path="res://materials/starkron/lambert1.tres" id="2_wgh4v"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="4_wgh4v"]
 [ext_resource type="Script" uid="uid://u0vglhwhkt7o" path="res://entities/starkron/attack_area.gd" id="5_bu6mh"]
 

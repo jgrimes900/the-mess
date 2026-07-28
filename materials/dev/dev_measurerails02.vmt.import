@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://qr4gt40q5vdc"
+path="res://.godot/imported/dev_measurerails02.vmt-f112e97c1df2b4ed7c4e015645aeb331.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurerails02.vmt"
+dest_files=["res://.godot/imported/dev_measurerails02.vmt-f112e97c1df2b4ed7c4e015645aeb331.vmt.res"]
+
+[params]
+

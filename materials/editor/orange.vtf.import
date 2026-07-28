@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bigmib8p6enq2"
+path="res://.godot/imported/orange.vtf-5970d4ed5860ad6fe3adaab55da3b910.vtf.res"
+
+[deps]
+
+source_file="res://materials/editor/orange.vtf"
+dest_files=["res://.godot/imported/orange.vtf-5970d4ed5860ad6fe3adaab55da3b910.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

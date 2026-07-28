@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://b4j871xlj2cp2"
+path="res://.godot/imported/ceil.vmt-89c3add078e2cc66db043a136676df67.vmt.res"
+
+[deps]
+
+source_file="res://materials/winmaze/ceil.vmt"
+dest_files=["res://.godot/imported/ceil.vmt-89c3add078e2cc66db043a136676df67.vmt.res"]
+
+[params]
+

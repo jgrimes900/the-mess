@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://4rajdlxx3cmc"
+path="res://.godot/imported/dev_measureice01.vtf-ac1a38d2393cf3158258827045b0d7a3.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measureice01.vtf"
+dest_files=["res://.godot/imported/dev_measureice01.vtf-ac1a38d2393cf3158258827045b0d7a3.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

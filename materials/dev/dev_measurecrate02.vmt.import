@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://b4q4y206ris8j"
+path="res://.godot/imported/dev_measurecrate02.vmt-4744478793e5ed7b27a633d60638df24.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurecrate02.vmt"
+dest_files=["res://.godot/imported/dev_measurecrate02.vmt-4744478793e5ed7b27a633d60638df24.vmt.res"]
+
+[params]
+

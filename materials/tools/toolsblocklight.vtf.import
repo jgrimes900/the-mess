@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://dv6l7cv1fwyiq"
+path="res://.godot/imported/toolsblocklight.vtf-7560c617a20d1030ae5572a13a7e20f9.vtf.res"
+
+[deps]
+
+source_file="res://materials/tools/toolsblocklight.vtf"
+dest_files=["res://.godot/imported/toolsblocklight.vtf-7560c617a20d1030ae5572a13a7e20f9.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

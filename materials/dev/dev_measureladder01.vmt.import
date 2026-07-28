@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://cw5rpltd3486j"
+path="res://.godot/imported/dev_measureladder01.vmt-6a0b5108c8d47e506b73c16bb1d19ffd.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measureladder01.vmt"
+dest_files=["res://.godot/imported/dev_measureladder01.vmt-6a0b5108c8d47e506b73c16bb1d19ffd.vmt.res"]
+
+[params]
+

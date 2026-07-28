@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://barsxi6ccv0gr"
+path="res://.godot/imported/env_firesource.vtf-cc1e51cda3e1cbc393781244ce97ad59.vtf.res"
+
+[deps]
+
+source_file="res://materials/editor/env_firesource.vtf"
+dest_files=["res://.godot/imported/env_firesource.vtf-cc1e51cda3e1cbc393781244ce97ad59.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

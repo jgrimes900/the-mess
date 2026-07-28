@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cvb3ls0ugt1ai"]
 
 [ext_resource type="Script" uid="uid://ccgt74tbacmxp" path="res://maps/scripts/pokemon_red_blue_controler.gd" id="1_6wdm5"]
-[ext_resource type="Texture2D" uid="uid://cp3smmt7edqxe" path="res://assets/textures/pokemon rb/tileset_0.png" id="1_648gg"]
+[ext_resource type="Texture2D" uid="uid://cp3smmt7edqxe" path="res://materials/pokemon rb/tileset_0.png" id="1_648gg"]
 [ext_resource type="Script" uid="uid://dx7an1crfscdh" path="res://entities/spawn_2d.gd" id="3_uoyma"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_6wdm5"]

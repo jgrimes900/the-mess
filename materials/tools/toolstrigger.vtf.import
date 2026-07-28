@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bcddj3m40lif6"
+path="res://.godot/imported/toolstrigger.vtf-0fd5d1b8609eedddc496bfbf0cf6c1ae.vtf.res"
+
+[deps]
+
+source_file="res://materials/tools/toolstrigger.vtf"
+dest_files=["res://.godot/imported/toolstrigger.vtf-0fd5d1b8609eedddc496bfbf0cf6c1ae.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

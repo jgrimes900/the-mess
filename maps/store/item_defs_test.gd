@@ -3,7 +3,7 @@ extends Node
 var Items: Array = [
 	{
 		"name": "Paper Box",
-		"model": preload("res://assets/models/irl/old_room_assets/storageBox_a001.mesh"),
+		"model": preload("res://models/irl/old_room_assets/storageBox_a001.mesh"),
 		"size": Vector3(0.335, 0.274, 0.577),
 		"scale": Vector3(1,1,1),
 		"rotation": Vector3(0,90,0),
@@ -13,7 +13,7 @@ var Items: Array = [
 	},
 	{
 		"name": "Stress Test",
-		"model": preload("res://assets/models/irl/old_room_assets/storageBox_a001.mesh"),
+		"model": preload("res://models/irl/old_room_assets/storageBox_a001.mesh"),
 		"size": Vector3(0.00335, 0.00274, 0.00577),
 		"scale": Vector3(0.01,0.01,0.01),
 		"rotation": Vector3(0,90,0),
@@ -23,7 +23,7 @@ var Items: Array = [
 	},
 	{
 		"name": "keyboard",
-		"model": preload("res://assets/models/irl/keyboard.res"),
+		"model": preload("res://models/irl/keyboard.res"),
 		"size": Vector3(0.315*3, 0.024*3, 0.105*3),
 		"scale": Vector3(0.3,0.3,0.3),
 		"rotation": Vector3(0,0,0),

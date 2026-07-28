@@ -1,0 +1,22 @@
+[remap]
+
+importer="MDL"
+type="PackedScene"
+uid="uid://dcsecuclaculj"
+path="res://.godot/imported/playerstart.mdl-d283ad2320ef45c7f895b2472ccf5611.scn"
+
+[deps]
+
+source_file="res://models/editor/playerstart.mdl"
+dest_files=["res://.godot/imported/playerstart.mdl-d283ad2320ef45c7f895b2472ccf5611.scn"]
+
+[params]
+
+use_global_scale=true
+scale=0.02
+additional_rotation=Vector3(0, 0, 0)
+generate_occluder=false
+generate_lods=true
+primitive_occluder=false
+primitive_occluder_scale=Vector3(1, 1, 1)
+gi_mode=1

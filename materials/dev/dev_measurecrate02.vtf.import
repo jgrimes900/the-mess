@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bga7ib2ex1wio"
+path="res://.godot/imported/dev_measurecrate02.vtf-71ed75bf2ba7461f3aac1634b39fa31c.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurecrate02.vtf"
+dest_files=["res://.godot/imported/dev_measurecrate02.vtf-71ed75bf2ba7461f3aac1634b39fa31c.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

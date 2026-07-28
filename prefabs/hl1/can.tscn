@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c84bpg6qt2r5m"]
 
 [ext_resource type="Script" uid="uid://bprm8t0tiebj1" path="res://entities/hl1_can.gd" id="1_8lukn"]
-[ext_resource type="ArrayMesh" uid="uid://cka7e6euosvgf" path="res://assets/models/hl1/vending/can.tres" id="2_byi3b"]
+[ext_resource type="ArrayMesh" uid="uid://cka7e6euosvgf" path="res://models/hl1/vending/can.tres" id="2_byi3b"]
 [ext_resource type="AudioStream" uid="uid://b2j68q721acvw" path="res://assets/sounds/hl1/weapons/g_bounce3.wav" id="3_lojjo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x7ok1"]

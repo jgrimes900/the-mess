@@ -7,25 +7,25 @@
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="2_e6eqk"]
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="3_hbdp2"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="4_2qh8p"]
-[ext_resource type="Texture2D" uid="uid://cotm4ug7wd84k" path="res://assets/textures/hl1_c1a0/c1a0_texture_71.png" id="5_dh13w"]
+[ext_resource type="Texture2D" uid="uid://dg181ucrawndb" path="res://materials/hl1_c1a0/c1a0_texture_71.png" id="5_dh13w"]
 [ext_resource type="AudioStream" uid="uid://bj1jdfbsucegp" path="res://assets/sounds/fnaf1/BallastHumMedium2.wav" id="5_xmy25"]
 [ext_resource type="AudioStream" uid="uid://bse608jo4yv6a" path="res://assets/sounds/fnaf1/Buzz_Fan_Florescent2.wav" id="6_6xc40"]
-[ext_resource type="Texture2D" uid="uid://dsvuyuvis6224" path="res://assets/textures/hl1_c1a0/c1a0_texture_4.png" id="6_h5ams"]
+[ext_resource type="Texture2D" uid="uid://c4c0puvmcu82c" path="res://materials/hl1_c1a0/c1a0_texture_4.png" id="6_h5ams"]
 [ext_resource type="AudioStream" uid="uid://bcy45kwldvui7" path="res://assets/sounds/fnaf1/Door.wav" id="6_p1kp7"]
 [ext_resource type="AudioStream" uid="uid://cvtivc4mas0k0" path="res://assets/sounds/fnaf1/ColdPresc B.wav" id="7_6xc40"]
 [ext_resource type="AudioStream" uid="uid://n8vsutiurfqc" path="res://assets/sounds/hl1/buttons/button11.wav" id="7_7kj5v"]
 [ext_resource type="PackedScene" uid="uid://c22wldk8v3xb2" path="res://prefabs/door_gridmap.tscn" id="7_t883d"]
 [ext_resource type="Script" uid="uid://b3cbkhmp5jpsn" path="res://maps/scripts/door_controler.gd" id="8_h5ams"]
 [ext_resource type="Texture2D" uid="uid://c4r6mna26f23k" path="res://assets/sprites/fnaf/cam/0001.png" id="9_0t5t8"]
-[ext_resource type="Texture2D" uid="uid://cwkjdwoxmqp2" path="res://assets/textures/hl1_c1a0/c1a0_texture_6.png" id="9_t883d"]
+[ext_resource type="Texture2D" uid="uid://cwb3fwtbl2w5c" path="res://materials/hl1_c1a0/c1a0_texture_6.png" id="9_t883d"]
 [ext_resource type="Texture2D" uid="uid://dtc1syrbown0l" path="res://assets/sprites/fnaf/cam/0002.png" id="10_exw41"]
 [ext_resource type="Texture2D" uid="uid://doyeufhaokvi5" path="res://assets/sprites/fnaf/cam/0003.png" id="11_vytrw"]
 [ext_resource type="Texture2D" uid="uid://d238qkdp75moj" path="res://assets/sprites/fnaf/cam/0004.png" id="12_21b6a"]
 [ext_resource type="Texture2D" uid="uid://0a6md8fvjka8" path="res://assets/sprites/fnaf/cam/0005.png" id="13_0m5ra"]
-[ext_resource type="Texture2D" uid="uid://cpjvx17h34ftg" path="res://assets/textures/hl1_c1a0/c1a0_texture_21.png" id="13_g52et"]
+[ext_resource type="Texture2D" uid="uid://djqxmj0mngiu5" path="res://materials/hl1_c1a0/c1a0_texture_21.png" id="13_g52et"]
 [ext_resource type="AudioStream" uid="uid://du66dmti6lybh" path="res://assets/sounds/hl1/scientist/heal4.wav" id="13_grm12"]
 [ext_resource type="Texture2D" uid="uid://8yuudj6bffir" path="res://assets/sprites/fnaf/cam/0006.png" id="14_8syl6"]
-[ext_resource type="Texture2D" uid="uid://c2af38m7xc1fx" path="res://assets/textures/hl1_c1a0/c1a0_texture_10.png" id="14_p1kp7"]
+[ext_resource type="Texture2D" uid="uid://ddi7eck3cerk" path="res://materials/hl1_c1a0/c1a0_texture_10.png" id="14_p1kp7"]
 [ext_resource type="AudioStream" uid="uid://b00cijlvli5v2" path="res://assets/sounds/hl1/weapons/cbar_miss1.wav" id="14_yiu8l"]
 [ext_resource type="AudioStream" uid="uid://bptt1xsoyu4in" path="res://assets/sounds/hl1/common/bodysplat.wav" id="15_eh2jl"]
 [ext_resource type="Texture2D" uid="uid://b8eryle3tc1ss" path="res://assets/sprites/fnaf/cam/0007.png" id="15_fmx8f"]
@@ -51,11 +51,11 @@
 [ext_resource type="AudioStream" uid="uid://blwnpuxbnigbc" path="res://assets/sounds/fnaf1/static.wav" id="37_dbmyc"]
 [ext_resource type="Script" uid="uid://cwk3u3mt5nadq" path="res://maps/scripts/control_2.gd" id="39_mbdr4"]
 [ext_resource type="AudioStream" uid="uid://bqd0tgytjcjmi" path="res://assets/sounds/fnaf1/chimes 2.wav" id="40_dbmyc"]
-[ext_resource type="PackedScene" uid="uid://htbr6ob6akas" path="res://assets/models/hl1/barney.fbx" id="42_2qh8p"]
+[ext_resource type="PackedScene" uid="uid://htbr6ob6akas" path="res://models/hl1/barney.fbx" id="42_2qh8p"]
 [ext_resource type="Script" uid="uid://bgxucfyqojq7d" path="res://maps/scripts/barney.gd" id="42_pcvmc"]
 [ext_resource type="Script" uid="uid://bam16fm2g6un6" path="res://maps/scripts/gman.gd" id="48_6h0fy"]
 [ext_resource type="Script" uid="uid://uwcwsbh283el" path="res://maps/scripts/scientist.gd" id="50_ml5qq"]
-[ext_resource type="PackedScene" uid="uid://d1htbvk6sla1e" path="res://assets/models/hl1/scientist.fbx" id="51_k25sq"]
+[ext_resource type="PackedScene" uid="uid://d1htbvk6sla1e" path="res://models/hl1/scientist.fbx" id="51_k25sq"]
 [ext_resource type="Script" uid="uid://cn1jca1xypr0j" path="res://maps/scripts/grunt.gd" id="53_ruiuf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pcvmc"]
@@ -1365,7 +1365,7 @@ vertical_alignment = 1
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -2, 2.6632695)
 visible = false
 
-[node name="Skeleton3D" parent="Control/JumpScare/sci/stage/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(279182304, 1557884323) index="0" unique_id=1116839183]
+[node name="Skeleton3D" parent="Control/JumpScare/sci/stage/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(279182304, 2103475625) index="0" unique_id=124754434]
 bones/0/position = Vector3(-0.0021336547, -0.17854194, 0.3682126)
 bones/0/scale = Vector3(0.99999976, 0.99999976, 1)
 bones/1/position = Vector3(0, 0, -5.551115e-17)
@@ -2542,7 +2542,7 @@ script = ExtResource("42_pcvmc")
 [node name="stage" parent="Barney" unique_id=2127239272 instance=ExtResource("42_2qh8p")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.6965731, -1.9985552, -24.127438)
 
-[node name="Skeleton3D" parent="Barney/stage/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(2127239272, 782107584) index="0" unique_id=852036002]
+[node name="Skeleton3D" parent="Barney/stage/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(2127239272, 1954348026) index="0" unique_id=152379412]
 bones/1/position = Vector3(1.7347235e-18, 8.6736174e-19, 0)
 bones/1/rotation = Quaternion(-0.4999997, -0.50000036, -0.49999964, 0.50000036)
 bones/2/position = Vector3(-4.689285e-08, 7.912063e-08, 0.044273924)
@@ -2613,7 +2613,7 @@ bones/28/scale = Vector3(1.0000001, 1, 1)
 [node name="dine" parent="Barney" unique_id=426373166 instance=ExtResource("42_2qh8p")]
 transform = Transform3D(0.69318485, 0, 0.2863473, 0, 0.75, 0, -0.2863473, 0, 0.69318485, -0.04532206, -1.9985552, -10.121912)
 
-[node name="Skeleton3D" parent="Barney/dine/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(426373166, 782107584) index="0" unique_id=852036002]
+[node name="Skeleton3D" parent="Barney/dine/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(426373166, 1954348026) index="0" unique_id=152379412]
 bones/1/position = Vector3(1.7347235e-18, 8.6736174e-19, 0)
 bones/1/rotation = Quaternion(-0.4999997, -0.50000036, -0.49999964, 0.50000036)
 bones/2/position = Vector3(-4.689285e-08, 7.912063e-08, 0.044273924)
@@ -2682,7 +2682,7 @@ bones/28/scale = Vector3(1.0000001, 1, 1)
 [node name="pas" parent="Barney" unique_id=232738695 instance=ExtResource("42_2qh8p")]
 transform = Transform3D(0.71921515, 0, -0.21267264, 0, 0.75, 0, 0.21267264, 0, 0.71921515, -10.866827, -1.9985552, -16.54935)
 
-[node name="Skeleton3D" parent="Barney/pas/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(232738695, 782107584) index="0" unique_id=852036002]
+[node name="Skeleton3D" parent="Barney/pas/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(232738695, 1954348026) index="0" unique_id=152379412]
 bones/1/position = Vector3(1.7347235e-18, 8.6736174e-19, 0)
 bones/1/rotation = Quaternion(-0.4999997, -0.50000036, -0.49999964, 0.50000036)
 bones/2/position = Vector3(-4.689285e-08, 7.912063e-08, 0.044273924)
@@ -2751,7 +2751,7 @@ bones/28/scale = Vector3(1.0000001, 1, 1)
 [node name="lhall" parent="Barney" unique_id=223526091 instance=ExtResource("42_2qh8p")]
 transform = Transform3D(0.7499643, 0, -0.0073302835, 0, 0.7500001, 0, 0.0073302835, 0, 0.7499643, -5.062002, -1.9985552, -2.826414)
 
-[node name="Skeleton3D" parent="Barney/lhall/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(223526091, 782107584) index="0" unique_id=852036002]
+[node name="Skeleton3D" parent="Barney/lhall/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(223526091, 1954348026) index="0" unique_id=152379412]
 bones/1/position = Vector3(1.7347235e-18, 8.6736174e-19, 0)
 bones/1/rotation = Quaternion(-0.4999997, -0.50000036, -0.49999964, 0.50000036)
 bones/2/position = Vector3(-4.689285e-08, 7.912063e-08, 0.044273924)
@@ -2820,7 +2820,7 @@ bones/28/scale = Vector3(1.0000001, 1, 1)
 [node name="lhallc" parent="Barney" unique_id=1731997760 instance=ExtResource("42_2qh8p")]
 transform = Transform3D(-0.73472637, 0, 0.15059057, 0, 0.75000036, 0, -0.15059057, 0, -0.73472637, -5.062002, -1.9985552, 3.1084669)
 
-[node name="Skeleton3D" parent="Barney/lhallc/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(1731997760, 782107584) index="0" unique_id=852036002]
+[node name="Skeleton3D" parent="Barney/lhallc/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(1731997760, 1954348026) index="0" unique_id=152379412]
 bones/1/position = Vector3(1.7347235e-18, 8.6736174e-19, 0)
 bones/1/rotation = Quaternion(-0.4999997, -0.50000036, -0.49999964, 0.50000036)
 bones/2/position = Vector3(-4.689285e-08, 7.912063e-08, 0.044273924)
@@ -2889,7 +2889,7 @@ bones/28/scale = Vector3(1.0000001, 1, 1)
 [node name="ldoor" parent="Barney" unique_id=1679245286 instance=ExtResource("42_2qh8p")]
 transform = Transform3D(0.55385053, 0, 0.5057172, 0, 0.7500001, 0, -0.5057172, 0, 0.55385053, -2.8669295, -1.9985552, 0.6069852)
 
-[node name="Skeleton3D" parent="Barney/ldoor/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(1679245286, 782107584) index="0" unique_id=852036002]
+[node name="Skeleton3D" parent="Barney/ldoor/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(1679245286, 1954348026) index="0" unique_id=152379412]
 bones/1/position = Vector3(1.7347235e-18, 8.6736174e-19, 0)
 bones/1/rotation = Quaternion(-0.4999997, -0.50000036, -0.49999964, 0.50000036)
 bones/2/position = Vector3(-4.689285e-08, 7.912063e-08, 0.044273924)
@@ -2959,7 +2959,7 @@ bones/28/scale = Vector3(1.0000001, 1, 1)
 [node name="closit" parent="Barney" unique_id=1891056620 instance=ExtResource("42_2qh8p")]
 transform = Transform3D(0.33930275, 0, 0.6688601, 0, 0.75000024, 0, -0.6688601, 0, 0.33930275, -9.3827915, -1.9985552, -3.1432884)
 
-[node name="Skeleton3D" parent="Barney/closit/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(1891056620, 782107584) index="0" unique_id=852036002]
+[node name="Skeleton3D" parent="Barney/closit/BARNEY-X_Template_Biped1_skeleton" parent_id_path=PackedInt32Array(1891056620, 1954348026) index="0" unique_id=152379412]
 bones/1/position = Vector3(1.7347235e-18, 8.6736174e-19, 0)
 bones/1/rotation = Quaternion(-0.4999997, -0.50000036, -0.49999964, 0.50000036)
 bones/2/position = Vector3(-4.689285e-08, 7.912063e-08, 0.044273924)
@@ -3035,7 +3035,7 @@ script = ExtResource("50_ml5qq")
 [node name="stage" parent="Scientist" unique_id=1522164036 instance=ExtResource("51_k25sq")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -2, -24.127)
 
-[node name="Skeleton3D" parent="Scientist/stage/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(1522164036, 1557884323) index="0" unique_id=1116839183]
+[node name="Skeleton3D" parent="Scientist/stage/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(1522164036, 2103475625) index="0" unique_id=124754434]
 bones/1/position = Vector3(0, 0, -5.551115e-17)
 bones/1/rotation = Quaternion(-0.49999964, -0.50000036, -0.49999958, 0.50000036)
 bones/1/scale = Vector3(1, 0.99999994, 1)
@@ -3099,7 +3099,7 @@ bones/25/scale = Vector3(1.0000001, 1, 1)
 [node name="dine" parent="Scientist" unique_id=1830877885 instance=ExtResource("51_k25sq")]
 transform = Transform3D(0.73892856, 0, -0.12839231, 0, 0.75, 0, 0.12839231, 0, 0.73892856, 2.7415903, -2, -7.8012366)
 
-[node name="Skeleton3D" parent="Scientist/dine/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(1830877885, 1557884323) index="0" unique_id=1116839183]
+[node name="Skeleton3D" parent="Scientist/dine/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(1830877885, 2103475625) index="0" unique_id=124754434]
 bones/1/position = Vector3(0, 0, -5.551115e-17)
 bones/1/rotation = Quaternion(-0.49999964, -0.50000036, -0.49999958, 0.50000036)
 bones/1/scale = Vector3(1, 0.99999994, 1)
@@ -3163,7 +3163,7 @@ bones/25/scale = Vector3(1.0000001, 1, 1)
 [node name="bath" parent="Scientist" unique_id=644851124 instance=ExtResource("51_k25sq")]
 transform = Transform3D(-0.7019387, 0, -0.26416302, 0, 0.75, 0, 0.26416302, 0, -0.7019387, 8.655981, -2, -14.374282)
 
-[node name="Skeleton3D" parent="Scientist/bath/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(644851124, 1557884323) index="0" unique_id=1116839183]
+[node name="Skeleton3D" parent="Scientist/bath/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(644851124, 2103475625) index="0" unique_id=124754434]
 bones/1/position = Vector3(0, 0, -5.551115e-17)
 bones/1/rotation = Quaternion(-0.49999964, -0.50000036, -0.49999958, 0.50000036)
 bones/1/scale = Vector3(1, 0.99999994, 1)
@@ -3227,7 +3227,7 @@ bones/25/scale = Vector3(1.0000001, 1, 1)
 [node name="kitchen" parent="Scientist" unique_id=991038198 instance=ExtResource("51_k25sq")]
 transform = Transform3D(-0.7019387, 0, -0.26416302, 0, 0.75, 0, 0.26416302, 0, -0.7019387, 11.401082, -2, -0.81151426)
 
-[node name="Skeleton3D" parent="Scientist/kitchen/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(991038198, 1557884323) index="0" unique_id=1116839183]
+[node name="Skeleton3D" parent="Scientist/kitchen/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(991038198, 2103475625) index="0" unique_id=124754434]
 bones/1/position = Vector3(0, 0, -5.551115e-17)
 bones/1/rotation = Quaternion(-0.49999964, -0.50000036, -0.49999958, 0.50000036)
 bones/1/scale = Vector3(1, 0.99999994, 1)
@@ -3291,7 +3291,7 @@ bones/25/scale = Vector3(1.0000001, 1, 1)
 [node name="rhall" parent="Scientist" unique_id=1956344581 instance=ExtResource("51_k25sq")]
 transform = Transform3D(0.74449235, 0, -0.09072636, 0, 0.75, 0, 0.09072636, 0, 0.74449235, 5.2463603, -2, -1.2144144)
 
-[node name="Skeleton3D" parent="Scientist/rhall/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(1956344581, 1557884323) index="0" unique_id=1116839183]
+[node name="Skeleton3D" parent="Scientist/rhall/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(1956344581, 2103475625) index="0" unique_id=124754434]
 bones/1/position = Vector3(0, 0, -5.551115e-17)
 bones/1/rotation = Quaternion(-0.49999964, -0.50000036, -0.49999958, 0.50000036)
 bones/1/scale = Vector3(1, 0.99999994, 1)
@@ -3355,7 +3355,7 @@ bones/25/scale = Vector3(1.0000001, 1, 1)
 [node name="rhallc" parent="Scientist" unique_id=1238397512 instance=ExtResource("51_k25sq")]
 transform = Transform3D(-0.71374416, 0, -0.230368, 0, 0.74999994, 0, 0.230368, 0, -0.71374416, 4.9996495, -2, 3.4913738)
 
-[node name="Skeleton3D" parent="Scientist/rhallc/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(1238397512, 1557884323) index="0" unique_id=1116839183]
+[node name="Skeleton3D" parent="Scientist/rhallc/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(1238397512, 2103475625) index="0" unique_id=124754434]
 bones/1/position = Vector3(0, 0, -5.551115e-17)
 bones/1/rotation = Quaternion(-0.49999964, -0.50000036, -0.49999958, 0.50000036)
 bones/1/scale = Vector3(1, 0.99999994, 1)
@@ -3419,7 +3419,7 @@ bones/25/scale = Vector3(1.0000001, 1, 1)
 [node name="rdoor" parent="Scientist" unique_id=44541250 instance=ExtResource("51_k25sq")]
 transform = Transform3D(0.326553, 0, -0.67517644, 0, 0.74999994, 0, 0.67517644, 0, 0.326553, 2.78854, -2, 0.5857917)
 
-[node name="Skeleton3D" parent="Scientist/rdoor/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(44541250, 1557884323) index="0" unique_id=1116839183]
+[node name="Skeleton3D" parent="Scientist/rdoor/SCI3_Template_Biped1(Headless_Body)_skeleton" parent_id_path=PackedInt32Array(44541250, 2103475625) index="0" unique_id=124754434]
 bones/1/position = Vector3(0, 0, -5.551115e-17)
 bones/1/rotation = Quaternion(-0.49999964, -0.50000036, -0.49999958, 0.50000036)
 bones/1/scale = Vector3(1, 0.99999994, 1)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://pur4sauhv34n"
+path="res://.godot/imported/floor.vtf-99e94288f7691d6e6014aeed8e0c6d76.vtf.res"
+
+[deps]
+
+source_file="res://materials/winmaze/floor.vtf"
+dest_files=["res://.godot/imported/floor.vtf-99e94288f7691d6e6014aeed8e0c6d76.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,11 +1,11 @@
 [gd_resource type="MeshLibrary" format=4 uid="uid://cd2uwqa068rvp"]
 
-[ext_resource type="ArrayMesh" uid="uid://8xbdhsdiemc0" path="res://assets/models/WinMaze/NW.res" id="1_0ha73"]
-[ext_resource type="ArrayMesh" uid="uid://eieh013t1jqg" path="res://assets/models/WinMaze/N_.res" id="2_256t2"]
-[ext_resource type="ArrayMesh" uid="uid://dowfnvfjsdjn7" path="res://assets/models/WinMaze/_W.res" id="3_eiyj0"]
-[ext_resource type="ArrayMesh" uid="uid://cu0hwjcifd3pj" path="res://assets/models/WinMaze/__.res" id="4_4gdx0"]
-[ext_resource type="Material" uid="uid://b05g0qqdyr8ip" path="res://assets/materials/WinMaze/Wall.tres" id="5_eiyj0"]
-[ext_resource type="Material" uid="uid://bmsvhvrbe3iw6" path="res://assets/materials/WinMaze/Floor.tres" id="6_4gdx0"]
+[ext_resource type="ArrayMesh" uid="uid://8xbdhsdiemc0" path="res://models/WinMaze/NW.res" id="1_0ha73"]
+[ext_resource type="ArrayMesh" uid="uid://eieh013t1jqg" path="res://models/WinMaze/N_.res" id="2_256t2"]
+[ext_resource type="ArrayMesh" uid="uid://dowfnvfjsdjn7" path="res://models/WinMaze/_W.res" id="3_eiyj0"]
+[ext_resource type="ArrayMesh" uid="uid://cu0hwjcifd3pj" path="res://models/WinMaze/__.res" id="4_4gdx0"]
+[ext_resource type="Material" uid="uid://b05g0qqdyr8ip" path="res://materials/winmaze/Wall.tres" id="5_eiyj0"]
+[ext_resource type="Material" uid="uid://bmsvhvrbe3iw6" path="res://materials/winmaze/Floor.tres" id="6_4gdx0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ha73"]
 size = Vector3(2, 0.1, 2)

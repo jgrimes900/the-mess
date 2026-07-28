@@ -1,0 +1,14 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://beysdopr48epq"
+valid=false
+
+[deps]
+
+source_file="res://materials/editor/cubemap.hdr.vtf"
+
+[params]
+
+srgb_conversion_method=1

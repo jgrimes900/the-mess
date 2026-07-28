@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://b1wq334gqonrh"
+path="res://.godot/imported/wall.vmt-26457e64fce5cc3b7bd8dcfa73480f88.vmt.res"
+
+[deps]
+
+source_file="res://materials/winmaze/wall.vmt"
+dest_files=["res://.godot/imported/wall.vmt-26457e64fce5cc3b7bd8dcfa73480f88.vmt.res"]
+
+[params]
+

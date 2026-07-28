@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c22wldk8v3xb2"]
 
 [ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="1_oes1k"]
-[ext_resource type="ArrayMesh" uid="uid://donjr6fbwwdyt" path="res://assets/models/C1A0_001.res" id="2_bfqxw"]
+[ext_resource type="ArrayMesh" uid="uid://donjr6fbwwdyt" path="res://models/C1A0_001.res" id="2_bfqxw"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="3_oc5ta"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gr3wi"]

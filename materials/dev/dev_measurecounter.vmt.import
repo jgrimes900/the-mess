@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://db4nep5uqwtse"
+path="res://.godot/imported/dev_measurecounter.vmt-97ea46d5aade0938feda275a1793842c.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurecounter.vmt"
+dest_files=["res://.godot/imported/dev_measurecounter.vmt-97ea46d5aade0938feda275a1793842c.vmt.res"]
+
+[params]
+

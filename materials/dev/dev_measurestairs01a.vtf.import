@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://cdi2gc1kg1v73"
+path="res://.godot/imported/dev_measurestairs01a.vtf-97b9f0f550e8e9f0b3f5fcc7f5a8911d.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurestairs01a.vtf"
+dest_files=["res://.godot/imported/dev_measurestairs01a.vtf-97b9f0f550e8e9f0b3f5fcc7f5a8911d.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

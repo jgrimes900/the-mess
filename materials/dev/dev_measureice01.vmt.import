@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://cr644fc2ltqsj"
+path="res://.godot/imported/dev_measureice01.vmt-ea583dc0900c7eb25a0110d263d08b25.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measureice01.vmt"
+dest_files=["res://.godot/imported/dev_measureice01.vmt-ea583dc0900c7eb25a0110d263d08b25.vmt.res"]
+
+[params]
+

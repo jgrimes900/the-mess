@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://x5c25rive5s6"]
 
-[ext_resource type="Texture2D" uid="uid://c664e8dbp81k6" path="res://assets/textures/terrain/starkron/checkardTest_terrain.png" id="1_52wwa"]
+[ext_resource type="Texture2D" uid="uid://c664e8dbp81k6" path="res://materials/terrain/starkron/checkardTest_terrain.png" id="1_52wwa"]
 [ext_resource type="Script" uid="uid://y5l84q5odctl" path="res://entities/map.gd" id="1_e4jf1"]
-[ext_resource type="Texture2D" uid="uid://yqp5bay1gh10" path="res://assets/textures/terrain/hl1/c0a0e_texture_31.png" id="2_e4jf1"]
+[ext_resource type="Texture2D" uid="uid://yqp5bay1gh10" path="res://materials/terrain/hl1/c0a0e_texture_31.png" id="2_e4jf1"]
 [ext_resource type="Image" uid="uid://b1pqsvalm3qxx" path="res://maps/terrain_test/Heightmap_0_0.res" id="3_863k3"]
 [ext_resource type="Image" uid="uid://dcexv8580aqmw" path="res://maps/terrain_test/Splatmap_0_0_0.res" id="4_e31x1"]
 [ext_resource type="Image" uid="uid://dox2fsucoefm6" path="res://maps/terrain_test/Color_0_1.res" id="5_kjmdv"]

@@ -1,0 +1,17 @@
+@PointClass base(Targetname, Origin, Angles) iconsprite("editor/obsolete.vmt") = info_player_start : "Entity's description" [
+	spawnflags(Flags) = [
+		1 : "Is Offset" : 0
+		2 : "Is Main" : 0
+	]
+
+	offset(vector) : "Offset" : "0.0 0.0 0.0" : ""
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+
+
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+

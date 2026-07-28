@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://c04xsuuds77es"
+path="res://.godot/imported/dev_measureswitch02.vmt-ac3a1de33f955e32c30f95a030a8dcc2.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measureswitch02.vmt"
+dest_files=["res://.godot/imported/dev_measureswitch02.vmt-ac3a1de33f955e32c30f95a030a8dcc2.vmt.res"]
+
+[params]
+

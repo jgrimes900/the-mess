@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://dcrgyktdqfdlj"
+path="res://.godot/imported/dev_measureladder01.vtf-5a85099b7a29d54e153a380975e29e4d.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measureladder01.vtf"
+dest_files=["res://.godot/imported/dev_measureladder01.vtf-5a85099b7a29d54e153a380975e29e4d.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

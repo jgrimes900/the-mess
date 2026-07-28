@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://couyclas70k2x"
+path="res://.godot/imported/toolsblack.vtf-6a3e394ff702613869eb4777866a679a.vtf.res"
+
+[deps]
+
+source_file="res://materials/tools/toolsblack.vtf"
+dest_files=["res://.godot/imported/toolsblack.vtf-6a3e394ff702613869eb4777866a679a.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

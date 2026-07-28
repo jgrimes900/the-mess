@@ -11,12 +11,12 @@ var col: KinematicCollision3D
 var landed: bool = false
 
 var textures = [
-	preload("res://assets/materials/hl1/vending/can/1.tres"),
-	preload("res://assets/materials/hl1/vending/can/2.tres"),
-	preload("res://assets/materials/hl1/vending/can/3.tres"),
-	preload("res://assets/materials/hl1/vending/can/4.tres"),
-	preload("res://assets/materials/hl1/vending/can/5.tres"),
-	preload("res://assets/materials/hl1/vending/can/6.tres")
+	preload("res://materials/hl1/vending/can/1.tres"),
+	preload("res://materials/hl1/vending/can/2.tres"),
+	preload("res://materials/hl1/vending/can/3.tres"),
+	preload("res://materials/hl1/vending/can/4.tres"),
+	preload("res://materials/hl1/vending/can/5.tres"),
+	preload("res://materials/hl1/vending/can/6.tres"),
 ]
 
 # Called when the node enters the scene tree for the first time.

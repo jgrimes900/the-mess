@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://of4b00al4w3g"
+path="res://.godot/imported/toolsclip.vtf-6bc6eb5315deabd531a690e85fc43ff5.vtf.res"
+
+[deps]
+
+source_file="res://materials/tools/toolsclip.vtf"
+dest_files=["res://.godot/imported/toolsclip.vtf-6bc6eb5315deabd531a690e85fc43ff5.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

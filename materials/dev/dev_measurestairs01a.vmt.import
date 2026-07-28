@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://fi5fjmgdstfh"
+path="res://.godot/imported/dev_measurestairs01a.vmt-90852be6f5b21e21626aac71eac89147.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurestairs01a.vmt"
+dest_files=["res://.godot/imported/dev_measurestairs01a.vmt-90852be6f5b21e21626aac71eac89147.vmt.res"]
+
+[params]
+

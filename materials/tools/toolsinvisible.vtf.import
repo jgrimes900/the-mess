@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bp7h18tw5asdo"
+path="res://.godot/imported/toolsinvisible.vtf-de6600ef029e9a1f4bc3274cca92f22a.vtf.res"
+
+[deps]
+
+source_file="res://materials/tools/toolsinvisible.vtf"
+dest_files=["res://.godot/imported/toolsinvisible.vtf-de6600ef029e9a1f4bc3274cca92f22a.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bwx5urdeqoxxv"
+path="res://.godot/imported/dev_measuregeneric01b.vtf-78ed4c8bb13e63e4cf04d6bca400b155.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measuregeneric01b.vtf"
+dest_files=["res://.godot/imported/dev_measuregeneric01b.vtf-78ed4c8bb13e63e4cf04d6bca400b155.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

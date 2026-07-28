@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://dux3q5uk2v4rx"
+path="res://.godot/imported/dev_measurehall01.vmt-818ee6db97106d1452aa76690db3b700.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurehall01.vmt"
+dest_files=["res://.godot/imported/dev_measurehall01.vmt-818ee6db97106d1452aa76690db3b700.vmt.res"]
+
+[params]
+

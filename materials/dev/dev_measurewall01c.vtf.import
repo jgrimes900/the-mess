@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://dom3r42n4qm3r"
+path="res://.godot/imported/dev_measurewall01c.vtf-4db2aebe6b84672f9c2c009ffedc6001.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurewall01c.vtf"
+dest_files=["res://.godot/imported/dev_measurewall01c.vtf-4db2aebe6b84672f9c2c009ffedc6001.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

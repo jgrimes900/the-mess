@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://db23sur4bkcwc"
+path="res://.godot/imported/climb_node.vtf-a788644785fde77407d3fff713366810.vtf.res"
+
+[deps]
+
+source_file="res://materials/editor/climb_node.vtf"
+dest_files=["res://.godot/imported/climb_node.vtf-a788644785fde77407d3fff713366810.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfmpxhqrar0s5"]
 
-[ext_resource type="PackedScene" uid="uid://5gngwnuhmhhw" path="res://assets/models/v_hl1_glock/v_hl1_glock.glb" id="1_gnows"]
-[ext_resource type="AnimationLibrary" uid="uid://rjv4j6u37uni" path="res://assets/models/v_hl1_glock/glock.res" id="2_gnows"]
+[ext_resource type="PackedScene" uid="uid://5gngwnuhmhhw" path="res://models/v_hl1_glock/v_hl1_glock.glb" id="1_gnows"]
+[ext_resource type="AnimationLibrary" uid="uid://rjv4j6u37uni" path="res://models/v_hl1_glock/glock.res" id="2_gnows"]
 
 [node name="v_hl1_glock" unique_id=723113414 instance=ExtResource("1_gnows")]
 

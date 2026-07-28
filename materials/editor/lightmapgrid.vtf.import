@@ -1,0 +1,14 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://se5qu8y1kx6t"
+valid=false
+
+[deps]
+
+source_file="res://materials/editor/lightmapgrid.vtf"
+
+[params]
+
+srgb_conversion_method=1

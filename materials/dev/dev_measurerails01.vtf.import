@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://crjwgqypb6ktf"
+path="res://.godot/imported/dev_measurerails01.vtf-2bcc4a5daa7fa6a2026f20d4009bdc7a.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurerails01.vtf"
+dest_files=["res://.godot/imported/dev_measurerails01.vtf-2bcc4a5daa7fa6a2026f20d4009bdc7a.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://fstueym1af4l"
+path="res://.godot/imported/floor.vmt-92df5012434760b3bce81a7051c83020.vmt.res"
+
+[deps]
+
+source_file="res://materials/winmaze/floor.vmt"
+dest_files=["res://.godot/imported/floor.vmt-92df5012434760b3bce81a7051c83020.vmt.res"]
+
+[params]
+

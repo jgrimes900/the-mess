@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cxi7yvgbxawr3"]
+
+[ext_resource type="Texture2D" uid="uid://bhdh7sym7lyjs" path="res://models/irl/vm_arm_arm.png" id="1_usmap"]
+
+[resource]
+resource_name = "Material.004"
+cull_mode = 2
+albedo_texture = ExtResource("1_usmap")
+use_z_clip_scale = true
+z_clip_scale = 0.75

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bvi2j2jewwwvs"
+path="res://.godot/imported/gray.vtf-087bde77f7700594f127b6eff9829dc5.vtf.res"
+
+[deps]
+
+source_file="res://materials/editor/gray.vtf"
+dest_files=["res://.godot/imported/gray.vtf-087bde77f7700594f127b6eff9829dc5.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

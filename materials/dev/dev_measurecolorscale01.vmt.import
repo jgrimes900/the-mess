@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://jl5oqlan4s08"
+path="res://.godot/imported/dev_measurecolorscale01.vmt-f3b742b497bf2dbc49f16372c4489c35.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurecolorscale01.vmt"
+dest_files=["res://.godot/imported/dev_measurecolorscale01.vmt-f3b742b497bf2dbc49f16372c4489c35.vmt.res"]
+
+[params]
+

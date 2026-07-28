@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://f2xh5shb0fq0"
+path="res://.godot/imported/dev_measuredoor01.vmt-b7b50b277ffb8e6a9892d9a6ece84dce.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measuredoor01.vmt"
+dest_files=["res://.godot/imported/dev_measuredoor01.vmt-b7b50b277ffb8e6a9892d9a6ece84dce.vmt.res"]
+
+[params]
+

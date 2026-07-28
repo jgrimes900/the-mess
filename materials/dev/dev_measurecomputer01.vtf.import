@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://c6j5qug6awows"
+path="res://.godot/imported/dev_measurecomputer01.vtf-5cc7d694cdaacfb81e9956d81451aa2e.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurecomputer01.vtf"
+dest_files=["res://.godot/imported/dev_measurecomputer01.vtf-5cc7d694cdaacfb81e9956d81451aa2e.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

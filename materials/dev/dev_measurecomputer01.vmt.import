@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://kxa1fcba6v2s"
+path="res://.godot/imported/dev_measurecomputer01.vmt-b15bf7f2b2968307e5249f8fe98c1b11.vmt.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurecomputer01.vmt"
+dest_files=["res://.godot/imported/dev_measurecomputer01.vmt-b15bf7f2b2968307e5249f8fe98c1b11.vmt.res"]
+
+[params]
+

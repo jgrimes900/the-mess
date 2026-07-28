@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bpkkq7vsfug0d"
+path="res://.godot/imported/dev_measurecolorscale.vtf-85d19cb85eff8a495d6001a5222379f0.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurecolorscale.vtf"
+dest_files=["res://.godot/imported/dev_measurecolorscale.vtf-85d19cb85eff8a495d6001a5222379f0.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

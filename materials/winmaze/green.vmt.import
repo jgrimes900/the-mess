@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://ctx5mlvctnamv"
+path="res://.godot/imported/green.vmt-fd42156c349648554c7b3fede8369402.vmt.res"
+
+[deps]
+
+source_file="res://materials/winmaze/green.vmt"
+dest_files=["res://.godot/imported/green.vmt-fd42156c349648554c7b3fede8369402.vmt.res"]
+
+[params]
+

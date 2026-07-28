@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://d4qrcmq1qqqg"
+path="res://.godot/imported/blue.vmt-fc4690b43da4f1ebc01fcb28786031e4.vmt.res"
+
+[deps]
+
+source_file="res://materials/winmaze/blue.vmt"
+dest_files=["res://.godot/imported/blue.vmt-fc4690b43da4f1ebc01fcb28786031e4.vmt.res"]
+
+[params]
+

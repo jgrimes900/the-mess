@@ -1,28 +1,28 @@
 [gd_scene format=3 uid="uid://bck1kpbmbaj8n"]
 
 [ext_resource type="Script" uid="uid://y5l84q5odctl" path="res://entities/map.gd" id="1_t7t8s"]
-[ext_resource type="ArrayMesh" uid="uid://dewspllqh8or3" path="res://assets/models/C1A0.res" id="1_uxeic"]
-[ext_resource type="Shape3D" uid="uid://d1w5p7fpv5t5t" path="res://assets/models/C1A0_collision.res" id="2_5jp1s"]
+[ext_resource type="ArrayMesh" uid="uid://dewspllqh8or3" path="res://models/C1A0.res" id="1_uxeic"]
+[ext_resource type="Shape3D" uid="uid://d1w5p7fpv5t5t" path="res://models/C1A0_collision.res" id="2_5jp1s"]
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="3_s03oy"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="4_7fnmf"]
-[ext_resource type="Texture2D" uid="uid://c4c0puvmcu82c" path="res://assets/textures/hl1_c1a0/c1a0_texture_4.png" id="4_rkeft"]
-[ext_resource type="Texture2D" uid="uid://der5nx8on5fo" path="res://assets/textures/hl1_c1a0/c1a0_texture_31.png" id="5_8w5rr"]
+[ext_resource type="Texture2D" uid="uid://c4c0puvmcu82c" path="res://materials/hl1_c1a0/c1a0_texture_4.png" id="4_rkeft"]
+[ext_resource type="Texture2D" uid="uid://der5nx8on5fo" path="res://materials/hl1_c1a0/c1a0_texture_31.png" id="5_8w5rr"]
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="5_jgvh2"]
 [ext_resource type="PackedScene" uid="uid://bj7hpyycap38w" path="res://prefabs/door.tscn" id="6_pe3st"]
-[ext_resource type="Texture2D" uid="uid://do4v5a3swqyt8" path="res://assets/textures/hl1_c1a0/c1a0_texture_32.png" id="6_wd5nl"]
-[ext_resource type="ArrayMesh" uid="uid://b8yrqphxm3xcn" path="res://assets/models/hl1_c1a0_transition_C0A0E_003.res" id="7_7fnmf"]
-[ext_resource type="Texture2D" uid="uid://cwb3fwtbl2w5c" path="res://assets/textures/hl1_c1a0/c1a0_texture_6.png" id="7_c7rwn"]
+[ext_resource type="Texture2D" uid="uid://do4v5a3swqyt8" path="res://materials/hl1_c1a0/c1a0_texture_32.png" id="6_wd5nl"]
+[ext_resource type="ArrayMesh" uid="uid://b8yrqphxm3xcn" path="res://models/hl1_c1a0_transition_C0A0E_003.res" id="7_7fnmf"]
+[ext_resource type="Texture2D" uid="uid://cwb3fwtbl2w5c" path="res://materials/hl1_c1a0/c1a0_texture_6.png" id="7_c7rwn"]
 [ext_resource type="Script" uid="uid://8vx54lrm46k4" path="res://entities/timer_player.gd" id="7_jgvh2"]
 [ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="8_b5rxj"]
-[ext_resource type="Shape3D" uid="uid://esn36byd2ed" path="res://assets/models/C1A0_Transition_collision.res" id="8_jgvh2"]
+[ext_resource type="Shape3D" uid="uid://esn36byd2ed" path="res://models/C1A0_Transition_collision.res" id="8_jgvh2"]
 [ext_resource type="PackedScene" uid="uid://df2amvnuqjmfl" path="res://prefabs/c1a0_door_large.tscn" id="9_pe3st"]
-[ext_resource type="ArrayMesh" uid="uid://donjr6fbwwdyt" path="res://assets/models/C1A0_001.res" id="9_uthg3"]
+[ext_resource type="ArrayMesh" uid="uid://donjr6fbwwdyt" path="res://models/C1A0_001.res" id="9_uthg3"]
 [ext_resource type="PackedScene" uid="uid://d21p1ess5umoq" path="res://prefabs/hl1/vending_a.tscn" id="11_pe3st"]
 [ext_resource type="Script" uid="uid://drl3ms0grcmo4" path="res://entities/ButtonSliding.gd" id="11_v0x75"]
-[ext_resource type="PackedScene" uid="uid://c256f6gnhf0fr" path="res://assets/models/fnaf/sotm/SotM Lock.fbx" id="12_q28ir"]
-[ext_resource type="Texture2D" uid="uid://c8benl7ay7ho" path="res://assets/textures/fnaf/sotm/Lock.png" id="13_0gtl4"]
-[ext_resource type="Material" uid="uid://bjdeuhicogjjh" path="res://assets/materials/fnaf/sotm/Lock Level3.tres" id="14_ducml"]
-[ext_resource type="Material" uid="uid://bmsvhvrbe3iw6" path="res://assets/materials/WinMaze/Floor.tres" id="14_rkeft"]
+[ext_resource type="PackedScene" uid="uid://c256f6gnhf0fr" path="res://models/fnaf/sotm/SotM Lock.fbx" id="12_q28ir"]
+[ext_resource type="Texture2D" uid="uid://c8benl7ay7ho" path="res://materials/fnaf/sotm/Lock.png" id="13_0gtl4"]
+[ext_resource type="Material" uid="uid://bjdeuhicogjjh" path="res://materials/fnaf/sotm/Lock Level3.tres" id="14_ducml"]
+[ext_resource type="Material" uid="uid://bmsvhvrbe3iw6" path="res://materials/winmaze/Floor.tres" id="14_rkeft"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0f65"]
 albedo_texture = ExtResource("4_rkeft")
@@ -178,12 +178,12 @@ script = ExtResource("11_v0x75")
 
 [node name="SotM Lock" parent="C1A0/World/WinMaze Exit Room/doorlock_out" unique_id=1551676855 instance=ExtResource("12_q28ir")]
 
-[node name="Skeleton3D" parent="C1A0/World/WinMaze Exit Room/doorlock_out/SotM Lock/SotM Lock Rig" parent_id_path=PackedInt32Array(1551676855, 14589791) index="0" unique_id=1434248103]
+[node name="Skeleton3D" parent="C1A0/World/WinMaze Exit Room/doorlock_out/SotM Lock/SotM Lock Rig" parent_id_path=PackedInt32Array(1551676855, 1589526371) index="0" unique_id=1699604971]
 bones/1/position = Vector3(0.00045568487, 0.007100416, -0.027087338)
 bones/1/rotation = Quaternion(1.126339e-08, 0.97697073, -0.21337326, 3.066872e-07)
 bones/1/scale = Vector3(1, 1, 0.99999994)
 
-[node name="SotM Lock" parent="C1A0/World/WinMaze Exit Room/doorlock_out/SotM Lock/SotM Lock Rig/Skeleton3D" index="0" unique_id=152199536]
+[node name="SotM Lock" parent="C1A0/World/WinMaze Exit Room/doorlock_out/SotM Lock/SotM Lock Rig/Skeleton3D" index="0" unique_id=2080377681]
 surface_material_override/0 = SubResource("StandardMaterial3D_nihbn")
 surface_material_override/1 = ExtResource("14_ducml")
 

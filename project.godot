@@ -32,7 +32,17 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/godotfgd/plugin.cfg", "res://addons/godotvmf/plugin.cfg")
+
+[godot_vmf]
+
+import/instances_folder="res://prefabs"
+import/entities_folder="res://entities/vmf"
+import/geometry_folder="res://assets/models/vmf"
+models/target_folder="res://models"
+models/import=true
+import/scale=0.025
+materials/import_mode=1
 
 [input]
 

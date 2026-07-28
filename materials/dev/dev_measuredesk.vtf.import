@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://ciddy22r4kijl"
+path="res://.godot/imported/dev_measuredesk.vtf-9bc8c4d4a9082782287df36be581bb0f.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measuredesk.vtf"
+dest_files=["res://.godot/imported/dev_measuredesk.vtf-9bc8c4d4a9082782287df36be581bb0f.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

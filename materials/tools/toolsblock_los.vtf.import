@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://c8j131o2kgskl"
+path="res://.godot/imported/toolsblock_los.vtf-85ade60f21ffd5c8c2c0f25197d3f863.vtf.res"
+
+[deps]
+
+source_file="res://materials/tools/toolsblock_los.vtf"
+dest_files=["res://.godot/imported/toolsblock_los.vtf-85ade60f21ffd5c8c2c0f25197d3f863.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,0 +1,22 @@
+[remap]
+
+importer="MDL"
+type="PackedScene"
+uid="uid://sjr7ng5msc0a"
+path="res://.godot/imported/air_node_hint.mdl-37665db07eb2c9f5e589e733767fea57.scn"
+
+[deps]
+
+source_file="res://models/editor/air_node_hint.mdl"
+dest_files=["res://.godot/imported/air_node_hint.mdl-37665db07eb2c9f5e589e733767fea57.scn"]
+
+[params]
+
+use_global_scale=true
+scale=0.02
+additional_rotation=Vector3(0, 0, 0)
+generate_occluder=false
+generate_lods=true
+primitive_occluder=false
+primitive_occluder_scale=Vector3(1, 1, 1)
+gi_mode=1

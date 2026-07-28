@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://chiusb4motb56"
+path="res://.godot/imported/dev_measurebarrel.vtf-81a2434f1b11b0261c8a61eec0dc15c2.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measurebarrel.vtf"
+dest_files=["res://.godot/imported/dev_measurebarrel.vtf-81a2434f1b11b0261c8a61eec0dc15c2.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bw5ga3qhpwgtg" path="res://entities/signal_toggle.gd" id="1_ksxvg"]
 [ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="2_fk5ga"]
-[ext_resource type="ArrayMesh" uid="uid://ccbicyixoxxom" path="res://assets/models/hl1_bigdoor_C1A0_006.res" id="3_6gxou"]
-[ext_resource type="ArrayMesh" uid="uid://56fgg6yqde3k" path="res://assets/models/hl1_bigdoor_C1A0_007.res" id="4_io3nv"]
-[ext_resource type="ArrayMesh" uid="uid://lxtpcv4atw0d" path="res://assets/models/hl1_bigdoor_C1A0_005.res" id="5_4nt1x"]
-[ext_resource type="ArrayMesh" uid="uid://cfkdx21gdbgfy" path="res://assets/models/hl1_bigdoor_C1A0_004.res" id="6_0bphr"]
+[ext_resource type="ArrayMesh" uid="uid://ccbicyixoxxom" path="res://models/hl1_bigdoor_C1A0_006.res" id="3_6gxou"]
+[ext_resource type="ArrayMesh" uid="uid://56fgg6yqde3k" path="res://models/hl1_bigdoor_C1A0_007.res" id="4_io3nv"]
+[ext_resource type="ArrayMesh" uid="uid://lxtpcv4atw0d" path="res://models/hl1_bigdoor_C1A0_005.res" id="5_4nt1x"]
+[ext_resource type="ArrayMesh" uid="uid://cfkdx21gdbgfy" path="res://models/hl1_bigdoor_C1A0_004.res" id="6_0bphr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2shil"]
 size = Vector3(0.80108833, 4.024521, 1.6005859)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://c17k6su7mck40"
+path="res://.godot/imported/dev_measuredoor01.vtf-566f033dc7a0a0dbd3f6b18a10efda56.vtf.res"
+
+[deps]
+
+source_file="res://materials/dev/dev_measuredoor01.vtf"
+dest_files=["res://.godot/imported/dev_measuredoor01.vtf-566f033dc7a0a0dbd3f6b18a10efda56.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1
