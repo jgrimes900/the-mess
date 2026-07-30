@@ -31,6 +31,7 @@ var local_pos: Vector3
 var current_map: String = "hl1_c1a0"  # Default to starting map
 var last_map: String = ""
 var spawned: bool = false
+var prev_teleport_offset: Vector3 = Vector3.ZERO
 
 @onready var last_pos: Vector3 = self.global_position
 @onready var pivot: Node3D = $Pivot

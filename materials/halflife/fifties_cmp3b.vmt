@@ -1,0 +1,10 @@
+"LightmappedGeneric"
+{
+	// Original shader: BaseTimesLightmapPlusMaskedSphericalEnvMap
+	"$basetexture" "halflife/fifties_cmp3b"
+	"$envmap" "environment maps/envmap001a"
+	"$basealphaenvmapmask" "1"
+	"$envmapcontrast" 2
+	"$envmaptint" "[ .5 .5 .5 ]"
+	"$surfaceprop" "metal"
+}

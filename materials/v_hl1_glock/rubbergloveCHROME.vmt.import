@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://caxy81o55040d"
+path="res://.godot/imported/rubbergloveCHROME.vmt-31178f811bef937b2a1a4774288ea6e4.vmt.res"
+
+[deps]
+
+source_file="res://materials/v_hl1_glock/rubbergloveCHROME.vmt"
+dest_files=["res://.godot/imported/rubbergloveCHROME.vmt-31178f811bef937b2a1a4774288ea6e4.vmt.res"]
+
+[params]
+

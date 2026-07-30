@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://dmwi2i2bf1r7p"
+path="res://.godot/imported/+0button2.vtf-1cf3dc89c6dd536c58658210781b5107.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/+0button2.vtf"
+dest_files=["res://.godot/imported/+0button2.vtf-1cf3dc89c6dd536c58658210781b5107.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

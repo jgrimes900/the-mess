@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://gcx8gvhk8iqf"
+path="res://.godot/imported/goomba_face_2.vmt-0eab6d016dad6187bc919f3db9253bd2.vmt.res"
+
+[deps]
+
+source_file="res://materials/mario64/goomba_face_2.vmt"
+dest_files=["res://.godot/imported/goomba_face_2.vmt-0eab6d016dad6187bc919f3db9253bd2.vmt.res"]
+
+[params]
+

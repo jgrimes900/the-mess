@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://cpbwsh0ci38pl"
+path="res://.godot/imported/!radio.vmt-d7e3721fc456cc24848bb7fde5449cdf.vmt.res"
+
+[deps]
+
+source_file="res://materials/liquids/!radio.vmt"
+dest_files=["res://.godot/imported/!radio.vmt-d7e3721fc456cc24848bb7fde5449cdf.vmt.res"]
+
+[params]
+

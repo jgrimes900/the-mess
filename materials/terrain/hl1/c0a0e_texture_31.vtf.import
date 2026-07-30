@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://by6jm8tdow4le"
+path="res://.godot/imported/c0a0e_texture_31.vtf-ee0151fef58213eaeb3db4857596c5bf.vtf.res"
+
+[deps]
+
+source_file="res://materials/terrain/hl1/c0a0e_texture_31.vtf"
+dest_files=["res://.godot/imported/c0a0e_texture_31.vtf-ee0151fef58213eaeb3db4857596c5bf.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

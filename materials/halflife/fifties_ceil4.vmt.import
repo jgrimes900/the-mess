@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://i8db2g3mihpw"
+path="res://.godot/imported/fifties_ceil4.vmt-22a17d3736817afb5581e767780c726a.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/fifties_ceil4.vmt"
+dest_files=["res://.godot/imported/fifties_ceil4.vmt-22a17d3736817afb5581e767780c726a.vmt.res"]
+
+[params]
+

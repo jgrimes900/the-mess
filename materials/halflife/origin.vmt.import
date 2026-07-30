@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://bdsm875rhyt5r"
+path="res://.godot/imported/origin.vmt-26e3547d66149114ee94b159dae25a59.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/origin.vmt"
+dest_files=["res://.godot/imported/origin.vmt-26e3547d66149114ee94b159dae25a59.vmt.res"]
+
+[params]
+

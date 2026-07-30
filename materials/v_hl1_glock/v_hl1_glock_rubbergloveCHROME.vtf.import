@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://cdanybojp33bs"
+path="res://.godot/imported/v_hl1_glock_rubbergloveCHROME.vtf-548d21e63e4eccf11b5904ffda521581.vtf.res"
+
+[deps]
+
+source_file="res://materials/v_hl1_glock/v_hl1_glock_rubbergloveCHROME.vtf"
+dest_files=["res://.godot/imported/v_hl1_glock_rubbergloveCHROME.vtf-548d21e63e4eccf11b5904ffda521581.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

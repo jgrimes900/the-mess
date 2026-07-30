@@ -42,7 +42,11 @@ import/geometry_folder="res://assets/models/vmf"
 models/target_folder="res://models"
 models/import=true
 import/scale=0.025
-materials/import_mode=1
+import/gameinfo_path="/media/jgrimes900/Data/Program Files (x86)/Steam/steamapps/common/Half-Life 2/hl1"
+import/entity_aliases={
+"func_ladder": "uid://bk75tw7lrdt6w"
+}
+materials/ignore=["tools/toolsnodraw", "tools/toolsskybox", "halflife/origin"]
 
 [input]
 

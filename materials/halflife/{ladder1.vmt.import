@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://cawgdcuh7uxce"
+path="res://.godot/imported/{ladder1.vmt-e29f44db1d64c1c7a44e0d0cf69f1193.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/{ladder1.vmt"
+dest_files=["res://.godot/imported/{ladder1.vmt-e29f44db1d64c1c7a44e0d0cf69f1193.vmt.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://botlmatwt2icg"
+path="res://.godot/imported/medkitedge1.vmt-12fad1b2fe00180810a5bf8d81b03c6b.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/medkitedge1.vmt"
+dest_files=["res://.godot/imported/medkitedge1.vmt-12fad1b2fe00180810a5bf8d81b03c6b.vmt.res"]
+
+[params]
+

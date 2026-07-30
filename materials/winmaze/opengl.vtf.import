@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://brrtd2jp4o3dx"
+path="res://.godot/imported/opengl.vtf-ffc35846513172d04a334438d29e98c6.vtf.res"
+
+[deps]
+
+source_file="res://materials/winmaze/opengl.vtf"
+dest_files=["res://.godot/imported/opengl.vtf-ffc35846513172d04a334438d29e98c6.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

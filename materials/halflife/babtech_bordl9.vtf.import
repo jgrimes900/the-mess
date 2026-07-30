@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://cakg4avbetrxx"
+path="res://.godot/imported/babtech_bordl9.vtf-15afddd99841090a596cad96b4433aa1.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/babtech_bordl9.vtf"
+dest_files=["res://.godot/imported/babtech_bordl9.vtf-15afddd99841090a596cad96b4433aa1.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://d3mn7o2bjmjpt"
+path="res://.godot/imported/c1a0_labw2.vtf-22f1cb93c996a86122431e624ece0608.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/c1a0_labw2.vtf"
+dest_files=["res://.godot/imported/c1a0_labw2.vtf-22f1cb93c996a86122431e624ece0608.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://b76mxl1xpbdhn"
+path="res://.godot/imported/wall_dither.vtf-41aa08768cd866bc77e944a2b4010d0c.vtf.res"
+
+[deps]
+
+source_file="res://materials/winmaze/wall_dither.vtf"
+dest_files=["res://.godot/imported/wall_dither.vtf-41aa08768cd866bc77e944a2b4010d0c.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

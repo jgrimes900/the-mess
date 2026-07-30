@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://chvsm8v1t161a"
+path="res://.godot/imported/fifties_cmp3b.vtf-f112e978e9dae2458bb53155a0980735.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/fifties_cmp3b.vtf"
+dest_files=["res://.godot/imported/fifties_cmp3b.vtf-f112e978e9dae2458bb53155a0980735.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

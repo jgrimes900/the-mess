@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://5o4qugki2u61"]
+
+[ext_resource type="Script" uid="uid://dludjhrj8vivj" path="res://entities/vmf/func_water.gd" id="1_5sjjp"]
+
+[node name="func_illusionary" type="Node3D" unique_id=2011786848]
+script = ExtResource("1_5sjjp")

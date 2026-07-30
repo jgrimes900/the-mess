@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://cb5uwoks1cpjk"
+path="res://.godot/imported/glass_bright.vtf-32eeb7534c108b87d27df0ae16d237b5.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/glass_bright.vtf"
+dest_files=["res://.godot/imported/glass_bright.vtf-32eeb7534c108b87d27df0ae16d237b5.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

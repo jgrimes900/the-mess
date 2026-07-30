@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://c17n8nf6oiur5"
+path="res://.godot/imported/fifties_dr4dr.vtf-3b2b85b0da8659d5f8753290ab826e43.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/fifties_dr4dr.vtf"
+dest_files=["res://.godot/imported/fifties_dr4dr.vtf-3b2b85b0da8659d5f8753290ab826e43.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

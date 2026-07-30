@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://d00t3t6kyrxym"
+path="res://.godot/imported/duct_flr01a.vtf-ba25d087942f969f658eb2cdce7cc117.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/duct_flr01a.vtf"
+dest_files=["res://.godot/imported/duct_flr01a.vtf-ba25d087942f969f658eb2cdce7cc117.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

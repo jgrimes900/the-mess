@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://dvfwgsqlu7vca"
+path="res://.godot/imported/+0button2.vmt-64fd9400bed5bb9e6e701df0bc434415.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/+0button2.vmt"
+dest_files=["res://.godot/imported/+0button2.vmt-64fd9400bed5bb9e6e701df0bc434415.vmt.res"]
+
+[params]
+

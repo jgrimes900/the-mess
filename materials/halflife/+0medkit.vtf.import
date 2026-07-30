@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bfjcdacr6mrup"
+path="res://.godot/imported/+0medkit.vtf-bf8ab9782ba39d5933513b83b5da7156.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/+0medkit.vtf"
+dest_files=["res://.godot/imported/+0medkit.vtf-bf8ab9782ba39d5933513b83b5da7156.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

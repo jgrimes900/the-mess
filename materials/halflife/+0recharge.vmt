@@ -1,0 +1,14 @@
+"LightmappedGeneric"
+{
+	// Original shader: BaseTimesLightmap
+	"$basetexture" "halflife/+0recharge"
+	"$surfaceprop" "metal"
+	"Proxies"
+	{
+		"ToggleTexture"
+		{
+			"toggletexturevar" "$basetexture"
+			"toggletextureframenumvar" "$frame"
+		}
+	}
+}

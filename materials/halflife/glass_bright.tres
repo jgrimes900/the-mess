@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://4hys2mgdrhcl"]
+
+[ext_resource type="Texture2D" uid="uid://cb5uwoks1cpjk" path="res://materials/halflife/glass_bright.vtf" id="1_07hfj"]
+
+[resource]
+blend_mode = 1
+albedo_texture = ExtResource("1_07hfj")
+metadata/surfaceprop = "glass"
+metadata/details = {
+"$basealphaenvmapmask": 1,
+"$basetexture": "halflife/glass_bright",
+"$detail": "detail/detail_noise1",
+"$detailscale": 2.5,
+"$envmap": "environment maps/envmap001a",
+"$surfaceprop": "glass"
+}

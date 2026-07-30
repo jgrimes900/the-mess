@@ -1,0 +1,28 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bikdhxh4pxqjf"]
+
+[ext_resource type="Texture2D" uid="uid://blqn6bs72eawc" path="res://materials/liquids/!radio.vtf" id="1_80a06"]
+
+[resource]
+albedo_texture = ExtResource("1_80a06")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("1_80a06")
+metadata/compile_keys = ["compilewater"]
+metadata/surfaceprop = "water"
+metadata/details = {
+"$basetexture": "liquids/!radio",
+"$surfaceprop": "water",
+"$waterbasefactor": 0.2,
+"$waterbasemovementdist": 0.01,
+"$waterbasemovementfreq": 20,
+"$watercolor": "[ 0.10 0.13 0.14 ]",
+"$waterdepth": 64,
+"$watermurkiness": 0.85,
+"$waterspecularmax": 0.75,
+"$waterspecularmin": 0.4,
+"$watertimefreq1": 0.5,
+"$watertimefreq2": 0.62,
+"$waterwaveheight": 0.25,
+"$waterwavelength": 256,
+"%compilewater": 1
+}

@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://ca3il81dal1uf"
+path="res://.godot/imported/smiley.vmt-a860e9b0a7d4c0b4ca5481e974f01449.vmt.res"
+
+[deps]
+
+source_file="res://materials/winmaze/smiley.vmt"
+dest_files=["res://.godot/imported/smiley.vmt-a860e9b0a7d4c0b4ca5481e974f01449.vmt.res"]
+
+[params]
+

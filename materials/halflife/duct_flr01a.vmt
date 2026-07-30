@@ -1,0 +1,10 @@
+"LightmappedGeneric"
+{
+	// Original shader: BaseTimesLightmapPlusMaskedSphericalEnvMap
+	"$basetexture" "halflife/duct_flr01a"
+	"$envmap" "environment maps/ductenv1"
+	"$surfaceprop" "metalvent"
+	"$basealphaenvmapmask" "1"
+	"$envmapcontrast" 2
+	"$envmaptint" "[ .7 .7 .7 ]"
+}

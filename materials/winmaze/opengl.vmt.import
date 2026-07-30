@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://cfnljdey83rxb"
+path="res://.godot/imported/opengl.vmt-52b5ee7fd085c67a372ad5523633b565.vmt.res"
+
+[deps]
+
+source_file="res://materials/winmaze/opengl.vmt"
+dest_files=["res://.godot/imported/opengl.vmt-52b5ee7fd085c67a372ad5523633b565.vmt.res"]
+
+[params]
+

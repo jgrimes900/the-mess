@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://c7fxmbuwb3coo"
+path="res://.godot/imported/goomball.vtf-ce2056831d894481449ad71de48a4da2.vtf.res"
+
+[deps]
+
+source_file="res://materials/mario64/goomball.vtf"
+dest_files=["res://.godot/imported/goomball.vtf-ce2056831d894481449ad71de48a4da2.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://b0svw3i08xd3d"
+path="res://.godot/imported/{rail2.vtf-f0f8ab748a9f8bf3343f39b793bf0f73.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/{rail2.vtf"
+dest_files=["res://.godot/imported/{rail2.vtf-f0f8ab748a9f8bf3343f39b793bf0f73.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

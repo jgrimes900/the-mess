@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://cxx5pwxog8630"
+path="res://.godot/imported/bulletCHROME.vmt-da2dad8f3152be104b75f8fe347e2338.vmt.res"
+
+[deps]
+
+source_file="res://materials/v_hl1_glock/bulletCHROME.vmt"
+dest_files=["res://.godot/imported/bulletCHROME.vmt-da2dad8f3152be104b75f8fe347e2338.vmt.res"]
+
+[params]
+

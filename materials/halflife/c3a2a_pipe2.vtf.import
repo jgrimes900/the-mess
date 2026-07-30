@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://clwi3la81cqxb"
+path="res://.godot/imported/c3a2a_pipe2.vtf-7b2a7b19117658c5043d6ebdbf4103d9.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/c3a2a_pipe2.vtf"
+dest_files=["res://.godot/imported/c3a2a_pipe2.vtf-7b2a7b19117658c5043d6ebdbf4103d9.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

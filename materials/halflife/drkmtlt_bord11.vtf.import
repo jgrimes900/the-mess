@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://csmcpeyvhkkf3"
+path="res://.godot/imported/drkmtlt_bord11.vtf-adc1dfdb5382b371649355b566597f9a.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/drkmtlt_bord11.vtf"
+dest_files=["res://.godot/imported/drkmtlt_bord11.vtf-adc1dfdb5382b371649355b566597f9a.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

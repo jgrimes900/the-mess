@@ -58,5 +58,8 @@ bones/35/rotation = Quaternion(-0.35956103, 0.50716096, -0.28025478, 0.7314102)
 bones/36/rotation = Quaternion(-0.08415624, -0.0028308118, -0.004248609, 0.99643946)
 bones/37/rotation = Quaternion(-0.097206414, 0.008467398, -0.12998998, 0.98670256)
 
+[node name="Circle_001" parent="Armature/Skeleton3D" index="0" unique_id=1705225867]
+gi_mode = 2
+
 [node name="AnimationPlayer" parent="." index="1" unique_id=1624260831]
 libraries/vm_arm_lib = ExtResource("2_kyyyv")

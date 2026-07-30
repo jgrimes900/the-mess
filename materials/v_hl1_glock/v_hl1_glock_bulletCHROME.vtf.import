@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://6u7lcn16nduy"
+path="res://.godot/imported/v_hl1_glock_bulletCHROME.vtf-19d9ecde9f8142152fa7543565e57e2b.vtf.res"
+
+[deps]
+
+source_file="res://materials/v_hl1_glock/v_hl1_glock_bulletCHROME.vtf"
+dest_files=["res://.godot/imported/v_hl1_glock_bulletCHROME.vtf-19d9ecde9f8142152fa7543565e57e2b.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

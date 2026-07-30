@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckev71l8eoos"]
+
+[ext_resource type="Texture2D" uid="uid://tp1hge64tkf6" path="res://materials/halflife/+0~fifts_lght5.vtf" id="1_7k3w6"]
+[ext_resource type="Texture2D" uid="uid://b5w62ntdc78g2" path="res://materials/halflife/+0~fifts_lght5_glow.png" id="2_6e613"]
+
+[resource]
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_7k3w6")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("2_6e613")
+metadata/details = {
+"$basetexture": "halflife/+0~fifts_lght5"
+}

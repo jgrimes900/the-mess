@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cv1vo5n1775wj"]
+
+[ext_resource type="Script" uid="uid://74kv5euwu4o4" path="res://entities/vmf/func_illusionary.gd" id="1_87tw4"]
+
+[node name="func_illusionary" type="Node3D" unique_id=101990194]
+script = ExtResource("1_87tw4")

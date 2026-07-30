@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://cra25ncg7htfx"
+path="res://.godot/imported/generic011.vmt-a542d1e12a572c38d5e939a58dc829f3.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/generic011.vmt"
+dest_files=["res://.godot/imported/generic011.vmt-a542d1e12a572c38d5e939a58dc829f3.vmt.res"]
+
+[params]
+

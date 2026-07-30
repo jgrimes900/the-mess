@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://cnlakel2fiiw5"
+path="res://.godot/imported/pattern2.vtf-32e528a6851250c91a803916ff850928.vtf.res"
+
+[deps]
+
+source_file="res://materials/winmaze/pattern2.vtf"
+dest_files=["res://.godot/imported/pattern2.vtf-32e528a6851250c91a803916ff850928.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

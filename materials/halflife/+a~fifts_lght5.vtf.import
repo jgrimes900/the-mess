@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://skt4q3bh3e8k"
+path="res://.godot/imported/+a~fifts_lght5.vtf-a91074c8875bae8fc3747aaecb981b56.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/+a~fifts_lght5.vtf"
+dest_files=["res://.godot/imported/+a~fifts_lght5.vtf-a91074c8875bae8fc3747aaecb981b56.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -5,10 +5,10 @@
 
 [node name="v_hl1_glock" unique_id=723113414 instance=ExtResource("1_gnows")]
 
-[node name="v_9mmhandgun_qc_skeleton_001" parent="." index="0" unique_id=1984918445]
+[node name="v_9mmhandgun_qc_skeleton_001" parent="." index="0" unique_id=752472831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
-[node name="Skeleton3D" parent="v_9mmhandgun_qc_skeleton_001" index="0" unique_id=1662775800]
+[node name="Skeleton3D" parent="v_9mmhandgun_qc_skeleton_001" index="0" unique_id=16504553]
 bones/0/rotation = Quaternion(-0.061234385, 0.07260266, -0.94566244, 0.31096926)
 bones/1/rotation = Quaternion(-2.6919391e-08, -1.4506732e-07, -0.35790738, 0.93375707)
 bones/2/position = Vector3(0.9875909, 8.36565e-05, 2.833528e-06)
@@ -46,5 +46,14 @@ bones/19/position = Vector3(0.24677412, -0.13615005, -6.083957e-06)
 bones/20/position = Vector3(-12.082544, -29.333797, -8.329674)
 bones/20/rotation = Quaternion(0.0011378437, 0.008646085, 0.13047756, 0.991413)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=455222354]
+[node name="clip_reference" parent="v_9mmhandgun_qc_skeleton_001/Skeleton3D" index="0" unique_id=1707193081]
+gi_mode = 2
+
+[node name="glock_reference" parent="v_9mmhandgun_qc_skeleton_001/Skeleton3D" index="1" unique_id=1274671000]
+gi_mode = 2
+
+[node name="glock_reference(silencer)" parent="v_9mmhandgun_qc_skeleton_001/Skeleton3D" index="2" unique_id=28442042]
+gi_mode = 2
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=2079467882]
 libraries/glock = ExtResource("2_gnows")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://blqn6bs72eawc"
+path="res://.godot/imported/!radio.vtf-ffb6bb7d02b098ebf8cf8602e0c34779.vtf.res"
+
+[deps]
+
+source_file="res://materials/liquids/!radio.vtf"
+dest_files=["res://.godot/imported/!radio.vtf-ffb6bb7d02b098ebf8cf8602e0c34779.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://b33lnf6772iyu"
+path="res://.godot/imported/Lock Level3.vtf-1eb0dd0d461a0e780ee72ee17fd49920.vtf.res"
+
+[deps]
+
+source_file="res://materials/fnaf/sotm/Lock Level3.vtf"
+dest_files=["res://.godot/imported/Lock Level3.vtf-1eb0dd0d461a0e780ee72ee17fd49920.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

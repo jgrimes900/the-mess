@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://bq2t6bulm762s"
+path="res://.godot/imported/sims3_gradient.vmt-c9121d25bb6c4cb341af708e507d373b.vmt.res"
+
+[deps]
+
+source_file="res://materials/ui/sims3_gradient.vmt"
+dest_files=["res://.godot/imported/sims3_gradient.vmt-c9121d25bb6c4cb341af708e507d373b.vmt.res"]
+
+[params]
+

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://b1lbct5xsnoh7"
+path="res://.godot/imported/sims3_gradient.vtf-29a9aa06a0a8a8bc6f7ef810f5971e0b.vtf.res"
+
+[deps]
+
+source_file="res://materials/ui/sims3_gradient.vtf"
+dest_files=["res://.godot/imported/sims3_gradient.vtf-29a9aa06a0a8a8bc6f7ef810f5971e0b.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

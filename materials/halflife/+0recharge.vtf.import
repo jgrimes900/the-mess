@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://n7n7mljv5tyk"
+path="res://.godot/imported/+0recharge.vtf-aa3a32d5c18c5383068dae7d2e48bf7f.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/+0recharge.vtf"
+dest_files=["res://.godot/imported/+0recharge.vtf-aa3a32d5c18c5383068dae7d2e48bf7f.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

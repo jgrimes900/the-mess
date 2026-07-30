@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://vsortlx10kei"
+path="res://.godot/imported/drkmtlt_bord11.vmt-bdc08a57232412457cf4c235fdc9e2d8.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/drkmtlt_bord11.vmt"
+dest_files=["res://.godot/imported/drkmtlt_bord11.vmt-bdc08a57232412457cf4c235fdc9e2d8.vmt.res"]
+
+[params]
+

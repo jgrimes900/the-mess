@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://cb57ehyi8dj12"
+path="res://.godot/imported/c1a3wall03.vtf-bce0c4a6c8657ad0900cfaf427be4b39.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/c1a3wall03.vtf"
+dest_files=["res://.godot/imported/c1a3wall03.vtf-bce0c4a6c8657ad0900cfaf427be4b39.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

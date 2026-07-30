@@ -1,0 +1,14 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://b5tfaida41wts"
+valid=false
+
+[deps]
+
+source_file="res://materials/Starkron/checkardTest.vtf"
+
+[params]
+
+srgb_conversion_method=1

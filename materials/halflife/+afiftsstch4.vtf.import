@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://fx4a17wg1a36"
+path="res://.godot/imported/+afiftsstch4.vtf-7c579499a9095584c307c48086d705cd.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/+afiftsstch4.vtf"
+dest_files=["res://.godot/imported/+afiftsstch4.vtf-7c579499a9095584c307c48086d705cd.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

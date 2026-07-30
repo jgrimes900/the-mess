@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://d0hyaxxvw2jgk"
+path="res://.godot/imported/checkardtest_terrain.vtf-6fbd5d984ce91007ad9969dab1eb9c21.vtf.res"
+
+[deps]
+
+source_file="res://materials/terrain/starkron/checkardtest_terrain.vtf"
+dest_files=["res://.godot/imported/checkardtest_terrain.vtf-6fbd5d984ce91007ad9969dab1eb9c21.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

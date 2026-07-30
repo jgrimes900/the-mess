@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://kvoyfklh6ib3"
+path="res://.godot/imported/medkitedge1.vtf-63435d5a48e3a839607cffdfe056748a.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/medkitedge1.vtf"
+dest_files=["res://.godot/imported/medkitedge1.vtf-63435d5a48e3a839607cffdfe056748a.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://bc3c3ysa2wsvm"
+path="res://.godot/imported/{rail2.vmt-14d84c2e6f3beeb87edef19e53a043b5.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/{rail2.vmt"
+dest_files=["res://.godot/imported/{rail2.vmt-14d84c2e6f3beeb87edef19e53a043b5.vmt.res"]
+
+[params]
+

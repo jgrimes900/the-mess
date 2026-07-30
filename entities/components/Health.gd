@@ -1,5 +1,7 @@
 extends Node
 
+class_name Health
+
 @export var health: float = 100.0
 @export var max_health: float = 100.0
 @export var iframes: int = 0

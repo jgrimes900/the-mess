@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://b8mkce4gqr6oy"
+path="res://.godot/imported/smiley.vtf-d0673729816aca402a777f5f1dc1601d.vtf.res"
+
+[deps]
+
+source_file="res://materials/winmaze/smiley.vtf"
+dest_files=["res://.godot/imported/smiley.vtf-d0673729816aca402a777f5f1dc1601d.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

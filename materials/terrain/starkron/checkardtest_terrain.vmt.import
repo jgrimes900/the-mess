@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://cujiqp7syij4j"
+path="res://.godot/imported/checkardtest_terrain.vmt-80a21c08886d196ebc38739dce15faf4.vmt.res"
+
+[deps]
+
+source_file="res://materials/terrain/starkron/checkardtest_terrain.vmt"
+dest_files=["res://.godot/imported/checkardtest_terrain.vmt-80a21c08886d196ebc38739dce15faf4.vmt.res"]
+
+[params]
+

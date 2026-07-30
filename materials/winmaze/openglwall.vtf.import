@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://dawk43lelrj2f"
+path="res://.godot/imported/openglwall.vtf-3b8c988c56e81a5c0a82416dba1a089b.vtf.res"
+
+[deps]
+
+source_file="res://materials/winmaze/openglwall.vtf"
+dest_files=["res://.godot/imported/openglwall.vtf-3b8c988c56e81a5c0a82416dba1a089b.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

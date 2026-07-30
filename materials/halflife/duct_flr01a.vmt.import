@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://b80s1os50pmnj"
+path="res://.godot/imported/duct_flr01a.vmt-5b28987ca98d128d7f1d7809e3a26095.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/duct_flr01a.vmt"
+dest_files=["res://.godot/imported/duct_flr01a.vmt-5b28987ca98d128d7f1d7809e3a26095.vmt.res"]
+
+[params]
+

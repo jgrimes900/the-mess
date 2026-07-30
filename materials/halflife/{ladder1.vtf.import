@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://toa801i4ifoh"
+path="res://.godot/imported/{ladder1.vtf-88f8424f4a747973ed19396d23c116ca.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/{ladder1.vtf"
+dest_files=["res://.godot/imported/{ladder1.vtf-88f8424f4a747973ed19396d23c116ca.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

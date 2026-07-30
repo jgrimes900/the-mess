@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://c0l2n1ud5tuai"
+path="res://.godot/imported/glass_bright.vmt-48e54a8975ae3a6a396e5417010a7562.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/glass_bright.vmt"
+dest_files=["res://.godot/imported/glass_bright.vmt-48e54a8975ae3a6a396e5417010a7562.vmt.res"]
+
+[params]
+

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://b25lscrpp5rcm"
+path="res://.godot/imported/goomba_face_2.vtf-d576ffe8fb5c40870d358278ebf615d0.vtf.res"
+
+[deps]
+
+source_file="res://materials/mario64/goomba_face_2.vtf"
+dest_files=["res://.godot/imported/goomba_face_2.vtf-d576ffe8fb5c40870d358278ebf615d0.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

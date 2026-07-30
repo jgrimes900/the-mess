@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://b2ocb14un303x"
+path="res://.godot/imported/babtech_bordl9.vmt-6c1c24875923ff065bd23a25c4bf7800.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/babtech_bordl9.vmt"
+dest_files=["res://.godot/imported/babtech_bordl9.vmt-6c1c24875923ff065bd23a25c4bf7800.vmt.res"]
+
+[params]
+

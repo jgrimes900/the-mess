@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://d3orngxmmu8ki"
+path="res://.godot/imported/silo2_w3brd.vmt-495ac1e60ef0171cea144248b41feb61.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/silo2_w3brd.vmt"
+dest_files=["res://.godot/imported/silo2_w3brd.vmt-495ac1e60ef0171cea144248b41feb61.vmt.res"]
+
+[params]
+

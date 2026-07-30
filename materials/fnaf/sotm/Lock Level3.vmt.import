@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://ciikxybhi1qun"
+path="res://.godot/imported/Lock Level3.vmt-f6775985e4110bf06cc810a55d00e420.vmt.res"
+
+[deps]
+
+source_file="res://materials/fnaf/sotm/Lock Level3.vmt"
+dest_files=["res://.godot/imported/Lock Level3.vmt-f6775985e4110bf06cc810a55d00e420.vmt.res"]
+
+[params]
+

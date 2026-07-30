@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://b3wdiuieyj5a7"
+path="res://.godot/imported/rechargeedge1.vtf-f43949a3c0a5f81a13fd7bf8bf85292b.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/rechargeedge1.vtf"
+dest_files=["res://.godot/imported/rechargeedge1.vtf-f43949a3c0a5f81a13fd7bf8bf85292b.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

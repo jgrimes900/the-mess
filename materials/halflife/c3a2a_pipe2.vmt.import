@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://y81rp5e6gis"
+path="res://.godot/imported/c3a2a_pipe2.vmt-e9517767cdc66055239df21294abaa9f.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/c3a2a_pipe2.vmt"
+dest_files=["res://.godot/imported/c3a2a_pipe2.vmt-e9517767cdc66055239df21294abaa9f.vmt.res"]
+
+[params]
+

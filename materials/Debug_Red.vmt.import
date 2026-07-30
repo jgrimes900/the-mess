@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://7cddhh1f66kj"
+path="res://.godot/imported/Debug_Red.vmt-8e27fb9b4923a11e47a5edc5301b2634.vmt.res"
+
+[deps]
+
+source_file="res://materials/Debug_Red.vmt"
+dest_files=["res://.godot/imported/Debug_Red.vmt-8e27fb9b4923a11e47a5edc5301b2634.vmt.res"]
+
+[params]
+

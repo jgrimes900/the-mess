@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://dlggv2hitruat"
+path="res://.godot/imported/{grate1.vtf-d3a7bfb36ddbb38ff6024286a84b1427.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/{grate1.vtf"
+dest_files=["res://.godot/imported/{grate1.vtf-d3a7bfb36ddbb38ff6024286a84b1427.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

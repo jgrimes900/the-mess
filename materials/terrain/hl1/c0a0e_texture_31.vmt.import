@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://cn4vwej73pamq"
+path="res://.godot/imported/c0a0e_texture_31.vmt-fc23d422200ae2d0b5c05b46b0639532.vmt.res"
+
+[deps]
+
+source_file="res://materials/terrain/hl1/c0a0e_texture_31.vmt"
+dest_files=["res://.godot/imported/c0a0e_texture_31.vmt-fc23d422200ae2d0b5c05b46b0639532.vmt.res"]
+
+[params]
+

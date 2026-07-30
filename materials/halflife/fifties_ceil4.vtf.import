@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://c6tnwiekl1cyh"
+path="res://.godot/imported/fifties_ceil4.vtf-2502805d434dc944d554d9f07fe864f6.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/fifties_ceil4.vtf"
+dest_files=["res://.godot/imported/fifties_ceil4.vtf-2502805d434dc944d554d9f07fe864f6.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

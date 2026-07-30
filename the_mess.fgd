@@ -1,14 +1,191 @@
-@PointClass base(Targetname, Origin, Angles) iconsprite("editor/obsolete.vmt") = info_player_start : "Entity's description" [
+@SolidClass base(Targetname, Origin)  = func_button : "Entity's description" [
 	spawnflags(Flags) = [
-		1 : "Is Offset" : 0
-		2 : "Is Main" : 0
+		1 : "Dont Move" : 0
+		32 : "Toggle" : 0
 	]
 
-	offset(vector) : "Offset" : "0.0 0.0 0.0" : ""
+	speed(integer) : "Speed" : 5 : ""
+	lip(integer) : "Lip" : 0 : ""
+	wait(float) : "Wait" : "3.0" : ""
+	target_node(target_destination) : "Target Node" : "" : ""
+	movedir(angles) : "Movedir" : "0.0 0.0 0.0" : ""
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+	output OnPressed(void) : ""
+
+	input Use(void) : ""
+	input Press(void) : ""
+	input Lock(void) : ""
+	input Unock(void) : ""
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+
+@SolidClass base(Targetname, Angles, Origin)  = func_door : "Entity's description" [
+	spawnflags(Flags) = [
+		1 : "Start Open" : 0
+		32 : "Toggle" : 0
+		1024 : "Touch Opens" : 0
+		8192 : "Godot Lip" : 0
+	]
+
+	speed(integer) : "Speed" : 100 : ""
+	lip(integer) : "Lip" : 0 : ""
+	wait(float) : "Wait" : "4.0" : ""
+	movedir(angles) : "Movedir" : "0.0 0.0 0.0" : ""
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+	output OnFullyOpen(void) : ""
+	output OnFullyClose(void) : ""
+	output OnOpen(void) : ""
+	output OnClose(void) : ""
+
+	input Open(void) : ""
+	input Close(void) : ""
+	input Toggle(void) : ""
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+
+@SolidClass base(Targetname, Origin)  = func_door_rotating : "Entity's description" [
+	spawnflags(Flags) = [
+		1 : "Start Open" : 0
+		2 : "Reverse Direction" : 0
+		16 : "One Way" : 0
+		32 : "Toggle" : 0
+		64 : "X Axis" : 0
+		128 : "Y Axis" : 0
+		1024 : "Touch Opens" : 0
+		8192 : "Godot Lip" : 0
+	]
+
+	speed(integer) : "Speed" : 100 : ""
+	distance(integer) : "Distance" : 0 : ""
+	wait(float) : "Wait" : "4.0" : ""
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+	output OnFullyOpen(void) : ""
+	output OnFullyClose(void) : ""
+	output OnOpen(void) : ""
+	output OnClose(void) : ""
+
+	input Open(void) : ""
+	input Close(void) : ""
+	input Toggle(void) : ""
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+
+@SolidClass base(Targetname, Origin)  = func_illusionary : "Entity's description" [
+	spawnflags(Flags) = [
+
+	]
+
 	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
 
 
 
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+
+@SolidClass base(Targetname, Origin)  = func_rot_button : "Entity's description" [
+	spawnflags(Flags) = [
+		1 : "Start Open" : 0
+		2 : "Reverse Direction" : 0
+		32 : "Toggle" : 0
+		64 : "X Axis" : 0
+		128 : "Y Axis" : 0
+	]
+
+	speed(integer) : "Speed" : 100 : ""
+	distance(integer) : "Distance" : 0 : ""
+	wait(float) : "Wait" : "4.0" : ""
+	target_node(target_destination) : "Target Node" : "" : ""
+	movedir(angles) : "Movedir" : "0.0 0.0 0.0" : ""
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+	output OnPressed(void) : ""
+
+	input Use(void) : ""
+	input Press(void) : ""
+	input Lock(void) : ""
+	input Unock(void) : ""
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+
+@SolidClass base(Targetname, Origin)  = func_wall : "Entity's description" [
+	spawnflags(Flags) = [
+
+	]
+
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+
+
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+
+@SolidClass base(Targetname, Origin)  = func_water : "Entity's description" [
+	spawnflags(Flags) = [
+
+	]
+
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+
+
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+
+@PointClass base(Targetname, Origin, Angles) iconsprite("editor/obsolete.vmt") = info_player_start : "Sets the player's spawn location." [
+	spawnflags(Flags) = [
+		1 : "Is Offset" : 0
+		2 : "Is Not Main" : 0
+		4 : "Is Offset From Prev Teleport" : 0
+	]
+
+	offset(vector) : "Offset" : "0.0 0.0 0.0" : ""
+	rot_offset(float) : "Rot Offset" : "0.0" : ""
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+
+
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+
+@SolidClass base(Targetname, Origin)  = trigger_changelevel : "Changes the level to the one specified when the player touches it." [
+	spawnflags(Flags) = [
+		8 : "Silent" : 0
+		16 : "No Sprite" : 0
+	]
+
+	map(string) : "Map" : "" : ""
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+
+
+	input ChangeLevel(void) : ""
 	input Toggle(void) : ""
 	input Enable(void) : ""
 	input Disable(void) : ""

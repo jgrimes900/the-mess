@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://y28fpoaxqel4"
+path="res://.godot/imported/chrome.vmt-d94abc0e27e3f850e0026e94d9f6c9f6.vmt.res"
+
+[deps]
+
+source_file="res://materials/v_hl1_glock/chrome.vmt"
+dest_files=["res://.godot/imported/chrome.vmt-d94abc0e27e3f850e0026e94d9f6c9f6.vmt.res"]
+
+[params]
+

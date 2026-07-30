@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bsrii7yo72ise"
+path="res://.godot/imported/silo2_w3brd.vtf-8cae38bae1dc20da7187362d30e0db70.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/silo2_w3brd.vtf"
+dest_files=["res://.godot/imported/silo2_w3brd.vtf-8cae38bae1dc20da7187362d30e0db70.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://bgswcyd00fjg7"
+path="res://.godot/imported/goomball.vmt-3c618f965499bc218e5b2734de070f4c.vmt.res"
+
+[deps]
+
+source_file="res://materials/mario64/goomball.vmt"
+dest_files=["res://.godot/imported/goomball.vmt-3c618f965499bc218e5b2734de070f4c.vmt.res"]
+
+[params]
+

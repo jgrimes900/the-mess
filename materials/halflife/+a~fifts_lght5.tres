@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7atd5kx3dfba"]
+
+[ext_resource type="Texture2D" uid="uid://cpfwob82vawjv" path="res://materials/halflife/+a~fifts_lght5.tex" id="1_gkt4g"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_gkt4g")
+metadata/surfaceprop = "glass"
+metadata/details = {
+"$basetexture": "halflife/+a~fifts_lght5",
+"$detail": "detail/detail_noise1",
+"$detailscale": 2.5,
+"$surfaceprop": "glass",
+"proxies": {
+"toggletexture": {
+"toggletextureframenumvar": "$frame",
+"toggletexturevar": "$basetexture"
+}
+}
+}

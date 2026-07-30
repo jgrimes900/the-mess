@@ -27,6 +27,7 @@ func MapChange2(_a = null,body: Node3D = get_node("/root/Player"),level: String 
 		callable.call_deferred(level)
 		
 func DoTheThing(level: String):
+	get_node("/root/Player").prev_teleport_offset = global_position - get_node("/root/Player").global_position
 	$"/root/Player/Save".emit_signal("saving")
 	get_node("/root/Player").last_map = get_node("/root/Player").current_map
 	get_node("/root/Player").current_map = level

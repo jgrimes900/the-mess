@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://co3bdo4mu7n2y"]
+
+[ext_resource type="Script" uid="uid://d3quo6xcu7tho" path="res://entities/vmf/func_door.gd" id="1_nfs46"]
+
+[node name="func_door" type="Node3D" unique_id=505359632]
+script = ExtResource("1_nfs46")

@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://6u7cuyva88vs"
+path="res://.godot/imported/lambert1.vmt-1b4c8ff5de52e5aac1d4be4aef0ea25d.vmt.res"
+
+[deps]
+
+source_file="res://materials/starkron/lambert1.vmt"
+dest_files=["res://.godot/imported/lambert1.vmt-1b4c8ff5de52e5aac1d4be4aef0ea25d.vmt.res"]
+
+[params]
+

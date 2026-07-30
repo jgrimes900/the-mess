@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://sy73frnh24dd"
+path="res://.godot/imported/fifties_wall12d.vtf-66267e41dd0954decff24b55b9fa344a.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/fifties_wall12d.vtf"
+dest_files=["res://.godot/imported/fifties_wall12d.vtf-66267e41dd0954decff24b55b9fa344a.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

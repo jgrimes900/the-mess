@@ -47,9 +47,11 @@ func _input(event: InputEvent) -> void:
 
 func _gui_input_respawn():
 	if open:
-		get_node("/root/Node3D/Spawn").Respawn()
-		get_node("/root/Player/Health").reset_health()
-		get_node("/root/Player/Health").iframes = 5
+#		get_node("/root/Node3D/Spawn").Respawn()
+#		get_node("/root/Player/Health").reset_health()
+#		get_node("/root/Player/Health").iframes = 5
+		$"../Save".frame_1 = 0
+		$"../Save"._ready()
 		_gui_input_continue()
 
 var call_return_a = Callable(return_a);

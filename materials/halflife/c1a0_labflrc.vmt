@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	// Original shader: BaseTimesLightmap
+	"$basetexture" "halflife/c1a0_labflrc"
+	"$envmap" "environment maps/envmap001a"
+	"$basealphaenvmapmask" "1"
+	"$envmapcontrast" 2
+	"$envmaptint" "[ .25 .25 .25 ]"
+}

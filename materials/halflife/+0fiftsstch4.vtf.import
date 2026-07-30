@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://fesvescwt80h"
+path="res://.godot/imported/+0fiftsstch4.vtf-79ba07de8768e8d0b2202d383ebdccb6.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/+0fiftsstch4.vtf"
+dest_files=["res://.godot/imported/+0fiftsstch4.vtf-79ba07de8768e8d0b2202d383ebdccb6.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

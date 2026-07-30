@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://bfoxhc37wex1y"
+path="res://.godot/imported/lab3_w1d.vmt-c19093a05df7c53f4ce6ec1190ef00de.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/lab3_w1d.vmt"
+dest_files=["res://.godot/imported/lab3_w1d.vmt-c19093a05df7c53f4ce6ec1190ef00de.vmt.res"]
+
+[params]
+

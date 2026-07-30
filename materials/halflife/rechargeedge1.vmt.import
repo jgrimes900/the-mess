@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://c6alwi5htq5vi"
+path="res://.godot/imported/rechargeedge1.vmt-bc56d1325c8ad95fa051db7fc1953382.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/rechargeedge1.vmt"
+dest_files=["res://.godot/imported/rechargeedge1.vmt-bc56d1325c8ad95fa051db7fc1953382.vmt.res"]
+
+[params]
+

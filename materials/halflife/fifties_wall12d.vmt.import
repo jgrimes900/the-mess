@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://dtcckavhu0rqn"
+path="res://.godot/imported/fifties_wall12d.vmt-a10d20ab3d3657a8f2fa8c19b28c7287.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/fifties_wall12d.vmt"
+dest_files=["res://.godot/imported/fifties_wall12d.vmt-a10d20ab3d3657a8f2fa8c19b28c7287.vmt.res"]
+
+[params]
+

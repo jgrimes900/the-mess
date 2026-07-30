@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bnsuag82re76u"
+path="res://.godot/imported/pattern3.vtf-89ecd80af40665dbe90ea428c8cd701b.vtf.res"
+
+[deps]
+
+source_file="res://materials/winmaze/pattern3.vtf"
+dest_files=["res://.godot/imported/pattern3.vtf-89ecd80af40665dbe90ea428c8cd701b.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

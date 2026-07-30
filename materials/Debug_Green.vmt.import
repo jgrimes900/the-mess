@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://blcns6un01u24"
+path="res://.godot/imported/Debug_Green.vmt-cdf7ff9b489b09c6eb195911dabdfd4e.vmt.res"
+
+[deps]
+
+source_file="res://materials/Debug_Green.vmt"
+dest_files=["res://.godot/imported/Debug_Green.vmt-cdf7ff9b489b09c6eb195911dabdfd4e.vmt.res"]
+
+[params]
+

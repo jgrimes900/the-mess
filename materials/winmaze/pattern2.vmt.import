@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://dkao2hdw5eo8n"
+path="res://.godot/imported/pattern2.vmt-ffdd2cf17bcf6fa26eba7d5fc5a1948f.vmt.res"
+
+[deps]
+
+source_file="res://materials/winmaze/pattern2.vmt"
+dest_files=["res://.godot/imported/pattern2.vmt-ffdd2cf17bcf6fa26eba7d5fc5a1948f.vmt.res"]
+
+[params]
+

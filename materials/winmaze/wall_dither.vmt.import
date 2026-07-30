@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://dtl164ihabxah"
+path="res://.godot/imported/wall_dither.vmt-30b2027fd4c5b727b7b1e8b80e00b897.vmt.res"
+
+[deps]
+
+source_file="res://materials/winmaze/wall_dither.vmt"
+dest_files=["res://.godot/imported/wall_dither.vmt-30b2027fd4c5b727b7b1e8b80e00b897.vmt.res"]
+
+[params]
+

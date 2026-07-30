@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://bnc14rl8bmn8v"
+path="res://.godot/imported/fifties_cmp1b.vmt-d3797398344ea9cb73a0f454f876d990.vmt.res"
+
+[deps]
+
+source_file="res://materials/halflife/fifties_cmp1b.vmt"
+dest_files=["res://.godot/imported/fifties_cmp1b.vmt-d3797398344ea9cb73a0f454f876d990.vmt.res"]
+
+[params]
+

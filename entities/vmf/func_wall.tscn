@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bk75tw7lrdt6w"]
+
+[ext_resource type="Script" uid="uid://y21okmeakp27" path="res://entities/vmf/func_wall.gd" id="1_durc0"]
+
+[node name="func_wall" type="Node3D" unique_id=1153353875]
+script = ExtResource("1_durc0")

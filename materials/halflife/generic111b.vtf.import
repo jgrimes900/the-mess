@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://bq8h4obawshbw"
+path="res://.godot/imported/generic111b.vtf-abac3b85fba5a3d7d3a82263900e034e.vtf.res"
+
+[deps]
+
+source_file="res://materials/halflife/generic111b.vtf"
+dest_files=["res://.godot/imported/generic111b.vtf-abac3b85fba5a3d7d3a82263900e034e.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

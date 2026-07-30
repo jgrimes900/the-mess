@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://bnw35msd2idws"
+path="res://.godot/imported/openglwall.vmt-fb50db19c4c35ccfcdda1cf32cccb08e.vmt.res"
+
+[deps]
+
+source_file="res://materials/winmaze/openglwall.vmt"
+dest_files=["res://.godot/imported/openglwall.vmt-fb50db19c4c35ccfcdda1cf32cccb08e.vmt.res"]
+
+[params]
+
