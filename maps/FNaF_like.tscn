@@ -7,25 +7,25 @@
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="2_e6eqk"]
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="3_hbdp2"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="4_2qh8p"]
-[ext_resource type="Texture2D" uid="uid://dg181ucrawndb" path="res://materials/hl1_c1a0/c1a0_texture_71.png" id="5_dh13w"]
+[ext_resource type="Texture2D" uid="uid://bv2j7xf1xhtw6" path="res://materials/hl1_c1a0/c1a0_texture_71.png" id="5_dh13w"]
 [ext_resource type="AudioStream" uid="uid://bj1jdfbsucegp" path="res://assets/sounds/fnaf1/BallastHumMedium2.wav" id="5_xmy25"]
 [ext_resource type="AudioStream" uid="uid://bse608jo4yv6a" path="res://assets/sounds/fnaf1/Buzz_Fan_Florescent2.wav" id="6_6xc40"]
-[ext_resource type="Texture2D" uid="uid://c4c0puvmcu82c" path="res://materials/hl1_c1a0/c1a0_texture_4.png" id="6_h5ams"]
+[ext_resource type="Texture2D" uid="uid://kogw7ph6a2cf" path="res://materials/hl1_c1a0/c1a0_texture_4.png" id="6_h5ams"]
 [ext_resource type="AudioStream" uid="uid://bcy45kwldvui7" path="res://assets/sounds/fnaf1/Door.wav" id="6_p1kp7"]
 [ext_resource type="AudioStream" uid="uid://cvtivc4mas0k0" path="res://assets/sounds/fnaf1/ColdPresc B.wav" id="7_6xc40"]
 [ext_resource type="AudioStream" uid="uid://n8vsutiurfqc" path="res://assets/sounds/hl1/buttons/button11.wav" id="7_7kj5v"]
 [ext_resource type="PackedScene" uid="uid://c22wldk8v3xb2" path="res://prefabs/door_gridmap.tscn" id="7_t883d"]
 [ext_resource type="Script" uid="uid://b3cbkhmp5jpsn" path="res://maps/scripts/door_controler.gd" id="8_h5ams"]
 [ext_resource type="Texture2D" uid="uid://c4r6mna26f23k" path="res://assets/sprites/fnaf/cam/0001.png" id="9_0t5t8"]
-[ext_resource type="Texture2D" uid="uid://cwb3fwtbl2w5c" path="res://materials/hl1_c1a0/c1a0_texture_6.png" id="9_t883d"]
+[ext_resource type="Texture2D" uid="uid://umg18jaxp3fl" path="res://materials/hl1_c1a0/c1a0_texture_6.png" id="9_t883d"]
 [ext_resource type="Texture2D" uid="uid://dtc1syrbown0l" path="res://assets/sprites/fnaf/cam/0002.png" id="10_exw41"]
 [ext_resource type="Texture2D" uid="uid://doyeufhaokvi5" path="res://assets/sprites/fnaf/cam/0003.png" id="11_vytrw"]
 [ext_resource type="Texture2D" uid="uid://d238qkdp75moj" path="res://assets/sprites/fnaf/cam/0004.png" id="12_21b6a"]
 [ext_resource type="Texture2D" uid="uid://0a6md8fvjka8" path="res://assets/sprites/fnaf/cam/0005.png" id="13_0m5ra"]
-[ext_resource type="Texture2D" uid="uid://djqxmj0mngiu5" path="res://materials/hl1_c1a0/c1a0_texture_21.png" id="13_g52et"]
+[ext_resource type="Texture2D" uid="uid://dng2lonpcg1ml" path="res://materials/hl1_c1a0/c1a0_texture_21.png" id="13_g52et"]
 [ext_resource type="AudioStream" uid="uid://du66dmti6lybh" path="res://assets/sounds/hl1/scientist/heal4.wav" id="13_grm12"]
 [ext_resource type="Texture2D" uid="uid://8yuudj6bffir" path="res://assets/sprites/fnaf/cam/0006.png" id="14_8syl6"]
-[ext_resource type="Texture2D" uid="uid://ddi7eck3cerk" path="res://materials/hl1_c1a0/c1a0_texture_10.png" id="14_p1kp7"]
+[ext_resource type="Texture2D" uid="uid://c6f1b83po3y31" path="res://materials/hl1_c1a0/c1a0_texture_10.png" id="14_p1kp7"]
 [ext_resource type="AudioStream" uid="uid://b00cijlvli5v2" path="res://assets/sounds/hl1/weapons/cbar_miss1.wav" id="14_yiu8l"]
 [ext_resource type="AudioStream" uid="uid://bptt1xsoyu4in" path="res://assets/sounds/hl1/common/bodysplat.wav" id="15_eh2jl"]
 [ext_resource type="Texture2D" uid="uid://b8eryle3tc1ss" path="res://assets/sprites/fnaf/cam/0007.png" id="15_fmx8f"]
@@ -2107,7 +2107,6 @@ environment = SubResource("Environment_x02sa")
 
 [node name="Roof" type="CSGBox3D" parent="." unique_id=1989042516]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.453247, 1.5, -10.512451)
-visible = false
 material_override = SubResource("StandardMaterial3D_6xc40")
 size = Vector3(40.020264, 1, 38.325684)
 

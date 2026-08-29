@@ -26,11 +26,13 @@ func _entity_ready() -> void:
 ## This method is called during the import process
 func _entity_setup(_e: VMFEntity) -> void:
 
-	var trigger = $Area3d
+	var trigger = ent_LoadLevel.new()
+	trigger.name = "Area3d"
 
 	var collision_shape := CollisionShape3D.new();
 	collision_shape.shape = get_entity_shape();
 	
+	add_child(trigger)
 	trigger.add_child(collision_shape);
 
 	trigger.set_owner(owner);
@@ -41,8 +43,14 @@ func _entity_setup(_e: VMFEntity) -> void:
 	trigger.LevelDef = map
 	
 		
-	if has_flag(FLAG_NO_SPRITE):
-		$Area3d/Sprite3D.queue_free()
+	if !has_flag(FLAG_NO_SPRITE):
+		var sprite = Sprite3D.new()
+		sprite.texture = load("res://assets/sprites/dbg_portal.png")
+		sprite.pixel_size = 0.02
+		sprite.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+		trigger.add_child(sprite)
+		sprite.set_owner(owner)
+		sprite.name = "Sprite3d"
 
 	## Do additional setup things here
 

@@ -5,14 +5,12 @@
 [ext_resource type="Shape3D" uid="uid://d1w5p7fpv5t5t" path="res://models/C1A0_collision.res" id="2_5jp1s"]
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="3_s03oy"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="4_7fnmf"]
-[ext_resource type="Texture2D" uid="uid://c4c0puvmcu82c" path="res://materials/hl1_c1a0/c1a0_texture_4.png" id="4_rkeft"]
-[ext_resource type="Texture2D" uid="uid://der5nx8on5fo" path="res://materials/hl1_c1a0/c1a0_texture_31.png" id="5_8w5rr"]
+[ext_resource type="Texture2D" uid="uid://kogw7ph6a2cf" path="res://materials/hl1_c1a0/c1a0_texture_4.png" id="5_4k7vf"]
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="5_jgvh2"]
 [ext_resource type="PackedScene" uid="uid://bj7hpyycap38w" path="res://prefabs/door.tscn" id="6_pe3st"]
-[ext_resource type="Texture2D" uid="uid://do4v5a3swqyt8" path="res://materials/hl1_c1a0/c1a0_texture_32.png" id="6_wd5nl"]
 [ext_resource type="ArrayMesh" uid="uid://b8yrqphxm3xcn" path="res://models/hl1_c1a0_transition_C0A0E_003.res" id="7_7fnmf"]
-[ext_resource type="Texture2D" uid="uid://cwb3fwtbl2w5c" path="res://materials/hl1_c1a0/c1a0_texture_6.png" id="7_c7rwn"]
 [ext_resource type="Script" uid="uid://8vx54lrm46k4" path="res://entities/timer_player.gd" id="7_jgvh2"]
+[ext_resource type="Texture2D" uid="uid://umg18jaxp3fl" path="res://materials/hl1_c1a0/c1a0_texture_6.png" id="7_wgsmo"]
 [ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="8_b5rxj"]
 [ext_resource type="Shape3D" uid="uid://esn36byd2ed" path="res://models/C1A0_Transition_collision.res" id="8_jgvh2"]
 [ext_resource type="PackedScene" uid="uid://df2amvnuqjmfl" path="res://prefabs/c1a0_door_large.tscn" id="9_pe3st"]
@@ -23,26 +21,29 @@
 [ext_resource type="Texture2D" uid="uid://c8benl7ay7ho" path="res://materials/fnaf/sotm/Lock.png" id="13_0gtl4"]
 [ext_resource type="Material" uid="uid://bjdeuhicogjjh" path="res://materials/fnaf/sotm/Lock Level3.tres" id="14_ducml"]
 [ext_resource type="Material" uid="uid://bmsvhvrbe3iw6" path="res://materials/winmaze/Floor.tres" id="14_rkeft"]
+[ext_resource type="Texture2D" uid="uid://btpkeiisve76k" path="res://materials/hl1_c1a0/c1a0_texture_31.png" id="33_n1v4c"]
+[ext_resource type="Texture2D" uid="uid://cga3m71mqpdsi" path="res://materials/hl1_c1a0/c1a0_texture_32.png" id="34_ipbkc"]
+[ext_resource type="LightmapGIData" uid="uid://bvtl8mcsmm0ji" path="res://maps/hl1_c1a0.lmbake" id="149_kmepf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0f65"]
-albedo_texture = ExtResource("4_rkeft")
+albedo_texture = ExtResource("5_4k7vf")
 uv1_scale = Vector3(4, 4, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8w5rr"]
-albedo_texture = ExtResource("4_rkeft")
+albedo_texture = ExtResource("5_4k7vf")
 uv1_scale = Vector3(4, 4, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkx8j"]
-albedo_texture = ExtResource("5_8w5rr")
+albedo_texture = ExtResource("33_n1v4c")
 uv1_scale = Vector3(2, 4, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fyd13"]
-albedo_texture = ExtResource("6_wd5nl")
+albedo_texture = ExtResource("34_ipbkc")
 emission_enabled = true
-emission_texture = ExtResource("6_wd5nl")
+emission_texture = ExtResource("34_ipbkc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mo56y"]
-albedo_texture = ExtResource("7_c7rwn")
+albedo_texture = ExtResource("7_wgsmo")
 uv1_scale = Vector3(2, 1, 1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rkeft"]
@@ -544,6 +545,13 @@ is_offset = true
 offset = Vector3(-36.577, -19.219, -12.559)
 main = false
 from_maps = ["WinMap"]
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1127958921]
+quality = 3
+interior = true
+texel_scale = 2.0
+generate_probes_subdiv = 3
+light_data = ExtResource("149_kmepf")
 
 [connection signal="closed" from="C1A0/World/WinMaze Exit Room/doorlock_out" to="C1A0/World/WinMaze Exit Room/Door4" method="_open"]
 [connection signal="opened" from="C1A0/World/WinMaze Exit Room/doorlock_out" to="C1A0/World/WinMaze Exit Room/Door4" method="_open"]

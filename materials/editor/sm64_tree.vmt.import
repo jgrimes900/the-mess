@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://7nofuc27tr5w"
+path="res://.godot/imported/sm64_tree.vmt-0544fa10d6dd63e64df2083b6e06a54a.vmt.res"
+
+[deps]
+
+source_file="res://materials/editor/sm64_tree.vmt"
+dest_files=["res://.godot/imported/sm64_tree.vmt-0544fa10d6dd63e64df2083b6e06a54a.vmt.res"]
+
+[params]
+

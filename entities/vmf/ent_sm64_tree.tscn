@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://h5ds2a4f0677"]
+
+[ext_resource type="Script" uid="uid://ca50n4ra2cfdi" path="res://entities/vmf/ent_sm64_tree.gd" id="1_23lyl"]
+[ext_resource type="Script" uid="uid://cddmtyqjy7hcs" path="res://entities/SM64_Tree.gd" id="2_hh4iq"]
+
+[node name="EntSm64Tree" type="Node3D" unique_id=149219848]
+script = ExtResource("1_23lyl")
+
+[node name="Tree" type="Area3D" parent="." unique_id=1835041445]
+script = ExtResource("2_hh4iq")
+height = 4.0

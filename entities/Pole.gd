@@ -14,7 +14,7 @@ extends Area3D
 var state = 0
 var player
 var target_velocity = Vector3(0,0,0)
-var previous_speed_cap: float
+var speed_mod_id: int
 var latch_time_timer: float = 0
 
 func _ready() -> void:
@@ -64,17 +64,17 @@ func _physics_process(delta: float) -> void:
 	
 func _deactivate():
 	player.in_control = true
-	player.speed_cap = previous_speed_cap
+	player._sub_mod("speed_cap", speed_mod_id)
+	player.update_current_speed_cap()
 	latch_time_timer = 0
 	state = 0
 	
 func _climb(body):
 	if(player == body):
-		if state == 0:
-			previous_speed_cap = player.speed_cap
-		player.speed_cap = jump_speed
-		player.position.x = position.x
-		player.position.z = position.z
+		speed_mod_id = player._add_mod("speed_cap", "=", jump_speed)
+		player.update_current_speed_cap()
+		player.global_position.x = global_position.x
+		player.global_position.z = global_position.z
 		player.in_control = false
 		if player.is_on_floor():
 			target_velocity.y = climb_speed

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://byotvf4qmavsw"]
+
+[ext_resource type="Script" uid="uid://bww03peiq3tvl" path="res://entities/vmf/func_breakable.gd" id="1_w1y7l"]
+
+[node name="func_breakable" type="Node3D" unique_id=252414936]
+script = ExtResource("1_w1y7l")

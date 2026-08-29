@@ -1,0 +1,7 @@
+"Sprite"
+{
+	"$spriteorientation" "parallel_upright"
+	"$spriteorigin" "[ 0.50 1.00 ]"
+	"$basetexture" "editor/sm64_tree"
+    "$no_fullbright" 1
+}

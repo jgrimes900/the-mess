@@ -73,7 +73,7 @@ lip = 4.0
 close_time = -1.0
 
 [node name="In" type="MeshInstance3D" parent="Top_Bar" unique_id=436591282]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.477, -0.019, 0.74)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.47450805, -0.011284351, 0.7400154)
 mesh = ExtResource("5_4nt1x")
 
 [node name="CollisionShapeIn" type="CollisionShape3D" parent="Top_Bar" unique_id=155042921]

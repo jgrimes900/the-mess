@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cigl2b3q8mljj"]
+
+[ext_resource type="Texture2D" uid="uid://3klxsdx07jwa" path="res://materials/hl1_c1a0/c1a0_texture_55.png" id="1_sclw7"]
+[ext_resource type="Texture2D" uid="uid://bxxync55gfacs" path="res://materials/hl1_c1a0/c1a0_texture_62_glow.png" id="2_pfpmj"]
+
+[resource]
+resource_name = "texture_62.003"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_sclw7")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("2_pfpmj")

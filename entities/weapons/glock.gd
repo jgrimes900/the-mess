@@ -15,7 +15,8 @@ extends Node3D
 @onready var Sounds: AudioStreamPlayer3D = $GunSounds
 
 var player_dead = false
-var in_control: bool = false
+var in_control: bool = true
+var active: bool = false
 
 func _ready() -> void:
 	silencer.visible = has_silencer
@@ -23,17 +24,29 @@ func _ready() -> void:
 
 # TODO: Add sound, ammo, silencer, missing animations, and make the player have to pick it up first
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("fire_left") and !player_dead and in_control:
-		if gun._fire():
-			Sounds.play()
-			glock_anim.stop()
-			arms_anim.stop()
-			glock_anim.play("glock/shoot")
-			arms_anim.play("vm_arm_lib/glock_shoot")
+	if active:
+		if Input.is_action_just_pressed("fire_left") and !player_dead and in_control:
+			if gun._fire():
+				Sounds.play()
+				glock_anim.stop()
+				arms_anim.stop()
+				glock_anim.play("glock/shoot")
+				arms_anim.play("vm_arm_lib/glock_shoot")
 
 func _idle_animation():
 	#aniplay.play("v_9mmhandgun_animation_lib/idle"+str(randi_range(1,3)))
 	pass
+
+func _select(a:bool):
+	if a:
+		active = true
+		$v_hl1_glock.visible = true
+		glock_anim.play("glock/shoot") # replace with draw animation
+		arms_anim.play("vm_arm_lib/glock_shoot")
+	else:
+		active = false
+		$v_hl1_glock.visible = false
+		
 
 func _player_dead() -> void:
 	$v_hl1_glock.visible = false

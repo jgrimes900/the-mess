@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b08u4hhuembjg"]
+
+[ext_resource type="Script" uid="uid://bt1ut5wg1f283" path="res://entities/vmf/prop_physics.gd" id="1_rytce"]
+
+[node name="prop_physics" type="Node3D" unique_id=1647567024]
+script = ExtResource("1_rytce")

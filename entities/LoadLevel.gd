@@ -1,5 +1,7 @@
 extends Area3D
 
+class_name ent_LoadLevel
+
 const SOUND = preload("uid://btlcj7opvssw5")
 
 const KNOWN_MAPS = {

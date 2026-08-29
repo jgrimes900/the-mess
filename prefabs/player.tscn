@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" uid="uid://vwsbmq3jf1tl" path="res://entities/Player.gd" id="1_edtk3"]
 [ext_resource type="Script" uid="uid://cyep5fxuvrqq1" path="res://GUI/Menu.gd" id="2_f2e50"]
-[ext_resource type="Script" uid="uid://cgr6yf5xx8ppq" path="res://entities/weapons/glock.gd" id="2_q2wkl"]
-[ext_resource type="Script" uid="uid://cpuo877xwybdf" path="res://entities/Gun.gd" id="4_22xyk"]
-[ext_resource type="PackedScene" uid="uid://dfmpxhqrar0s5" path="res://prefabs/vm_hl1_glock.tscn" id="6_0anbp"]
+[ext_resource type="PackedScene" uid="uid://bukqx0lffvbyx" path="res://prefabs/guns/glock.tscn" id="2_w4pj3"]
 [ext_resource type="PackedScene" uid="uid://nu7tu0pbhfax" path="res://prefabs/vm_arm.tscn" id="16_pp8wu"]
 [ext_resource type="AudioStream" uid="uid://btlcj7opvssw5" path="res://assets/sounds/tele.ogg" id="16_w4pj3"]
+[ext_resource type="ArrayMesh" uid="uid://cka7e6euosvgf" path="res://models/hl1/vending/can.tres" id="17_e3k5d"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="17_r1s2y"]
-[ext_resource type="AudioStream" uid="uid://drtprupubkrbs" path="res://assets/sounds/hl1/weapons/pl_gun3.wav" id="17_r3tw4"]
+[ext_resource type="Script" uid="uid://dwlnlo5a6rv5h" path="res://entities/components/center_bbox.gd" id="18_2v6jp"]
 [ext_resource type="Script" uid="uid://cris617752oit" path="res://GUI/inv.gd" id="18_22xyk"]
 [ext_resource type="Texture2D" uid="uid://dotvhc43bepmm" path="res://assets/sprites/shar_coin.png" id="18_f2e50"]
 [ext_resource type="TileSet" uid="uid://ddp8fcog0h7ly" path="res://GUI/WorldMapTiles.tres" id="18_gf0v6"]
@@ -115,7 +114,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="MeshTexture" id="MeshTexture_6hvlk"]
+[sub_resource type="Environment" id="Environment_e3k5d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0anbp"]
 shader = ExtResource("33_r1s2y")
@@ -361,25 +360,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 cull_mask = 524287
 current = true
 
-[node name="glock" type="Node3D" parent="Pivot" unique_id=419579820]
+[node name="glock" parent="Pivot" unique_id=1469320455 instance=ExtResource("2_w4pj3")]
 transform = Transform3D(-3.6280452e-09, 0, -0.083, 0, 0.083, 0, 0.083, 0, -3.6280452e-09, 0.2, 0, 0)
-script = ExtResource("2_q2wkl")
-
-[node name="Gun" type="RayCast3D" parent="Pivot/glock" unique_id=1651856622 node_paths=PackedStringArray("parent")]
-transform = Transform3D(-3.590641e-07, -1.6757912e-07, 12.048193, -12.048193, -5.2664325e-07, -3.5906413e-07, 5.2664325e-07, -12.048193, -1.6757912e-07, 0, 0, 0)
-script = ExtResource("4_22xyk")
-parent = NodePath("../../..")
-damage = 5.0
-fire_delay = 0.4
-
-[node name="GunSounds" type="AudioStreamPlayer3D" parent="Pivot/glock" unique_id=967592462]
-stream = ExtResource("17_r3tw4")
-volume_db = -10.0
-max_db = -5.0
-attenuation_filter_cutoff_hz = 20500.0
-
-[node name="v_hl1_glock" parent="Pivot/glock" unique_id=56590863 instance=ExtResource("6_0anbp")]
-transform = Transform3D(-5.6494025e-07, 0, 4.8192773, 0, 4.8192773, 0, -4.8192773, 0, -5.6494025e-07, 0, -3.8554218, 0)
 
 [node name="vm_arm" parent="Pivot" unique_id=389459286 instance=ExtResource("16_pp8wu")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.2, -0.32, 0)
@@ -630,6 +612,42 @@ texture = ExtResource("23_btr86")
 expand_mode = 1
 flip_v = true
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HUD/sims3_item_popup/Control4" unique_id=411547800]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="HUD/sims3_item_popup/Control4/SubViewportContainer" unique_id=1101380701]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(50, 50)
+render_target_update_mode = 0
+
+[node name="Node3D" type="Node3D" parent="HUD/sims3_item_popup/Control4/SubViewportContainer/SubViewport" unique_id=961197640]
+
+[node name="Camera3D" type="Camera3D" parent="HUD/sims3_item_popup/Control4/SubViewportContainer/SubViewport/Node3D" unique_id=1474372995]
+transform = Transform3D(1, 0, 0, 0, 0.9238795, 0.38268346, 0, -0.38268346, 0.9238795, 0, 2.7638636, 6.6725564)
+projection = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="HUD/sims3_item_popup/Control4/SubViewportContainer/SubViewport/Node3D" unique_id=2117024705]
+environment = SubResource("Environment_e3k5d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="HUD/sims3_item_popup/Control4/SubViewportContainer/SubViewport/Node3D" unique_id=1110395038]
+transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HUD/sims3_item_popup/Control4/SubViewportContainer/SubViewport/Node3D" unique_id=523279103]
+transform = Transform3D(1.6656467, 0, 1.6656467, 0, 2.35558, 0, -1.6656467, 0, 1.6656467, 0.02138865, -0.20003587, 0.027398922)
+mesh = ExtResource("17_e3k5d")
+script = ExtResource("18_2v6jp")
+
 [node name="PanelContainer" type="PanelContainer" parent="HUD/sims3_item_popup/Control4" unique_id=638256147]
 layout_mode = 1
 anchors_preset = 15
@@ -638,19 +656,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pp8wu")
-
-[node name="TextureRect" type="TextureRect" parent="HUD/sims3_item_popup/Control4" unique_id=882127147]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.038000003
-anchor_top = 0.038000003
-anchor_right = 0.9620001
-anchor_bottom = 0.9620001
-offset_left = 0.02399993
-offset_top = 0.02399993
-offset_right = -0.024002075
-offset_bottom = -0.024002075
-texture = SubResource("MeshTexture_6hvlk")
 
 [node name="LabelName" type="Label" parent="HUD/sims3_item_popup" unique_id=107687623]
 layout_mode = 1
@@ -665,7 +670,7 @@ theme_override_colors/font_outline_color = Color(0, 0.09803922, 0.34901962, 1)
 theme_override_constants/line_spacing = 3
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Seed of Doom"
+text = "Soda Can"
 
 [node name="LabelQuality" type="Label" parent="HUD/sims3_item_popup" unique_id=1034102552]
 layout_mode = 1
@@ -691,7 +696,7 @@ offset_bottom = 110.0
 theme_override_colors/font_color = Color(0, 0.09803922, 0.34901962, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 9
-text = "Rarity: Special"
+text = "Rarity: Common"
 
 [node name="panel_fuck" type="Panel" parent="." unique_id=1363549028]
 visible = false
@@ -1035,7 +1040,6 @@ shape = SubResource("RectangleShape2D_envas")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 shape = SubResource("BoxShape3D_envas")
 
-[connection signal="control" from="Control" to="Pivot/glock" method="_set_control"]
 [connection signal="pressed" from="Control/VBoxContainer/Return" to="Control" method="_gui_input_return"]
 [connection signal="pressed" from="Control/VBoxContainer/Respawn" to="Control" method="_gui_input_respawn"]
 [connection signal="pressed" from="Control/VBoxContainer/Continue" to="Control" method="_gui_input_continue"]
@@ -1048,7 +1052,5 @@ shape = SubResource("BoxShape3D_envas")
 [connection signal="mouse_entered" from="Inv/TabContainer/Beads/FNaF Like/DEBUG/ColorRect6" to="Inv/TabContainer/Beads/FNaF Like" method="_unlock" binds= [5]]
 [connection signal="mouse_entered" from="Inv/TabContainer/Beads/FNaF Like/DEBUG/ColorRect7" to="Inv/TabContainer/Beads/FNaF Like" method="_unlock" binds= [6]]
 [connection signal="dead" from="Health" to="." method="_kill"]
-[connection signal="dead" from="Health" to="Pivot/glock" method="_player_dead"]
 [connection signal="reset" from="Health" to="." method="_unkill"]
-[connection signal="reset" from="Health" to="Pivot/glock" method="_player_undead"]
 [connection signal="timeout" from="Save/Timer" to="Save" method="_on_timer_timeout"]

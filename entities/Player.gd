@@ -14,6 +14,9 @@ extends CharacterBody3D
 @export var friction_ground: float = 0.9999
 @export var friction_air: float = 0.8
 @export var use_distance: float = 2.0
+@export var crouch_speed_mod: float = 2.0
+
+var current_speed_cap: float
 
 var dead = false
 var view_pitch: float = 0.0
@@ -32,6 +35,7 @@ var current_map: String = "hl1_c1a0"  # Default to starting map
 var last_map: String = ""
 var spawned: bool = false
 var prev_teleport_offset: Vector3 = Vector3.ZERO
+var speed_cap_mods: Array = []
 
 @onready var last_pos: Vector3 = self.global_position
 @onready var pivot: Node3D = $Pivot
@@ -42,6 +46,11 @@ var prev_teleport_offset: Vector3 = Vector3.ZERO
 
 @onready var pkmn_ply: CharacterBody2D = $pokemon_rb_player
 var ply_mode: String = "normal"
+
+@onready var guns: Array[Node3D] = [null, $Pivot/glock]
+var selected_gun: int = 0
+
+@onready var _arms: Node3D = $Pivot/vm_arm
 
 const coin_sounds = {
 	SHaR_Coin = 3,
@@ -75,7 +84,22 @@ func _unkill():
 
 func _ready() -> void:
 	add_collision_exception_with($rigidbody_collider)
+	current_speed_cap = speed_cap
 
+func select_gun(index, dir = null) -> void:
+	if dir and len(guns)>0:
+		if selected_gun < 0: selected_gun = 0
+		if guns[selected_gun] != null:
+			guns[selected_gun]._select(false)
+		selected_gun = (index*dir + selected_gun)%len(guns)
+		if selected_gun < 0:
+			selected_gun = len(guns)+selected_gun
+		if guns[selected_gun] == null:
+			(_arms.get_node("AnimationPlayer") as AnimationPlayer).play("vm_arm_lib/fuckyou")
+		else:
+			guns[selected_gun]._select(true)
+		print(selected_gun)
+		
 
 func _physics_process(delta: float) -> void:
 	match ply_mode:
@@ -132,8 +156,8 @@ func normal_mode_physics_process(delta: float) -> void:
 				collision_shape.position.y += (collision_size.y * collision_mult_crouched.y)
 				pivot.position.y += (shape.size.y/2)
 				local_pos = local_pos - (up_direction * (shape.size.y/2))
-				speed_cap = speed_cap/2
 				crouched = true
+				update_current_speed_cap()
 			elif not Input.is_action_pressed("crouch") and crouched:
 				var shape: BoxShape3D = collision_shape.shape
 				shape.size = collision_size
@@ -141,8 +165,8 @@ func normal_mode_physics_process(delta: float) -> void:
 				position = position + (up_direction * (collision_size.y * collision_mult_crouched.y))
 				pivot.position.y -= (collision_size.y * collision_mult_crouched.y)/2
 				local_pos = local_pos + ( up_direction *( (collision_size.y * collision_mult_crouched.y)/2))
-				speed_cap = speed_cap*2
 				crouched = false
+				update_current_speed_cap()
 
 		if abs(local_pos.y - last_y) <= 0.001:
 			target_velocity.y = 0
@@ -157,8 +181,8 @@ func normal_mode_physics_process(delta: float) -> void:
 		
 		target_velocity.x += direction.x
 		target_velocity.z += direction.z
-		if (target_velocity*Vector3(1,0,1)).length() > speed_cap:
-			target_velocity = ((target_velocity*Vector3(1,0,1)).normalized()*speed_cap)+(target_velocity*Vector3(0,1,0))
+		if (target_velocity*Vector3(1,0,1)).length() > current_speed_cap:
+			target_velocity = ((target_velocity*Vector3(1,0,1)).normalized()*current_speed_cap)+(target_velocity*Vector3(0,1,0))
 		var friction
 		if is_on_floor():
 			friction = friction_ground
@@ -186,7 +210,50 @@ func normal_mode_physics_process(delta: float) -> void:
 					
 		last_pos = global_position
 		$rigidbody_collider.global_position = last_pos
-		
+	
+func update_current_speed_cap():
+	current_speed_cap = speed_cap
+	if crouched:
+		current_speed_cap /= crouch_speed_mod
+	for mod in speed_cap_mods:
+		if mod == null: continue
+		match mod[0]:
+			"+":
+				current_speed_cap += mod[1]
+			"-":
+				current_speed_cap -= mod[1]
+			"/":
+				current_speed_cap /= mod[1]
+			"*":
+				current_speed_cap *= mod[1]
+			"^":
+				current_speed_cap ^= mod[1]
+			"=":
+				current_speed_cap = mod[1]
+			"max":
+				current_speed_cap = maxf(current_speed_cap, mod[1])
+			"min":
+				current_speed_cap = minf(current_speed_cap, mod[1])
+
+func _add_mod(which, op, val) -> int:
+	match which:
+		"speed_cap":
+			return null_or_append(speed_cap_mods, [op, val])
+	return -1
+
+func null_or_append(array, val) -> int:
+	var id = array.find(null)
+	if id == -1:
+		array.append(val)
+		return len(array)-1
+	array[id] = val
+	return id
+
+func _sub_mod(which, id):
+	match which:
+		"speed_cap":
+			speed_cap_mods[id] = null
+
 func do_gravity(delta: float, velocity_in: Vector3):
 	velocity_in.y -= gravity * delta
 	if velocity_in.y > fall_cap:
@@ -217,6 +284,11 @@ func _input(event: InputEvent) -> void:
 			elif new_pitch <= -1.5:
 				pivot.rotation = Vector3(0, pivot.rotation.y, 1.5)
 				view_pitch_set = -1
+	else:
+		if Input.is_action_pressed("weapon_select_back"):
+			select_gun(1, -1)
+		elif Input.is_action_pressed("weapon_select_next"):
+			select_gun(1, 1)
 		
 func recive_currency(_index, type: String):
 	if coin_sounds[type]:

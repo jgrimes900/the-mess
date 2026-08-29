@@ -24,6 +24,10 @@
 [ext_resource type="ArrayMesh" uid="uid://de3pt6j305c2t" path="res://models/irl/wallart_001.res" id="21_2y1ab"]
 [ext_resource type="PackedScene" uid="uid://x221shcp4uic" path="res://models/irl/app_small_001.glb" id="23_atcwo"]
 [ext_resource type="PackedScene" uid="uid://dg2370ht27uli" path="res://models/irl/keyboard.glb" id="24_a1t16"]
+[ext_resource type="Texture2D" uid="uid://3cajur5s7hxe" path="res://materials/bad_sign.png" id="25_egron"]
+[ext_resource type="Script" uid="uid://ckyl0dpw7pqu3" path="res://entities/remover.gd" id="26_pfqyr"]
+[ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="27_yjj08"]
+[ext_resource type="AudioStream" uid="uid://b2j68q721acvw" path="res://assets/sounds/hl1/weapons/g_bounce3.wav" id="28_yjj08"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba6ci"]
 size = Vector3(2, 2, 2)
@@ -73,6 +77,16 @@ size = Vector3(1, 1, 2)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a1t16"]
 data = PackedVector3Array(-1.6749476e-08, -1.6926352, 1, -3.6264132e-07, -1.9603223, 1, -0.04577723, -1.9522506, 1, 0.15118434, -1.9869803, -1, -3.6264132e-07, -1.9603223, -1, 0.15118434, -1.9869803, 1, -0.04577723, -1.9522506, -1, -3.6264132e-07, -1.9603223, -1, 0.8457773, 1.9522506, -1, 0.8457773, 1.9522506, -1, -1.6749476e-08, -1.6926352, -1, -0.04577723, -1.9522506, -1, 0.8457773, 1.9522506, -1, -3.6264132e-07, -1.9603223, -1, 0.15118434, -1.9869803, -1, 0.15118434, -1.9869803, -1, 0.15118434, -1.9869803, 1, 0.8457773, 1.9522506, -1, 0.6488157, 1.9869803, -1, -1.6749476e-08, -1.6926352, 1, -1.6749476e-08, -1.6926352, -1, 0.15118434, -1.9869803, 1, -3.6264132e-07, -1.9603223, -1, -3.6264132e-07, -1.9603223, 1, 0.6488157, 1.9869803, 1, -3.6264132e-07, -1.9603223, 1, -1.6749476e-08, -1.6926352, 1, -3.6264132e-07, -1.9603223, 1, 0.6488157, 1.9869803, 1, 0.15118434, -1.9869803, 1, -1.6749476e-08, -1.6926352, -1, 0.8457773, 1.9522506, -1, 0.6488157, 1.9869803, -1, 0.6488157, 1.9869803, -1, 0.8457773, 1.9522506, -1, 0.6488157, 1.9869803, 1, 0.6488157, 1.9869803, -1, 0.6488157, 1.9869803, 1, -1.6749476e-08, -1.6926352, 1, 0.15118434, -1.9869803, 1, 0.8457773, 1.9522506, 1, 0.8457773, 1.9522506, -1, 0.15118434, -1.9869803, 1, 0.6488157, 1.9869803, 1, 0.8457773, 1.9522506, 1, 0.8457773, 1.9522506, -1, 0.8457773, 1.9522506, 1, 0.6488157, 1.9869803, 1, -0.15118435, -1.9869802, -1, -3.6264132e-07, -1.9603223, -1, -0.04577723, -1.9522506, -1, -0.15118435, -1.9869802, -1, -0.15118435, -1.9869802, 1, -3.6264132e-07, -1.9603223, -1, -0.64881563, 1.9869802, -1, -0.15118435, -1.9869802, -1, -0.04577723, -1.9522506, -1, -0.64881563, 1.9869802, -1, -0.04577723, -1.9522506, -1, -1.6749476e-08, -1.6926352, -1, -0.64881563, 1.9869802, -1, -1.6749476e-08, -1.6926352, -1, -1.6749476e-08, -1.6926352, 1, -0.15118435, -1.9869802, 1, -3.6264132e-07, -1.9603223, 1, -3.6264132e-07, -1.9603223, -1, -0.15118435, -1.9869802, 1, -0.04577723, -1.9522506, 1, -3.6264132e-07, -1.9603223, 1, -0.84577715, 1.9522505, 1, -0.15118435, -1.9869802, 1, -0.15118435, -1.9869802, -1, -0.84577715, 1.9522505, 1, -0.04577723, -1.9522506, 1, -0.15118435, -1.9869802, 1, -0.84577715, 1.9522505, 1, -1.6749476e-08, -1.6926352, 1, -0.04577723, -1.9522506, 1, -0.84577715, 1.9522505, -1, -0.15118435, -1.9869802, -1, -0.64881563, 1.9869802, -1, -0.84577715, 1.9522505, -1, -0.84577715, 1.9522505, 1, -0.15118435, -1.9869802, -1, -0.84577715, 1.9522505, -1, -0.64881563, 1.9869802, -1, -0.84577715, 1.9522505, 1, -0.64881563, 1.9869802, -1, -1.6749476e-08, -1.6926352, 1, -0.64881563, 1.9869802, 1, -0.84577715, 1.9522505, 1, -0.64881563, 1.9869802, 1, -1.6749476e-08, -1.6926352, 1, -0.64881563, 1.9869802, -1, -0.64881563, 1.9869802, 1, -0.84577715, 1.9522505, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_hv0v0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfqyr"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("25_egron")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ic36"]
 
 [node name="Node3D" type="Node3D" unique_id=1193290923]
 script = ExtResource("1_lumrj")
@@ -443,11 +457,37 @@ billboard = 1
 alpha_scissor_threshold = 0.484
 texture = ExtResource("6_fl54b")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1535328894]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8, 0, 3)
+mesh = SubResource("QuadMesh_hv0v0")
+surface_material_override/0 = SubResource("StandardMaterial3D_pfqyr")
+
+[node name="breakable test" type="StaticBody3D" parent="." unique_id=776256512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -1, 5)
+script = ExtResource("26_pfqyr")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="breakable test" unique_id=1449717300]
+
+[node name="Health" type="Node" parent="breakable test" unique_id=137116141]
+script = ExtResource("27_yjj08")
+health = 25.0
+max_health = 25.0
+metadata/_custom_type_script = "uid://b3koe758ngxfw"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakable test" unique_id=1268211003]
+shape = SubResource("BoxShape3D_8ic36")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="breakable test" unique_id=1054966121]
+stream = ExtResource("28_yjj08")
+volume_db = 30.0
+
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
 [connection signal="body_shape_entered" from="FNaF Teleport Trigger" to="FNaF Teleport Trigger" method="MapChange" unbinds=4]
 [connection signal="body_shape_entered" from="WinMap Teleport Trigger" to="WinMap Teleport Trigger" method="MapChange" unbinds=2 binds= ["WinMap"]]
 [connection signal="body_shape_entered" from="Shop Teleport Trigger" to="Shop Teleport Trigger" method="MapChange" unbinds=2]
 [connection signal="body_shape_entered" from="WinMap Teleport Trigger2" to="WinMap Teleport Trigger2" method="MapChange" unbinds=2]
+[connection signal="damaged" from="breakable test/Health" to="breakable test/AudioStreamPlayer3D" method="play" unbinds=1]
+[connection signal="dead" from="breakable test/Health" to="breakable test" method="_remove"]
 
 [editable path="test_doorlock_out/SotM Lock"]
 [editable path="test_doorlock_in/SotM Lock"]

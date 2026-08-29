@@ -1,0 +1,22 @@
+[remap]
+
+importer="MDL"
+type="PackedScene"
+uid="uid://g28fifds80bb"
+path="res://.godot/imported/toolbox.mdl-0ef9c4a2510443d039ed055bf2a4f8fd.scn"
+
+[deps]
+
+source_file="res://models/models/opfor/props/toolbox.mdl"
+dest_files=["res://.godot/imported/toolbox.mdl-0ef9c4a2510443d039ed055bf2a4f8fd.scn"]
+
+[params]
+
+use_global_scale=true
+scale=0.02
+additional_rotation=Vector3(0, -90, 0)
+generate_occluder=false
+generate_lods=true
+primitive_occluder=false
+primitive_occluder_scale=Vector3(1, 1, 1)
+gi_mode=1

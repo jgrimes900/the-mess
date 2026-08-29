@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://4fv1lxv2ljfe"
+path="res://.godot/imported/toolbox.vtf-179ca7a59f4cf2cc59e9aa80d5ee39fa.vtf.res"
+
+[deps]
+
+source_file="res://materials/models/opfor/props/toolbox/toolbox.vtf"
+dest_files=["res://.godot/imported/toolbox.vtf-179ca7a59f4cf2cc59e9aa80d5ee39fa.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

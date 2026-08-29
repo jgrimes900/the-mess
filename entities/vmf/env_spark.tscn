@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cmhadbb5081ln"]
+
+[ext_resource type="Script" uid="uid://bifcytg87nybu" path="res://entities/vmf/env_spark.gd" id="1_5y4ql"]
+[ext_resource type="Script" uid="uid://cu636cow85yk8" path="res://entities/sparker.gd" id="2_507qo"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_no0lw"]
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+
+[sub_resource type="Curve" id="Curve_8ic36"]
+_data = [Vector2(0.0035460964, 0.04160583), 0.0, 1.2675369, 0, 0, Vector2(0.53900707, 0.32627732), 0.0, 0.0, 0, 0, Vector2(1, 0.0036495924), -1.6900499, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dunv"]
+cull_mode = 2
+emission_enabled = true
+emission = Color(0.87282413, 0.72907144, 0.1834431, 1)
+emission_energy_multiplier = 5.0
+disable_receive_shadows = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_mn34h"]
+material = SubResource("StandardMaterial3D_4dunv")
+add_uv2 = true
+size = 0.1
+section_length = 0.02
+curve = SubResource("Curve_8ic36")
+
+[node name="env_spark" type="Node3D" unique_id=1665965426]
+script = ExtResource("1_5y4ql")
+
+[node name="sparker" type="GPUParticles3D" parent="." unique_id=785872820]
+emitting = false
+lifetime = 0.25
+one_shot = true
+explosiveness = 0.5
+trail_enabled = true
+trail_lifetime = 0.13
+process_material = SubResource("ParticleProcessMaterial_no0lw")
+draw_pass_1 = SubResource("RibbonTrailMesh_mn34h")
+script = ExtResource("2_507qo")
+
+[node name="Timer" type="Timer" parent="." unique_id=1135413236]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="sparker" method="_spark"]

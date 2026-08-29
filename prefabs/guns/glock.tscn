@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bukqx0lffvbyx"]
+
+[ext_resource type="Script" uid="uid://cgr6yf5xx8ppq" path="res://entities/weapons/glock.gd" id="1_jqgwu"]
+[ext_resource type="Script" uid="uid://cpuo877xwybdf" path="res://entities/Gun.gd" id="2_puios"]
+[ext_resource type="AudioStream" uid="uid://drtprupubkrbs" path="res://assets/sounds/hl1/weapons/pl_gun3.wav" id="3_2tlqd"]
+[ext_resource type="PackedScene" uid="uid://dfmpxhqrar0s5" path="res://prefabs/vm_hl1_glock.tscn" id="4_kjfk7"]
+
+[node name="glock" type="Node3D" unique_id=1469320455]
+transform = Transform3D(-3.6280452e-09, 0, -0.083, 0, 0.083, 0, 0.083, 0, -3.6280452e-09, 0, 0, 0)
+script = ExtResource("1_jqgwu")
+
+[node name="Gun" type="RayCast3D" parent="." unique_id=476851195]
+transform = Transform3D(-3.590641e-07, -1.6757912e-07, 12.048193, -12.048193, -5.2664325e-07, -3.5906413e-07, 5.2664325e-07, -12.048193, -1.6757912e-07, 0, 0, 0)
+script = ExtResource("2_puios")
+damage = 5.0
+fire_delay = 0.4
+
+[node name="GunSounds" type="AudioStreamPlayer3D" parent="." unique_id=1521583157]
+stream = ExtResource("3_2tlqd")
+volume_db = -10.0
+max_db = -5.0
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="v_hl1_glock" parent="." unique_id=723113414 instance=ExtResource("4_kjfk7")]
+transform = Transform3D(-5.6494025e-07, 0, 4.8192773, 0, 4.8192773, 0, -4.8192773, 0, -5.6494025e-07, 0, -3.8554218, 0)
+visible = false

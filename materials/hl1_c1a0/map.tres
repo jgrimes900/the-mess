@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cvayfhm73ph0h"]
+
+[ext_resource type="Texture2D" uid="uid://c23krjji1q55y" path="res://materials/hl1_c1a0/c1a0_texture_38.png" id="1_d0pn5"]
+[ext_resource type="Texture2D" uid="uid://b3jh7713ht7td" path="res://materials/hl1_c1a0/c1a0_texture_38_glow.png" id="2_5pcp3"]
+
+[resource]
+resource_name = "texture_38.007"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_d0pn5")
+emission_enabled = true
+emission_texture = ExtResource("2_5pcp3")

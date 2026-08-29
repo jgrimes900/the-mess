@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dgj6d3fn76rx7"]
+
+[ext_resource type="Texture2D" uid="uid://umg18jaxp3fl" path="res://materials/hl1_c1a0/c1a0_texture_6.png" id="1_2javi"]
+
+[resource]
+resource_name = "texture_6.007"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_2javi")

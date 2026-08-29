@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://bbfu4alhcj8yf"
+path="res://.godot/imported/toolbox.vmt-bb8c5a5ff1eda370b625c9fa5104c7b5.vmt.res"
+
+[deps]
+
+source_file="res://materials/models/opfor/props/toolbox/toolbox.vmt"
+dest_files=["res://.godot/imported/toolbox.vmt-bb8c5a5ff1eda370b625c9fa5104c7b5.vmt.res"]
+
+[params]
+

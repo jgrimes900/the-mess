@@ -83,7 +83,7 @@ func _process(delta: float) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.get_node("Control")._2d_ify()
-	player.get_node("Pivot/glock/SVC").visible = false
+#	player.get_node("Pivot/glock/SVC").visible = false
 	player.get_node("HUD").visible = false
 	player.get_node("Pivot/glock")._set_control(false)
 	emit_signal("DoorLeft")

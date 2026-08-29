@@ -22,7 +22,7 @@ func spawn():
 	var player = get_node("/root/Player") as CharacterBody3D;
 	if is_offset:
 		if is_offset_from_prev_teleport:
-			player.global_position = global_position + (player.prev_teleport_offset as Vector3).rotated(Vector3.UP, -deg_to_rad(rot_offset))
+			player.global_position = global_position - (player.prev_teleport_offset as Vector3).rotated(Vector3.UP, deg_to_rad(rot_offset))
 		player.global_position += offset;
 		player.rotate_object_local(Vector3.UP, deg_to_rad(rot_offset))
 	else:

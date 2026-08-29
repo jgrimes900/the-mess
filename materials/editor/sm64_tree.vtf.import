@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://3l4wbmaqshbc"
+path="res://.godot/imported/sm64_tree.vtf-13027fded125198895d01bac6c92c231.vtf.res"
+
+[deps]
+
+source_file="res://materials/editor/sm64_tree.vtf"
+dest_files=["res://.godot/imported/sm64_tree.vtf-13027fded125198895d01bac6c92c231.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

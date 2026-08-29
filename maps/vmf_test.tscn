@@ -12,18 +12,19 @@
 [ext_resource type="PackedScene" uid="uid://co3bdo4mu7n2y" path="res://entities/vmf/func_door.tscn" id="8_g7ych"]
 [ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="9_1yjix"]
 [ext_resource type="Material" uid="uid://cdwj47hec8c0d" path="res://materials/dev/dev_measuregeneric01b.vmt" id="10_cyo74"]
+[ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="10_s0xxa"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="11_s0xxa"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cyo74"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s0xxa"]
 points = PackedVector3Array(-1.6000004, -1.8000001, -0.4000001, -1.6000004, -1.8000001, 0.39999962, -1.6000004, 1.8000001, -0.4000001, 1.5996864, -1.8000001, -0.4000001, 1.5996864, -1.8000001, 0.39999962, -1.6000004, 1.8000001, 0.39999962, 1.5996864, 1.8000001, -0.4000001, 1.5996864, 1.8000001, 0.39999962)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s0xxa"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gei87"]
 points = PackedVector3Array(0.79999924, 1.8000001, 1.5996873, -0.79999924, 1.8000001, 1.5996873, 0.79999924, -1.8000001, 1.5996873, 0.79999924, 1.8000001, -1.5999994, -0.79999924, 1.8000001, -1.5999994, -0.79999924, -1.8000001, 1.5996873, 0.79999924, -1.8000001, -1.5999994, -0.79999924, -1.8000001, -1.5999994)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gei87"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1rvsu"]
 points = PackedVector3Array(0.099999905, 1.2, 0.8, -0.099999905, 1.2, 0.8, 0.099999905, -1.2, 0.8, 0.099999905, 1.2, -0.8, -0.099999905, 1.2, -0.8, -0.099999905, -1.2, 0.8, 0.099999905, -1.2, -0.8, -0.099999905, -1.2, -0.8)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1rvsu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_uw1gl"]
 _surfaces = [{
 "aabb": AABB(-0.099999905, -1.2, -0.8, 0.19999981, 2.4, 1.6),
 "attribute_data": PackedByteArray("/////wAAAMEAAAAA/////wAA+MAAAAAA/////wAA+MAAAABA/////wAAAMEAAABA/////wAAAMEAAABA/////wAA+MAAAABA/////wAA+MAAAAAA/////wAAAMEAAAAA/////wAAAAAAAEDA/////wAAAMAAAEDA/////wAAAMAAAAAA/////wAAAAAAAAAA/////wAAAAAAAAAA/////wAAAMAAAAAA/////wAAAMAAAEDA/////wAAAAAAAEDA/////wAA+MAAAEDA/////wAAAMEAAEDA/////wAAAMEAAAAA/////wAA+MAAAAAA/////wAA+MAAAAAA/////wAAAMEAAAAA/////wAAAMEAAEDA/////wAA+MAAAAAA/////wAAAMEAAEDA/////wAA+MAAAEDA"),
@@ -47,26 +48,26 @@ script = ExtResource("1_qsknn")
 vmf = "res://mapsrc/map_test.vmf"
 metadata/_custom_type_script = "uid://cqniwoblbqpw8"
 
-[node name="Geometry" type="MeshInstance3D" parent="VMFNode" unique_id=1069316397]
+[node name="Geometry" type="MeshInstance3D" parent="VMFNode" unique_id=1564441275]
 mesh = ExtResource("2_8lmxk")
 
-[node name="surface_prop_default" type="StaticBody3D" parent="VMFNode/Geometry" unique_id=1079676393]
+[node name="surface_prop_default" type="StaticBody3D" parent="VMFNode/Geometry" unique_id=965004498]
 metadata/surface_prop = "default"
 
-[node name="collision" type="CollisionShape3D" parent="VMFNode/Geometry/surface_prop_default" unique_id=340722980]
+[node name="collision" type="CollisionShape3D" parent="VMFNode/Geometry/surface_prop_default" unique_id=380132783]
 shape = ExtResource("4_r8cym")
 
-[node name="surface_prop_metal" type="StaticBody3D" parent="VMFNode/Geometry" unique_id=388916049]
+[node name="surface_prop_metal" type="StaticBody3D" parent="VMFNode/Geometry" unique_id=1364315940]
 metadata/surface_prop = "metal"
 
-[node name="collision" type="CollisionShape3D" parent="VMFNode/Geometry/surface_prop_metal" unique_id=626042402]
+[node name="collision" type="CollisionShape3D" parent="VMFNode/Geometry/surface_prop_metal" unique_id=1691178022]
 shape = ExtResource("4_1yjix")
 
-[node name="Entities" type="Node3D" parent="VMFNode" unique_id=820670374]
+[node name="Entities" type="Node3D" parent="VMFNode" unique_id=910611216]
 
-[node name="lights" type="Node3D" parent="VMFNode/Entities" unique_id=1053774514]
+[node name="lights" type="Node3D" parent="VMFNode/Entities" unique_id=225773126]
 
-[node name="light_5" parent="VMFNode/Entities/lights" unique_id=702484772 instance=ExtResource("5_06dtp")]
+[node name="light_5" parent="VMFNode/Entities/lights" unique_id=1169635838 instance=ExtResource("5_06dtp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 3.2, 0.8)
 default_light_energy = 0.78431374
 entity = {
@@ -100,7 +101,7 @@ light_bake_mode = 1
 omni_range = 5.6011205
 omni_attenuation = 1.44
 
-[node name="light_350" parent="VMFNode/Entities/lights" unique_id=1124708270 instance=ExtResource("5_06dtp")]
+[node name="light_350" parent="VMFNode/Entities/lights" unique_id=579077825 instance=ExtResource("5_06dtp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 3.2, 0.8)
 default_light_energy = 0.78431374
 entity = {
@@ -134,7 +135,7 @@ light_bake_mode = 1
 omni_range = 5.6011205
 omni_attenuation = 1.44
 
-[node name="light_355" parent="VMFNode/Entities/lights" unique_id=1870346289 instance=ExtResource("5_06dtp")]
+[node name="light_355" parent="VMFNode/Entities/lights" unique_id=1601608845 instance=ExtResource("5_06dtp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3.2, 0.8)
 default_light_energy = 0.78431374
 entity = {
@@ -168,7 +169,7 @@ light_bake_mode = 1
 omni_range = 5.6011205
 omni_attenuation = 1.44
 
-[node name="light_387" parent="VMFNode/Entities/lights" unique_id=152850298 instance=ExtResource("5_06dtp")]
+[node name="light_387" parent="VMFNode/Entities/lights" unique_id=707539239 instance=ExtResource("5_06dtp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -0.2, 0.8)
 default_light_energy = 0.78431374
 entity = {
@@ -202,7 +203,7 @@ light_bake_mode = 1
 omni_range = 5.6011205
 omni_attenuation = 1.44
 
-[node name="light_392" parent="VMFNode/Entities/lights" unique_id=388519678 instance=ExtResource("5_06dtp")]
+[node name="light_392" parent="VMFNode/Entities/lights" unique_id=152155109 instance=ExtResource("5_06dtp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -0.2, -4.4)
 default_light_energy = 0.78431374
 entity = {
@@ -236,7 +237,7 @@ light_bake_mode = 1
 omni_range = 5.6011205
 omni_attenuation = 1.44
 
-[node name="light_418" parent="VMFNode/Entities/lights" unique_id=1343101287 instance=ExtResource("5_06dtp")]
+[node name="light_418" parent="VMFNode/Entities/lights" unique_id=1273122252 instance=ExtResource("5_06dtp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -0.2, 6)
 default_light_energy = 0.78431374
 entity = {
@@ -270,7 +271,7 @@ light_bake_mode = 1
 omni_range = 5.6011205
 omni_attenuation = 1.44
 
-[node name="infos" type="Node3D" parent="VMFNode/Entities" unique_id=1044527577]
+[node name="infos" type="Node3D" parent="VMFNode/Entities" unique_id=2083686603]
 
 [node name="info_player_start_35" parent="VMFNode/Entities/infos" unique_id=1435300596 instance=ExtResource("5_qsknn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.8, 0.8)
@@ -295,8 +296,8 @@ entity = {
 [node name="Spawn" parent="VMFNode/Entities/infos/info_player_start_35" index="0" unique_id=37124099]
 from_maps = ["uid://cthyw1ikp54a8"]
 
-[node name="info_player_start_577" parent="VMFNode/Entities/infos" unique_id=131521926 instance=ExtResource("5_qsknn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4, -3.4, 11.2)
+[node name="info_player_start_577" parent="VMFNode/Entities/infos" unique_id=1895600618 instance=ExtResource("5_qsknn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4, -1.6, 11.2)
 entity = {
 "StartDisabled": 0,
 "angles": Vector3(0, 0, 0),
@@ -324,7 +325,7 @@ rot_offset = -90.0
 main = false
 from_maps = ["uid://cthyw1ikp54a8"]
 
-[node name="triggers" type="Node3D" parent="VMFNode/Entities" unique_id=2011946090]
+[node name="triggers" type="Node3D" parent="VMFNode/Entities" unique_id=27684307]
 
 [node name="trigger_changelevel_447" parent="VMFNode/Entities/triggers" unique_id=2032872691 instance=ExtResource("6_c1o3q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -1.6, -7.6)
@@ -521,14 +522,19 @@ entity = {
 &"vmf": "res://mapsrc/map_test.vmf"
 }
 
-[node name="Area3d" type="Area3D" parent="VMFNode/Entities/triggers/trigger_changelevel_447" unique_id=469675157]
+[node name="Area3d" type="Area3D" parent="VMFNode/Entities/triggers/trigger_changelevel_447" unique_id=306968841]
 script = ExtResource("7_r8cym")
 LevelDef = "uid://cqqyh372rtitd"
 
-[node name="shape" type="CollisionShape3D" parent="VMFNode/Entities/triggers/trigger_changelevel_447/Area3d" unique_id=1162632263]
-shape = SubResource("ConvexPolygonShape3D_cyo74")
+[node name="shape" type="CollisionShape3D" parent="VMFNode/Entities/triggers/trigger_changelevel_447/Area3d" unique_id=1626162129]
+shape = SubResource("ConvexPolygonShape3D_s0xxa")
 
-[node name="trigger_changelevel_574" parent="VMFNode/Entities/triggers" unique_id=545632042 instance=ExtResource("6_c1o3q")]
+[node name="Sprite3d" type="Sprite3D" parent="VMFNode/Entities/triggers/trigger_changelevel_447/Area3d" unique_id=453624071]
+pixel_size = 0.02
+billboard = 1
+texture = ExtResource("10_s0xxa")
+
+[node name="trigger_changelevel_574" parent="VMFNode/Entities/triggers" unique_id=1516766385 instance=ExtResource("6_c1o3q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6, -1.6, 11.2)
 entity = {
 "StartDisabled": 0,
@@ -724,14 +730,14 @@ entity = {
 }
 flags = 24
 
-[node name="Area3d" type="Area3D" parent="VMFNode/Entities/triggers/trigger_changelevel_574" unique_id=1994479159]
+[node name="Area3d" type="Area3D" parent="VMFNode/Entities/triggers/trigger_changelevel_574" unique_id=673606944]
 script = ExtResource("7_r8cym")
 LevelDef = "uid://cthyw1ikp54a8"
 
-[node name="shape" type="CollisionShape3D" parent="VMFNode/Entities/triggers/trigger_changelevel_574/Area3d" unique_id=639611832]
-shape = SubResource("ConvexPolygonShape3D_s0xxa")
+[node name="shape" type="CollisionShape3D" parent="VMFNode/Entities/triggers/trigger_changelevel_574/Area3d" unique_id=747729812]
+shape = SubResource("ConvexPolygonShape3D_gei87")
 
-[node name="funcs" type="Node3D" parent="VMFNode/Entities" unique_id=141577929]
+[node name="funcs" type="Node3D" parent="VMFNode/Entities" unique_id=1674778015]
 
 [node name="func_door_477" parent="VMFNode/Entities/funcs" unique_id=505359632 instance=ExtResource("8_g7ych")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3, 1.2, 0.8)
@@ -932,20 +938,20 @@ entity = {
 "wait": 4.0
 }
 
-[node name="collision" type="AnimatableBody3D" parent="VMFNode/Entities/funcs/func_door_477" unique_id=919940834]
+[node name="collision" type="AnimatableBody3D" parent="VMFNode/Entities/funcs/func_door_477" unique_id=1672663950]
 script = ExtResource("9_1yjix")
 move_direction = Vector3(-1, 0, 0)
 move_speed = 1.6
 lip = -2.3000002
 
-[node name="shape" type="CollisionShape3D" parent="VMFNode/Entities/funcs/func_door_477/collision" unique_id=248641332]
-shape = SubResource("ConvexPolygonShape3D_gei87")
+[node name="shape" type="CollisionShape3D" parent="VMFNode/Entities/funcs/func_door_477/collision" unique_id=891433055]
+shape = SubResource("ConvexPolygonShape3D_1rvsu")
 
-[node name="mesh" type="MeshInstance3D" parent="VMFNode/Entities/funcs/func_door_477/collision" unique_id=1394098330]
+[node name="mesh" type="MeshInstance3D" parent="VMFNode/Entities/funcs/func_door_477/collision" unique_id=2077474755]
 gi_mode = 2
-mesh = SubResource("ArrayMesh_1rvsu")
+mesh = SubResource("ArrayMesh_uw1gl")
 
-[node name="Health" type="Node" parent="VMFNode/Entities/funcs/func_door_477/collision" unique_id=1594512901]
+[node name="Health" type="Node" parent="VMFNode/Entities/funcs/func_door_477/collision" unique_id=1796025680]
 script = ExtResource("11_s0xxa")
 
 [editable path="VMFNode/Entities/lights/light_5"]
