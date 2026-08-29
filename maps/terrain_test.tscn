@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="16_n1qxw"]
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="17_sjl1l"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="18_147sb"]
+[ext_resource type="PackedScene" uid="uid://c54u0qah11kl7" path="res://models/mario64/piano.glb" id="20_863k3"]
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_6bxk8"]
 albedoTexture = ExtResource("1_52wwa")
@@ -73,6 +74,9 @@ sky_material = SubResource("ProceduralSkyMaterial_52wwa")
 background_mode = 2
 sky = SubResource("Sky_3e7qf")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_863k3"]
+points = PackedVector3Array(664.96216, -92.05167, -593.99994, 664.96216, 17.992188, -593.99994, 678, -92.05167, 540.91583, 402.82397, -372, 383.99536, 392.85388, -372, -432.1264, 453.90186, -92.05167, -592.0863, 678, 17.992188, 540.91583, 453.90186, 219.94208, -592.0863, -665.0552, -92.05167, 556.00006, -598.02515, -372, 134.88123, -674.10504, -92.05167, -277.11957, -14.081421, -92.05167, -586.1201, 466.9397, 219.94208, 542.9421, -665.0552, 219.94208, 556.00006, -14.081421, 219.94208, -586.1201, -884.0916, -92.05167, 356.97894, -889, -92.05167, -67.06671, -674.10504, 219.94208, -277.11957, -884.0916, 219.94208, 356.97894, -889, 219.94208, -67.06671)
+
 [node name="Node3D" type="Node3D" unique_id=1445642513]
 script = ExtResource("1_e4jf1")
 
@@ -82,7 +86,7 @@ textureSets = SubResource("TextureSetsResource_mw2n6")
 useAntiTile = false
 terrainZones = SubResource("ZonesResource_ko5lu")
 physics_interpolation_mode = 2
-metadata/_edit_lock_ = false
+metadata/_edit_lock_ = true
 
 [node name="Spawn" type="Node3D" parent="." unique_id=1920763249]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 2, 180)
@@ -109,5 +113,52 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1465069497]
 environment = SubResource("Environment_e4jf1")
+
+[node name="Piano Platform" type="CSGCombiner3D" parent="." unique_id=313473194]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 4, -5, 15.856071, -31.409567)
+use_collision = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Piano Platform" unique_id=893025672]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-2, -1, -1, 1, 1, 1, 2, -1)
+depth = 0.2
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Piano Platform" unique_id=81598901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7326341, -0.5, 0.85512733)
+radius = 0.075
+height = 0.8
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Piano Platform" unique_id=403517821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88345194, -0.5, -0.82029057)
+radius = 0.075
+height = 0.8
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Piano Platform" unique_id=264158986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.733, -0.5, 0.8553457)
+radius = 0.075
+height = 0.8
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Piano Platform" unique_id=327023662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.883, -0.5, -0.82000065)
+radius = 0.075
+height = 0.8
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Piano Platform" unique_id=1397617862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35383797, 1.1316757)
+size = Vector3(1, 0.2, 0.25)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Piano Platform" unique_id=159742950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.64854336, 1.3382692)
+size = Vector3(1, 0.2, 0.25)
+
+[node name="Piano" type="StaticBody3D" parent="." unique_id=1959101884]
+transform = Transform3D(0.8309844, 0, 0.5562956, 0, 1, 0, -0.5562956, 0, 0.8309844, -7.526153, 15.856071, -32.621056)
+
+[node name="model" parent="Piano" unique_id=1222274799 instance=ExtResource("20_863k3")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+
+[node name="collision" type="CollisionShape3D" parent="Piano" unique_id=1363294203]
+transform = Transform3D(8.940697e-10, 0, -0.0024999997, 0, 0.0024999997, 0, 0.0025, 0, 8.9406965e-10, -0.0425, 0.93250006, 0.48999992)
+shape = SubResource("ConvexPolygonShape3D_863k3")
 
 [connection signal="body_shape_entered" from="Teleport Trigger" to="Teleport Trigger" method="MapChange" unbinds=2]
