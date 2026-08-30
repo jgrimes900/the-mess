@@ -289,7 +289,11 @@ func _input(event: InputEvent) -> void:
 			select_gun(1, -1)
 		elif Input.is_action_pressed("weapon_select_next"):
 			select_gun(1, 1)
-		
+			
+func _set_view_pitch(new_pitch):
+	pivot.rotate_object_local(Vector3.FORWARD, new_pitch-view_pitch)
+	view_pitch = new_pitch
+
 func recive_currency(_index, type: String):
 	if coin_sounds[type]:
 		sound_player.stream = coin_sounds[type + str(randi_range(1,coin_sounds[type]))]

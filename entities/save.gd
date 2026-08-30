@@ -8,6 +8,8 @@ var Map_Chuncks = {
 signal saving()
 signal loading()
 
+var to_kill = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var file = FileAccess.open("user://save_game.dat", FileAccess.READ)
@@ -38,13 +40,19 @@ func _ready() -> void:
 					0x100:
 						var pos = get_position(file)
 						OnLoad.connect("level_loaded", set_ply_pos.bind(pos))
+					0x101:
+						var pos = get_position(file)
+						$"..".rotation_degrees = get_position(file)
+						$"..".rotation_mod = get_position(file)
+						$"../Pivot".rotation.y = file.get_float()
+						OnLoad.connect("level_loaded", set_ply_pos.bind(pos).bind(file.get_float()))
+						$"..".target_velocity = get_position(file)
 					5:
 						$"../Inv/TabContainer/Beads/Stars".unlocked = get_bool_array(file)
 					6:
 						$"../Health".max_health = file.get_float()
 						$"../Health".health = file.get_float()
-						if file.get_8() == 1:
-							$".."._kill()
+						to_kill = file.get_8()
 					0x200:
 						var map = get_string(file)
 						var map_chunck_cont = true
@@ -63,9 +71,10 @@ func _ready() -> void:
 				cont = false
 		file.close()
 
-func set_ply_pos(pos):
+func set_ply_pos(vp, pos):
 	var set_pos = func():
 		$"..".position = pos
+		$".."._set_view_pitch(vp)
 		$Timer.start()
 	set_pos.call_deferred()
 	
@@ -89,8 +98,13 @@ func _process(delta: float) -> void:
 		store_string(file, $"..".current_map)
 		file.store_16(7)
 		store_string(file, $"..".last_map)
-		file.store_16(0x100)
+		file.store_16(0x101)
 		store_position(file, $"..".position)
+		store_position(file, $"..".rotation_degrees)
+		store_position(file, $"..".rotation_mod)
+		file.store_float($"../Pivot".rotation.y)
+		file.store_float($"..".view_pitch)
+		store_position(file, $"..".target_velocity)
 		file.store_16(5)
 		store_bool_array(file, $"../Inv/TabContainer/Beads/Stars".unlocked)
 		file.store_16(6)
@@ -221,4 +235,8 @@ func get_dictionary_int32(file: FileAccess):
 
 
 func _on_timer_timeout() -> void:
+	if to_kill == 1:
+		$".."._kill()
+	else:
+		$".."._unkill()
 	OnLoad.level_loaded.disconnect(set_ply_pos)

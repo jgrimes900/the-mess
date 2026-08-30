@@ -1015,7 +1015,7 @@ script = ExtResource("17_r1s2y")
 script = ExtResource("34_0anbp")
 
 [node name="Timer" type="Timer" parent="Save" unique_id=1572122708]
-wait_time = 0.2
+wait_time = 0.001
 one_shot = true
 
 [node name="pokemon_rb_player" type="CharacterBody2D" parent="." unique_id=1658328274]
