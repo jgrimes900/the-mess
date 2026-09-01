@@ -8,6 +8,13 @@ class_name DoorSliding
 @export var close_time: float = 4.0
 @export var start_open_flag: bool = false
 
+@export var sound: AudioStreamPlayer3D
+@export var sound_open: AudioStream
+@export var sound_close: AudioStream
+@export var sound_move: AudioStream
+@export var sound_stop: AudioStream
+@export var sound_start: AudioStream
+
 signal opened()
 signal closed()
 
@@ -42,15 +49,16 @@ func _force_open():
 	if state == 0:
 		emit_signal("start_open")
 		state = 1
+		do_sound()
 func _force_close():
 	if state == 2:
 		emit_signal("start_close")
 		state = 3
+		do_sound()
 
 func _open():
 	_force_open()
 	_force_close()
-	print(state)
 
 func _physics_process(delta: float) -> void:
 	if state == 1:
@@ -62,13 +70,14 @@ func _physics_process(delta: float) -> void:
 			openness = lip
 			state = 2
 			emit_signal("opened")
+			do_sound()
 			close_timer = 0.0
 		else:
 			translate_object_local(move_direction * move_delta_val)
 	elif state == 2 and close_time >= 0:
 		close_timer += delta
 		if close_timer >= close_time:
-			state = 3
+			_force_close()
 			close_timer = 0.0
 			
 	elif state == 3:
@@ -80,6 +89,7 @@ func _physics_process(delta: float) -> void:
 			openness = 0.0
 			state = 0
 			emit_signal("closed")
+			do_sound()
 			close_timer = 0.0
 		else:
 			translate_object_local(move_direction * move_delta_val)
@@ -94,3 +104,34 @@ func _lip_to_source_lip(aabb: Vector3) -> void:
 	var z_comp = (move_direction.z * move_direction.z) / (aabb.z * aabb.z)
 	
 	lip = (1.0 / sqrt(x_comp + y_comp + z_comp)) - lip
+
+func do_sound(state_temp: int = state):
+	if sound:
+		sound.stop()
+		if sound_stop and state_temp == 2:
+			sound.stream = sound_stop
+			sound.play()
+		elif state_temp == 0:
+			if sound_close:
+				sound.stream = sound_close
+				sound.play()
+			elif sound_stop:
+				sound.stream = sound_stop
+				sound.play()
+		elif state_temp == 1:
+			if sound_open:
+				sound.stream = sound_open
+				sound.play()
+			elif sound_start:
+				sound.stream = sound_start
+				sound.play()
+		elif state_temp == 3 and sound_start:
+			sound.stream = sound_start
+			sound.play()
+		
+
+
+func _on_sound_finished() -> void:
+	if sound and sound_move and (state == 1 or state == 3):
+		sound.stream = sound_move
+		sound.play()

@@ -13,8 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://umg18jaxp3fl" path="res://materials/hl1_c1a0/c1a0_texture_6.png" id="7_wgsmo"]
 [ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="8_b5rxj"]
 [ext_resource type="Shape3D" uid="uid://esn36byd2ed" path="res://models/C1A0_Transition_collision.res" id="8_jgvh2"]
+[ext_resource type="AudioStream" uid="uid://jp6r8swd0nws" path="res://assets/sounds/hl1/doors/doormove4.wav" id="9_7yy6w"]
 [ext_resource type="PackedScene" uid="uid://df2amvnuqjmfl" path="res://prefabs/c1a0_door_large.tscn" id="9_pe3st"]
 [ext_resource type="ArrayMesh" uid="uid://donjr6fbwwdyt" path="res://models/C1A0_001.res" id="9_uthg3"]
+[ext_resource type="AudioStream" uid="uid://ck6eei8chsg7h" path="res://assets/sounds/hl1/doors/doorstop5.wav" id="10_y575s"]
+[ext_resource type="AudioStream" uid="uid://cmb0h5jh6gp38" path="res://assets/sounds/hl1/common/null.wav" id="11_5bxwr"]
 [ext_resource type="PackedScene" uid="uid://d21p1ess5umoq" path="res://prefabs/hl1/vending_a.tscn" id="11_pe3st"]
 [ext_resource type="Script" uid="uid://drl3ms0grcmo4" path="res://entities/ButtonSliding.gd" id="11_v0x75"]
 [ext_resource type="PackedScene" uid="uid://c256f6gnhf0fr" path="res://models/fnaf/sotm/SotM Lock.fbx" id="12_q28ir"]
@@ -49,7 +52,10 @@
 [ext_resource type="ArrayMesh" uid="uid://fg8dlonhkoh3" path="res://models/GameDevTycoon/level1_Cube_004.res" id="39_oqdcm"]
 [ext_resource type="ArrayMesh" uid="uid://ca2owi0fmfrmb" path="res://models/GameDevTycoon/level1_Plane_002.res" id="47_12bgp"]
 [ext_resource type="ArrayMesh" uid="uid://cktexplhqtyja" path="res://models/GameDevTycoon/level1_Plane_008.res" id="49_0e6ng"]
+[ext_resource type="AudioStream" uid="uid://drjh7bsyteg8f" path="res://assets/sounds/doors/door_open_1.ogg" id="49_svwo7"]
+[ext_resource type="AudioStream" uid="uid://cuapilmoxsklo" path="res://assets/sounds/doors/door_close_1_short.ogg" id="50_svwo7"]
 [ext_resource type="ArrayMesh" uid="uid://lmyj3drn1ttj" path="res://models/GameDevTycoon/level1_Plane_009.res" id="51_qqsv8"]
+[ext_resource type="AudioStream" uid="uid://cen7qc1wilmvg" path="res://assets/sounds/doors/door_move_1.ogg" id="51_wqdgl"]
 [ext_resource type="ArrayMesh" uid="uid://dwqk1m5a4xm35" path="res://models/GameDevTycoon/level1_Plane_010.res" id="52_2atha"]
 [ext_resource type="ArrayMesh" uid="uid://d30sbuv587unu" path="res://models/GameDevTycoon/level1_Cube_002.res" id="53_p3cxl"]
 [ext_resource type="ArrayMesh" uid="uid://cksp3tgwklkdc" path="res://models/GameDevTycoon/level1_Cube_003.res" id="54_u81uv"]
@@ -405,10 +411,15 @@ layers = 524289
 light_energy = 2.0
 light_size = 0.213
 
-[node name="Door4" type="AnimatableBody3D" parent="C1A0/World/WinMaze Exit Room" unique_id=1588603263]
+[node name="Door4" type="AnimatableBody3D" parent="C1A0/World/WinMaze Exit Room" unique_id=1588603263 node_paths=PackedStringArray("sound")]
 transform = Transform3D(0, 1.9106855e-15, 1, -4.371139e-08, 1, -1.9106855e-15, -1, -4.371139e-08, -8.351872e-23, 0.042312622, 1.4052725, 0.19977856)
 script = ExtResource("8_b5rxj")
+move_speed = 5.0
 lip = 2.4
+sound = NodePath("sound")
+sound_move = ExtResource("9_7yy6w")
+sound_stop = ExtResource("10_y575s")
+sound_start = ExtResource("11_5bxwr")
 
 [node name="C1a0001" type="MeshInstance3D" parent="C1A0/World/WinMaze Exit Room/Door4" unique_id=393157243]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
@@ -417,6 +428,8 @@ mesh = ExtResource("9_uthg3")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="C1A0/World/WinMaze Exit Room/Door4" unique_id=1049821439]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0.00049972534)
 shape = SubResource("BoxShape3D_gr3wi")
+
+[node name="sound" type="AudioStreamPlayer3D" parent="C1A0/World/WinMaze Exit Room/Door4" unique_id=710707935]
 
 [node name="doorlock_out" type="AnimatableBody3D" parent="C1A0/World/WinMaze Exit Room" unique_id=1271615858]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0639095, 1.6212726, -0.00022125244)
@@ -1096,13 +1109,18 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tu3k8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5063791, 1.0615759, 0.41796038)
 mesh = ExtResource("47_12bgp")
 
-[node name="Door" type="AnimatableBody3D" parent="Node3D/level1" unique_id=1462658617]
+[node name="Door" type="AnimatableBody3D" parent="Node3D/level1" unique_id=1462658617 node_paths=PackedStringArray("sound")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5825176, 0.8312119, 1.8589048)
 script = ExtResource("27_mo56y")
 reverse = true
 move_speed = 3.0
 lip = 90.0
 close_time = -1.0
+sound = NodePath("sound")
+sound_open = ExtResource("49_svwo7")
+sound_close = ExtResource("50_svwo7")
+sound_move = ExtResource("51_wqdgl")
+sound_start = ExtResource("11_5bxwr")
 
 [node name="Plane_008" type="MeshInstance3D" parent="Node3D/level1/Door" unique_id=1663881470]
 gi_mode = 2
@@ -1121,6 +1139,8 @@ metadata/_custom_type_script = "uid://b3koe758ngxfw"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/level1/Door/Area3D" unique_id=301914251]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056714267, -0.049227476, -0.36398298)
 shape = SubResource("BoxShape3D_cxy5f")
+
+[node name="sound" type="AudioStreamPlayer3D" parent="Node3D/level1/Door" unique_id=5321960]
 
 [node name="cabnet_floor" type="StaticBody3D" parent="Node3D/level1" unique_id=965376574]
 
@@ -1290,6 +1310,7 @@ shape = SubResource("ConcavePolygonShape3D_7yy6w")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1688820716]
 environment = SubResource("Environment_12bgp")
 
+[connection signal="finished" from="C1A0/World/WinMaze Exit Room/Door4/sound" to="C1A0/World/WinMaze Exit Room/Door4" method="_on_sound_finished"]
 [connection signal="closed" from="C1A0/World/WinMaze Exit Room/doorlock_out" to="C1A0/World/WinMaze Exit Room/Door4" method="_open"]
 [connection signal="opened" from="C1A0/World/WinMaze Exit Room/doorlock_out" to="C1A0/World/WinMaze Exit Room/Door4" method="_open"]
 [connection signal="body_shape_entered" from="C1A0/GridMapTest Teleport Trigger" to="C1A0/GridMapTest Teleport Trigger" method="MapChange" unbinds=2 binds= ["GridMapTest"]]
@@ -1304,5 +1325,6 @@ environment = SubResource("Environment_12bgp")
 [connection signal="timeout" from="Transition_A/Timer" to="Transition_A/DoorIn" method="trigger" binds= [false, NodePath("/root/Player")]]
 [connection signal="damaged" from="Node3D/level1/Door/Health" to="Node3D/level1/Door" method="_open" unbinds=1]
 [connection signal="body_shape_entered" from="Node3D/level1/Door/Area3D" to="Node3D/level1/Door" method="_on_touch"]
+[connection signal="finished" from="Node3D/level1/Door/sound" to="Node3D/level1/Door" method="_on_sound_finished"]
 
 [editable path="C1A0/World/WinMaze Exit Room/doorlock_out/SotM Lock"]

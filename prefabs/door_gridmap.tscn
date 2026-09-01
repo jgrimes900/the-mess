@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="1_oes1k"]
 [ext_resource type="ArrayMesh" uid="uid://donjr6fbwwdyt" path="res://models/C1A0_001.res" id="2_bfqxw"]
+[ext_resource type="AudioStream" uid="uid://jp6r8swd0nws" path="res://assets/sounds/hl1/doors/doormove4.wav" id="2_hpjst"]
+[ext_resource type="AudioStream" uid="uid://ck6eei8chsg7h" path="res://assets/sounds/hl1/doors/doorstop5.wav" id="3_5g1b4"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="3_oc5ta"]
+[ext_resource type="AudioStream" uid="uid://cmb0h5jh6gp38" path="res://assets/sounds/hl1/common/null.wav" id="4_mf7wr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gr3wi"]
 size = Vector3(0.002, 0.02, 0.02)
@@ -10,11 +13,16 @@ size = Vector3(0.002, 0.02, 0.02)
 [sub_resource type="BoxShape3D" id="BoxShape3D_r26ln"]
 size = Vector3(0.004, 0.02, 0.02)
 
-[node name="Door" type="AnimatableBody3D" unique_id=878979255]
+[node name="Door" type="AnimatableBody3D" unique_id=878979255 node_paths=PackedStringArray("sound")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_oes1k")
 move_direction = Vector3(0, 0, -1)
+move_speed = 5.0
 lip = 2.0
+sound = NodePath("sound")
+sound_move = ExtResource("2_hpjst")
+sound_stop = ExtResource("3_5g1b4")
+sound_start = ExtResource("4_mf7wr")
 
 [node name="C1a0001" type="MeshInstance3D" parent="." unique_id=1554549279]
 transform = Transform3D(71.4, 0, 0, 0, 71.4, 0, 0, 0, 125, 0, 0, 0)
@@ -33,5 +41,8 @@ shape = SubResource("BoxShape3D_r26ln")
 [node name="Health" type="Node" parent="." unique_id=1933561153]
 script = ExtResource("3_oc5ta")
 
+[node name="sound" type="AudioStreamPlayer3D" parent="." unique_id=24712938]
+
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_touch"]
 [connection signal="triggered" from="Health" to="." method="_open"]
+[connection signal="finished" from="sound" to="." method="_on_sound_finished"]

@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b5oombtjef0fs" path="res://entities/DoorSliding.gd" id="1_v6xrn"]
 [ext_resource type="ArrayMesh" uid="uid://donjr6fbwwdyt" path="res://models/C1A0_001.res" id="2_0phs7"]
+[ext_resource type="AudioStream" uid="uid://jp6r8swd0nws" path="res://assets/sounds/hl1/doors/doormove4.wav" id="2_aprx7"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="3_0phs7"]
+[ext_resource type="AudioStream" uid="uid://ck6eei8chsg7h" path="res://assets/sounds/hl1/doors/doorstop5.wav" id="3_rofyl"]
+[ext_resource type="AudioStream" uid="uid://cmb0h5jh6gp38" path="res://assets/sounds/hl1/common/null.wav" id="4_2mko4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gr3wi"]
 size = Vector3(0.002, 0.028, 0.016)
@@ -10,9 +13,14 @@ size = Vector3(0.002, 0.028, 0.016)
 [sub_resource type="BoxShape3D" id="BoxShape3D_r26ln"]
 size = Vector3(0.004, 0.028, 0.016)
 
-[node name="Door" type="AnimatableBody3D" unique_id=1588603263]
+[node name="Door" type="AnimatableBody3D" unique_id=1588603263 node_paths=PackedStringArray("sound")]
 script = ExtResource("1_v6xrn")
+move_speed = 5.0
 lip = 2.4
+sound = NodePath("sound")
+sound_move = ExtResource("2_aprx7")
+sound_stop = ExtResource("3_rofyl")
+sound_start = ExtResource("4_2mko4")
 
 [node name="C1a0001" type="MeshInstance3D" parent="." unique_id=393157243]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
@@ -31,5 +39,8 @@ shape = SubResource("BoxShape3D_r26ln")
 [node name="Health" type="Node" parent="." unique_id=803127411]
 script = ExtResource("3_0phs7")
 
+[node name="sound" type="AudioStreamPlayer3D" parent="." unique_id=1346287288]
+
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_touch"]
 [connection signal="triggered" from="Health" to="." method="_open"]
+[connection signal="finished" from="sound" to="." method="_on_sound_finished"]

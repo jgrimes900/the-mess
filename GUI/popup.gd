@@ -27,7 +27,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	match state:
 		STATE.OPENING:
-			print(position.x)
 			position.x -= speed
 			moved += speed
 			if moved >= size.x:
