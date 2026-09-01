@@ -36,6 +36,7 @@ var last_map: String = ""
 var spawned: bool = false
 var prev_teleport_offset: Vector3 = Vector3.ZERO
 var speed_cap_mods: Array = []
+var noclip: bool = false
 
 @onready var last_pos: Vector3 = self.global_position
 @onready var pivot: Node3D = $Pivot
@@ -122,94 +123,115 @@ func pkmn_rb_mode_physics_process(delta: float) -> void:
 		
 func normal_mode_physics_process(delta: float) -> void:
 	get_node("Health").iframes -= 1
-	if dead:
-		rot_temp = rotation - Vector3(deg_to_rad(death_rotation.x),deg_to_rad(death_rotation.y),deg_to_rad(death_rotation.z))
-	else:
-		rot_temp = rotation
-	local_pos = (Basis.from_euler(rot_temp) * position)
-	if in_control:
-		var direction := Vector3.ZERO
-		
-		if !dead:
-			up_direction = Basis.from_euler(rot_temp).y
-			if Input.is_action_just_pressed("use"):
-				var space_state = get_world_3d().direct_space_state
-				var query = PhysicsRayQueryParameters3D.create(pivot.global_position, (pivot.global_basis.x.normalized() * -use_distance) + pivot.global_position)
-				var result = space_state.intersect_ray(query)
-				if result:
-					if result.collider.get("can_use"):
-						result.collider._on_use()
-			# Movement stuff
-			if Input.is_action_pressed("move_right"):
-				direction.z -= 1.0
-			if Input.is_action_pressed("move_left"):
-				direction.z += 1.0
-			if Input.is_action_pressed("move_back"):
-				direction.x += 1.0
-			if Input.is_action_pressed("move_forward"):
-				direction.x -= 1.0
-				
-			# TODO: Check if the player can uncrouch with a shapecast
-			if Input.is_action_pressed("crouch") and not crouched:
-				var shape: BoxShape3D = collision_shape.shape
-				shape.size = collision_size * collision_mult_crouched
-				collision_shape.position.y += (collision_size.y * collision_mult_crouched.y)
-				pivot.position.y += (shape.size.y/2)
-				local_pos = local_pos - (up_direction * (shape.size.y/2))
-				crouched = true
-				update_current_speed_cap()
-			elif not Input.is_action_pressed("crouch") and crouched:
-				var shape: BoxShape3D = collision_shape.shape
-				shape.size = collision_size
-				collision_shape.position.y -= (collision_size.y * collision_mult_crouched.y)
-				position = position + (up_direction * (collision_size.y * collision_mult_crouched.y))
-				pivot.position.y -= (collision_size.y * collision_mult_crouched.y)/2
-				local_pos = local_pos + ( up_direction *( (collision_size.y * collision_mult_crouched.y)/2))
-				crouched = false
-				update_current_speed_cap()
+	if Input.is_action_just_pressed("noclip"):
+			noclip = !noclip
+	if !noclip:
+		if dead:
+			rot_temp = rotation - Vector3(deg_to_rad(death_rotation.x),deg_to_rad(death_rotation.y),deg_to_rad(death_rotation.z))
+		else:
+			rot_temp = rotation
+		local_pos = (Basis.from_euler(rot_temp) * position)
+		if in_control:
+			var direction := Vector3.ZERO
+			if !dead:
+				up_direction = Basis.from_euler(rot_temp).y
+				if Input.is_action_just_pressed("use"):
+					var space_state = get_world_3d().direct_space_state
+					var query = PhysicsRayQueryParameters3D.create(pivot.global_position, (pivot.global_basis.x.normalized() * -use_distance) + pivot.global_position)
+					var result = space_state.intersect_ray(query)
+					if result:
+						if result.collider.get("can_use"):
+							result.collider._on_use()
+				# Movement stuff
+				if Input.is_action_pressed("move_right"):
+					direction.z -= 1.0
+				if Input.is_action_pressed("move_left"):
+					direction.z += 1.0
+				if Input.is_action_pressed("move_back"):
+					direction.x += 1.0
+				if Input.is_action_pressed("move_forward"):
+					direction.x -= 1.0
+					
+				# TODO: Check if the player can uncrouch with a shapecast
+				if Input.is_action_pressed("crouch") and not crouched:
+					var shape: BoxShape3D = collision_shape.shape
+					shape.size = collision_size * collision_mult_crouched
+					collision_shape.position.y += (collision_size.y * collision_mult_crouched.y)
+					pivot.position.y += (shape.size.y/2)
+					local_pos = local_pos - (up_direction * (shape.size.y/2))
+					crouched = true
+					update_current_speed_cap()
+				elif not Input.is_action_pressed("crouch") and crouched:
+					var shape: BoxShape3D = collision_shape.shape
+					shape.size = collision_size
+					collision_shape.position.y -= (collision_size.y * collision_mult_crouched.y)
+					position = position + (up_direction * (collision_size.y * collision_mult_crouched.y))
+					pivot.position.y -= (collision_size.y * collision_mult_crouched.y)/2
+					local_pos = local_pos + ( up_direction *( (collision_size.y * collision_mult_crouched.y)/2))
+					crouched = false
+					update_current_speed_cap()
 
-		if abs(local_pos.y - last_y) <= 0.001:
-			target_velocity.y = 0
+			if abs(local_pos.y - last_y) <= 0.001:
+				target_velocity.y = 0
+				
+			if not is_on_floor():
+				target_velocity = do_gravity(delta, target_velocity)
+			elif !dead and Input.is_action_pressed("jump"):
+				target_velocity.y += jump_vel
 			
-		if not is_on_floor():
-			target_velocity = do_gravity(delta, target_velocity)
-		elif !dead and Input.is_action_pressed("jump"):
-			target_velocity.y += jump_vel
-		
+			if direction != Vector3.ZERO:
+				direction = (direction.normalized() * speed).rotated(Vector3.UP, pivot.rotation.y)
+			
+			target_velocity.x += direction.x
+			target_velocity.z += direction.z
+			if (target_velocity*Vector3(1,0,1)).length() > current_speed_cap:
+				target_velocity = ((target_velocity*Vector3(1,0,1)).normalized()*current_speed_cap)+(target_velocity*Vector3(0,1,0))
+			var friction
+			if is_on_floor():
+				friction = friction_ground
+			else:
+				friction = friction_air
+			target_velocity.x += (target_velocity.x) * exp(delta * log(1.0 - friction)) - (target_velocity.x) 
+			target_velocity.z += (target_velocity.z) * exp(delta * log(1.0 - friction)) - (target_velocity.z) 
+			
+			last_y = local_pos.y
+			
+			velocity = Basis.from_euler(rot_temp) * target_velocity
+			
+			move_and_slide()
+			
+			
+			if is_on_floor() and last_pos != global_position:
+				step_time += (last_pos - global_position).length()
+				if step_time >= step_wait:
+					step_time = 0.0
+					sound_step.stream = step_sounds[step]
+					sound_step.play()
+					step += 1
+					if step >= step_sounds.size():
+						step = 0
+						
+			last_pos = global_position
+			$rigidbody_collider.global_position = last_pos
+	else:
+		var direction := Vector3.ZERO
+		if Input.is_action_pressed("move_right"):
+			direction.z -= 1.0
+		if Input.is_action_pressed("move_left"):
+			direction.z += 1.0
+		if Input.is_action_pressed("move_back"):
+			direction.x += 1.0
+		if Input.is_action_pressed("move_forward"):
+			direction.x -= 1.0
+		if Input.is_action_pressed("jump"):
+			direction.y += 1.0
+		if Input.is_action_pressed("crouch"):
+			direction.y -= 1.0
+			
 		if direction != Vector3.ZERO:
 			direction = (direction.normalized() * speed).rotated(Vector3.UP, pivot.rotation.y)
 		
-		target_velocity.x += direction.x
-		target_velocity.z += direction.z
-		if (target_velocity*Vector3(1,0,1)).length() > current_speed_cap:
-			target_velocity = ((target_velocity*Vector3(1,0,1)).normalized()*current_speed_cap)+(target_velocity*Vector3(0,1,0))
-		var friction
-		if is_on_floor():
-			friction = friction_ground
-		else:
-			friction = friction_air
-		target_velocity.x += (target_velocity.x) * exp(delta * log(1.0 - friction)) - (target_velocity.x) 
-		target_velocity.z += (target_velocity.z) * exp(delta * log(1.0 - friction)) - (target_velocity.z) 
-		
-		last_y = local_pos.y
-		
-		velocity = Basis.from_euler(rot_temp) * target_velocity
-		
-		move_and_slide()
-		
-		
-		if is_on_floor() and last_pos != global_position:
-			step_time += (last_pos - global_position).length()
-			if step_time >= step_wait:
-				step_time = 0.0
-				sound_step.stream = step_sounds[step]
-				sound_step.play()
-				step += 1
-				if step >= step_sounds.size():
-					step = 0
-					
-		last_pos = global_position
-		$rigidbody_collider.global_position = last_pos
+		position += Basis.from_euler(rotation) * direction * delta
 	
 func update_current_speed_cap():
 	current_speed_cap = speed_cap
@@ -289,6 +311,10 @@ func _input(event: InputEvent) -> void:
 			select_gun(1, -1)
 		elif Input.is_action_pressed("weapon_select_next"):
 			select_gun(1, 1)
+		elif Input.is_action_pressed("hide_hud"):
+			visible = !visible
+			$HUD.visible = visible
+			$panel_fuck.visible = visible
 			
 func _set_view_pitch(new_pitch):
 	pivot.rotate_object_local(Vector3.FORWARD, new_pitch-view_pitch)

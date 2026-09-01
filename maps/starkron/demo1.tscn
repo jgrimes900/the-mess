@@ -12,6 +12,7 @@
 [ext_resource type="Shape3D" uid="uid://esn36byd2ed" path="res://models/C1A0_Transition_collision.res" id="8_jabkh"]
 [ext_resource type="PackedScene" uid="uid://df2amvnuqjmfl" path="res://prefabs/c1a0_door_large.tscn" id="9_ds621"]
 [ext_resource type="PackedScene" uid="uid://cxkmecccsn0bg" path="res://prefabs/mario_64/goomba.tscn" id="11_6jtjt"]
+[ext_resource type="LightmapGIData" uid="uid://bvtl8mcsmm0ji" path="res://maps/hl1_c1a0.lmbake" id="13_ds621"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ymd38"]
 
@@ -43,6 +44,7 @@ shape = ExtResource("2_ymd38")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=51383646]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5, 0)
+cast_shadow = 2
 use_collision = true
 collision_layer = 3
 size = Vector3(200, 1, 200)
@@ -185,6 +187,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92223597, -1.9073486e-05, -
 
 [node name="Goomba3" parent="DELETE_ME_Goombas/FakeGoombaTriplet5" unique_id=1323301692 instance=ExtResource("11_6jtjt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5203049, 1.335144e-05, 1.7290937)
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=361647105]
+quality = 3
+interior = true
+texel_scale = 2.0
+generate_probes_subdiv = 3
+light_data = ExtResource("13_ds621")
 
 [connection signal="on_spawn" from="Spawn" to="Transition_A/Timer" method="start"]
 [connection signal="timeout" from="Transition_A/hl1_c1a0 Teleport Trigger2/Timer" to="Transition_A/hl1_c1a0 Teleport Trigger2" method="MapChange2"]

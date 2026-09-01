@@ -42,6 +42,7 @@ close_time = -1.0
 
 [node name="Door" type="MeshInstance3D" parent="Top" unique_id=1193713258]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.084, -1.075, 0.74)
+gi_mode = 2
 mesh = ExtResource("3_6gxou")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Top" unique_id=1492936941]
@@ -58,6 +59,7 @@ close_time = -1.0
 
 [node name="Door" type="MeshInstance3D" parent="Bottom" unique_id=466373398]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.084, 0.857, 0.74)
+gi_mode = 2
 mesh = ExtResource("4_io3nv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bottom" unique_id=830152946]
@@ -74,6 +76,7 @@ close_time = -1.0
 
 [node name="In" type="MeshInstance3D" parent="Top_Bar" unique_id=436591282]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.47450805, -0.011284351, 0.7400154)
+gi_mode = 2
 mesh = ExtResource("5_4nt1x")
 
 [node name="CollisionShapeIn" type="CollisionShape3D" parent="Top_Bar" unique_id=155042921]
@@ -82,6 +85,7 @@ shape = SubResource("CylinderShape3D_wwy6x")
 
 [node name="Out" type="MeshInstance3D" parent="Top_Bar" unique_id=1794330151]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.63606644, -0.019, 0.74)
+gi_mode = 2
 mesh = ExtResource("5_4nt1x")
 
 [node name="CollisionShapeOut" type="CollisionShape3D" parent="Top_Bar" unique_id=597323638]
@@ -98,10 +102,12 @@ close_time = -1.0
 
 [node name="In" type="MeshInstance3D" parent="Bottom_Bar" unique_id=929345695]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.477, 0.024, 0.74)
+gi_mode = 2
 mesh = ExtResource("5_4nt1x")
 
 [node name="Out" type="MeshInstance3D" parent="Bottom_Bar" unique_id=1225719157]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.63606644, 0.024, 0.74)
+gi_mode = 2
 mesh = ExtResource("5_4nt1x")
 
 [node name="CollisionShapeIn" type="CollisionShape3D" parent="Bottom_Bar" unique_id=646551858]
@@ -117,6 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.403, -1.763)
 
 [node name="In" type="MeshInstance3D" parent="Top_Spin" unique_id=120117728]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.477, 0, 0)
+gi_mode = 2
 mesh = ExtResource("6_0bphr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Top_Spin" unique_id=144478804]
@@ -125,6 +132,7 @@ shape = SubResource("CylinderShape3D_2vpma")
 
 [node name="Out" type="MeshInstance3D" parent="Top_Spin" unique_id=1112335489]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.63606644, 0, 0)
+gi_mode = 2
 mesh = ExtResource("6_0bphr")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Top_Spin" unique_id=284645045]
@@ -136,10 +144,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.475, 1.914)
 
 [node name="In" type="MeshInstance3D" parent="Bottom_Spin" unique_id=592172588]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.477, 0, 0)
+gi_mode = 2
 mesh = ExtResource("6_0bphr")
 
 [node name="Out" type="MeshInstance3D" parent="Bottom_Spin" unique_id=139888645]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.63606644, 0, 0)
+gi_mode = 2
 mesh = ExtResource("6_0bphr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bottom_Spin" unique_id=14092416]

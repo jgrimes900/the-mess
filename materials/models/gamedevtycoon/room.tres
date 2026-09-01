@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ogmk8wdua12d"]
+
+[ext_resource type="Texture2D" uid="uid://bj45scrxs8x48" path="res://models/GameDevTycoon/level1_level1_empty.png" id="1_7g7cr"]
+
+[resource]
+resource_name = "Material.001"
+albedo_texture = ExtResource("1_7g7cr")
+roughness = 0.5

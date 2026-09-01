@@ -1,0 +1,330 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dqe8a1an0rqp4"
+path="res://.godot/imported/level1.glb-64baf52bab1946f02a4b83371de075ce.scn"
+
+[deps]
+
+source_file="res://models/GameDevTycoon/level1.glb"
+dest_files=["res://.godot/imported/level1.glb-64baf52bab1946f02a4b83371de075ce.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/models/gamedevtycoon/objects.tres",
+"use_external/path": "uid://cvflqhjrnn2a6"
+},
+"Material.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/models/gamedevtycoon/room.tres",
+"use_external/path": "uid://ogmk8wdua12d"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/models/gamedevtycoon/rug.tres",
+"use_external/path": "uid://bypdwm4xerllg"
+},
+"Material.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/models/gamedevtycoon/light.tres",
+"use_external/path": "uid://dr2786gxpj6ha"
+},
+"book_brown": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/models/gamedevtycoon/book_brown.tres",
+"use_external/path": "uid://dcjoojefp6uso"
+},
+"book_green": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/models/gamedevtycoon/book_green.tres",
+"use_external/path": "uid://cas04uyypwb3n"
+},
+"book_red": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/models/gamedevtycoon/book_red.tres",
+"use_external/path": "uid://8r0bm5gwo1ql"
+},
+"book_yellow": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/models/gamedevtycoon/book_yellow.tres",
+"use_external/path": "uid://7d728w8vi6bv"
+}
+},
+"meshes": {
+"level1_Circle": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Circle.res",
+"save_to_file/path": "uid://ck6knpg3txai"
+},
+"level1_Circle_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Circle_001.res",
+"save_to_file/path": "uid://bxcmwul102p3i"
+},
+"level1_Circle_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Circle_002.res",
+"save_to_file/path": "uid://b04bh3mbn4aiq"
+},
+"level1_Circle_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Circle_003.res",
+"save_to_file/path": "uid://c2a2rqc23nlmg"
+},
+"level1_Circle_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Circle_004.res",
+"save_to_file/path": "uid://ew8hkirdn0l8"
+},
+"level1_Circle_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Circle_006.res",
+"save_to_file/path": "uid://lf4wuv7w5aqn"
+},
+"level1_Circle_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Circle_008.res",
+"save_to_file/path": "uid://bc86rsinxnhbl"
+},
+"level1_Circle_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Circle_009.res",
+"save_to_file/path": "uid://lof6fn3vx6nf"
+},
+"level1_Cube": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Cube.res",
+"save_to_file/path": "uid://okr7nivlgeh5"
+},
+"level1_Cube_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Cube_001.res",
+"save_to_file/path": "uid://bjxi7ahchs34q"
+},
+"level1_Cube_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Cube_002.res",
+"save_to_file/path": "uid://d038ijyanmp33"
+},
+"level1_Cube_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Cube_003.res",
+"save_to_file/path": "uid://dhvlbboj1mpvx"
+},
+"level1_Cube_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Cube_004.res",
+"save_to_file/path": "uid://b3r2mrxfu4i25"
+},
+"level1_Cube_022": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Cube_022.res",
+"save_to_file/path": "uid://c427ea8rkjfrf"
+},
+"level1_Cylinder_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Cylinder_003.res",
+"save_to_file/path": "uid://co4wxkjy13gyj"
+},
+"level1_Plane": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane.res",
+"save_to_file/path": "uid://cnfxfjl1tsefp"
+},
+"level1_Plane_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_002.res",
+"save_to_file/path": "uid://b6dk26wufnt7c"
+},
+"level1_Plane_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_004.res",
+"save_to_file/path": "uid://cmb1e43jagneh"
+},
+"level1_Plane_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_005.res",
+"save_to_file/path": "uid://bvfrlfy744ivm"
+},
+"level1_Plane_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_006.res",
+"save_to_file/path": "uid://buijbq1h5lq67"
+},
+"level1_Plane_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_007.res",
+"save_to_file/path": "uid://bc1k0ki1oqv1"
+},
+"level1_Plane_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_008.res",
+"save_to_file/path": "uid://c7rsous2msm3j"
+},
+"level1_Plane_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_009.res",
+"save_to_file/path": "uid://w7k4c0ktn4d5"
+},
+"level1_Plane_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_010.res",
+"save_to_file/path": "uid://7m7ratluhfly"
+},
+"level1_Plane_012": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_012.res",
+"save_to_file/path": "uid://c8et1w370fjbh"
+},
+"level1_Plane_013": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_013.res",
+"save_to_file/path": "uid://cm54hiimf6v0b"
+},
+"level1_Plane_014": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/GameDevTycoon/level1_Plane_014.res",
+"save_to_file/path": "uid://dnnnbhe3q4jhn"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

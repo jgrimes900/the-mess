@@ -9,7 +9,7 @@ var timer: float = fire_delay
 
 func _ready() -> void:
 	target_position = Vector3.DOWN * distance
-	add_exception(parent)
+	#add_exception(parent)
 
 func _fire() -> bool:
 	if timer >= fire_delay:

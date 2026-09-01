@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bypdwm4xerllg"]
+
+[ext_resource type="Texture2D" uid="uid://cb0gthe5qewb2" path="res://models/GameDevTycoon/level1_level1_rug.png" id="1_cmm67"]
+
+[resource]
+resource_name = "Material.002"
+transparency = 4
+albedo_texture = ExtResource("1_cmm67")

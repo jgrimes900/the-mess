@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7d728w8vi6bv"]
+
+[ext_resource type="Texture2D" uid="uid://crm6gfph3pgrd" path="res://models/GameDevTycoon/level1_book_book_yellow.png" id="1_v3jl5"]
+
+[resource]
+resource_name = "book_yellow"
+albedo_texture = ExtResource("1_v3jl5")

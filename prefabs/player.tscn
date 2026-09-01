@@ -699,7 +699,6 @@ theme_override_font_sizes/font_size = 9
 text = "Rarity: Common"
 
 [node name="panel_fuck" type="Panel" parent="." unique_id=1363549028]
-visible = false
 material = SubResource("ShaderMaterial_0anbp")
 anchors_preset = 15
 anchor_right = 1.0

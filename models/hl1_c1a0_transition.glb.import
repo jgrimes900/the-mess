@@ -24,7 +24,7 @@ nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
-meshes/light_baking=1
+meshes/light_baking=2
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
@@ -38,6 +38,23 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"materials": {
+"texture_32.006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/hl1_c1a0/light2.tres",
+"use_external/path": "uid://fq4dcfl2ag36"
+},
+"texture_33.006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/hl1_c1a0/light1.tres",
+"use_external/path": "uid://bqe21jo60m4hr"
+},
+"texture_58.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/hl1_c1a0/grate0.tres",
+"use_external/path": "uid://b4rjlvgl4nafv"
+}
+},
 "meshes": {
 "hl1_c1a0_transition_C0A0E_003": {
 "generate/lightmap_uv": 0,
