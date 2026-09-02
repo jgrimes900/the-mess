@@ -37,6 +37,7 @@ var spawned: bool = false
 var prev_teleport_offset: Vector3 = Vector3.ZERO
 var speed_cap_mods: Array = []
 var noclip: bool = false
+var flashlight_on: bool = false
 
 @onready var last_pos: Vector3 = self.global_position
 @onready var pivot: Node3D = $Pivot
@@ -66,6 +67,16 @@ const step_sounds = [
 	preload("res://assets/sounds/ply/step/step_r2.ogg"),
 	preload("res://assets/sounds/ply/step/step_l2.ogg")
 ]
+
+const flashlight_sounds = [
+	[
+		preload("res://assets/sounds/irl/flashlight_off1.ogg")
+	],
+	[
+		preload("res://assets/sounds/irl/flashlight_on1.ogg")
+	]
+]
+
 var step_time:float = 0.0
 var step:int = 0
 @export var step_wait: float = 2.0
@@ -315,6 +326,14 @@ func _input(event: InputEvent) -> void:
 			visible = !visible
 			$HUD.visible = visible
 			$panel_fuck.visible = visible
+		elif Input.is_action_pressed("flashlight"):
+			if flashlight_on:
+				$Pivot/flashlight.visible = false
+			else:
+				$Pivot/flashlight.visible = true
+			flashlight_on = !flashlight_on
+			$Pivot/flashlight/sound.stream = flashlight_sounds[int(flashlight_on)][0]
+			$Pivot/flashlight/sound.play()
 			
 func _set_view_pitch(new_pitch):
 	pivot.rotate_object_local(Vector3.FORWARD, new_pitch-view_pitch)

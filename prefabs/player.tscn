@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://vwsbmq3jf1tl" path="res://entities/Player.gd" id="1_edtk3"]
 [ext_resource type="Script" uid="uid://cyep5fxuvrqq1" path="res://GUI/Menu.gd" id="2_f2e50"]
 [ext_resource type="PackedScene" uid="uid://bukqx0lffvbyx" path="res://prefabs/guns/glock.tscn" id="2_w4pj3"]
+[ext_resource type="Texture2D" uid="uid://85id4ehfqx1x" path="res://materials/irl/flashlight.png" id="4_r1s2y"]
+[ext_resource type="Script" uid="uid://chmwrho8nxboq" path="res://scripts/transform_lag.gd" id="5_0anbp"]
 [ext_resource type="PackedScene" uid="uid://nu7tu0pbhfax" path="res://prefabs/vm_arm.tscn" id="16_pp8wu"]
 [ext_resource type="AudioStream" uid="uid://btlcj7opvssw5" path="res://assets/sounds/tele.ogg" id="16_w4pj3"]
 [ext_resource type="ArrayMesh" uid="uid://cka7e6euosvgf" path="res://models/hl1/vending/can.tres" id="17_e3k5d"]
@@ -357,7 +359,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62031054, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=1145977306]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-cull_mask = 524287
 current = true
 
 [node name="glock" parent="Pivot" unique_id=1469320455 instance=ExtResource("2_w4pj3")]
@@ -365,6 +366,26 @@ transform = Transform3D(-3.6280452e-09, 0, -0.083, 0, 0.083, 0, 0.083, 0, -3.628
 
 [node name="vm_arm" parent="Pivot" unique_id=389459286 instance=ExtResource("16_pp8wu")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.2, -0.32, 0)
+
+[node name="flashlight" type="SpotLight3D" parent="Pivot" unique_id=1027617922 node_paths=PackedStringArray("match_node")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
+light_color = Color(0.9719992, 0.87655795, 0.6729425, 1)
+light_energy = 3.0
+light_projector = ExtResource("4_r1s2y")
+light_size = 0.1
+light_bake_mode = 0
+light_cull_mask = 4294443007
+shadow_enabled = true
+shadow_caster_mask = 4294443007
+spot_range = 20.0
+spot_angle = 33.666454
+script = ExtResource("5_0anbp")
+rotation_lag = true
+match_node = NodePath("../Camera3D")
+rotation_offset = Vector3(0, 0, 0)
+
+[node name="sound" type="AudioStreamPlayer" parent="Pivot/flashlight" unique_id=732119129]
 
 [node name="HUD" type="Control" parent="." unique_id=1183936384]
 layout_mode = 3
