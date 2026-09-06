@@ -38,13 +38,22 @@ func _ready() -> void:
 	Hitbox.connect("body_shape_entered", collect.unbind(2))
 	connect("collected", player.recive_currency.bind("SHaR_Coin"))
 	connect("collected", Inv.recive_currency.bind("SHaR_Coin", 1))
+	if is_monster or spawner:
+		$Save.queue_free()
 	
+func _kill():
+	if !is_monster and !spawner:
+		var node_residue = Residue.new()
+		node_residue.name = "_"+name
+		$"..".add_child(node_residue)
+		$Save.reparent(node_residue)
+	queue_free()
 
 func collect(_a, body):
 	if body == player and iframes <= 0:
 		collected.emit(index)
 		spawner_notify.emit(index, self)
-		queue_free()
+		_kill()
 	
 
 func _process(delta: float) -> void:

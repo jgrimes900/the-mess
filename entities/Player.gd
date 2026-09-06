@@ -15,6 +15,9 @@ extends CharacterBody3D
 @export var friction_air: float = 0.8
 @export var use_distance: float = 2.0
 @export var crouch_speed_mod: float = 2.0
+@export var max_dive_time: float = 3.0
+
+var dive_timer: float = 0
 
 var current_speed_cap: float
 
@@ -38,6 +41,10 @@ var prev_teleport_offset: Vector3 = Vector3.ZERO
 var speed_cap_mods: Array = []
 var noclip: bool = false
 var flashlight_on: bool = false
+var overide_y_vel: bool = false
+var should_do_gravity: bool = true
+
+var should_do_crouch: bool = true
 
 @onready var last_pos: Vector3 = self.global_position
 @onready var pivot: Node3D = $Pivot
@@ -151,6 +158,7 @@ func normal_mode_physics_process(delta: float) -> void:
 					var query = PhysicsRayQueryParameters3D.create(pivot.global_position, (pivot.global_basis.x.normalized() * -use_distance) + pivot.global_position)
 					var result = space_state.intersect_ray(query)
 					if result:
+						print(result.collider.name)
 						if result.collider.get("can_use"):
 							result.collider._on_use()
 				# Movement stuff
@@ -164,7 +172,7 @@ func normal_mode_physics_process(delta: float) -> void:
 					direction.x -= 1.0
 					
 				# TODO: Check if the player can uncrouch with a shapecast
-				if Input.is_action_pressed("crouch") and not crouched:
+				if should_do_crouch and Input.is_action_pressed("crouch") and not crouched:
 					var shape: BoxShape3D = collision_shape.shape
 					shape.size = collision_size * collision_mult_crouched
 					collision_shape.position.y += (collision_size.y * collision_mult_crouched.y)
@@ -172,7 +180,7 @@ func normal_mode_physics_process(delta: float) -> void:
 					local_pos = local_pos - (up_direction * (shape.size.y/2))
 					crouched = true
 					update_current_speed_cap()
-				elif not Input.is_action_pressed("crouch") and crouched:
+				elif (not should_do_crouch and crouched) or (not Input.is_action_pressed("crouch") and crouched):
 					var shape: BoxShape3D = collision_shape.shape
 					shape.size = collision_size
 					collision_shape.position.y -= (collision_size.y * collision_mult_crouched.y)
@@ -182,9 +190,9 @@ func normal_mode_physics_process(delta: float) -> void:
 					crouched = false
 					update_current_speed_cap()
 
-			if abs(local_pos.y - last_y) <= 0.001:
+			if abs(local_pos.y - last_y) <= 0.001 and !overide_y_vel:
 				target_velocity.y = 0
-				
+			
 			if not is_on_floor():
 				target_velocity = do_gravity(delta, target_velocity)
 			elif !dead and Input.is_action_pressed("jump"):
@@ -288,9 +296,10 @@ func _sub_mod(which, id):
 			speed_cap_mods[id] = null
 
 func do_gravity(delta: float, velocity_in: Vector3):
-	velocity_in.y -= gravity * delta
-	if velocity_in.y > fall_cap:
-		velocity_in.y = fall_cap
+	if should_do_gravity:
+		velocity_in.y -= gravity * delta
+		if velocity_in.y > fall_cap:
+			velocity_in.y = fall_cap
 	return velocity_in
 
 func _input(event: InputEvent) -> void:

@@ -4,7 +4,7 @@ enum States {NOT_PLACED,PLACED,MOVING}
 var state = States.NOT_PLACED
 var move_to: Vector3i
 var direction_to_go: Vector3
-var speed: float = 0.1
+var speed: float = 5
 var move_to_f: Vector3
 var last_dir = 0x0001
 
@@ -68,7 +68,7 @@ func _process(delta: float) -> void:
 			state = States.NOT_PLACED
 			_place(Map.dirs_keys.pick_random())
 		States.MOVING:
-			position += direction_to_go * speed
-			if position.distance_to(move_to_f) <= speed:
+			position += direction_to_go * speed * delta
+			if position.distance_to(move_to_f) <= speed * delta:
 				position = move_to_f
 				state = States.PLACED

@@ -40,10 +40,9 @@ func _ready() -> void:
 		dirs_keys.append(cell)
 	
 	$"../Rat"._place(dirs_keys.pick_random())
-	$"../Gravity_Flipper".position = _hall_corner()*2 as Vector3
-	$"../Gravity_Flipper".position.x += 1
-	$"../Gravity_Flipper".position.z += 1
-	$"../Gravity_Flipper".position.y += 1
+	var pos = _hall_corner()*2 as Vector3
+	pos += Vector3(1,1,1)
+	$"../Gravity_Flipper"._move(pos)
 #	$"../c1a0 Teleport Trigger".position = _corner()*2 as Vector3
 #	$"../c1a0 Teleport Trigger".position.x += 1
 #	$"../c1a0 Teleport Trigger".position.z += 1

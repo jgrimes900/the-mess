@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bnijdfm8dpeuu"]
+[gd_scene format=4 uid="uid://bnijdfm8dpeuu"]
 
 [ext_resource type="Script" uid="uid://y5l84q5odctl" path="res://entities/map.gd" id="1_lumrj"]
 [ext_resource type="MeshLibrary" uid="uid://doqsed0qkm4q6" path="res://assets/GridMapTest_Tiles.res" id="1_mj7vu"]
@@ -28,6 +28,9 @@
 [ext_resource type="Script" uid="uid://ckyl0dpw7pqu3" path="res://entities/remover.gd" id="26_pfqyr"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="27_yjj08"]
 [ext_resource type="AudioStream" uid="uid://b2j68q721acvw" path="res://assets/sounds/hl1/weapons/g_bounce3.wav" id="28_yjj08"]
+[ext_resource type="Material" uid="uid://bikdhxh4pxqjf" path="res://materials/liquids/!radio.tres" id="30_burdy"]
+[ext_resource type="Script" uid="uid://bnct3uk5ps7ks" path="res://entities/AreaWater3D.gd" id="31_mty32"]
+[ext_resource type="Script" uid="uid://db2k11j761bt2" path="res://entities/FogArea3D.gd" id="31_vpor8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba6ci"]
 size = Vector3(2, 2, 2)
@@ -87,6 +90,27 @@ alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("25_egron")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ic36"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_idbfw"]
+_surfaces = [{
+"aabb": AABB(-3, -1.5, -3.2, 6.0000005, 3, 6.4),
+"attribute_data": PackedByteArray("/////wAAiD8AAIA//////wAAiD8AAIC//////wAAPEAAAIC//////wAAiD8AAIA//////wAAPEAAAIC//////wAAPEAAAIA//////wAAiD8AAIC//////wAAiD8AAIA//////wAAPEAAAIA//////wAAiD8AAIC//////wAAPEAAAIA//////wAAPEAAAIC//////wAAgL8AAI5A/////wAAgD8AAI5A/////wAAgD8AAGBA/////wAAgL8AAGBA/////wAAgD8AAI5A/////wAAgL8AAI5A/////wAAgL8AAGBA/////wAAgD8AAGBA/////wAAiD8AAI5A/////wAAPEAAAI5A/////wAAPEAAAGBA/////wAAiD8AAI5A/////wAAPEAAAGBA/////wAAiD8AAGBA/////wAAPEAAAI5A/////wAAiD8AAI5A/////wAAiD8AAGBA/////wAAPEAAAI5A/////wAAiD8AAGBA/////wAAPEAAAGBA"),
+"format": 34359742495,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFwAYABkAGgAbABwAHQAeAB8A"),
+"material": ExtResource("30_burdy"),
+"name": "surface_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AABAwAAAwD/NzExAAABAwAAAwD/NzEzAAgBAQAAAwD/NzEzAAABAwAAAwD/NzExAAgBAQAAAwD/NzEzAAgBAQAAAwD/NzExAAABAwAAAwL/NzEzAAABAwAAAwL/NzExAAgBAQAAAwL/NzExAAABAwAAAwL/NzEzAAgBAQAAAwL/NzExAAgBAQAAAwL/NzEzAAABAwAAAwL/NzExAAABAwAAAwL/NzEzAAABAwAAAwD/NzEzAAABAwAAAwD/NzExAAgBAQAAAwL/NzEzAAgBAQAAAwL/NzExAAgBAQAAAwD/NzExAAgBAQAAAwD/NzEzAAABAwAAAwL/NzEzAAgBAQAAAwL/NzEzAAgBAQAAAwD/NzEzAAABAwAAAwL/NzEzAAgBAQAAAwD/NzEzAAABAwAAAwD/NzEzAAgBAQAAAwL/NzExAAABAwAAAwL/NzExAAABAwAAAwD/NzExAAgBAQAAAwL/NzExAAABAwAAAwD/NzExAAgBAQAAAwD/NzExAAID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AIAAAP///z8AgAAA////PwCAAAD///8/AIAAAP///z8AgAAA////PwCAAAD///8/AAAAgP//AAAAAACA//8AAAAAAID//wAAAAAAgP//AAD//wCA////////AID///////8AgP///////wCA//////////////8//////////z//////////P/////////8//////////z//////////P/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////vw==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iwjhq"]
+points = PackedVector3Array(3.0000005, 1.5, 3.2, 3.0000005, -1.5, 3.2, 3.0000005, 1.5, -3.2, -3, 1.5, 3.2, -3, -1.5, 3.2, 3.0000005, -1.5, -3.2, -3, 1.5, -3.2, -3, -1.5, -3.2)
+
+[sub_resource type="Environment" id="Environment_4dunv"]
 
 [node name="Node3D" type="Node3D" unique_id=1193290923]
 script = ExtResource("1_lumrj")
@@ -480,6 +504,32 @@ shape = SubResource("BoxShape3D_8ic36")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="breakable test" unique_id=1054966121]
 stream = ExtResource("28_yjj08")
 volume_db = 30.0
+
+[node name="Node3D" type="Node3D" parent="." unique_id=329840201]
+
+[node name="mesh" type="MeshInstance3D" parent="Node3D" unique_id=1533610876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, -0.6999998, 10)
+gi_mode = 2
+mesh = SubResource("ArrayMesh_idbfw")
+
+[node name="fogarea" type="Area3D" parent="Node3D" unique_id=1887597269 node_paths=PackedStringArray("worldenv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, -0.6999998, 10)
+script = ExtResource("31_vpor8")
+worldenv = NodePath("../../WorldEnvironment")
+fog_color = Color(0.2627451, 0.5176471, 0.12156863, 1)
+
+[node name="shape" type="CollisionShape3D" parent="Node3D/fogarea" unique_id=1079005081]
+shape = SubResource("ConvexPolygonShape3D_iwjhq")
+
+[node name="waterarea" type="Area3D" parent="Node3D" unique_id=960255609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, -0.6999998, 10)
+script = ExtResource("31_mty32")
+
+[node name="shape" type="CollisionShape3D" parent="Node3D/waterarea" unique_id=578739892]
+shape = SubResource("ConvexPolygonShape3D_iwjhq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=710852107]
+environment = SubResource("Environment_4dunv")
 
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
 [connection signal="body_shape_entered" from="FNaF Teleport Trigger" to="FNaF Teleport Trigger" method="MapChange" unbinds=4]

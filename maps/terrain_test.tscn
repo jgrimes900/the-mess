@@ -20,6 +20,8 @@
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="17_sjl1l"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="18_147sb"]
 [ext_resource type="PackedScene" uid="uid://c54u0qah11kl7" path="res://models/mario64/piano.glb" id="20_863k3"]
+[ext_resource type="Script" uid="uid://bnct3uk5ps7ks" path="res://entities/AreaWater3D.gd" id="21_kjmdv"]
+[ext_resource type="Script" uid="uid://db2k11j761bt2" path="res://entities/FogArea3D.gd" id="22_5f81l"]
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_6bxk8"]
 albedoTexture = ExtResource("1_52wwa")
@@ -122,6 +124,9 @@ _data = {
 &"RESET": SubResource("Animation_rgyuw")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rgyuw"]
+size = Vector3(2, 8, 2)
+
 [node name="Node3D" type="Node3D" unique_id=1445642513]
 script = ExtResource("1_e4jf1")
 
@@ -218,5 +223,23 @@ autoplay = &"RESET"
 [node name="ReflectionProbe" type="ReflectionProbe" parent="MeshInstance3D" unique_id=773972111]
 size = Vector3(50, 20, 50)
 enable_shadows = true
+
+[node name="AreaWater3D" type="Area3D" parent="MeshInstance3D" unique_id=1787618426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+script = ExtResource("21_kjmdv")
+metadata/_custom_type_script = "uid://bnct3uk5ps7ks"
+
+[node name="shape" type="CollisionShape3D" parent="MeshInstance3D/AreaWater3D" unique_id=588247967]
+shape = SubResource("BoxShape3D_rgyuw")
+
+[node name="FogArea3D" type="Area3D" parent="MeshInstance3D" unique_id=2116446631 node_paths=PackedStringArray("worldenv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+script = ExtResource("22_5f81l")
+worldenv = NodePath("../../WorldEnvironment")
+fog_color = Color(0.42899996, 0.5689667, 0.65, 1)
+metadata/_custom_type_script = "uid://db2k11j761bt2"
+
+[node name="shape" type="CollisionShape3D" parent="MeshInstance3D/FogArea3D" unique_id=232430838]
+shape = SubResource("BoxShape3D_rgyuw")
 
 [connection signal="body_shape_entered" from="Teleport Trigger" to="Teleport Trigger" method="MapChange" unbinds=2]

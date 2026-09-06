@@ -53,6 +53,10 @@ func _ready() -> void:
 						$"../Health".max_health = file.get_float()
 						$"../Health".health = file.get_float()
 						to_kill = file.get_8()
+					8:
+						var items = get_dictionary_int32(file)
+						for key in items:
+							$"../Inv"._give_item(key,items[key])
 					0x200:
 						var map = get_string(file)
 						var map_chunck_cont = true
@@ -111,6 +115,8 @@ func _process(delta: float) -> void:
 		file.store_float($"../Health".max_health)
 		file.store_float($"../Health".health)
 		file.store_8(int($"..".dead))
+		file.store_16(8)
+		store_dictionary_int32(file,$"../Inv".items)
 		
 		Map_Chuncks[$"..".current_map] = {}
 		emit_signal("saving")

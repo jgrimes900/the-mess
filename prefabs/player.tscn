@@ -35,6 +35,9 @@
 [ext_resource type="Script" uid="uid://dp6g72ue80n5h" path="res://entities/save.gd" id="34_0anbp"]
 [ext_resource type="Script" uid="uid://rd5m8o6wooeh" path="res://GUI/stars.gd" id="36_gxohq"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_0anbp"]
+radius = 0.05
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf0v6"]
 bg_color = Color(0, 0, 0, 0.44705883)
 skew = Vector2(0.25, 0)
@@ -117,6 +120,20 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="Environment" id="Environment_e3k5d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0anbp"]
+bg_color = Color(0.3306776, 0.5368649, 0.66631067, 1)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.06913407, 0.287014, 0.42948064, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3k5d"]
+font = ExtResource("19_e3k5d")
+font_size = 50
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0anbp"]
 shader = ExtResource("33_r1s2y")
@@ -336,6 +353,10 @@ font_size = 32
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_0anbp"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_ipj2g"]
 font_size = 32
 font_color = Color(0.21499999, 0.6, 0.18, 1)
@@ -356,6 +377,11 @@ script = ExtResource("1_edtk3")
 
 [node name="Pivot" type="Node3D" parent="." unique_id=50831465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62031054, 0)
+
+[node name="camera_collider" type="Area3D" parent="Pivot" unique_id=1119619463]
+
+[node name="shape" type="CollisionShape3D" parent="Pivot/camera_collider" unique_id=2131275712]
+shape = SubResource("SphereShape3D_0anbp")
 
 [node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=1145977306]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
@@ -719,6 +745,26 @@ theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 9
 text = "Rarity: Common"
 
+[node name="dive_meter" type="PanelContainer" parent="HUD" unique_id=2141701540]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.95
+anchor_right = 0.95
+anchor_bottom = 0.95
+offset_left = -100.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0anbp")
+
+[node name="Label" type="Label" parent="HUD/dive_meter" unique_id=2035020979]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3"
+label_settings = SubResource("LabelSettings_e3k5d")
+
 [node name="panel_fuck" type="Panel" parent="." unique_id=1363549028]
 material = SubResource("ShaderMaterial_0anbp")
 anchors_preset = 15
@@ -815,10 +861,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 0
 
 [node name="Currency" type="VBoxContainer" parent="Inv/TabContainer" unique_id=2072009274]
-visible = false
 layout_mode = 2
 alignment = 1
 metadata/_tab_index = 0
@@ -865,6 +910,18 @@ horizontal_alignment = 2
 custom_minimum_size = Vector2(40, 10)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
+
+[node name="Total" type="Label" parent="Inv/TabContainer/Currency/SHaR_Coin/ColorRect2" unique_id=1076279517]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 10
+text = "
+/23"
+label_settings = SubResource("LabelSettings_0anbp")
 
 [node name="USD" type="HBoxContainer" parent="Inv/TabContainer/Currency" unique_id=862064814]
 layout_mode = 2
@@ -914,6 +971,7 @@ layout_mode = 2
 color = Color(1, 1, 1, 0)
 
 [node name="Beads" type="TabContainer" parent="Inv/TabContainer" unique_id=1788741967]
+visible = false
 layout_mode = 2
 current_tab = 1
 tab_0/hidden = true

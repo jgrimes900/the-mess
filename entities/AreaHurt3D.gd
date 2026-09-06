@@ -1,5 +1,7 @@
 extends Area3D
 
+class_name AreaHurt3D
+
 @export var damage: float = 0.0
 @export var is_percent: bool = false
 @export var is_per_second = false

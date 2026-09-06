@@ -14,3 +14,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$HealthBar.max_value = $"../Health".max_health
 	$HealthBar.value = $"../Health".health
+	$dive_meter/Label.text = str(abs(int(ceil($"..".dive_timer - $"..".max_dive_time - 1))))
+	$dive_meter.visible = $"..".dive_timer > 0

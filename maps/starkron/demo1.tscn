@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dssbc5hbjreg6" path="res://entities/Spawn.gd" id="2_cmqfk"]
 [ext_resource type="Shape3D" uid="uid://3d8of500lp84" path="res://models/Starkron/block_out_v4_collider.shape" id="2_ymd38"]
 [ext_resource type="Material" uid="uid://bmcuaiimjayw2" path="res://materials/starkron/checkard Test orange.tres" id="3_ymd38"]
+[ext_resource type="PackedScene" uid="uid://brf1n5ap71gw" path="res://prefabs/shar_coin.tscn" id="5_axtdh"]
 [ext_resource type="Script" uid="uid://cwfle0lloje08" path="res://entities/LoadLevel.gd" id="5_u8kvw"]
 [ext_resource type="Texture2D" uid="uid://bb0e64vof5t2o" path="res://assets/sprites/dbg_portal.png" id="6_qsut8"]
 [ext_resource type="ArrayMesh" uid="uid://b8yrqphxm3xcn" path="res://models/hl1_c1a0_transition_C0A0E_003.res" id="7_6jtjt"]
@@ -64,6 +65,9 @@ size = Vector3(0.2874873, 0.3197046, 0.39898682)
 transform = Transform3D(0.92387956, -0.3826835, 0, 0.3826835, 0.92387956, 0, 0, 0, 1, 2.7545173, 0.43896228, 0.07300001)
 operation = 2
 size = Vector3(1.6371758, 0.32, 0.399)
+
+[node name="CoinTest" parent="CSGBox3D" unique_id=1854968160 instance=ExtResource("5_axtdh")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.58740896, 0.00999999, -0.3401793)
 
 [node name="Spawn" type="Node3D" parent="." unique_id=59475480]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

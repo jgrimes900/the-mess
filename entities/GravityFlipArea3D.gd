@@ -1,10 +1,12 @@
 extends Area3D
 
+class_name GravityFlipArea3D
+
 @export var direction: Vector3 = Vector3(0, 0, 180)
 
 var flipped = false
 @onready var player = get_node("/root/Player")
-@onready var aniplay = get_node("../AnimationPlayer")
+@export var aniplay: AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +22,6 @@ func _ready() -> void:
 				player.rotate_ply(player.alive_rotation)
 				flipped = true
 		print(flipped))
-
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	aniplay.play("GravityFlipper/anim_Gravity_Flipper_Rotate")

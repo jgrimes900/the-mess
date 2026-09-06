@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="28_nihbn"]
 [ext_resource type="ArrayMesh" uid="uid://cqbyaqcyexpxu" path="res://models/GameDevTycoon/level1_Circle.res" id="28_vqjhl"]
 [ext_resource type="ArrayMesh" uid="uid://dsa5qo4mxrr7r" path="res://models/GameDevTycoon/level1_Circle_001.res" id="29_svwo7"]
+[ext_resource type="Texture2D" uid="uid://bomiete2ay7j6" path="res://materials/models/gamedevtycoon/level1_wall.png" id="29_y575s"]
 [ext_resource type="ArrayMesh" uid="uid://ddjyrtjv6qqyg" path="res://models/GameDevTycoon/level1_Circle_002.res" id="30_h4ri5"]
 [ext_resource type="ArrayMesh" uid="uid://bx12mycu0o1dl" path="res://models/GameDevTycoon/level1_Circle_003.res" id="31_wqdgl"]
 [ext_resource type="Texture2D" uid="uid://eoc333paeg6p" path="res://models/GameDevTycoon/level1_book_book_blue.png" id="31_xll1s"]
@@ -65,6 +66,10 @@
 [ext_resource type="ArrayMesh" uid="uid://crntw6r8nrm7y" path="res://models/GameDevTycoon/level1_Plane_013.res" id="58_5kfje"]
 [ext_resource type="ArrayMesh" uid="uid://duqmw5xh4hj3j" path="res://models/GameDevTycoon/level1_Plane_014.res" id="59_gic8m"]
 [ext_resource type="ArrayMesh" uid="uid://ottgiqmcc4u4" path="res://models/GameDevTycoon/level1_Cube_022.res" id="60_arnee"]
+[ext_resource type="PackedScene" uid="uid://brf1n5ap71gw" path="res://prefabs/shar_coin.tscn" id="68_5bxwr"]
+[ext_resource type="Material" uid="uid://dx2yrnwwctjum" path="res://materials/hl1_c1a0/floor_tile_0.tres" id="69_wog16"]
+[ext_resource type="ArrayMesh" uid="uid://briebbtbsa8va" path="res://models/WinMaze/Gravity_Flipper.res" id="70_oqdcm"]
+[ext_resource type="PackedScene" uid="uid://cpl5g6ucti1gr" path="res://prefabs/WinMaze/gravity_flipper.tscn" id="71_12bgp"]
 [ext_resource type="LightmapGIData" uid="uid://bvtl8mcsmm0ji" path="res://maps/hl1_c1a0.lmbake" id="149_kmepf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0f65"]
@@ -182,10 +187,36 @@ size = Vector3(1, 3.5, 5)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6y3yx"]
 data = PackedVector3Array(-2.5219, 0, 1.1309, 2.5219, 0, -2.5219, 2.5219, 0, 1.1309, -2.5219, 0, 1.1309, -2.5219, 0, -2.5219, 2.5219, 0, -2.5219, -2.5219, 0, 1.8587999, -2.5219, 0, 1.1309, 2.5219, 0, 1.1309, -2.5219, 0, 1.8587999, -2.655, 0, 1.1309, -2.5219, 0, 1.1309, -2.5219, 0, 1.8587999, -2.655, 0, 1.8587999, -2.655, 0, 1.1309, -2.5219, 0, 1.8587999, 2.5219, 0, 1.1309, 2.5219, 0, 1.8587999, -2.5219, 0, 2.5219, -2.5219, 0, 1.8587999, 2.5219, 0, 1.8587999, -2.5219, 0, 2.5219, 2.5219, 0, 1.8587999, 2.5219, 0, 2.5219, -2.5219, 1.564, -2.5219, 2.5219, 1.8542999, -2.5219, 2.5219, 1.564, -2.5219, -2.5219, 1.564, -2.5219, -2.5219, 1.8542999, -2.5219, 2.5219, 1.8542999, -2.5219, -2.5219, 0, -2.5219, -2.5219, 1.564, -2.5219, 2.5219, 1.564, -2.5219, -2.5219, 0, -2.5219, 2.5219, 1.564, -2.5219, 2.5219, 0, -2.5219, -2.5219, 1.564, 1.1309, -2.5219, 1.8542999, -2.5219, -2.5219, 1.564, -2.5219, -2.5219, 1.564, 1.1309, -2.5219, 1.8542999, 1.1309, -2.5219, 1.8542999, -2.5219, -2.5219, 0, 1.1309, -2.5219, 1.564, 1.1309, -2.5219, 1.564, -2.5219, -2.5219, 0, 1.1309, -2.5219, 1.564, -2.5219, -2.5219, 0, -2.5219, -2.5219, 1.564, 1.8587999, -2.5219, 1.8542999, 1.1309, -2.5219, 1.564, 1.1309, -2.5219, 1.564, 1.8587999, -2.5219, 1.8542999, 1.8587999, -2.5219, 1.8542999, 1.1309, -2.5219, 1.564, 2.5219, -2.5219, 1.8542999, 1.8587999, -2.5219, 1.564, 1.8587999, -2.5219, 1.564, 2.5219, -2.5219, 1.8542999, 2.5219, -2.5219, 1.8542999, 1.8587999, -2.5219, 0, 2.5219, -2.5219, 1.564, 2.5219, -2.5219, 1.564, 1.8587999, -2.5219, 0, 2.5219, -2.5219, 1.564, 1.8587999, -2.5219, 0, 1.8587999, -2.5219, 0, 1.1309, -2.655, 1.564, 1.1309, -2.5219, 1.564, 1.1309, -2.5219, 0, 1.1309, -2.655, 0, 1.1309, -2.655, 1.564, 1.1309, -2.5219, 1.564, 1.1309, -2.655, 1.564, 1.8587999, -2.5219, 1.564, 1.8587999, -2.5219, 1.564, 1.1309, -2.655, 1.564, 1.1309, -2.655, 1.564, 1.8587999, -2.5219, 1.564, 1.8587999, -2.655, 0, 1.8587999, -2.5219, 0, 1.8587999, -2.5219, 1.564, 1.8587999, -2.655, 1.564, 1.8587999, -2.655, 0, 1.8587999)
 
+[sub_resource type="Gradient" id="Gradient_5bxwr"]
+offsets = PackedFloat32Array(0.25291827, 0.36575875)
+colors = PackedColorArray(0.8047423, 0.8047428, 0.80474234, 1, 0.851769, 0.8517689, 0.85176885, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tk5t2"]
+noise_type = 2
+frequency = 0.2412
+cellular_jitter = 1.5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dh5k2"]
+noise = SubResource("FastNoiseLite_tk5t2")
+color_ramp = SubResource("Gradient_5bxwr")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wog16"]
+albedo_texture = SubResource("NoiseTexture2D_dh5k2")
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_12bgp"]
 lightmap_size_hint = Vector2i(27, 27)
+material = SubResource("StandardMaterial3D_wog16")
 add_uv2 = true
 size = Vector2(5.2, 5.2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oqdcm"]
+lightmap_size_hint = Vector2i(27, 11)
+add_uv2 = true
+size = Vector2(5.2, 1.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12bgp"]
+albedo_texture = ExtResource("29_y575s")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_doqcj"]
 points = PackedVector3Array(-0.027040558, -0.06969583, -5.2936375e-06, -0.019121084, -0.06969583, 0.019115789, -0.027040558, -1.0222197e-05, -5.2936375e-06, -0.019121084, -0.06969583, -0.019121084, -0.016892407, -0.11603129, -0.016892407, -0.023885474, -0.11603129, -5.2936375e-06, -0.016892407, -0.11603129, 0.016887115, -5.2936375e-06, -0.06969583, 0.027040558, -0.019121084, -1.0222197e-05, 0.019115789, -5.2936375e-06, 0.012333751, -5.2936375e-06, -0.019121084, -1.0222197e-05, -0.019121084, -5.2936375e-06, -0.06969583, -0.027040558, -5.2936375e-06, -0.11603129, -0.023885474, -5.2936375e-06, -0.26908427, -0.008316508, -0.0058813747, -0.26908427, -0.0058813747, -0.0058813747, -0.29580924, -0.0024139583, -0.008316508, -0.29580924, -5.2936375e-06, -5.2936375e-06, -0.11603129, 0.023880178, -0.0058813747, -0.29580924, 0.0024086628, -0.0058813747, -0.26908427, 0.005876081, -5.2936375e-06, -0.26908427, 0.008311214, 0.019115789, -0.06969583, 0.019115789, -5.2936375e-06, -1.0222197e-05, 0.027040558, 0.016887115, -0.11603129, 0.016887115, 0.027040558, -1.0222197e-05, -5.2936375e-06, 0.019115789, -1.0222197e-05, -0.019121084, -5.2936375e-06, -1.0222197e-05, -0.027040558, 0.019115789, -1.0222197e-05, 0.019115789, 0.016887115, -0.11603129, -0.016892407, 0.019115789, -0.06969583, -0.019121084, 0.005876081, -0.26908427, -0.0058813747, 0.005876081, -0.29580924, -0.0024139583, -5.2936375e-06, -0.29580924, -0.0034091864, -5.2936375e-06, -0.29827195, -5.2936375e-06, -5.2936375e-06, -0.29580924, 0.0034038909, 0.005876081, -0.29580924, 0.0024086628, 0.005876081, -0.26908427, 0.005876081, 0.027040558, -0.06969583, -5.2936375e-06, 0.023880178, -0.11603129, -5.2936375e-06, 0.008311214, -0.29580924, -5.2936375e-06)
@@ -324,6 +355,15 @@ data = PackedVector3Array(0.25, 0, 0.364, -0.25, 0, 0.364, 0.25, 0, -0.364, -0.2
 ambient_light_energy = 0.0
 glow_enabled = true
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_0e6ng"]
+material = ExtResource("69_wog16")
+top_radius = 0.325
+bottom_radius = 0.375
+height = 0.05
+radial_segments = 12
+rings = 1
+cap_bottom = false
+
 [node name="Node3D" type="Node3D" unique_id=2064185158]
 script = ExtResource("1_t7t8s")
 
@@ -423,6 +463,7 @@ sound_start = ExtResource("11_5bxwr")
 
 [node name="C1a0001" type="MeshInstance3D" parent="C1A0/World/WinMaze Exit Room/Door4" unique_id=393157243]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+gi_mode = 2
 mesh = ExtResource("9_uthg3")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="C1A0/World/WinMaze Exit Room/Door4" unique_id=1049821439]
@@ -733,6 +774,11 @@ script = ExtResource("5_jgvh2")
 main = false
 from_maps = ["GridMapTest"]
 
+[node name="Spawn_main" type="Node3D" parent="." unique_id=1309168137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.918, -2.3, 0.597)
+script = ExtResource("5_jgvh2")
+from_maps = ["GridMapTest", "StarkronDemo1", "WinMap"]
+
 [node name="Spawn_Starkron_Demo1" type="Node3D" parent="." unique_id=318784193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9184103, -2.1957545, 0.5974302)
 script = ExtResource("5_jgvh2")
@@ -808,7 +854,9 @@ from_maps = ["WinMap"]
 quality = 3
 interior = true
 texel_scale = 2.0
-generate_probes_subdiv = 3
+environment_mode = 3
+environment_custom_color = Color(0, 0, 0, 1)
+generate_probes_subdiv = 4
 light_data = ExtResource("149_kmepf")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1087892371]
@@ -824,17 +872,19 @@ mesh = ExtResource("25_oh6j0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/level1/room" unique_id=1213602183]
 shape = SubResource("ConcavePolygonShape3D_6y3yx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/level1/room" unique_id=41351059]
+[node name="Roof" type="MeshInstance3D" parent="Node3D/level1/room" unique_id=41351059]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -4.2351647e-22, 1.8534626, 4.5423654e-08)
 mesh = SubResource("PlaneMesh_12bgp")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/level1/room" unique_id=1546802585]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, -1.10078545e-07, 1.8534627, 2.5183036)
-mesh = SubResource("PlaneMesh_12bgp")
+[node name="Wall1" type="MeshInstance3D" parent="Node3D/level1/room" unique_id=1546802585]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 0.9, 2.518)
+mesh = SubResource("PlaneMesh_oqdcm")
+surface_material_override/0 = SubResource("StandardMaterial3D_12bgp")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/level1/room" unique_id=2126749198]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.5, 1.853, 0)
-mesh = SubResource("PlaneMesh_12bgp")
+[node name="Wall2" type="MeshInstance3D" parent="Node3D/level1/room" unique_id=1372825856]
+transform = Transform3D(4.371139e-08, -1, -3.821371e-15, -4.371139e-08, 1.9106855e-15, -1, -1, -4.371139e-08, 4.371139e-08, 2.518, 0.9, 0)
+mesh = SubResource("PlaneMesh_oqdcm")
+surface_material_override/0 = SubResource("StandardMaterial3D_12bgp")
 
 [node name="tool_board" type="MeshInstance3D" parent="Node3D/level1" unique_id=1897893739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4833246, 1.2489877, -2.5054395)
@@ -1309,6 +1359,26 @@ shape = SubResource("ConcavePolygonShape3D_7yy6w")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1688820716]
 environment = SubResource("Environment_12bgp")
+
+[node name="CoinTest" parent="." unique_id=1854968160 instance=ExtResource("68_5bxwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0855722, 15.266985, 33.69285)
+
+[node name="gf_spot" type="Node3D" parent="." unique_id=1317241737]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -10.175964, 15.562225, 39.750214)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="gf_spot" unique_id=5531282]
+mesh = SubResource("CylinderMesh_0e6ng")
+
+[node name="Node3D" type="Node3D" parent="gf_spot/MeshInstance3D" unique_id=722041224]
+transform = Transform3D(0.25, 0, 0, 0, 0.003, 0, 0, 0, 0.25, 0, 0.02560234, 0)
+
+[node name="Gravity_Flipper2" type="MeshInstance3D" parent="gf_spot/MeshInstance3D/Node3D" unique_id=1372869238]
+transform = Transform3D(-1.0927847e-08, -0.5, 0, 0.23096988, -2.0192028e-08, -0.19134173, 0.095670864, -8.363813e-09, 0.46193975, 0, 0, 0)
+mesh = ExtResource("70_oqdcm")
+
+[node name="Gravity_Flipper" parent="gf_spot" unique_id=1463828297 instance=ExtResource("71_12bgp")]
+transform = Transform3D(-0.25, 2.1855694e-08, 0, -2.1855694e-08, -0.25, 0, 0, 0, 0.25, 0, 0.659235, 0)
+disabled = true
 
 [connection signal="finished" from="C1A0/World/WinMaze Exit Room/Door4/sound" to="C1A0/World/WinMaze Exit Room/Door4" method="_on_sound_finished"]
 [connection signal="closed" from="C1A0/World/WinMaze Exit Room/doorlock_out" to="C1A0/World/WinMaze Exit Room/Door4" method="_open"]

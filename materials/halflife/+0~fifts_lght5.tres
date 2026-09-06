@@ -7,7 +7,6 @@
 albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
 albedo_texture = ExtResource("1_7k3w6")
 emission_enabled = true
-emission_energy_multiplier = 2.0
 emission_texture = ExtResource("2_6e613")
 metadata/details = {
 "$basetexture": "halflife/+0~fifts_lght5"
