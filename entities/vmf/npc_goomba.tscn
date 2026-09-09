@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ch6c1wi1oq2ke"]
+
+[ext_resource type="Script" uid="uid://c2lf3odsgmag6" path="res://entities/vmf/npc_goomba.gd" id="1_rdy13"]
+[ext_resource type="PackedScene" uid="uid://cxkmecccsn0bg" path="res://prefabs/mario_64/goomba.tscn" id="2_5f72e"]
+
+[node name="npc_goomba" type="Node3D" unique_id=1670925197]
+script = ExtResource("1_rdy13")
+
+[node name="Goomba" parent="." unique_id=1214246322 instance=ExtResource("2_5f72e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)

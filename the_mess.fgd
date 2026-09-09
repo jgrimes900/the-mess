@@ -1,3 +1,18 @@
+@PointClass base(Targetname, Origin, Angles) iconsprite("editor/shar_coin.vmt") = EntSharCoin : "Entity's description" [
+	spawnflags(Flags) = [
+
+	]
+
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+
+
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+
 @PointClass base(Targetname, Origin, Angles) size( -8 -8 0, 8 8 160 ) iconsprite("editor/sm64_tree.vmt") = ent_sm64_tree : "Entity's description" [
 	spawnflags(Flags) = [
 
@@ -217,6 +232,21 @@
 
 	offset(vector) : "Offset" : "0.0 0.0 0.0" : ""
 	rot_offset(float) : "Rot Offset" : "0.0" : ""
+	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
+
+
+
+	input Toggle(void) : ""
+	input Enable(void) : ""
+	input Disable(void) : ""
+	input Kill(void) : ""
+]
+
+@PointClass base(Targetname, Origin, Angles) iconsprite("mario64/goomball.vmt") = npc_goomba : "Entity's description" [
+	spawnflags(Flags) = [
+
+	]
+
 	StartDisabled(choices) : "Start Disabled" : 0 = [		"0" : "No"		"1" : "Yes"	]
 
 

@@ -1,0 +1,14 @@
+[remap]
+
+importer="VMT"
+type="Material"
+uid="uid://d0qp1kh2wwlvl"
+path="res://.godot/imported/shar_coin.vmt-dee1dbd643775d09075fbcc1dfe73de2.vmt.res"
+
+[deps]
+
+source_file="res://materials/editor/shar_coin.vmt"
+dest_files=["res://.godot/imported/shar_coin.vmt-dee1dbd643775d09075fbcc1dfe73de2.vmt.res"]
+
+[params]
+

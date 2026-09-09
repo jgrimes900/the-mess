@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d06esb334g33x"]
+
+[ext_resource type="Texture2D" uid="uid://cmrgubbia6ptt" path="res://materials/oot/oot_log_oot_log_end.png" id="1_5a5lw"]
+
+[resource]
+resource_name = "end"
+cull_mode = 2
+albedo_texture = ExtResource("1_5a5lw")
+texture_repeat = false

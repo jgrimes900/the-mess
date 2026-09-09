@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2clvnc0rn1fy"]
+
+[ext_resource type="Texture2D" uid="uid://pj78bldm6b45" path="res://materials/oot/oot_log_oot_log_side.png" id="1_7y2cm"]
+
+[resource]
+resource_name = "side"
+cull_mode = 2
+albedo_texture = ExtResource("1_7y2cm")
+texture_repeat = false

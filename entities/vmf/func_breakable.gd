@@ -4,6 +4,8 @@
 ## Entity's description
 class_name func_breakable extends VMFEntityNode
 
+enum MATERIALS {GLASS, WOOD, METAL, FLESH, CINDER_BLOCK, CEILING_TILE, COMPUTER, UNBREAKABLE_GLASS, ROCKS}
+
 # Use @exposed tag to make them appear in the FGD file
 
 ## @exposed
@@ -12,13 +14,12 @@ var health: float = 5.0:
 
 ## @exposed
 var material: int:
-	get: return entity.get("material", 2);
+	get: return entity.get("material", MATERIALS.GLASS);
 
 ## Use this method instead _ready
 func _entity_ready() -> void:
-	$collision/Health.connect("damaged", Callable($collision/sound, "play").unbind(1))
+	$collision/Health.connect("damaged", Callable($collision/sound, "play_random").unbind(1))
 	$collision/Health.connect("dead", Callable($collision, "_remove"))
-
 
 ## This method is called during the import process
 func _entity_setup(_e: VMFEntity) -> void:
@@ -32,10 +33,19 @@ func _entity_setup(_e: VMFEntity) -> void:
 	var collision_shape := CollisionShape3D.new();
 	collision_shape.shape = get_entity_shape();
 	
-	var sound := AudioStreamPlayer3D.new()
+	var sound := RandomSoundPlayer3D.new()
+	sound.pitch_high = 1.1
+	sound.pitch_low  = 0.9
 	match material:
+		MATERIALS.METAL:
+			sound.streams = [
+				load("res://assets/sounds/hl1/debris/metal1.wav"),
+				load("res://assets/sounds/hl1/debris/metal3.wav")
+			]
 		_:
-			sound.stream = load("res://assets/sounds/hl1/buttons/button11.wav")
+			sound.streams = [
+				load("res://assets/sounds/hl1/buttons/button11.wav")
+			]
 			
 	var health_obj := Health.new()
 	health_obj.health = health

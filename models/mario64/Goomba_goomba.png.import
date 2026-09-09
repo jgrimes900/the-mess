@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnf7mvr7hnwck"
-path="res://.godot/imported/Goomba_goomba.png-4c7a440d5e8bdb866067a345ea90ea63.ctex"
+path.s3tc="res://.godot/imported/Goomba_goomba.png-4c7a440d5e8bdb866067a345ea90ea63.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "5d87931e6907c1a59f5d50d0f8e6ebe4"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://models/mario64/Goomba_goomba.png"
-dest_files=["res://.godot/imported/Goomba_goomba.png-4c7a440d5e8bdb866067a345ea90ea63.ctex"]
+dest_files=["res://.godot/imported/Goomba_goomba.png-4c7a440d5e8bdb866067a345ea90ea63.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

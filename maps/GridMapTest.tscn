@@ -28,9 +28,15 @@
 [ext_resource type="Script" uid="uid://ckyl0dpw7pqu3" path="res://entities/remover.gd" id="26_pfqyr"]
 [ext_resource type="Script" uid="uid://b3koe758ngxfw" path="res://entities/components/Health.gd" id="27_yjj08"]
 [ext_resource type="AudioStream" uid="uid://b2j68q721acvw" path="res://assets/sounds/hl1/weapons/g_bounce3.wav" id="28_yjj08"]
+[ext_resource type="Script" uid="uid://b1hhmpoknet68" path="res://entities/RandomSoundPlayer3d.gd" id="29_burdy"]
+[ext_resource type="AudioStream" uid="uid://biddc8hg35upe" path="res://assets/sounds/hl1/debris/metal1.wav" id="30_a14vt"]
 [ext_resource type="Material" uid="uid://bikdhxh4pxqjf" path="res://materials/liquids/!radio.tres" id="30_burdy"]
 [ext_resource type="Script" uid="uid://bnct3uk5ps7ks" path="res://entities/AreaWater3D.gd" id="31_mty32"]
+[ext_resource type="AudioStream" uid="uid://b4snwua425nri" path="res://assets/sounds/hl1/debris/metal2.wav" id="31_vmm3c"]
 [ext_resource type="Script" uid="uid://db2k11j761bt2" path="res://entities/FogArea3D.gd" id="31_vpor8"]
+[ext_resource type="AudioStream" uid="uid://dakgtx30tx0ae" path="res://assets/sounds/hl1/debris/metal3.wav" id="32_li6vm"]
+[ext_resource type="ArrayMesh" uid="uid://rxrbxcs70h04" path="res://models/oot/oot_log_10m.res" id="36_n7w7c"]
+[ext_resource type="ArrayMesh" uid="uid://csm15s1awxnxg" path="res://models/oot/oot_log_5m.res" id="37_a14vt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba6ci"]
 size = Vector3(2, 2, 2)
@@ -503,7 +509,11 @@ shape = SubResource("BoxShape3D_8ic36")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="breakable test" unique_id=1054966121]
 stream = ExtResource("28_yjj08")
-volume_db = 30.0
+volume_db = 10.0
+script = ExtResource("29_burdy")
+streams = Array[AudioStream]([ExtResource("30_a14vt"), ExtResource("31_vmm3c"), ExtResource("32_li6vm")])
+pitch_high = 0.9
+pitch_low = 1.1
 
 [node name="Node3D" type="Node3D" parent="." unique_id=329840201]
 
@@ -531,12 +541,24 @@ shape = SubResource("ConvexPolygonShape3D_iwjhq")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=710852107]
 environment = SubResource("Environment_4dunv")
 
+[node name="OotLog10m" type="MeshInstance3D" parent="." unique_id=1449632761]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19, 0.5, 3)
+mesh = ExtResource("36_n7w7c")
+
+[node name="OotLog10m2" type="MeshInstance3D" parent="." unique_id=659283060]
+transform = Transform3D(0.26495963, 0.59363365, 0, -0.42402405, 0.3709435, 0, 0, 0, 0.5, -21.03574, 0.8098756, 3)
+mesh = ExtResource("36_n7w7c")
+
+[node name="OotLog5m" type="MeshInstance3D" parent="." unique_id=2043059912]
+transform = Transform3D(0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, -23, -0.75, 3)
+mesh = ExtResource("37_a14vt")
+
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
 [connection signal="body_shape_entered" from="FNaF Teleport Trigger" to="FNaF Teleport Trigger" method="MapChange" unbinds=4]
 [connection signal="body_shape_entered" from="WinMap Teleport Trigger" to="WinMap Teleport Trigger" method="MapChange" unbinds=2 binds= ["WinMap"]]
 [connection signal="body_shape_entered" from="Shop Teleport Trigger" to="Shop Teleport Trigger" method="MapChange" unbinds=2]
 [connection signal="body_shape_entered" from="WinMap Teleport Trigger2" to="WinMap Teleport Trigger2" method="MapChange" unbinds=2]
-[connection signal="damaged" from="breakable test/Health" to="breakable test/AudioStreamPlayer3D" method="play" unbinds=1]
+[connection signal="damaged" from="breakable test/Health" to="breakable test/AudioStreamPlayer3D" method="play_random" unbinds=1]
 [connection signal="dead" from="breakable test/Health" to="breakable test" method="_remove"]
 
 [editable path="test_doorlock_out/SotM Lock"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="VTF"
+type="Texture"
+uid="uid://ddgyfpdnwcsgq"
+path="res://.godot/imported/shar_coin.vtf-b97c00bb0e6cd711cbedbc151f29ba1f.vtf.res"
+
+[deps]
+
+source_file="res://materials/editor/shar_coin.vtf"
+dest_files=["res://.godot/imported/shar_coin.vtf-b97c00bb0e6cd711cbedbc151f29ba1f.vtf.res"]
+
+[params]
+
+srgb_conversion_method=1

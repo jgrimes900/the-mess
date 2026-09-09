@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dbdh7qc16k06y"]
+
+[ext_resource type="Script" uid="uid://dpogh2fdcoxkl" path="res://entities/vmf/ent_shar_coin.gd" id="1_qep3y"]
+[ext_resource type="PackedScene" uid="uid://brf1n5ap71gw" path="res://prefabs/shar_coin.tscn" id="2_xri6f"]
+
+[node name="EntSharCoin" type="Node3D" unique_id=2098092719]
+script = ExtResource("1_qep3y")
+
+[node name="CoinTest" parent="." unique_id=1854968160 instance=ExtResource("2_xri6f")]
