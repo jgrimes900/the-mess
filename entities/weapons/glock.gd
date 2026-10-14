@@ -1,4 +1,4 @@
-extends Node3D
+extends GunBase
 
 # The glock / 9mm Pistol from Half-Life 1
 
@@ -14,47 +14,24 @@ extends Node3D
 @onready var silencer: MeshInstance3D = $"v_hl1_glock/v_9mmhandgun_qc_skeleton_001/Skeleton3D/glock_reference(silencer)"
 @onready var Sounds: AudioStreamPlayer3D = $GunSounds
 
-var player_dead = false
-var in_control: bool = true
-var active: bool = false
-
 func _ready() -> void:
 	silencer.visible = has_silencer
 	_idle_animation()
 
 # TODO: Add sound, ammo, silencer, missing animations, and make the player have to pick it up first
-func _process(delta: float) -> void:
-	if active:
-		if Input.is_action_just_pressed("fire_left") and !player_dead and in_control:
-			if gun._fire():
-				Sounds.play()
-				glock_anim.stop()
-				arms_anim.stop()
-				glock_anim.play("glock/shoot")
-				arms_anim.play("vm_arm_lib/glock_shoot")
+func _process_next(delta: float) -> void:
+	if Input.is_action_just_pressed("fire_left"):
+		if gun._fire():
+			Sounds.play()
+			glock_anim.stop()
+			arms_anim.stop()
+			glock_anim.play("glock/shoot")
+			arms_anim.play("vm_arm_lib/glock_shoot")
 
 func _idle_animation():
 	#aniplay.play("v_9mmhandgun_animation_lib/idle"+str(randi_range(1,3)))
 	pass
 
-func _select(a:bool):
-	if a:
-		active = true
-		$v_hl1_glock.visible = true
-		glock_anim.play("glock/shoot") # replace with draw animation
-		arms_anim.play("vm_arm_lib/glock_shoot")
-	else:
-		active = false
-		$v_hl1_glock.visible = false
-		
-
-func _player_dead() -> void:
-	$v_hl1_glock.visible = false
-	player_dead = true
-	
-func _player_undead() -> void:
-	$v_hl1_glock.visible = true
-	player_dead = false
-
-func _set_control(a: bool):
-	in_control = a
+func select_setup():
+	glock_anim.play("glock/shoot") # replace with draw animation
+	arms_anim.play("vm_arm_lib/glock_shoot")

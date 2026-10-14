@@ -14,10 +14,12 @@ func _init():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_init()
-	for a in pos:
-		a.visible = false
-	pos[posi].visible = true
+	var to_call = func():
+		_init()
+		for a in pos:
+			a.visible = false
+		pos[posi].visible = true
+	to_call.call_deferred()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

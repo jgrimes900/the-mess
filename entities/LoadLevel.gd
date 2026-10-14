@@ -23,14 +23,15 @@ func MapChange(_a = null,body: Node3D = get_node("/root/Player"),level: String =
 		get_node("/root/Player/AudioTele").stream = SOUND
 		get_node("/root/Player/AudioTele").play()
 	
-func MapChange2(_a = null,body: Node3D = get_node("/root/Player"),level: String = LevelDef) -> void:
+func MapChange2(_a = null,body: Node3D = get_node("/root/Player"),level: String = LevelDef, save: bool = true) -> void:
 	if body == get_node("/root/Player"):
 		var callable = Callable(DoTheThing);
-		callable.call_deferred(level)
+		callable.call_deferred(level, save)
 		
-func DoTheThing(level: String):
+func DoTheThing(level: String, save: bool = true):
+	print(global_position)
 	get_node("/root/Player").prev_teleport_offset = global_position - get_node("/root/Player").global_position
-	$"/root/Player/Save".emit_signal("saving")
+	if save: $"/root/Player/Save".emit_signal("saving")
 	get_node("/root/Player").last_map = get_node("/root/Player").current_map
 	get_node("/root/Player").current_map = level
 	get_node("/root/Player").spawned = false

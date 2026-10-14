@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bc86dq8j47gps"]
+
+[ext_resource type="Texture2D" uid="uid://c2cn1rckdy6we" path="res://models/stronghold2/buildings/building_apothecary_2.png" id="1_mhhgu"]
+[ext_resource type="Texture2D" uid="uid://cj4nfuybchnb6" path="res://models/stronghold2/buildings/building_apothecary_1.png" id="2_secat"]
+
+[resource]
+resource_name = "material_1"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_mhhgu")
+ao_enabled = true
+ao_texture = ExtResource("2_secat")
+ao_on_uv2 = true

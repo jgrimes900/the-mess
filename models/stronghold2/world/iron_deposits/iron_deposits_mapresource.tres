@@ -1,0 +1,23 @@
+[gd_resource type="ObjectResource" format=3 uid="uid://c40r8rp4ikj5f"]
+
+[ext_resource type="PackedScene" uid="uid://dt8022o7iq203" path="res://models/stronghold2/world/iron_deposits/1.tscn" id="1_0jx0h"]
+[ext_resource type="PackedScene" uid="uid://c8o5u0yux3o0k" path="res://models/stronghold2/world/iron_deposits/2.tscn" id="2_3u61a"]
+[ext_resource type="PackedScene" uid="uid://c67u1rthknn62" path="res://models/stronghold2/world/iron_deposits/3.tscn" id="3_k5ftb"]
+[ext_resource type="PackedScene" uid="uid://c1yljp87qeqiw" path="res://models/stronghold2/world/iron_deposits/4.tscn" id="4_tgb2j"]
+[ext_resource type="PackedScene" uid="uid://ctbwnurcvtf80" path="res://models/stronghold2/world/iron_deposits/5.tscn" id="5_ctikj"]
+[ext_resource type="PackedScene" uid="uid://vedowiodgm7q" path="res://models/stronghold2/world/iron_deposits/6.tscn" id="6_rem2o"]
+[ext_resource type="PackedScene" uid="uid://qk4r6jg6rth6" path="res://models/stronghold2/world/iron_deposits/7.tscn" id="7_od1n5"]
+[ext_resource type="PackedScene" uid="uid://ckamuiem6lb6y" path="res://models/stronghold2/world/iron_deposits/8.tscn" id="8_uydx1"]
+[ext_resource type="PackedScene" uid="uid://cq7itxgwcdkxf" path="res://models/stronghold2/world/iron_deposits/9.tscn" id="9_5f8x4"]
+[ext_resource type="PackedScene" uid="uid://cvs4amsvqpjws" path="res://models/stronghold2/world/iron_deposits/10.tscn" id="10_c5vuj"]
+[ext_resource type="PackedScene" uid="uid://cx1uc0ebmqnlc" path="res://models/stronghold2/world/iron_deposits/11.tscn" id="11_l052j"]
+[ext_resource type="PackedScene" uid="uid://bvssxgf7cck4q" path="res://models/stronghold2/world/iron_deposits/12.tscn" id="12_ohpk3"]
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_0ivvq"]
+objectFrequency = 2
+randomRange = 2.0
+randomRotation = true
+objectScenes = Array[PackedScene]([ExtResource("1_0jx0h"), ExtResource("2_3u61a"), ExtResource("3_k5ftb"), ExtResource("4_tgb2j"), ExtResource("5_ctikj"), ExtResource("6_rem2o"), ExtResource("7_od1n5"), ExtResource("8_uydx1"), ExtResource("9_5f8x4"), ExtResource("10_c5vuj"), ExtResource("11_l052j"), ExtResource("12_ohpk3")])
+
+[resource]
+definition = SubResource("ObjectDefinitionResource_0ivvq")

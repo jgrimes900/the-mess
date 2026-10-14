@@ -8,7 +8,7 @@ var size: Vector3
 
 @onready var tag_node = $"Tag"
 @onready var collider: Area3D = $"Collider"
-@onready var itemDefs = $"../../ItemDefs"
+@onready var itemDefs = $"/root/Node3D/ItemDefs"
 
 @export var item = 0
 var count = 1000000

@@ -34,7 +34,7 @@ func _ready() -> void:
 								$"../Inv".coin_counts[key] = coins[key]
 								$"../Inv".recive_currency(null, key, 0)
 					1:
-						LoadLevel.MapChange2(null,get_node("/root/Player"),get_string(file))
+						LoadLevel.MapChange2(null,get_node("/root/Player"),get_string(file), false)
 					7:
 						get_node("/root/Player").last_map = get_string(file)
 					0x100:

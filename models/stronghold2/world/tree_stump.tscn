@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dwjgp8bvv2y2j"]
+
+[ext_resource type="ArrayMesh" uid="uid://rnjx71pw0lon" path="res://models/stronghold2/world/tree_stump_trees_chopped_002.res" id="1_ua5qk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fyd84"]
+height = 0.8052521
+radius = 0.4
+
+[node name="TreeStump" type="StaticBody3D" unique_id=1815705908]
+metadata/is_stump = true
+
+[node name="TreeStumpTreesChopped002" type="MeshInstance3D" parent="." unique_id=997435083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030265689, 0, 0.023033857)
+mesh = ExtResource("1_ua5qk")
+
+[node name="collider" type="CollisionShape3D" parent="." unique_id=1526398182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40262604, 0)
+shape = SubResource("CylinderShape3D_fyd84")

@@ -34,7 +34,7 @@ func _entity_setup(_e: VMFEntity) -> void:
 	collision_shape.shape = get_entity_shape();
 	
 	var sound := RandomSoundPlayer3D.new()
-	sound.pitch_high = 1.1
+	sound.pitch_high = 1.2
 	sound.pitch_low  = 0.9
 	match material:
 		MATERIALS.METAL:

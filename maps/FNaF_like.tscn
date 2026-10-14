@@ -3497,7 +3497,6 @@ autostart = true
 wait_time = 80.0
 autostart = true
 
-[connection signal="body_shape_entered" from="ExitWarp" to="ExitWarp" method="MapChange" unbinds=1]
 [connection signal="input_event" from="Control/SubViewportContainer/Left Door" to="Controler" method="_on_left_door_input_event"]
 [connection signal="input_event" from="Control/SubViewportContainer/Left Light" to="Controler" method="_on_left_light_input_event"]
 [connection signal="input_event" from="Control/SubViewportContainer/Right Door" to="Controler" method="_on_right_door_input_event"]

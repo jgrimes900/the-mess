@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://brjkqis2jmfy"]
+
+[ext_resource type="Texture2D" uid="uid://cre1owy2rv667" path="res://models/stronghold2/buildings/building_apothecary_8.png" id="1_6pyrs"]
+[ext_resource type="Texture2D" uid="uid://cj4nfuybchnb6" path="res://models/stronghold2/buildings/building_apothecary_1.png" id="2_uuir7"]
+
+[resource]
+resource_name = "material_7"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_6pyrs")
+ao_enabled = true
+ao_texture = ExtResource("2_uuir7")
+ao_on_uv2 = true

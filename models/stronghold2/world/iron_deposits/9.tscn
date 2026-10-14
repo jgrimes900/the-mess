@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cq7itxgwcdkxf"]
+
+[ext_resource type="ArrayMesh" uid="uid://dvpne4sew0cjc" path="res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_009.res" id="1_tkrm2"]
+
+[node name="1" type="Node3D" unique_id=853349319]
+
+[node name="IronDepositsIronDeposits001" type="MeshInstance3D" parent="." unique_id=595147231]
+mesh = ExtResource("1_tkrm2")

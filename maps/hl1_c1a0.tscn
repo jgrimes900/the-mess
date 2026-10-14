@@ -197,6 +197,7 @@ frequency = 0.2412
 cellular_jitter = 1.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dh5k2"]
+resource_name = "hl1_c1a0"
 noise = SubResource("FastNoiseLite_tk5t2")
 color_ramp = SubResource("Gradient_5bxwr")
 seamless = true

@@ -23,4 +23,3 @@ attenuation_filter_cutoff_hz = 20500.0
 
 [node name="v_hl1_glock" parent="." unique_id=723113414 instance=ExtResource("4_kjfk7")]
 transform = Transform3D(-5.6494025e-07, 0, 4.8192773, 0, 4.8192773, 0, -4.8192773, 0, -5.6494025e-07, 0, -3.8554218, 0)
-visible = false

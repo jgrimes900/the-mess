@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c21jsk4ri550q"]
+
+[ext_resource type="Texture2D" uid="uid://dein7ns0qivig" path="res://models/stronghold2/buildings/building_stockpile_0.png" id="1_0he4o"]
+
+[resource]
+resource_name = "material_0"
+albedo_color = Color(0.85430586, 0.85430586, 0.85430586, 1)
+ao_light_affect = 1.0
+ao_texture = ExtResource("1_0he4o")
+ao_on_uv2 = true

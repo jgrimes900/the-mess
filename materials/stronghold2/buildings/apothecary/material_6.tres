@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dpfdoame2b3xl"]
+
+[ext_resource type="Texture2D" uid="uid://c0knp2ff8ccfg" path="res://models/stronghold2/buildings/building_apothecary_7.png" id="1_l0hwi"]
+[ext_resource type="Texture2D" uid="uid://cj4nfuybchnb6" path="res://models/stronghold2/buildings/building_apothecary_1.png" id="2_lo5mp"]
+
+[resource]
+resource_name = "material_6"
+albedo_texture = ExtResource("1_l0hwi")
+ao_enabled = true
+ao_texture = ExtResource("2_lo5mp")
+ao_on_uv2 = true

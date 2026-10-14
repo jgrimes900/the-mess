@@ -56,7 +56,7 @@ var should_do_crouch: bool = true
 @onready var pkmn_ply: CharacterBody2D = $pokemon_rb_player
 var ply_mode: String = "normal"
 
-@onready var guns: Array[Node3D] = [null, $Pivot/glock]
+@onready var guns: Array[Node3D] = [$Pivot/vm_arm, $Pivot/glock]
 var selected_gun: int = 0
 
 @onready var _arms: Node3D = $Pivot/vm_arm
@@ -96,10 +96,14 @@ func _kill():
 		$ani_fuck.play("fuck")
 	dead = true
 	rotate_ply(death_rotation)
+	for gun in guns:
+		gun._set_player_dead(true)
 func _unkill():
 	dead = false
 	rotate_ply(alive_rotation)
 	$ani_fuck.play("RESET")
+	for gun in guns:
+		gun._set_player_dead(false)
 
 func _ready() -> void:
 	add_collision_exception_with($rigidbody_collider)
@@ -113,8 +117,6 @@ func select_gun(index, dir = null) -> void:
 		selected_gun = (index*dir + selected_gun)%len(guns)
 		if selected_gun < 0:
 			selected_gun = len(guns)+selected_gun
-		if guns[selected_gun] == null:
-			(_arms.get_node("AnimationPlayer") as AnimationPlayer).play("vm_arm_lib/fuckyou")
 		else:
 			guns[selected_gun]._select(true)
 		print(selected_gun)

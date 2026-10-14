@@ -554,7 +554,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, -23, -0.75, 3)
 mesh = ExtResource("37_a14vt")
 
 [connection signal="body_shape_entered" from="Exit Teleport Trigger" to="Exit Teleport Trigger" method="MapChange" unbinds=2 binds= ["hl1_c1a0"]]
-[connection signal="body_shape_entered" from="FNaF Teleport Trigger" to="FNaF Teleport Trigger" method="MapChange" unbinds=4]
+[connection signal="body_shape_entered" from="FNaF Teleport Trigger" to="FNaF Teleport Trigger" method="MapChange" unbinds=2]
 [connection signal="body_shape_entered" from="WinMap Teleport Trigger" to="WinMap Teleport Trigger" method="MapChange" unbinds=2 binds= ["WinMap"]]
 [connection signal="body_shape_entered" from="Shop Teleport Trigger" to="Shop Teleport Trigger" method="MapChange" unbinds=2]
 [connection signal="body_shape_entered" from="WinMap Teleport Trigger2" to="WinMap Teleport Trigger2" method="MapChange" unbinds=2]

@@ -83,9 +83,9 @@ func _process(delta: float) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.get_node("Control")._2d_ify()
-#	player.get_node("Pivot/glock/SVC").visible = false
+	for gun in player.guns:
+		gun._set_control(false)
 	player.get_node("HUD").visible = false
-	player.get_node("Pivot/glock")._set_control(false)
 	emit_signal("DoorLeft")
 	emit_signal("DoorRight")
 	get_node("/root").move_child.call_deferred($"..", 0)
@@ -131,9 +131,9 @@ func init_char(char, id):
 func _return_a():
 	print("squid")
 	player.get_node("Control")._un_2d()
-	player.get_node("Pivot/glock/SVC").visible = true
+	for gun in player.guns:
+		gun._set_control(true)
 	player.get_node("HUD").visible = true
-	player.get_node("Pivot/glock")._set_control(true)
 	player.get_node("panel_fuck").visible = true
 
 func do_disabled():

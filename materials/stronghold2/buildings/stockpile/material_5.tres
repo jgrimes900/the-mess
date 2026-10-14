@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://283ut6n1bwgb"]
+
+[ext_resource type="Texture2D" uid="uid://gfkbm26tw4r0" path="res://models/stronghold2/buildings/building_stockpile_3.png" id="1_q84le"]
+[ext_resource type="Texture2D" uid="uid://dein7ns0qivig" path="res://models/stronghold2/buildings/building_stockpile_0.png" id="2_0nwwh"]
+
+[resource]
+resource_name = "material_5"
+cull_mode = 2
+albedo_texture = ExtResource("1_q84le")
+ao_enabled = true
+ao_texture = ExtResource("2_0nwwh")
+ao_on_uv2 = true

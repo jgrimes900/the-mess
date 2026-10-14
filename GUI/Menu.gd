@@ -19,10 +19,10 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause"):
 		if !open:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			get_node("/root/Player").mouse_captured = false
+			player.mouse_captured = false
 			visible = true
 			open = true
-			emit_signal("control", false)
+			set_in_control(false)
 			if get_node_or_null("/root/Node3D/ExitWarp"):
 				$VBoxContainer/Return.visible = true
 			else:
@@ -31,19 +31,23 @@ func _input(event: InputEvent) -> void:
 		else:
 			_gui_input_continue()
 	if Input.is_action_just_pressed("open_inv"):
-		if get_node("/root/Player").inv.visible:
-			get_node("/root/Player").inv.visible = false
+		if player.inv.visible:
+			player.inv.visible = false
 			if !mode_2d:
-				get_node("/root/Player").in_control = true
-				emit_signal("control", true)
+				set_in_control(true)
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			get_node("/root/Player").mouse_captured = true
+			player.mouse_captured = true
 		else:
-			get_node("/root/Player").inv.visible = true
-			get_node("/root/Player").in_control = false
+			player.inv.visible = true
+			set_in_control(false)
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			get_node("/root/Player").mouse_captured = false
-			emit_signal("control", false)
+			player.mouse_captured = false
+
+func set_in_control(a: bool):
+	player.in_control = a
+	emit_signal("control", a)
+	for gun in player.guns:
+		gun._set_control(a)
 
 func _gui_input_respawn():
 	if open:
@@ -61,7 +65,7 @@ func _gui_input_return():
 	if open:
 		OnLoad.connect("level_loaded", call_return_a)
 		retrun_code.call()
-		map_from = get_node("/root/Player").current_map
+		map_from = player.current_map
 		get_node("/root/Node3D/ExitWarp").MapChange.call_deferred()
 		_gui_input_continue()
 
@@ -75,18 +79,18 @@ func _gui_input_continue():
 	if open:
 		if !mode_2d:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			emit_signal("control", true)
-		get_node("/root/Player").mouse_captured = true
+			set_in_control(true)
+		player.mouse_captured = true
 		visible = false
 		open = false
 		Engine.time_scale = 1
 		
 func _2d_ify():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	get_node("/root/Player").mouse_captured = false
+	player.mouse_captured = false
 	mode_2d = true
 
 func _un_2d():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	get_node("/root/Player").mouse_captured = true
+	player.mouse_captured = true
 	mode_2d = false

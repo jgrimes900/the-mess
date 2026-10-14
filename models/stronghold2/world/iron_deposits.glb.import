@@ -1,0 +1,153 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://jl74tcv3drws"
+path="res://.godot/imported/iron_deposits.glb-ee94d6ebe3f49a19773cec6df75bcc59.scn"
+
+[deps]
+
+source_file="res://models/stronghold2/world/iron_deposits.glb"
+dest_files=["res://.godot/imported/iron_deposits.glb-ee94d6ebe3f49a19773cec6df75bcc59.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"meshes": {
+"iron_deposits_iron_deposits_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_001.res",
+"save_to_file/path": "uid://cl0qcp5k02f38"
+},
+"iron_deposits_iron_deposits_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_002.res",
+"save_to_file/path": "uid://dfov0bar8x20y"
+},
+"iron_deposits_iron_deposits_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_003.res",
+"save_to_file/path": "uid://e1vtuigggmrg"
+},
+"iron_deposits_iron_deposits_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_004.res",
+"save_to_file/path": "uid://cnke7t8cnkgfs"
+},
+"iron_deposits_iron_deposits_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_005.res",
+"save_to_file/path": "uid://ctopsatpdqq4w"
+},
+"iron_deposits_iron_deposits_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_006.res",
+"save_to_file/path": "uid://m4r1dgkbhgsu"
+},
+"iron_deposits_iron_deposits_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_007.res",
+"save_to_file/path": "uid://dxsetadobgpyd"
+},
+"iron_deposits_iron_deposits_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_008.res",
+"save_to_file/path": "uid://bdt044jj2dtkn"
+},
+"iron_deposits_iron_deposits_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_009.res",
+"save_to_file/path": "uid://bs301wqkiasw"
+},
+"iron_deposits_iron_deposits_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_010.res",
+"save_to_file/path": "uid://deph80fwg06ry"
+},
+"iron_deposits_iron_deposits_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_011.res",
+"save_to_file/path": "uid://dqll4paympatt"
+},
+"iron_deposits_iron_deposits_012": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://models/stronghold2/world/iron_deposits/iron_deposits_iron_deposits_012.res",
+"save_to_file/path": "uid://dxej0dvguimek"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
